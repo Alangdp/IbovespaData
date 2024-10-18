@@ -1,0 +1,13 @@
+{
+    "code-runner.executorMap": {
+        "typescript": "npx ts-node --files --esm ",
+    },
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "editor.tokenColorCustomizations": {
+        "comments": "",
+        "textMateRules": []
+    },
+    "cSpell.words": [
+        "BBAS"
+    ]
+}
