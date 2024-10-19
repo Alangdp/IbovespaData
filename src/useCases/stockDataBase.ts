@@ -23,8 +23,12 @@ export class StockDataBase {
       return activeModel.findOne({ ticker });
     }
 
-    async function updateStock(stock: StockProtocol) {
-      await activeModel.updateOne(stock);
+    async function getAll() {
+      return activeModel.find({});
+    }
+
+    async function findStockBySegment(segment: string) {
+      return activeModel.find({ segment }, { _id: false });
     }
 
     async function deleteStock(stock: StockProtocol) {
@@ -54,6 +58,11 @@ export class StockDataBase {
       return stock;
     }
 
+    async function updateStock(ticker: string) {
+      await activeModel.deleteMany({ ticker });
+      return createStock(ticker);
+    }
+
     async function getStockWithoutTime(ticker: string) {
       const stock = await activeModel.findOne({ ticker });
       return stock;
@@ -67,6 +76,8 @@ export class StockDataBase {
       existsStock,
       getStock,
       getStockWithoutTime,
+      findStockBySegment,
+      getAll,
     };
   }
 }

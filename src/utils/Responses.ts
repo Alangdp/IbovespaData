@@ -14,6 +14,12 @@ export function response<T>(
 }
 
 export function errorResponse(res: Response, error: any) {
+  if (error.message && error.message.includes('404'))
+    return response(res, {
+      status: 400,
+      errors: [addError('Invalid Ticker', null)],
+    });
+
   if (error instanceof CustomError) {
     return response(res, {
       data: {},

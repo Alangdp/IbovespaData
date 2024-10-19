@@ -22,12 +22,7 @@ class DatabaseSeed {
   }
 
   async execute() {
-    const invalidTickers: string[] = Json.readJSONFromFile(
-      'invalidTickers.json'
-    );
-
     for (const ticker of this.tickers) {
-      if (invalidTickers.includes(ticker)) continue;
       try {
         await this.getData(ticker);
       } catch (error: any) {

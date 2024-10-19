@@ -18,6 +18,7 @@
     "@types/chart.js": "^2.9.41",
     "@types/cors": "^2.8.17",
     "@types/jsonwebtoken": "^9.0.4",
+    "@types/node-schedule": "^2.1.7",
     "@types/plotly.js": "^2.12.30",
     "@types/sequelize": "^4.28.16",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
@@ -53,6 +54,7 @@
     "install": "^0.13.0",
     "jsonwebtoken": "^9.0.2",
     "lowdb": "^7.0.1",
+    "node-schedule": "^2.1.1",
     "querystring": "^0.2.1",
     "socket.io": "^4.7.5"
   }

@@ -1,20 +1,20 @@
 import express from 'express';
-import dotenv from 'dotenv';
 import {
   index,
-  indexBazin,
-  indexFullStock,
-  indexGraham,
+  indexPrice,
+  indexIndicators,
+  indexBySegment,
 } from '../controllers/stock.controller.js';
-dotenv.config();
 
 const router = express.Router();
 
 router.get('/stock/:ticker', index);
+router.get('/stock/price/:ticker', indexPrice);
+router.get('/stock/indicators/:ticker', indexIndicators);
+router.get('/stock/segment/:segment', indexBySegment);
 
-router.get('/bazin/:ticker', indexBazin);
-router.get('/graham/:ticker', indexGraham);
-
-router.post('/full', indexFullStock);
+// router.get('/stock/:ticker', index);
+// router.get('/stock/:ticker', index);
+// router.get('/stock/:ticker', index);
 
 export default router;

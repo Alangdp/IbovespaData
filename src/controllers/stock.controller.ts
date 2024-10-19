@@ -21,26 +21,6 @@ const toChartWithoutDate = (data: any[]) => {
   return toReturn;
 };
 
-function removeKeyFromObject(key: string, object: any) {
-  const objectTypeof = typeof object;
-
-  if (objectTypeof !== 'object' || object === null) return object;
-  if (Array.isArray(object)) {
-    for (const item of object) {
-      removeKeyFromObject(key, item);
-    }
-  } else {
-    delete object[key];
-    for (const subKey in object) {
-      if (object.hasOwnProperty(subKey)) {
-        removeKeyFromObject(key, object[subKey]);
-      }
-    }
-  }
-
-  return object;
-}
-
 export const indexFullStock: RequestHandler = async (req, res, next) => {
   const { getStockWithoutTime, getStock } = await StockDataBase.startDatabase();
 
@@ -71,29 +51,9 @@ export const index: RequestHandler = async (req, res, next) => {
     const ticker: string = req.params.ticker;
     const stock: StockProps = (await getStock(ticker)).toObject();
 
-    const indicators = stock.indicators;
-
-    // const toReturn: StocKPropTemp = {
-    //   ticker,
-    //   dividendsChart: toChartWithoutDate(stock.lastDividendsYieldYear),
-    //   p_vp: toChartWithoutDate(indicators.p_vp.olds.map((item) => item.value)),
-    //   p_l: toChartWithoutDate(indicators.p_l.olds.map((item) => item.value)),
-    //   roe: toChartWithoutDate(indicators.roe.olds.map((item) => item.value)),
-    //   roa: toChartWithoutDate(indicators.roa.olds.map((item) => item.value)),
-    //   liquid_margin: toChartWithoutDate(
-    //     indicators.margemliquida.olds.map((item) => item.value)
-    //   ),
-    //   liquid_debit_ebitda: toChartWithoutDate(
-    //     indicators.margemebitda.olds.map((item) => item.value)
-    //   ),
-    //   current_liquidity: toChartWithoutDate(
-    //     indicators.margemliquida.olds.map((item) => item.value)
-    //   ),
-    // };
-
     return response(res, {
       status: 200,
-      data: removeKeyFromObject('_id', stock),
+      data: stock,
     });
   } catch (error: any) {
     const stock = await getStockWithoutTime(req.body.ticker);
@@ -105,6 +65,59 @@ export const index: RequestHandler = async (req, res, next) => {
       });
     if (!stock) return errorResponse(res, error);
     return response(res, { status: 200, data: stock });
+  }
+};
+
+export const indexPrice: RequestHandler = async (req, res, next) => {
+  const { getStockWithoutTime, getStock } = await StockDataBase.startDatabase();
+
+  try {
+    const ticker: string = req.params.ticker;
+    const stockRaw: StockProps = (await getStock(ticker)).toObject();
+
+    return response(res, {
+      status: 200,
+      data: stockRaw,
+    });
+  } catch (error: any) {
+    const stock = await getStockWithoutTime(req.body.ticker);
+
+    if (!stock) return errorResponse(res, error);
+    return response(res, { status: 200, data: stock });
+  }
+};
+
+export const indexIndicators: RequestHandler = async (req, res, next) => {
+  const { getStockWithoutTime, getStock } = await StockDataBase.startDatabase();
+
+  try {
+    const ticker: string = req.params.ticker;
+    const stockRaw: StockProps = (await getStock(ticker)).toObject();
+
+    return response(res, {
+      status: 200,
+      data: stockRaw.indicators,
+    });
+  } catch (error: any) {
+    const stock = await getStockWithoutTime(req.body.ticker);
+    if (!stock) return errorResponse(res, error);
+    return response(res, { status: 200, data: stock });
+  }
+};
+
+export const indexBySegment: RequestHandler = async (req, res, next) => {
+  const { findStockBySegment } = await StockDataBase.startDatabase();
+
+  try {
+    const segment: string = req.params.segment;
+    const stockRaw = await findStockBySegment(segment);
+
+    return response(res, {
+      status: 200,
+      data: stockRaw,
+    });
+  } catch (error: any) {
+    return errorResponse(res, error);
   }
 };
 

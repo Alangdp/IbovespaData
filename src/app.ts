@@ -8,6 +8,9 @@ import cors, { CorsOptions } from 'cors';
 import './database/index.js';
 
 import stockRoutes from './routes/stock.routes.js';
+import { start } from './queueTasks';
+
+start();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
