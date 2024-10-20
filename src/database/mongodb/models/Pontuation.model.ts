@@ -1,5 +1,9 @@
 import { Schema } from 'mongoose';
-import { InfoData, PontuationProps, PontuationRule } from '../../../types/Pontuation.type';
+import {
+  InfoData,
+  PontuationProps,
+  PontuationRule,
+} from '../../../types/Pontuation.type';
 import { MongooConnection } from '../../index.js';
 
 interface PontuationDocument extends PontuationProps {
@@ -16,31 +20,37 @@ interface PontuationDocument extends PontuationProps {
 const pontuationSchema = new Schema<PontuationDocument>({
   defaultIfTrue: { type: Number, required: true },
   defaultIfFalse: { type: Number, required: true },
-  id: { type: String, required: true},
-  subId: { type: String, required: true},
-  totalPoints: {type: Number, required: true},
+  id: { type: String, required: true },
+  subId: { type: String, required: true },
+  totalPoints: { type: Number, required: true },
   infoData: {
-    actualPrice: { type: Number, required: true },
-    dy: { type: Number, required: true },
-    maxPrice: { type: Number, required: true }
+    type: {
+      actualPrice: { type: Number, required: true },
+      dy: { type: Number, required: true },
+      maxPrice: { type: Number, required: true },
+    },
+    _id: false,
   },
-  totalEvaluate: [
-    {
-      ruleName: { type: String, required: true },
-      rule: { type: Boolean, required: true },
-      ifTrue: { type: Number, required: false },
-      ifFalse: { type: Number, required: false },
-      scored: { type: Boolean, default: false }
-    }
-  ],
-  createdAt: {type: Date, default: new Date()}
+  totalEvaluate: {
+    type: [
+      {
+        ruleName: { type: String, required: true },
+        rule: { type: Boolean, required: true },
+        ifTrue: { type: Number, required: false },
+        ifFalse: { type: Number, required: false },
+        scored: { type: Boolean, default: false },
+      },
+    ],
+    _id: false,
+  },
+  createdAt: { type: Date, default: new Date() },
 });
 
 async function makeConnection() {
-  const mongoose = await MongooConnection.makeConnection() 
-  return mongoose.model<PontuationDocument>('pontuations', pontuationSchema)
+  const mongoose = await MongooConnection.makeConnection();
+  return mongoose.model<PontuationDocument>('pontuations', pontuationSchema);
 }
 
-const pontuationModel = makeConnection()
+const pontuationModel = makeConnection();
 
 export { pontuationModel };

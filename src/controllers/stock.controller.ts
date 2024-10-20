@@ -6,6 +6,7 @@ import { StockDataBase } from '../useCases/stockDataBase.js';
 import Utilities from '../utils/Utilities.js';
 import { Bazin } from '../Entities/Bazin.js';
 import { Granham } from '../Entities/Graham.js';
+import { PontuationDataBase } from '../useCases/PontuationDatabase.js';
 
 const toChartWithoutDate = (data: any[]) => {
   const toReturn: ChartsDefault = {};
@@ -68,6 +69,21 @@ export const index: RequestHandler = async (req, res, next) => {
   }
 };
 
+export const updateData: RequestHandler = async (req, res, next) => {
+  const { updateStock } = await StockDataBase.startDatabase();
+
+  try {
+    const ticker: string = req.params.ticker;
+    const stock: StockProps = await updateStock(ticker);
+    return response(res, {
+      status: 200,
+      data: stock,
+    });
+  } catch (error: any) {
+    return errorResponse(res, error);
+  }
+};
+
 export const indexPrice: RequestHandler = async (req, res, next) => {
   const { getStockWithoutTime, getStock } = await StockDataBase.startDatabase();
 
@@ -77,7 +93,7 @@ export const indexPrice: RequestHandler = async (req, res, next) => {
 
     return response(res, {
       status: 200,
-      data: stockRaw,
+      data: stockRaw.priceHistory,
     });
   } catch (error: any) {
     const stock = await getStockWithoutTime(req.body.ticker);
@@ -126,14 +142,24 @@ export const indexBazin: RequestHandler = async (req, res, next) => {
 
   try {
     const ticker: string = req.params.ticker;
-    const stock: StockProps = (await getStock(ticker)).toObject();
 
-    const { __v, createdAt, updatedAt, ...cleanStock } =
-      Utilities.removeKeyRecursively(stock, '_id');
+    const bazinPoints = await PontuationDataBase.get({
+      type: 'BAZIN',
+      ticker,
+    });
 
-    const bazin = new Bazin(cleanStock).makePoints(cleanStock);
+    return response(res, { status: 200, data: bazinPoints });
+  } catch (error: any) {
+    return errorResponse(res, error);
+  }
+};
 
-    return response(res, { status: 200, data: bazin });
+export const indexBazinAll: RequestHandler = async (req, res, next) => {
+  const { getStockWithoutTime, getStock } = await StockDataBase.startDatabase();
+
+  try {
+    const pontuations = await PontuationDataBase.getAll('BAZIN');
+    return response(res, { status: 200, data: pontuations });
   } catch (error: any) {
     return errorResponse(res, error);
   }
@@ -144,16 +170,25 @@ export const indexGraham: RequestHandler = async (req, res, next) => {
 
   try {
     const ticker: string = req.params.ticker;
-    const stock: StockProps = (await getStock(ticker)).toObject();
+    const grahamPoints = await PontuationDataBase.get({
+      type: 'GRAHAM',
+      ticker,
+    });
 
-    const { __v, createdAt, updatedAt, ...cleanStock } =
-      Utilities.removeKeyRecursively(stock, '_id');
-    const graham = new Granham(cleanStock);
-    const grahamPoints = await graham.makePoints(cleanStock);
+    return response(res, {
+      status: 200,
+      data: grahamPoints,
+    });
+  } catch (error: any) {
+    console.log(error);
+    return errorResponse(res, error);
+  }
+};
 
-    console.log(graham);
-
-    return response(res, { status: 200, data: grahamPoints });
+export const indexGrahamAll: RequestHandler = async (req, res, next) => {
+  try {
+    const pontuations = await PontuationDataBase.getAll('GRAHAM');
+    return response(res, { status: 200, data: pontuations });
   } catch (error: any) {
     return errorResponse(res, error);
   }

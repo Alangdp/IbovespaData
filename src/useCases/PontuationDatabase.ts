@@ -20,7 +20,8 @@ export class PontuationDataBase {
     .TOLERANCE_TIME_HOURS_RANKING as unknown as number;
 
   static async create(props: DatabaseProps) {
-    if(!props.ticker) throw new Error("To register pontuation is necessari ticker!")
+    if (!props.ticker)
+      throw new Error('To register pontuation is necessari ticker!');
     const model = await pontuationModel;
     const stock = await InstanceStock.execute(props.ticker);
     let pontuation: Pontuation | undefined = undefined;
@@ -28,12 +29,12 @@ export class PontuationDataBase {
     if (props.type === 'BAZIN') {
       pontuation = new Bazin(stock).makePoints(stock);
       await model.create(pontuation);
-      return pontuation
+      return pontuation;
     }
     if (props.type === 'GRAHAM') {
       pontuation = await new Granham(stock).makePoints(stock);
       await model.create(pontuation);
-      return pontuation
+      return pontuation;
     }
     throw new Error('Invalid Type');
   }
@@ -72,16 +73,17 @@ export class PontuationDataBase {
     if (!points) return PontuationDataBase.create(props);
 
     const time = points.get('createdAt') as Date;
-    const valid = PontuationDataBase.validTime(time.getTime())
-    if (!valid) {;
+    const valid = PontuationDataBase.validTime(time.getTime());
+    if (!valid) {
       await points.deleteOne({ ...props });
       return await PontuationDataBase.create(props);
     }
     return points;
   }
 
-  static async getAll(subID: 'BAZIN' | 'GRAHAM') {
-    const points = await (await pontuationModel).find({subId: "BAZIN"});
+  static async getAll(subId: 'BAZIN' | 'GRAHAM') {
+    const model = await pontuationModel;
+    const points = await model.find({ subId });
     return points;
   }
 }

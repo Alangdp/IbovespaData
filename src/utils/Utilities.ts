@@ -47,7 +47,7 @@ export default class Utilities {
       if (obj.constructor && obj.constructor.name !== 'Object') {
         return obj;
       }
-  
+
       return Object.keys(obj).reduce((acc, key) => {
         if (key !== keyToRemove) {
           acc[key] = this.removeKeyRecursively(obj[key], keyToRemove);
@@ -55,7 +55,7 @@ export default class Utilities {
         return acc;
       }, {} as any);
     }
-  
+
     return obj;
   }
 }

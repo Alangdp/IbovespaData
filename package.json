@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "prebuild": "if exist dist (rmdir /Q /S dist)",
-    "build": "tsc",
+    "build": "tsup src -d dist",
     "start": "npx tsx watch ./src/server.ts"
   },
   "author": "",
@@ -34,6 +34,7 @@
     "sequelize": "^6.32.1",
     "sequelize-cli": "^6.6.1",
     "ts-node": "^10.9.2",
+    "tsup": "^8.3.0",
     "tsx": "^4.15.7",
     "typescript": "^5.1.6"
   },

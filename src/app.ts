@@ -8,9 +8,11 @@ import cors, { CorsOptions } from 'cors';
 import './database/index.js';
 
 import stockRoutes from './routes/stock.routes.js';
-import { start } from './queueTasks';
+import bazinRoutes from './routes/bazin.routes.js';
+import grahamRoutes from './routes/graham.routes.js';
 
-start();
+// import { start } from './queueTasks';
+// start();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -25,7 +27,13 @@ class App {
     this.routes();
   }
   routes() {
+    this.app.get('/', (req, res) => {
+      res.status(301).redirect('http://localhost:3000');
+    });
+
     this.app.use('/', stockRoutes);
+    this.app.use('/', bazinRoutes);
+    this.app.use('/', grahamRoutes);
   }
 
   middlewares() {

@@ -141,21 +141,20 @@ export class Granham extends GranhamProtocol implements GranhamMethods {
         maxPrice: Math.sqrt(22.5 * vpaAverage * lpaAverage),
       },
       id: this.ticker,
-      subId: "BAZIN",
+      subId: 'GRAHAM',
       defaultIfFalse: 1,
       defaultIfTrue: 1,
       totalPoints: 0,
-      totalEvaluate: []
-    })
+      totalEvaluate: [],
+    });
 
-    rules.forEach( rule => {
+    rules.forEach((rule) => {
       pontuation.addRule(rule);
-    })
+    });
 
     pontuation.calculate();
 
-    return pontuation
-
+    return pontuation;
   }
 
   crescentNetLiquid(netLiquidOn10Years: NetLiquid[]): boolean {

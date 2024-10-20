@@ -39,7 +39,6 @@ async function main() {
     };
   };
   const obj: Teste = {};
-  console.log(ranker.stock.indicators.p_vp);
   await MongooConnection.destroy();
 }
 
