@@ -10,6 +10,7 @@ import './database/index.js';
 import stockRoutes from './routes/stock.routes.js';
 import bazinRoutes from './routes/bazin.routes.js';
 import grahamRoutes from './routes/graham.routes.js';
+import simulationRoutes from './routes/simulation.routes.js';
 
 // import { start } from './queueTasks';
 // start();
@@ -34,6 +35,7 @@ class App {
     this.app.use('/', stockRoutes);
     this.app.use('/', bazinRoutes);
     this.app.use('/', grahamRoutes);
+    this.app.use('/', simulationRoutes);
   }
 
   middlewares() {

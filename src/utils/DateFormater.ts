@@ -13,6 +13,9 @@ export class DateFormatter {
   }
 
   static stringToDate(dataString: string): Date | null {
+    if (dataString.includes('00:00'))
+      dataString = dataString.replace('00:00', '').trim();
+
     const partes = dataString.split('/');
 
     if (partes.length !== 3) {
@@ -25,7 +28,7 @@ export class DateFormatter {
     if (isNaN(day) || isNaN(month) || isNaN(year)) {
       return null;
     }
-    const date = new Date(year, month - 1, day);
+    const date = new Date(year > 100 ? year : year + 2000, month - 1, day);
 
     return date;
   }

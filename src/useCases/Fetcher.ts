@@ -421,7 +421,7 @@ export default class TickerFetcher {
       if (!data) throw new Error('Error Getting Prices Data');
 
       const priceReturn: PriceReturn = {
-        price: data[0].prices[0].price,
+        price: data[0].prices[data[0].prices.length - 1].price,
         priceVariation: data[0].prices,
         currency: data[0].currency,
       };
