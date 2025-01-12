@@ -1,5 +1,6 @@
 import { Mongoose } from 'mongoose';
 import dotenv from 'dotenv';
+import env from '../env';
 
 dotenv.config();
 
@@ -20,7 +21,7 @@ export class MongooConnection {
     if (MongooConnection.verifyConnection() === 1)
       return MongooConnection.mongoose
 
-    await MongooConnection.mongoose.connect(process.env.MONGOOSE_URI as string);
+    await MongooConnection.mongoose.connect(env.MONGOOSE_URI);
     return MongooConnection.mongoose
   }
 
