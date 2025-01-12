@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "prebuild": "if exist dist (rmdir /Q /S dist)",
     "build": "tsup src -d dist",
     "start": "npx tsx watch ./src/server.ts"
   },

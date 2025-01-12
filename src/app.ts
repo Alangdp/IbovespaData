@@ -12,12 +12,6 @@ import bazinRoutes from './routes/bazin.routes.js';
 import grahamRoutes from './routes/graham.routes.js';
 import simulationRoutes from './routes/simulation.routes.js';
 
-// import { start } from './queueTasks';
-// start();
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
 dotenv.config();
 
 class App {
