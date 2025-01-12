@@ -1,4 +1,5 @@
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
+
 import { FetcherUtilsProtocol } from './../interfaces/FetcherUtils.type';
 
 import Utilities from './Utilities.js';

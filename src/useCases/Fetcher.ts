@@ -3,7 +3,8 @@ import { DividendReturn, RootDividend } from '../types/dividends.type.js';
 import { Header } from '../types/get.type.js';
 import { MainPrices, PriceReturn } from '../types/prices.type.js';
 import axios, { AxiosRequestConfig } from 'axios';
-import Cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
+
 
 import Scrapper from '../utils/Fetcher.utils.js';
 import Utilities from '../utils/Utilities.js';
@@ -157,7 +158,7 @@ export default class TickerFetcher {
 
       const response = await axios.request(options);
 
-      const $ = Cheerio.load(response.data);
+      const $ = cheerio.load(response.data);
       const tickers: string[] = $('td span a')
         .map((index, element) => $(element).text())
         .get();
@@ -193,20 +194,20 @@ export default class TickerFetcher {
     if (!tableRows) return [];
 
     for (const tableRow of tableRows) {
-      const rowContent: any = Cheerio(tableRow).html();
-      const rows = Cheerio.load(rowContent, {});
+      const rowContent: any = cheerio.load(tableRow).html();
+      const rows = cheerio.load(rowContent, {});
 
       const status = this.Utility?.extractElement(selectors.status);
       const types = this.Utility?.extractElement(selectors.types);
       if (status === undefined || types === undefined) return [];
 
-      const statusTextArray = Cheerio(status)
+      const statusTextArray = status
         .map((index: number, element: cheerio.Element) => {
           return rows(element).text();
         })
         .get();
 
-      const infosText = Cheerio(types)
+      const infosText = types
         .each((index: number, element: cheerio.Element) => {
           return rows(element).text();
         })
@@ -636,8 +637,8 @@ export default class TickerFetcher {
     }
 
     try {
-      const $ = Cheerio;
       const html = await getHtmlPage();
+      const $ = cheerio.load(html);
       const scrapper = new Scrapper(html);
 
       const selectors = {
@@ -698,7 +699,7 @@ export default class TickerFetcher {
       const response = await axios.get(
         'https://br.tradingview.com/markets/stocks-brazil/news/'
       );
-      const $ = Cheerio.load(response.data);
+      const $ = cheerio.load(response.data);
 
       const jsonData = $("script[type='application/prs.init-data+json']")
         .eq(3)
@@ -750,7 +751,7 @@ export default class TickerFetcher {
       const response = await axios.get(
         `https://br.tradingview.com${item.link}`
       );
-      const $ = Cheerio.load(response.data);
+      const $ = cheerio.load(response.data);
       const content = $(
         '#tv-content > div > div > div > article > div.body-KX2tCBZq.bodyPreview-pIO_GYwT.body-pIO_GYwT.content-pIO_GYwT.body-RYg5Gq3E > span'
       );
