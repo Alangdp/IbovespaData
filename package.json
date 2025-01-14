@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsup src -d dist",
     "start": "node ./dist/server.js",
-    "dev": "npx tsx watch ./src/server.ts"
+    "dev": "tsx watch ./src/server.ts"
   },
   "author": "",
   "license": "ISC",
@@ -43,6 +43,7 @@
     "lowdb": "^7.0.1",
     "node-schedule": "^2.1.1",
     "querystring": "^0.2.1",
+    "redis": "4.7.0",
     "zod": "3.24.1"
   }
 }

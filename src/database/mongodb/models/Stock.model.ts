@@ -1,18 +1,14 @@
-import { Schema } from 'mongoose';
-import {
-  NetLiquid,
-  PriceHistory,
-  StockProps,
-} from '../../../types/stock.types';
-import { LastDividendPayment } from '../../../types/dividends.type';
-import { FinancialIndicators } from '../../../types/indicators.type';
-import { PassiveChartReturn } from '../../../types/PassiveChart.type';
-import { MongooConnection } from '../../index.js';
+import { Schema } from 'mongoose'
+
+import { LastDividendPayment } from '../../../types/dividends.type'
+import { PassiveChartReturn } from '../../../types/PassiveChart.type'
+import { NetLiquid, PriceHistory, StockProps } from '../../../types/stock.types'
+import { MongooConnection } from '../../index.js'
 
 const priceHistorySchema = new Schema<PriceHistory>({
   date: { type: String, required: false },
   price: { type: Number, default: 0, required: false },
-});
+})
 
 const lastDividendsValueSchema = new Schema<LastDividendPayment>({
   ticker: { type: String, required: false },
@@ -21,12 +17,12 @@ const lastDividendsValueSchema = new Schema<LastDividendPayment>({
   dividendType: { type: String, required: false },
   dividendTypeName: { type: String, required: false },
   value: { type: Number, default: 0, required: false },
-});
+})
 
 const oldIndicatorSchema = new Schema({
   date: { type: Number, required: true },
   value: { type: Number, required: true },
-});
+})
 
 const financialDataSchema = new Schema(
   {
@@ -34,8 +30,8 @@ const financialDataSchema = new Schema(
     avg: { type: Number, required: false },
     olds: [oldIndicatorSchema],
   },
-  { _id: false }
-);
+  { _id: false },
+)
 
 const indicatorsDataSchema = new Schema({
   dy: {
@@ -154,12 +150,12 @@ const indicatorsDataSchema = new Schema({
     type: financialDataSchema,
     _id: false,
   },
-});
+})
 
 const netLiquidSchema = new Schema<NetLiquid>({
   year: { type: String, required: false },
   value: { type: Number, default: 0, required: false },
-});
+})
 
 const passiveChartSchema = new Schema<PassiveChartReturn>({
   year: { type: Number, default: 0, required: false },
@@ -170,7 +166,7 @@ const passiveChartSchema = new Schema<PassiveChartReturn>({
   currentLiabilities: { type: Number, default: 0, required: false },
   nonCurrentLiabilities: { type: Number, default: 0, required: false },
   shareholdersEquity: { type: Number, default: 0, required: false },
-});
+})
 
 const stockSchema = new Schema<StockProps>(
   {
@@ -295,14 +291,14 @@ const stockSchema = new Schema<StockProps>(
       type: String,
     },
   },
-  { timestamps: true }
-);
+  { timestamps: true },
+)
 
 async function makeModel() {
-  const mongoose = await MongooConnection.makeConnection();
-  return mongoose.model<StockProps>('Stock', stockSchema);
+  const mongoose = await MongooConnection.makeConnection()
+  return mongoose.model<StockProps>('Stock', stockSchema)
 }
 
-const stockModel = makeModel();
+const stockModel = makeModel()
 
-export default stockModel;
+export default stockModel

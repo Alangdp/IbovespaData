@@ -1,9 +1,9 @@
 export class CustomError extends Error {
-  public customCode: number;
+  public customCode: number
 
   constructor(message: string, customCode: number) {
-    super(message);
-    this.customCode = customCode;
-    this.name = 'CustomError';
+    super(message)
+    this.customCode = customCode
+    this.name = 'CustomError'
   }
 }

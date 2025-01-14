@@ -1,9 +1,10 @@
-import express from 'express';
-import { indexBazin, indexBazinAll } from '../controllers/stock.controller.js';
+import express from 'express'
 
-const router = express.Router();
+// import { indexBazin, indexBazinAll } from '../controllers/stock.controller.js'
 
-router.get('/bazin/:ticker', indexBazin);
-router.get('/bazin/', indexBazinAll);
+const router = express.Router()
 
-export default router;
+// router.get('/bazin/:ticker', indexBazin)
+// router.get('/bazin/', indexBazinAll)
+
+export default router

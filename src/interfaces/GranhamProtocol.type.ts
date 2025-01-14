@@ -1,6 +1,6 @@
-import { Pontuation } from '../Entities/Pontuation';
-import { NetLiquid } from '../types/stock.types';
-import { StockProtocol } from './StockProtocol.type';
+import { Pontuation } from '../entities/Pontuation'
+import { NetLiquid } from '../types/stock.types'
+import { StockProtocol } from './StockProtocol.type'
 
 // Princípios utilizados:
 
@@ -35,43 +35,43 @@ import { StockProtocol } from './StockProtocol.type';
 // TODO - REFAZER TUDO
 
 export interface GranhamMethods {
-  makePoints(stock: StockProtocol): Promise<Pontuation>;
-  crescentNetLiquid(netLiquidOn10Years: NetLiquid[]): boolean;
-  crescentLpa(): boolean;
-  constantDividend(stock: StockProtocol): boolean;
-  calculateYearGrowth(stock: StockProtocol, numberYears: number): boolean;
+  makePoints(stock: StockProtocol): Promise<Pontuation>
+  crescentNetLiquid(netLiquidOn10Years: NetLiquid[]): boolean
+  crescentLpa(): boolean
+  constantDividend(stock: StockProtocol): boolean
+  calculateYearGrowth(stock: StockProtocol, numberYears: number): boolean
 }
 
 export abstract class GranhamProtocol {
-  protected ticker: string;
-  protected points: number;
-  protected lpa: number[];
-  protected vpa: number[];
-  protected p_l: number;
-  protected p_vp: number;
-  protected roe: number;
-  protected currentRatio: number;
-  protected grossDebt: number;
-  protected patrimony: number;
-  protected gb_p: number;
-  protected netLiquid: NetLiquid[];
-  protected actualPrice: number;
-  protected dy: number;
+  protected ticker: string
+  protected points: number
+  protected lpa: number[]
+  protected vpa: number[]
+  protected p_l: number
+  protected p_vp: number
+  protected roe: number
+  protected currentRatio: number
+  protected grossDebt: number
+  protected patrimony: number
+  protected gb_p: number
+  protected netLiquid: NetLiquid[]
+  protected actualPrice: number
+  protected dy: number
 
   constructor() {
-    this.dy = 0;
-    this.ticker = '';
-    this.points = 0;
-    this.lpa = [];
-    this.vpa = [];
-    this.p_l = 0;
-    this.p_vp = 0;
-    this.roe = 0;
-    this.currentRatio = 0;
-    this.grossDebt = 0;
-    this.patrimony = 0;
-    this.gb_p = 0;
-    this.netLiquid = [];
-    this.actualPrice = 0;
+    this.dy = 0
+    this.ticker = ''
+    this.points = 0
+    this.lpa = []
+    this.vpa = []
+    this.p_l = 0
+    this.p_vp = 0
+    this.roe = 0
+    this.currentRatio = 0
+    this.grossDebt = 0
+    this.patrimony = 0
+    this.gb_p = 0
+    this.netLiquid = []
+    this.actualPrice = 0
   }
 }

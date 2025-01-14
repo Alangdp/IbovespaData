@@ -1,7 +1,7 @@
 import { pontuationModel } from '../database/mongodb/models/Pontuation.model.js'
-import { Bazin } from '../Entities/Bazin.js'
-import { Granham } from '../Entities/Graham.js'
-import { Pontuation } from '../Entities/Pontuation.js'
+import { Bazin } from '../entities/Bazin.js'
+import { Granham } from '../entities/Graham.js'
+import { Pontuation } from '../entities/Pontuation.js'
 import env from '../env.js'
 import { InstanceStock } from './instanceStock.js'
 

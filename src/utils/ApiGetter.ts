@@ -1,20 +1,20 @@
-import axios from 'axios';
-import { AxiosOptions } from '../types/AxiosOptions.type';
-import { AxiosUtils } from './Axios.Utils.js';
-import { MainPrices } from '../types/prices.type';
+import axios from 'axios'
+
+import { AxiosOptions } from '../types/AxiosOptions.type'
+import { AxiosUtils } from './Axios.Utils.js'
 
 export default async function apiGetter<T>(
   axiosParams: AxiosOptions,
-  finalUrl: string
+  finalUrl: string,
 ): Promise<T | null> {
   try {
-    const options = AxiosUtils.makeOptionsJson(axiosParams, finalUrl);
+    const options = AxiosUtils.makeOptionsJson(axiosParams, finalUrl)
 
-    const response = await axios.request(options);
-    const responseData: T = response.data;
+    const response = await axios.request(options)
+    const responseData: T = response.data
 
-    return responseData;
+    return responseData
   } catch (error) {
-    return null;
+    return null
   }
 }

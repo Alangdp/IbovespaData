@@ -1,14 +1,14 @@
+import { MacroInfo } from '../global/MacroInfo.js'
 import {
   GranhamMethods,
   GranhamProtocol,
-} from '../interfaces/GranhamProtocol.type.js';
-import { StockProtocol } from '../interfaces/StockProtocol.type';
-import { Pontuation } from './Pontuation.js';
-import { oldIndicator } from '../types/indicators.type';
-import { NetLiquid } from '../types/stock.types';
-import { PontuationRule } from '../types/Pontuation.type';
-import MathUtils from '../utils/MathUtils.js';
-import { MacroInfo } from '../global/MacroInfo.js';
+} from '../interfaces/GranhamProtocol.type.js'
+import { StockProtocol } from '../interfaces/StockProtocol.type.js'
+import { oldIndicator } from '../types/indicators.type.js'
+import { PontuationRule } from '../types/Pontuation.type.js'
+import { NetLiquid } from '../types/stock.types.js'
+import MathUtils from '../utils/MathUtils.js'
+import { Pontuation } from './Pontuation.js'
 
 // Princípios utilizados:
 
@@ -45,42 +45,42 @@ import { MacroInfo } from '../global/MacroInfo.js';
 // @ts-ignore
 export class Granham extends GranhamProtocol implements GranhamMethods {
   constructor(stock: StockProtocol) {
-    super();
-    const { indicators, passiveChart } = stock;
-    const { currentLiabilities, currentAssets } = passiveChart[0];
+    super()
+    const { indicators, passiveChart } = stock
+    const { currentLiabilities, currentAssets } = passiveChart[0]
 
-    this.p_l = Number(indicators.p_l.actual);
-    this.p_vp = Number(indicators.p_vp.actual);
-    this.roe = Number(indicators.roe.actual) / 100;
+    this.p_l = Number(indicators.p_l.actual)
+    this.p_vp = Number(indicators.p_vp.actual)
+    this.roe = Number(indicators.roe.actual) / 100
 
     indicators.lpa.olds.map((indicator: oldIndicator) => {
-      this.lpa.push(Number(indicator.value));
-    });
+      this.lpa.push(Number(indicator.value))
+    })
 
     indicators.vpa.olds.map((indicator: oldIndicator) => {
-      this.vpa.push(Number(indicator.value));
-    });
+      this.vpa.push(Number(indicator.value))
+    })
 
-    this.netLiquid = stock.netLiquid;
-    this.currentRatio = currentAssets / currentLiabilities;
+    this.netLiquid = stock.netLiquid
+    this.currentRatio = currentAssets / currentLiabilities
 
-    this.grossDebt = stock.grossDebt;
-    this.patrimony = stock.patrimony;
-    if (this.patrimony === 0) this.patrimony = 1;
-    if (this.grossDebt === 0) this.grossDebt = 1;
+    this.grossDebt = stock.grossDebt
+    this.patrimony = stock.patrimony
+    if (this.patrimony === 0) this.patrimony = 1
+    if (this.grossDebt === 0) this.grossDebt = 1
 
-    this.gb_p = this.grossDebt / this.patrimony;
-    this.actualPrice = stock.actualPrice;
-    this.ticker = stock.ticker;
-    this.dy = stock.actualDividendYield;
+    this.gb_p = this.grossDebt / this.patrimony
+    this.actualPrice = stock.actualPrice
+    this.ticker = stock.ticker
+    this.dy = stock.actualDividendYield
   }
 
   async makePoints(stock: StockProtocol) {
-    const { netLiquid, vpa, lpa, p_l, p_vp, roe } = this;
+    const { netLiquid, vpa, lpa, p_l, p_vp, roe } = this
 
-    const lpaAverage = MathUtils.makeAverage(lpa);
-    const vpaAverage = MathUtils.makeAverage(vpa);
-    const netLiquidOn10Years = netLiquid.slice(0, 10);
+    const lpaAverage = MathUtils.makeAverage(lpa)
+    const vpaAverage = MathUtils.makeAverage(vpa)
+    const netLiquidOn10Years = netLiquid.slice(0, 10)
     const rules: PontuationRule[] = [
       {
         ruleName: 'A empresa tem dados de "Net Liquid" para os últimos 10 anos',
@@ -132,7 +132,7 @@ export class Granham extends GranhamProtocol implements GranhamMethods {
         ruleName: 'Dívida Bruta/Patrimônio inferior a 0.5',
         rule: this.patrimony > 2000000000,
       },
-    ];
+    ]
 
     const pontuation = new Pontuation({
       infoData: {
@@ -146,75 +146,75 @@ export class Granham extends GranhamProtocol implements GranhamMethods {
       defaultIfTrue: 1,
       totalPoints: 0,
       totalEvaluate: [],
-    });
+    })
 
     rules.forEach((rule) => {
-      pontuation.addRule(rule);
-    });
+      pontuation.addRule(rule)
+    })
 
-    pontuation.calculate();
+    pontuation.calculate()
 
-    return pontuation;
+    return pontuation
   }
 
   crescentNetLiquid(netLiquidOn10Years: NetLiquid[]): boolean {
-    let crescent = true;
+    let crescent = true
     for (let i = 0; i < netLiquidOn10Years.length; i++) {
-      if (netLiquidOn10Years[i + 1] === undefined) break;
+      if (netLiquidOn10Years[i + 1] === undefined) break
       if (!(netLiquidOn10Years[i].value < netLiquidOn10Years[i + 1].value))
-        crescent = false;
+        crescent = false
     }
-    return crescent;
+    return crescent
   }
 
   crescentLpa(): boolean {
-    const { lpa } = this;
+    const { lpa } = this
 
-    const lpaInitial = (lpa[0] + lpa[1] + lpa[2]) / 3;
+    const lpaInitial = (lpa[0] + lpa[1] + lpa[2]) / 3
     const lpaFinal =
-      (lpa[lpa.length - 3] + lpa[lpa.length - 2] + lpa[lpa.length - 1]) / 3;
+      (lpa[lpa.length - 3] + lpa[lpa.length - 2] + lpa[lpa.length - 1]) / 3
 
-    const crescent = lpa[lpa.length - 1] > 1.33 * lpaInitial;
+    const crescent = lpa[lpa.length - 1] > 1.33 * lpaInitial
 
-    return crescent;
+    return crescent
   }
 
   constantDividend(stock: StockProtocol): boolean {
-    const { lastDividendsValue } = stock;
-    let crescent = true;
+    const { lastDividendsValue } = stock
+    let crescent = true
 
     lastDividendsValue.map((dividend) => {
-      if (dividend.value <= 0) crescent = false;
-    });
+      if (dividend.value <= 0) crescent = false
+    })
 
-    return crescent;
+    return crescent
   }
 
   calculateYearGrowth(stock: StockProtocol, numberYears: number): boolean {
     try {
-      const { netLiquid } = stock;
+      const { netLiquid } = stock
 
-      const actualYear = netLiquid[0].year;
-      const lastYear = (Number(actualYear) - numberYears).toString();
+      const actualYear = netLiquid[0].year
+      const lastYear = (Number(actualYear) - numberYears).toString()
 
       const actualNetLiquid = netLiquid.find(
-        (netLiquid) => netLiquid.year === actualYear
-      );
+        (netLiquid) => netLiquid.year === actualYear,
+      )
       const lastNetLiquid = netLiquid.find(
-        (netLiquid) => netLiquid.year === lastYear
-      );
+        (netLiquid) => netLiquid.year === lastYear,
+      )
 
       if (!actualNetLiquid || !lastNetLiquid)
-        throw new Error('Invalid NetLiquid');
+        throw new Error('Invalid NetLiquid')
 
       const growth =
-        (actualNetLiquid.value - lastNetLiquid.value) / lastNetLiquid.value;
+        (actualNetLiquid.value - lastNetLiquid.value) / lastNetLiquid.value
 
-      if (growth > 0.05) return true;
-      return false;
+      if (growth > 0.05) return true
+      return false
     } catch (error) {
-      console.error(error);
-      return false;
+      console.error(error)
+      return false
     }
   }
 }

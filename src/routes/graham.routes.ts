@@ -1,12 +1,10 @@
-import express from 'express';
-import {
-  indexGraham,
-  indexGrahamAll,
-} from '../controllers/stock.controller.js';
+import express from 'express'
 
-const router = express.Router();
+// import { indexGraham, indexGrahamAll } from '../controllers/stock.controller.js'
 
-router.get('/graham/:ticker', indexGraham);
-router.get('/graham/', indexGrahamAll);
+const router = express.Router()
 
-export default router;
+// router.get('/graham/:ticker', indexGraham)
+// router.get('/graham/', indexGrahamAll)
+
+export default router

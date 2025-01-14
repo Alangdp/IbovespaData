@@ -1,4 +1,4 @@
-import { Stock } from '../Entities/Stock.js'
+import { Stock } from '../entities/Stock.js'
 import { BasicInfoReturn } from '../types/BasicInfo.type'
 import { DividendReturn } from '../types/dividends.type'
 import { Header } from '../types/get.type'

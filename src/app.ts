@@ -21,10 +21,6 @@ class App {
   }
 
   routes() {
-    this.app.get('/', (req, res) => {
-      res.status(301).redirect('http://localhost:3000')
-    })
-
     this.app.use('/', stockRoutes)
     this.app.use('/', bazinRoutes)
     this.app.use('/', grahamRoutes)

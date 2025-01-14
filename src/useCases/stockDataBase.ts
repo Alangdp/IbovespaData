@@ -1,3 +1,5 @@
+import { Model } from 'mongoose'
+
 import stockModel from '../database/mongodb/models/Stock.model.js'
 import env from '../env.js'
 import { StockProtocol } from '../interfaces/StockProtocol.type.js'
@@ -6,6 +8,12 @@ import { InstanceStock } from './instanceStock.js'
 const HOUR_IN_MILISECONDS = 3600000
 
 export class StockDataBase {
+  private model: Model<StockProtocol>
+
+  constructor() {
+    this.model = await stockModel
+  }
+
   private static toleranceTime: number =
     env.TOLERANCE_TIME_HOURS * HOUR_IN_MILISECONDS
 
