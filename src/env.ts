@@ -14,6 +14,9 @@ const envSchema = z.object({
 
   TOLERANCE_TIME_HOURS: z.coerce.number().default(1),
   TOLERANCE_TIME_HOURS_RANKING: z.coerce.number().default(24),
+
+  REDIS_PORT: z.coerce.number().default(6379),
+  REDIS_HOST: z.string().default('localhost'),
 })
 
 let env: z.infer<typeof envSchema>
