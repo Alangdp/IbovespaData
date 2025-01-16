@@ -1,83 +1,75 @@
-import { pontuationModel } from '../database/mongodb/models/Pontuation.model.js'
+import { Stock } from '@/entities/Stock.js'
+import { CustomError } from '@/errors/CustomError.js'
+import { Redis } from '@/global/Redis.js'
+
 import { Bazin } from '../entities/Bazin.js'
 import { Granham } from '../entities/Graham.js'
 import { Pontuation } from '../entities/Pontuation.js'
 import env from '../env.js'
-import { InstanceStock } from './instanceStock.js'
-
-const HOUR_IN_MILISECONDS = 3600000
+import { StockDataBase } from './stockDataBase.js'
 
 interface DatabaseProps {
   ticker?: string
   type: 'BAZIN' | 'GRAHAM'
 }
 
+// Horas em milisegundosq
+const HOUR_IN_MILISECONDS = 3600000
+// Tolerância de atualização
+const TOLERANCE_UPDATE = env.TOLERANCE_TIME_HOURS * HOUR_IN_MILISECONDS
+
+// Instancia a interface de banco de dados (Redis)
+const stockRepository = new StockDataBase()
+
+// Interface de banco de dados com tempo de criação
+interface PontuationCache extends Pontuation {
+  lastUpdate: number
+}
+
 export class PontuationDataBase {
   private static toleranceTime: number = env.TOLERANCE_TIME_HOURS_RANKING
 
-  static async create(props: DatabaseProps) {
-    if (!props.ticker)
-      throw new Error('To register pontuation is necessari ticker!')
-    const model = await pontuationModel
-    const stock = await InstanceStock.execute(props.ticker)
-    let pontuation: Pontuation | undefined
+  async getPoints(props: DatabaseProps): Promise<Pontuation> {
+    if (!props.ticker) throw new CustomError('Ticker is required', 400)
 
-    if (props.type === 'BAZIN') {
-      pontuation = new Bazin(stock).makePoints(stock)
-      await model.create(pontuation)
+    const cachedData = await Redis.getObjectFromCache<PontuationCache>(
+      `points-${props.type}-${props.ticker}`,
+    )
+
+    if (
+      !cachedData ||
+      cachedData.lastUpdate < new Date().getTime() - TOLERANCE_UPDATE
+    ) {
+      // Instancia a interface de pontuação
+      let pontuation: Pontuation | undefined
+      // Instancia as informações do ticker
+      const stock = await stockRepository.getStock(props.ticker)
+
+      // Verifica o tipo de pontuação
+      if (props.type === 'BAZIN') {
+        // Instancia a interface de Bazin
+        pontuation = new Bazin(stock).makePoints(stock)
+      }
+
+      // Verifica o tipo de pontuação
+      if (props.type === 'GRAHAM') {
+        // Instancia a interface de Ações(Requerida para a interface de Graham)
+        const stockProtocol = new Stock(stock)
+        // Instancia a interface de Graham
+        pontuation = await new Granham(stockProtocol).makePoints(stockProtocol)
+      }
+
+      // Salva a pontuação no cache
+      await Redis.saveObjectToCache(`points-${props.type}-${props.ticker}`, {
+        ...pontuation,
+        lastUpdate: new Date().getTime(),
+      })
+
+      // Retorna a pontuação
+      if (!pontuation) throw new CustomError('Invalid Type', 400)
       return pontuation
     }
-    if (props.type === 'GRAHAM') {
-      pontuation = await new Granham(stock).makePoints(stock)
-      await model.create(pontuation)
-      return pontuation
-    }
-    throw new Error('Invalid Type')
-  }
 
-  static async find(props: DatabaseProps) {
-    const point = (await pontuationModel).findOne({
-      subId: props.type,
-      id: props.ticker,
-    })
-    return point
-  }
-
-  static async update(pontuation: Pontuation) {
-    await (await pontuationModel).updateOne(pontuation)
-  }
-
-  static async delete(pontuation: Pontuation) {
-    await (await pontuationModel).deleteOne(pontuation)
-  }
-
-  static async exists(props: DatabaseProps) {
-    const points = await PontuationDataBase.find(props)
-    if (!points) return null
-    return points
-  }
-
-  static validTime(time: number) {
-    const milliseconds = new Date().getTime() - (time ?? 0)
-    return milliseconds / HOUR_IN_MILISECONDS < PontuationDataBase.toleranceTime
-  }
-
-  static async get(props: DatabaseProps) {
-    const points = await PontuationDataBase.find(props)
-    if (!points) return PontuationDataBase.create(props)
-
-    const time = points.get('createdAt') as Date
-    const valid = PontuationDataBase.validTime(time.getTime())
-    if (!valid) {
-      await points.deleteOne({ ...props })
-      return await PontuationDataBase.create(props)
-    }
-    return points
-  }
-
-  static async getAll(subId: 'BAZIN' | 'GRAHAM') {
-    const model = await pontuationModel
-    const points = await model.find({ subId })
-    return points
+    return cachedData
   }
 }

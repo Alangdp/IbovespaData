@@ -30,12 +30,40 @@ export class Redis {
     return cachedData ? JSON.parse(cachedData) : null
   }
 
+  public static getAllObjectWithFromCache = async <T>(
+    prefix: string,
+  ): Promise<T[]> => {
+    const redis = Redis.getInstance()
+
+    // Busca todas as chaves que começam com o prefixo
+    const keys = await redis.keys(`${prefix}*`)
+
+    if (!keys || keys.length === 0) {
+      return []
+    }
+
+    // Utiliza pipeline para buscar valores de todas as chaves
+    const pipeline = redis.pipeline()
+    keys.forEach((key) => pipeline.get(key))
+    const results = await pipeline.exec()
+    if (!results) return []
+
+    // Filtra valores válidos e parseia os resultados encontrados
+    return (
+      results
+        .filter(([error, value]) => !error && value) // Remove erros e valores nulos
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        .map(([_, value]) => JSON.parse(value as string) as T)
+    ) // Converte valores encontrados
+  }
+
   public static saveObjectToCache = async <T>(
     key: string,
     data: T,
+    timeExpire?: number,
   ): Promise<void> => {
     const redis = Redis.getInstance()
 
-    await redis.set(key, JSON.stringify(data))
+    await redis.set(key, JSON.stringify(data), 'EX', timeExpire || 3600)
   }
 }
