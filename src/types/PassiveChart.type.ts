@@ -10,12 +10,12 @@ export interface PassiveChart {
 }
 
 export interface PassiveChartReturn {
-  year: number;
-  totalAssets: number;
-  totalLiabilities: number;
-  currentAssets: number;
-  nonCurrentAssets: number;
-  currentLiabilities: number;
-  nonCurrentLiabilities: number;
-  shareholdersEquity: number;
+  year: number
+  totalAssets: number
+  totalLiabilities: number
+  currentAssets: number
+  nonCurrentAssets: number
+  currentLiabilities: number
+  nonCurrentLiabilities: number
+  shareholdersEquity: number
 }

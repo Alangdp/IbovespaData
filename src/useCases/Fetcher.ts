@@ -7,7 +7,11 @@ import { DividendReturn, RootDividend } from '../types/dividends.type.js'
 import { DreData, DReRoot, ValuesData } from '../types/DRE.type.js'
 import { Header } from '../types/get.type.js'
 import { HomeItens, ItemData } from '../types/HomeItens.type.js'
-import { IndicatorRoot, IndicatorsData } from '../types/indicators.type.js'
+import {
+  FinancialIndicators,
+  IndicatorRoot,
+  //   IndicatorsData,
+} from '../types/indicators.type.js'
 import { News, NewsAPI } from '../types/News.type.js'
 import { PassiveChart, PassiveChartReturn } from '../types/PassiveChart.type.js'
 import { PayoutReturn, RootPayout } from '../types/Payout.type.js'
@@ -323,7 +327,154 @@ export default class TickerFetcher {
     }
   }
 
-  async getIndicatorsInfo() {
+  async getIndicatorsInfo(): Promise<FinancialIndicators> {
+    const financialIndicators: FinancialIndicators = {
+      dy: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_l: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_vp: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_ebita: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_ebit: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_sr: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_ativo: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_capitlgiro: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      p_ativocirculante: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      ev_ebitda: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      ev_ebit: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      lpa: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      vpa: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      peg_Ratio: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      dividaliquida_patrimonioliquido: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      dividaliquida_ebitda: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      dividaliquida_ebit: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      patrimonio_ativo: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      passivo_ativo: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      liquidezcorrente: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      margembruta: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      margemebitda: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      margemebit: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      margemliquida: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      roe: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      roa: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      roic: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      giro_ativos: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+      receitas_cagr5: {
+        actual: 0,
+        avg: 0,
+        olds: [],
+      },
+    }
     const ticker = this.ticker
 
     const data = await apiGetter<IndicatorRoot>(
@@ -338,10 +489,9 @@ export default class TickerFetcher {
     )
     if (!data) throw new Error('Error Getting Indicators Data')
 
-    const indicatorsData: IndicatorsData = {}
     const tickerReference = Object.keys(data.data)[0]
     for (const item of data.data[tickerReference]) {
-      indicatorsData[item.key] = {
+      financialIndicators[item.key as keyof FinancialIndicators] = {
         actual: item.actual,
         avg: item.avg,
         olds: item.ranks.map((data) => {
@@ -353,7 +503,7 @@ export default class TickerFetcher {
       }
     }
 
-    return indicatorsData
+    return financialIndicators
   }
 
   async getDreInfo() {

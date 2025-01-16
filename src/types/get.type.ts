@@ -1,22 +1,20 @@
 type Header = {
-  name: string;
-  index: number;
-  value: { [key: string]: number };
-};
+  name: string
+  index: number
+  value: { [key: string]: number }
+}
 
 interface Dividend {
-  type: string;
-  dataEx: string;
-  dataCom: string;
-  value: number;
+  type: string
+  dataEx: string
+  dataCom: string
+  value: number
 }
 
 interface Dividends {
-  lastDividends: Dividend[];
-  dividiendPorcentInDecimal: number;
-  dividendPorcent: number;
+  lastDividends: Dividend[]
+  dividiendPorcentInDecimal: number
+  dividendPorcent: number
 }
 
-
-
-export { Dividends, Dividend,Header };
+export { Dividends, Dividend, Header }

@@ -1,10 +1,10 @@
-interface CacheProps<T> {
-  key: string;
-  data: T[];
+export interface CacheProps<T> {
+  key: string
+  data: T[]
   instanceTime: number
 }
 
-interface CacheJSONProps {
-  path: string;
-  duration: number;
+export interface CacheJSONProps {
+  path: string
+  duration: number
 }

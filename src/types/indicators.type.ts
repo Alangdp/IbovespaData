@@ -1,53 +1,53 @@
 export interface OldData {
-  date: number;
-  value: number;
+  date: number
+  value: number
 }
 
 export interface FinancialData {
-  actual: number;
-  avg: number;
-  olds: OldData[];
+  actual: number
+  avg: number
+  olds: OldData[]
 }
 
 export interface FinancialIndicators {
-  dy: FinancialData;
-  p_l: FinancialData;
-  p_vp: FinancialData;
-  p_ebita: FinancialData;
-  p_ebit: FinancialData;
-  p_sr: FinancialData;
-  p_ativo: FinancialData;
-  p_capitlgiro: FinancialData;
-  p_ativocirculante: FinancialData;
-  ev_ebitda: FinancialData;
-  ev_ebit: FinancialData;
-  lpa: FinancialData;
-  vpa: FinancialData;
-  peg_Ratio: FinancialData;
-  dividaliquida_patrimonioliquido: FinancialData;
-  dividaliquida_ebitda: FinancialData;
-  dividaliquida_ebit: FinancialData;
-  patrimonio_ativo: FinancialData;
-  passivo_ativo: FinancialData;
-  liquidezcorrente: FinancialData;
-  margembruta: FinancialData;
-  margemebitda: FinancialData;
-  margemebit: FinancialData;
-  margemliquida: FinancialData;
-  roe: FinancialData;
-  roa: FinancialData;
-  roic: FinancialData;
-  giro_ativos: FinancialData;
-  receitas_cagr5: FinancialData;
+  dy: FinancialData
+  p_l: FinancialData
+  p_vp: FinancialData
+  p_ebita: FinancialData
+  p_ebit: FinancialData
+  p_sr: FinancialData
+  p_ativo: FinancialData
+  p_capitlgiro: FinancialData
+  p_ativocirculante: FinancialData
+  ev_ebitda: FinancialData
+  ev_ebit: FinancialData
+  lpa: FinancialData
+  vpa: FinancialData
+  peg_Ratio: FinancialData
+  dividaliquida_patrimonioliquido: FinancialData
+  dividaliquida_ebitda: FinancialData
+  dividaliquida_ebit: FinancialData
+  patrimonio_ativo: FinancialData
+  passivo_ativo: FinancialData
+  liquidezcorrente: FinancialData
+  margembruta: FinancialData
+  margemebitda: FinancialData
+  margemebit: FinancialData
+  margemliquida: FinancialData
+  roe: FinancialData
+  roa: FinancialData
+  roic: FinancialData
+  giro_ativos: FinancialData
+  receitas_cagr5: FinancialData
 }
 
-export interface IndicatorRoot {
-  success: boolean
-  data: Data
-}
-
-export interface Data {
-  [ticker: string]: IndicatorResponse[]
+export interface Rank {
+  timeType: number
+  rank: number
+  rank_F: string
+  value?: number
+  value_F: string
+  rankN: number
 }
 
 export interface IndicatorResponse {
@@ -68,25 +68,24 @@ export interface IndicatorResponse {
   maxValueRank_F: string
   ranks: Rank[]
 }
-
-export interface Rank {
-  timeType: number
-  rank: number
-  rank_F: string
+export interface oldIndicator {
+  date: number
   value?: number
-  value_F: string
-  rankN: number
 }
 
 export interface IndicatorsData {
-  [key: string] : {
-    actual: number,
+  [key: string]: {
+    actual: number
     avg: number
     olds: oldIndicator[]
   }
 }
 
-export interface oldIndicator {
-  date: number;
-  value?: number;
+export interface Data {
+  [ticker: string]: IndicatorResponse[]
+}
+
+export interface IndicatorRoot {
+  success: boolean
+  data: Data
 }

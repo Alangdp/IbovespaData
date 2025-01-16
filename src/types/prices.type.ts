@@ -1,21 +1,21 @@
-type RootPrices = MainPrices[];
-
-interface MainPrices {
-  currencyType: number;
-  currency: string;
-  symbol: string;
-  prices: PriceObject[];
+interface PriceObject {
+  price: number
+  date: string
 }
 
-interface PriceObject {
-  price: number;
-  date: string;
+interface MainPrices {
+  currencyType: number
+  currency: string
+  symbol: string
+  prices: PriceObject[]
 }
 
 interface PriceReturn {
-  price: number;
-  priceVariation: PriceObject[];
-  currency: string;
+  price: number
+  priceVariation: PriceObject[]
+  currency: string
 }
 
-export { RootPrices, PriceObject, PriceReturn, MainPrices };
+type RootPrices = MainPrices[]
+
+export { RootPrices, PriceObject, PriceReturn, MainPrices }

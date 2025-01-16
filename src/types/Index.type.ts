@@ -1,15 +1,15 @@
-import { Dividend } from './dividends.type';
+import { Dividend } from './dividends.type'
 
 export type IndexHistoryPrice = {
   [date: string]: {
     [ticker: string]: {
-      price: number;
-    };
-  };
-};
+      price: number
+    }
+  }
+}
 
 export type IndexDividend = {
   [date: string]: {
-    [ticker: string]: Dividend;
-  };
-};
+    [ticker: string]: Dividend
+  }
+}
