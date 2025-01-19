@@ -6,12 +6,20 @@ export class Redis {
   // eslint-disable-next-line no-use-before-define
   static instance: Redis | null = null
   static redis: RedisIO
+  static expires_channel: RedisIO
 
   private constructor() {
     Redis.redis = new RedisIO({
       port: env.REDIS_PORT,
       host: env.REDIS_HOST,
     })
+
+    Redis.expires_channel = new RedisIO({
+      port: env.REDIS_PORT,
+      host: env.REDIS_HOST,
+    })
+
+    Redis.expires_channel.subscribe('__keyevent@0__:expired')
   }
 
   public static getInstance() {
@@ -49,12 +57,9 @@ export class Redis {
     if (!results) return []
 
     // Filtra valores válidos e parseia os resultados encontrados
-    return (
-      results
-        .filter(([error, value]) => !error && value) // Remove erros e valores nulos
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        .map(([_, value]) => JSON.parse(value as string) as T)
-    ) // Converte valores encontrados
+    return results
+      .filter(([error, value]) => !error && value) // Remove erros e valores nulos
+      .map(([_errors, value]) => JSON.parse(value as string) as T) // Converte valores encontrados
   }
 
   public static saveObjectToCache = async <T>(
