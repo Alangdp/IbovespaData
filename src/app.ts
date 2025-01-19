@@ -1,3 +1,6 @@
+// Inicio o processamento das filas
+import '@/queues/StockQueue.js'
+
 import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
@@ -42,4 +45,5 @@ class App {
     )
   }
 }
+
 export default new App().app
