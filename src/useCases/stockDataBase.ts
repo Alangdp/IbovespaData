@@ -2,24 +2,27 @@ import { Redis } from '@/global/Redis.js'
 import { IStockDatabase } from '@/types/Database/StockRepository.type.js'
 import { StockProps } from '@/types/stock.types.js'
 
-import env from '../env.js'
+// import env from '../env.js'
 import { InstanceStock } from './instanceStock.js'
 
-const HOUR_IN_MILISECONDS = 3600000
+// const HOUR_IN_MILISECONDS = 3600000
 
-const TOLERANCE_UPDATE = env.TOLERANCE_TIME_HOURS * HOUR_IN_MILISECONDS
+// const TOLERANCE_UPDATE = env.TOLERANCE_TIME_HOURS * HOUR_IN_MILISECONDS
 
 interface StockCache extends StockProps {
   lastUpdate: number
 }
 
 export class StockDataBase implements IStockDatabase {
-  async getStock(ticker: string): Promise<StockProps> {
+  async getStock(
+    ticker: string,
+    timeExpireSeconds?: number,
+  ): Promise<StockProps> {
     const cachedStock = await Redis.getObjectFromCache<StockCache>(
-      `stock-${ticker}`,
+      `STOCK-${ticker}`,
     )
 
-    if (cachedStock && cachedStock.lastUpdate > Date.now() - TOLERANCE_UPDATE) {
+    if (cachedStock) {
       return cachedStock as StockProps
     }
 
@@ -28,7 +31,11 @@ export class StockDataBase implements IStockDatabase {
       ...newStock,
       lastUpdate: Date.now(),
     }
-    Redis.saveObjectToCache(`stock-${ticker}`, stockCache)
+    Redis.saveObjectToCache(
+      `STOCK-${ticker}`,
+      stockCache,
+      timeExpireSeconds || undefined,
+    )
 
     return newStock
   }
