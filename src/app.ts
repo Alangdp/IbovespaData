@@ -1,4 +1,5 @@
 // Inicio o processamento das filas
+
 import '@/queues/StockQueue.js'
 
 import cors from 'cors'

@@ -20,9 +20,10 @@ export class Bazin extends BazinProtocol implements BazinMethods {
       segment,
     } = stock
     this.segment = segment
-    this.lastDividendsValue = lastDividendsValueYear.splice(0, 5)
-    this.lastDividendsYield = lastDividendsYieldYear.splice(0, 5)
-    this.lastDividendYieldBrute = lastDividendsYieldYear.splice(0, 5)
+    console.log(stock)
+    this.lastDividendsValue = lastDividendsValueYear.slice(0, 5)
+    this.lastDividendsYield = lastDividendsYieldYear.slice(0, 5)
+    this.lastDividendYieldBrute = lastDividendsYieldYear.slice(0, 5)
     this.lastDividendYieldBrute.shift()
 
     this.dividendYieldAverage = MathUtils.makeAverage(this.lastDividendsYield)

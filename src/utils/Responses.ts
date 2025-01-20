@@ -14,6 +14,7 @@ export function response<T>(
     .json({ status, data, errors: !errors ? [] : errors })
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function errorResponse(res: Response, error: any) {
   if (error.message && error.message.includes('404'))
     return response(res, {
@@ -34,6 +35,7 @@ export function errorResponse(res: Response, error: any) {
     const sequelizeErrors: ValidationErrorItem[] = error.errors
     sequelizeErrors.map((error) => {
       returnErrors.push(addError(error.message, error.value))
+      return error
     })
 
     return response(res, { data: {}, status: 400, errors: returnErrors })
@@ -41,7 +43,7 @@ export function errorResponse(res: Response, error: any) {
 
   if (error instanceof AxiosError) {
     if (error.response) {
-      const responseError: ResponseProps<any> = error.response.data
+      const responseError: ResponseProps<unknown> = error.response.data
       return response(res, {
         data: {},
         status: responseError.status,
@@ -50,13 +52,11 @@ export function errorResponse(res: Response, error: any) {
     }
 
     if (error.status) {
-      {
-        return response(res, {
-          data: {},
-          status: error.status ? 400 : 200,
-          errors: [addError(error.message, {})],
-        })
-      }
+      return response(res, {
+        data: {},
+        status: error.status ? 400 : 200,
+        errors: [addError(error.message, {})],
+      })
     }
 
     return response(res, {
@@ -80,6 +80,6 @@ export function errorResponse(res: Response, error: any) {
   })
 }
 
-export function addError(message: string, data: any): ErrorResponse {
+export function addError<T>(message: string, data: T): ErrorResponse {
   return { message, data }
 }

@@ -22,6 +22,7 @@ const index: RequestHandler = async (req, res) => {
       data: stock,
     })
   } catch (error) {
+    console.log(error)
     return errorResponse(res, error)
   }
 }
