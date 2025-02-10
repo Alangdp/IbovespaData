@@ -11,6 +11,12 @@ export interface Value {
   TERCODIGO: string
 }
 
+type BitcoinRequest = {
+  mins: number
+  price: string
+  closeTime: number
+}
+
 type CDIToMap = {
   date: Date
   valMonth: number
@@ -67,6 +73,14 @@ export class MacroInfo {
     const data: RootDolar = response.data
     if (data.value.length === 0) return
     return data.value[0]
+  }
+
+  static async getBitcoin() {
+    const response = await axios.get(
+      'https://www.mercadobitcoin.net/api/BTC/ticker/',
+    )
+    const data: BitcoinRequest = response.data
+    return Number(data.price)
   }
 
   static async getCDI() {
