@@ -1,5 +1,7 @@
-import axios, { AxiosError } from 'axios'
+import { AxiosError } from 'axios'
 import * as cheerio from 'cheerio'
+
+import { server as axios } from '@/config/axios.js'
 
 import { BasicInfoReturn } from '../types/BasicInfo.type.js'
 import { RootCashFlow } from '../types/cashFlow.type.js'

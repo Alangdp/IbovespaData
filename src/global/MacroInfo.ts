@@ -16,6 +16,16 @@ type CDIToMap = {
   valMonth: number
   valDay: number
 }
+export interface DolarValue {
+  cotacaoCompra: number
+  cotacaoVenda: number
+  dataHoraCotacao: string
+}
+
+export interface RootDolar {
+  '@odata.context': string
+  value: DolarValue[]
+}
 
 export interface RootSelic {
   '@odata.context': string
@@ -48,6 +58,15 @@ export class MacroInfo {
     )
     const data: RootCDI = response.data
     return Number(data.value[data.value.length - 1].VALVALOR.toFixed(2))
+  }
+
+  static async getDolar() {
+    const response = await axios.get(
+      "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='02-10-2025'&$top=100&$format=json",
+    )
+    const data: RootDolar = response.data
+    if (data.value.length === 0) return
+    return data.value[0]
   }
 
   static async getCDI() {
