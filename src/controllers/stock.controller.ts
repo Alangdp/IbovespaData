@@ -1,6 +1,7 @@
+/* eslint-disable camelcase */
 import { RequestHandler } from 'express'
 
-import { StockProps } from '../types/stock.types.js'
+import { StockProps, StockSheet } from '../types/stock.types.js'
 import { StockDataBase } from '../useCases/stockDataBase.js'
 import { errorResponse, response } from '../utils/Responses.js'
 
@@ -15,6 +16,54 @@ const index: RequestHandler = async (req, res) => {
     return response(res, {
       status: 200,
       data: stock,
+    })
+  } catch (error) {
+    return errorResponse(res, error)
+  }
+}
+
+const indexSheets: RequestHandler = async (req, res) => {
+  try {
+    const ticker: string = req.params.ticker
+    const stock: StockProps = await stockRepository.getStock(ticker)
+
+    const { name, segment, dividendYield, payout } = stock
+    const {
+      roe,
+      p_l,
+      roic,
+      dividaliquida_ebitda,
+      receitas_cagr5,
+      dividaliquida_ebit,
+    } = stock.indicators
+
+    const stockSheet: StockSheet = {
+      header: [ticker, name, segment],
+      dataHeader: [
+        'ROE',
+        'ROIC',
+        'P/L',
+        'DY',
+        'DIVIDALIQUIDA/EBITDA',
+        'CAGR5',
+        'DIVIDA LIQUIDA/EBIT',
+        'PAYOUT',
+      ],
+      data: [
+        roe.actual,
+        roic.actual,
+        p_l.actual,
+        dividendYield,
+        dividaliquida_ebitda.actual,
+        receitas_cagr5.actual,
+        dividaliquida_ebit.actual,
+        payout,
+      ],
+    }
+
+    return response(res, {
+      status: 200,
+      data: stockSheet,
     })
   } catch (error) {
     return errorResponse(res, error)
@@ -139,6 +188,7 @@ const indexDividendsHistory: RequestHandler = async (req, res) => {
 
 export {
   index,
+  indexSheets,
   indexPrice,
   indexDividends,
   indexIndicators,

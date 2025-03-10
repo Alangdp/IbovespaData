@@ -8,12 +8,17 @@ import {
   indexHistory,
   indexIndicators,
   indexPrice,
+  indexSheets,
 } from '../controllers/stock.controller.js'
 
 const router = express.Router()
 
 // Rota que retorna todos os dados relacionados ao StockProps
 router.get('/stock/:ticker', index)
+
+// Rota que retorna todos os dados relacionados ao StockProps no formato de...
+// ...sheet para o google sheets
+router.get('/stock/sheets/:ticker', indexSheets)
 
 // Rota que retorna apenas as informações relacionadas ao preço
 router.get('/stock/:ticker/price', indexPrice)

@@ -50,6 +50,19 @@ export interface StockProps extends VariableProps {
   passiveChart: PassiveChartReturn[]
 }
 
+// Structure to return to Google Sheets
+// This structure is used to return stock data in a format that can be
+// easily imported into a Google Sheet. Google Sheets converts
+// arrays into columns, example:
+// ["Taee11", "Taesa", "Eletrica"] = TAEE11 | Taesa | Eletrica
+export type StockSheet = {
+  // Ticker, Name, Segment
+  header: [string, string, string]
+  // DY, P/L, ROE
+  dataHeader: [string, string, string, string, string, string, string, string]
+  data: [number, number, number, number, number, number, number, number]
+}
+
 export type CashFlowHeader = {
   name: string
   index: number
