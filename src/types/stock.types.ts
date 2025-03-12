@@ -59,8 +59,23 @@ export type StockSheet = {
   // Ticker, Name, Segment
   header: [string, string, string]
   // DY, P/L, ROE
-  dataHeader: [string, string, string, string, string, string, string, string]
-  data: [number, number, number, number, number, number, number, number]
+  dataHeader: [
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+    string,
+  ]
+  data: [number, number, number, number, number, number, number, number, number]
+  // Lucro Líquido últimos 5 anos
+  netLiquidLegend: string[]
+  netLiquid: number[]
+  liquidMarginLegend: string[]
+  liquidMargin: number[]
 }
 
 export type CashFlowHeader = {

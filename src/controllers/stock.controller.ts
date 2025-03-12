@@ -35,6 +35,8 @@ const indexSheets: RequestHandler = async (req, res) => {
       dividaliquida_ebitda,
       receitas_cagr5,
       dividaliquida_ebit,
+      margemliquida,
+      p_vp,
     } = stock.indicators
 
     const stockSheet: StockSheet = {
@@ -48,6 +50,7 @@ const indexSheets: RequestHandler = async (req, res) => {
         'CAGR5',
         'DIVIDA LIQUIDA/EBIT',
         'PAYOUT',
+        'P/VP',
       ],
       data: [
         roe.actual,
@@ -58,7 +61,14 @@ const indexSheets: RequestHandler = async (req, res) => {
         receitas_cagr5.actual,
         dividaliquida_ebit.actual,
         payout,
+        p_vp.actual,
       ],
+      netLiquidLegend: stock.netLiquid.slice(0, 5).map((item) => item.year),
+      netLiquid: stock.netLiquid.slice(0, 5).map((item) => item.value),
+      liquidMarginLegend: margemliquida.olds
+        .slice(0, 5)
+        .map((item) => item.date.toString()),
+      liquidMargin: margemliquida.olds.slice(0, 5).map((item) => item.value),
     }
 
     return response(res, {
