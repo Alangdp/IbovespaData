@@ -10,7 +10,8 @@ const envSchema = z.object({
   PORT: z.coerce.number().default(3000),
 
   SECRET_TOKEN: z.string().default('secret'),
-  MONGOOSE_URI: z.string(),
+  // Desabilitado por não ter uso, por enquanto
+  MONGOOSE_URI: z.string().default("localhost"),
 
   TOLERANCE_TIME_HOURS: z.coerce.number().default(1),
   TOLERANCE_TIME_HOURS_RANKING: z.coerce.number().default(24),

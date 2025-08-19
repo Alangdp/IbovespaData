@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { Stock } from '../entities/Stock.js'
+import { Stock } from '../entities/Stock'
 import TickerFetcher from '../useCases/Fetcher.js'
 
 export interface Value {

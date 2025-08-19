@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express'
 
-import { Simulation } from '../entities/Simulation'
+import { Simulation } from '../Entities/Simulation'
 import { errorResponse, response } from '../utils/Responses'
 
 // TODO - Cache para tickers inválidos (Geral do sistema)
