@@ -1,0 +1,17 @@
+wiki_style: caveman
+language: pt
+commit_limit: 500
+provider: claude_cli
+model: claude_cli/claude-haiku-4-5
+embedder: mock
+exclude_patterns:
+- /assets
+reasoning: auto
+editor_files:
+  claude_md: false
+distill:
+  commands:
+    enabled: true
+hooks:
+  read_skeleton: true
+  search_digest: true

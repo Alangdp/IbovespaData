@@ -1,0 +1,143 @@
+{
+  "last_sync_commit": "048ea308690f4042696715430ceb95b8b945604a",
+  "total_pages": 138,
+  "provider": "claude_cli",
+  "model": "claude_cli/claude-haiku-4-5",
+  "docs_mode": "llm",
+  "docs_enabled": true,
+  "run_mode": "standard",
+  "git_tier": "full",
+  "git_history_coverage": {
+    "eligible_files": 100,
+    "files_with_history": 100,
+    "unavailable_files": 0,
+    "retained_commits": 217,
+    "per_file_limit": 500,
+    "global_commits": 0,
+    "deep_commits": 0,
+    "recent_files": 0,
+    "deep_files": 0,
+    "fallback_files": 100,
+    "complete_through_depth": 0,
+    "workers": 8
+  },
+  "index_scope": {
+    "version": 1,
+    "run_mode": "standard",
+    "content_provenance": "model",
+    "git_tier": "full",
+    "git_commit_cap": 500,
+    "git_history_coverage": {
+      "eligible_files": 100,
+      "files_with_history": 100,
+      "unavailable_files": 0,
+      "retained_commits": 217,
+      "per_file_limit": 500,
+      "global_commits": 0,
+      "deep_commits": 0,
+      "recent_files": 0,
+      "deep_files": 0,
+      "fallback_files": 100,
+      "complete_through_depth": 0,
+      "workers": 8
+    },
+    "file_pages": {
+      "configured_cap": null,
+      "effective_cap": null,
+      "eligible": 100,
+      "generated": 93,
+      "omitted": 7
+    },
+    "analysis": {
+      "unavailable": [],
+      "skipped": []
+    },
+    "upgrade": {
+      "status": "not_applicable",
+      "retryable": false,
+      "completed_stages": [],
+      "next_stage": null
+    },
+    "provider": {
+      "name": "claude_cli",
+      "model": "claude_cli/claude-haiku-4-5",
+      "embedder": "mock",
+      "reused": false,
+      "model_cost_possible": true
+    },
+    "search": {
+      "full_text": "available",
+      "semantic": "unavailable",
+      "next_command": "repowise reindex"
+    }
+  },
+  "include_submodules": false,
+  "total_tokens": 139796,
+  "phase_timings": {
+    "traverse": 0.4,
+    "co_change": 1.48,
+    "parse": 8.04,
+    "tsconfig": 0.05,
+    "graph.ts_index": 0.02,
+    "graph.imports": 0.04,
+    "graph.type_refs": 0.01,
+    "graph.heritage": 0.0,
+    "graph.calls": 0.02,
+    "graph.dispatch": 0.01,
+    "dynamic_hints": 0.21,
+    "graph.metrics": 2.35,
+    "graph.communities": 0.15,
+    "git": 15.34,
+    "external_systems": 0.02,
+    "dead_code": 0.15,
+    "doc_drift": 0.05,
+    "decisions": 0.09,
+    "health": 0.98,
+    "knowledge_graph.skeleton": 0.01,
+    "graph.flows": 0.0,
+    "generation.setup": 80.52,
+    "generation.checkpoint": 0.01,
+    "generation.embed": 0.99,
+    "generation.level1": 0.73,
+    "generation.level2": 0.3,
+    "generation.level3": 0.05,
+    "generation.level4": 216.84,
+    "generation.level8": 195.82,
+    "generation.finalize": 0.05,
+    "onboarding": 195.88,
+    "generation.llm": 413.99,
+    "generation": 494.51,
+    "generation.kg_enrich": 82.43,
+    "persist.fts": 0.02,
+    "persist": 0.55,
+    "run": 598.27
+  },
+  "knowledge_graph": {
+    "version": "1.0.0",
+    "node_count": 149,
+    "layer_count": 6,
+    "tour_steps": 12,
+    "has_summaries": true,
+    "fingerprint": "4c7edd1aeb959e4c"
+  },
+  "onboarding_slots_offered": [
+    "active_landscape",
+    "getting_started",
+    "glossary",
+    "how_it_works",
+    "key_concepts"
+  ],
+  "store_format_version": 2,
+  "written_by_version": "0.52.0",
+  "config_fingerprint": "27ad10477dcb23834e862d3d08f7cb71cf86f93b89913634d76b37e01dc7f2a5",
+  "config_dependency_fingerprints": {
+    "traversal": "b54cfcadb8e3235323fcc70c4d8bf7c02fe0e11c601cc697ece0176bd3d1cc44",
+    "git_history": "2a677ae5e4dd2016ef1191ac7c08539df480c7e3110576b8b1f71312fb185d67",
+    "health": "594e0c42a3a22127976d1564801ee46ca91f3d761eb56819f9da91ba062024ad",
+    "generation": "a7a817ce5ae2c78c85f57aa54c7c455e074e6f0529041868fa6cab6b1487397f",
+    "state_only": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "other": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  },
+  "health_analyzer_version": 21,
+  "last_full_rescore_at": 1790128980.0
+}
