@@ -1,4 +1,4 @@
-import { StockProps } from '../stock.types'
+import type { StockProps } from '../stock.types'
 
 export interface IStockDatabase {
   getStock(ticker: string): Promise<StockProps>

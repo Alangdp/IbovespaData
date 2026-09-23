@@ -1,9 +1,9 @@
 import {
-  BazinMethods,
+  type BazinMethods,
   BazinProtocol,
 } from '../interfaces/BazinProtocol.type.js'
-import { PontuationRule } from '../types/Pontuation.type.js'
-import { StockProps } from '../types/stock.types.js'
+import type { PontuationRule } from '../types/Pontuation.type.js'
+import type { StockProps } from '../types/stock.types.js'
 import MathUtils from '../utils/MathUtils.js'
 import { Pontuation } from './Pontuation.js'
 

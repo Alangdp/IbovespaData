@@ -1,5 +1,5 @@
-import { Pontuation } from '../entities/Pontuation'
-import { StockProtocol } from '../interfaces/StockProtocol.type'
+import type { Pontuation } from '../Entities/Pontuation'
+import type { StockProtocol } from '../interfaces/StockProtocol.type'
 
 // TODO - REFAZER TUDO
 

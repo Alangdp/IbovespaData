@@ -1,12 +1,12 @@
 import { MacroInfo } from '../global/MacroInfo.js'
 import {
-  GranhamMethods,
+  type GranhamMethods,
   GranhamProtocol,
 } from '../interfaces/GranhamProtocol.type.js'
-import { StockProtocol } from '../interfaces/StockProtocol.type.js'
-import { oldIndicator } from '../types/indicators.type.js'
-import { PontuationRule } from '../types/Pontuation.type.js'
-import { NetLiquid } from '../types/stock.types.js'
+import type { StockProtocol } from '../interfaces/StockProtocol.type.js'
+import type { oldIndicator } from '../types/indicators.type.js'
+import type { PontuationRule } from '../types/Pontuation.type.js'
+import type { NetLiquid } from '../types/stock.types.js'
 import MathUtils from '../utils/MathUtils.js'
 import { Pontuation } from './Pontuation.js'
 
@@ -42,7 +42,6 @@ import { Pontuation } from './Pontuation.js'
 
 // TODO - REFAZER TUDO
 
-// @ts-ignore
 export class Granham extends GranhamProtocol implements GranhamMethods {
   constructor(stock: StockProtocol) {
     super()
@@ -53,11 +52,11 @@ export class Granham extends GranhamProtocol implements GranhamMethods {
     this.p_vp = Number(indicators.p_vp.actual)
     this.roe = Number(indicators.roe.actual) / 100
 
-    indicators.lpa.olds.map((indicator: oldIndicator) => {
+    indicators.lpa.olds.forEach((indicator: oldIndicator) => {
       this.lpa.push(Number(indicator.value))
     })
 
-    indicators.vpa.olds.map((indicator: oldIndicator) => {
+    indicators.vpa.olds.forEach((indicator: oldIndicator) => {
       this.vpa.push(Number(indicator.value))
     })
 
@@ -183,7 +182,7 @@ export class Granham extends GranhamProtocol implements GranhamMethods {
     const { lastDividendsValue } = stock
     let crescent = true
 
-    lastDividendsValue.map((dividend) => {
+    lastDividendsValue.forEach((dividend) => {
       if (dividend.value <= 0) crescent = false
     })
 

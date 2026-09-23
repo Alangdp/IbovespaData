@@ -1,4 +1,4 @@
-import { AxiosOptions } from '../types/AxiosOptions.type'
+import type { AxiosOptions } from '../types/AxiosOptions.type'
 
 export class AxiosUtils {
   static makeOptionsJson(

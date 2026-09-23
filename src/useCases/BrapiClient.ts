@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 import env from '../env.js'
-import {
+import type {
   BrapiDividendsResponse,
   BrapiHistoricalResponse,
   BrapiIndicatorsResponse,

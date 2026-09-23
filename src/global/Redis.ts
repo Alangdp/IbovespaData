@@ -2,7 +2,7 @@ import { Redis as RedisIO } from 'ioredis'
 
 import env from '@/env'
 
-import { stockQueue } from './Queue'
+import { STOCK_JOB, stockQueue } from './Queue'
 
 type EventFunction = (key: string) => Promise<void>
 
@@ -50,8 +50,6 @@ export class Redis {
     regexKey: string,
     func: (key: string) => Promise<void>,
   ) {
-    Redis.saveObjectToCache('STOCK-BBAS3', { ticker: 'TESTE' })
-
     // Adicionar a função à lista de funções associadas ao padrão de chave
     if (!Redis.events[regexKey]) {
       Redis.events[regexKey] = []
@@ -111,7 +109,7 @@ export class Redis {
 
     // Utiliza pipeline para buscar valores de todas as chaves
     const pipeline = redis.pipeline()
-    keys.forEach((key) => pipeline.get(key))
+    for (const key of keys) pipeline.get(key)
     const results = await pipeline.exec()
     if (!results) return []
 
@@ -142,7 +140,7 @@ Redis.getInstance()
 // Onde XXXX são letras e DD são dígitos
 // Exemplo: STOCK-KLBN11
 // Exemplo: STOCK-PETR4
-Redis.addEvent('^STOCK-[a-zA-z]{4}\\d{1,2}$', async (key) => {
+Redis.addEvent('^STOCK-[a-zA-Z]{4}\\d{1,2}$', async (key) => {
   const ticker = key.split('-')[1]
-  stockQueue.add({ ticker })
+  await stockQueue.add(STOCK_JOB, { ticker })
 })

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-import { Stock } from '../entities/Stock'
-import TickerFetcher from '../useCases/Fetcher.js'
+import type { Stock } from '../Entities/Stock'
+import { fetchAllTickers } from '../sources/fundamentus.js'
 
 export interface Value {
   SERCODIGO: string
@@ -115,8 +115,8 @@ export class MacroInfo {
       this.IPCA = result
     })
 
-    this.tickers = await TickerFetcher.getAllTickers()
+    this.tickers = await fetchAllTickers()
 
-    return await TickerFetcher.getAllTickers()
+    return await fetchAllTickers()
   }
 }

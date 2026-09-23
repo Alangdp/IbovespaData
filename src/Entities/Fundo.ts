@@ -1,4 +1,4 @@
-import { FundoProps, Segmento } from '../types/fundo.types.js'
+import type { FundoProps, Segmento } from '../types/fundo.types.js'
 
 /* eslint-disable camelcase */
 // Campos em snake_case de propósito — ver types/fundo.types.ts

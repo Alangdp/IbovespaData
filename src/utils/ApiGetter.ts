@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { AxiosOptions } from '../types/AxiosOptions.type'
+import type { AxiosOptions } from '../types/AxiosOptions.type'
 import { AxiosUtils } from './Axios.Utils.js'
 
 export default async function apiGetter<T>(

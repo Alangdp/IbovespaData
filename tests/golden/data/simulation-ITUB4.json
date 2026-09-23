@@ -1,0 +1,25 @@
+{
+  "startSimulation": "2026-09-23T03:00:00.000Z",
+  "endSimulation": "2026-09-23T03:00:00.000Z",
+  "gainOrLoss": 26.499999999999996,
+  "history": {
+    "length": 1248,
+    "first": {
+      "date": "2021-09-23T03:00:00.000Z",
+      "price": 15.8,
+      "gainOrLossIndividual": 0,
+      "gainOrLossGeneral": 0,
+      "gainOrLossCDI": 0,
+      "totalCapital": 995.4000000000001
+    },
+    "last": {
+      "date": "2026-09-23T03:00:00.000Z",
+      "price": 42.3,
+      "gainOrLossIndividual": 26.499999999999996,
+      "gainOrLossGeneral": 1669.4999999999998,
+      "gainOrLossCDI": 0,
+      "totalCapital": 2664.8999999999996
+    },
+    "sha256": "aff06f68e5280154061f58c7ae60105cf85555a45284b62ef3492231779d31bf"
+  }
+}

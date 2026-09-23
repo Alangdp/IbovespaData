@@ -6,8 +6,8 @@
 // - Não considera aportes
 // - Dados de entrada dos ultimos 5 anos (Tempo máximo de simulação)
 
-import { PriceReturn } from '../types/prices.type'
-import TickerFetcher from '../useCases/Fetcher'
+import { fetchPrices } from '../sources/statusinvest'
+import type { PriceReturn } from '../types/prices.type'
 import { DateFormatter } from '../utils/DateFormater'
 
 // Deve conter:
@@ -46,19 +46,17 @@ type SimulationType = {
 
 export class Simulation {
   private ticker: string
-  private fetcher: TickerFetcher
   public priceHistory: PriceHistory = null // Últimos 5 anos
   private startInvestValue = 0
 
   constructor(ticker: string, startInvestValue: number) {
     this.ticker = ticker
-    this.fetcher = new TickerFetcher(ticker)
     this.startInvestValue = startInvestValue
   }
 
   async initialize() {
     try {
-      const prices = await this.fetcher.getPrice()
+      const prices = await fetchPrices(this.ticker)
       if (!prices) throw new Error('Error getting price history')
       this.priceHistory = prices
     } catch (error) {

@@ -17,4 +17,4 @@ interface Dividends {
   dividendPorcent: number
 }
 
-export { Dividends, Dividend, Header }
+export type { Dividend, Dividends, Header }

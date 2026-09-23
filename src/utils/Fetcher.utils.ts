@@ -1,12 +1,10 @@
 import * as cheerio from 'cheerio'
 
-import { FetcherUtilsProtocol } from './../interfaces/FetcherUtils.type'
+import type { FetcherUtilsProtocol } from './../interfaces/FetcherUtils.type'
 import Utilities from './Utilities.js'
 
-type CherioElement = cheerio.Cheerio
-
 export default class FetcherUtils implements FetcherUtilsProtocol {
-  private $?: cheerio.Root
+  private $?: cheerio.CheerioAPI
 
   constructor(html?: string) {
     if (html) this.$ = cheerio.load(html)
@@ -14,24 +12,12 @@ export default class FetcherUtils implements FetcherUtilsProtocol {
 
   extractText(selector: string): string {
     if (!this.$) throw new Error('Invalid $')
-    const element = this.$(selector) || null
-    if (!element) return ''
-    return element.text() || ''
-  }
-
-  extractElement(selector: string): CherioElement | undefined {
-    if (!this.$) throw new Error('Invalid $')
-    const element = this.$(selector)
-    if (element === null) {
-      return undefined
-    }
-    return element
+    return this.$(selector).text() || ''
   }
 
   extractImage(selector: string): string {
     if (!this.$) throw new Error('Invalid $')
     const element = this.$(selector)
-    if (element === null) return ''
     try {
       let img = element.attr('data-img') || ''
       img = img.split('(')[1].split(')')[0]

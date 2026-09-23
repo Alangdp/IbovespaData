@@ -1,6 +1,6 @@
 import { Redis } from '@/global/Redis.js'
-import { IStockDatabase } from '@/types/Database/StockRepository.type.js'
-import { StockProps } from '@/types/stock.types.js'
+import type { IStockDatabase } from '@/types/Database/StockRepository.type.js'
+import type { StockProps } from '@/types/stock.types.js'
 
 // import env from '../env.js'
 import { InstanceStock } from './instanceStock.js'

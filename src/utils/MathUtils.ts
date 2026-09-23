@@ -19,9 +19,7 @@ export default class MathUtils {
     if (value >= 1000) {
       const suffixes: string[] = ['', 'K', 'M', 'B', 'T']
       const suffixNum: number = Math.floor(Math.log10(value) / 3)
-      let shortValue: number | string = (
-        value / Math.pow(1000, suffixNum)
-      ).toFixed(0)
+      let shortValue: number | string = (value / 1000 ** suffixNum).toFixed(0)
 
       if (typeof shortValue !== 'number') {
         shortValue = parseFloat(shortValue).toFixed(0)

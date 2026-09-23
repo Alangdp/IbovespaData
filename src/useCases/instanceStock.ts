@@ -1,13 +1,26 @@
 import { Stock } from '../Entities/Stock'
-import { BasicInfoReturn } from '../types/BasicInfo.type'
-import { DividendReturn } from '../types/dividends.type'
-import { Header } from '../types/get.type'
-import { FinancialIndicators } from '../types/indicators.type'
-import { PassiveChartReturn } from '../types/PassiveChart.type'
-import { PayoutReturn } from '../types/Payout.type'
-import { PriceReturn } from '../types/prices.type'
-import { CashFlowHeader, NetLiquid, StockProps } from '../types/stock.types'
-import TickerFetcher from './Fetcher.js'
+import {
+  fetchCashFlow,
+  fetchDividends,
+  fetchIndicators,
+  fetchPassiveChart,
+  fetchPayout,
+  fetchPrices,
+  fetchStockPage,
+  parseBasicInfo,
+} from '../sources/statusinvest'
+import type { BasicInfoReturn } from '../types/BasicInfo.type'
+import type { DividendReturn } from '../types/dividends.type'
+import type { Header } from '../types/get.type'
+import type { FinancialIndicators } from '../types/indicators.type'
+import type { PassiveChartReturn } from '../types/PassiveChart.type'
+import type { PayoutReturn } from '../types/Payout.type'
+import type { PriceReturn } from '../types/prices.type'
+import type {
+  CashFlowHeader,
+  NetLiquid,
+  StockProps,
+} from '../types/stock.types'
 
 type instanceStockProps = {
   priceHistory: PriceReturn | null
@@ -20,8 +33,6 @@ type instanceStockProps = {
 }
 
 export class InstanceStock {
-  public static stock: Stock | null = null
-  private tickerFetcher: TickerFetcher
   private props: instanceStockProps = {
     priceHistory: null,
     payout: null,
@@ -32,38 +43,36 @@ export class InstanceStock {
     passiveChart: null,
   }
 
-  private constructor(tickerFetcher: TickerFetcher) {
-    this.tickerFetcher = tickerFetcher
+  private constructor(
+    private readonly ticker: string,
+    private readonly html: string,
+  ) {}
+
+  static async execute(ticker: string): Promise<Stock> {
+    // A página é baixada primeiro: ticker inválido (404) ou bloqueio (403)
+    // falham aqui, antes de qualquer outra consulta.
+    const html = await fetchStockPage(ticker)
+    return new InstanceStock(ticker, html).initialize()
   }
 
-  static async execute(ticker: string) {
-    const tickerFetcher = await new TickerFetcher(ticker).initialize()
-    const instanceStock = new InstanceStock(tickerFetcher)
-    await instanceStock.initialize()
-    const stock = InstanceStock.stock
-    if (!stock) throw new Error('Error creating stock')
-    return stock
-  }
-
-  private async initialize() {
+  private async initialize(): Promise<Stock> {
     await this.getData()
     this.validate(this.props)
-    InstanceStock.stock = await this.build()
+    return new Stock(this.makeStockProps())
   }
 
-  private async build() {
-    const stockProps = this.makeStockProps()
-    return new Stock(stockProps)
-  }
-
+  // As consultas rodam em sequência de propósito: paralelizar aumentaria a
+  // pressão sobre o statusinvest, que já bloqueia com 403.
   private async getData() {
-    this.props.basicInfo = await this.tickerFetcher.getBasicInfo()
-    this.props.priceHistory = await this.tickerFetcher.getPrice()
-    this.props.dividendInfo = await this.tickerFetcher.getDividendInfo()
-    this.props.payout = await this.tickerFetcher.getPayout()
-    this.props.indicators = await this.tickerFetcher.getIndicatorsInfo()
-    this.props.cashFlow = await this.tickerFetcher.getCashFlow()
-    this.props.passiveChart = await this.tickerFetcher.getPassiveChart()
+    const { ticker } = this
+
+    this.props.basicInfo = parseBasicInfo(this.html, ticker)
+    this.props.priceHistory = await fetchPrices(ticker)
+    this.props.dividendInfo = await fetchDividends(ticker)
+    this.props.payout = await fetchPayout(ticker)
+    this.props.indicators = await fetchIndicators(ticker)
+    this.props.cashFlow = await fetchCashFlow(ticker)
+    this.props.passiveChart = await fetchPassiveChart(ticker)
   }
 
   private makeStockProps(): StockProps {
@@ -145,7 +154,7 @@ export class InstanceStock {
     // ? DIVIDENDOS POR ANO
 
     const lastDividendsPerYear: number[] = []
-    for (const dividend of dividendInfo?.lastDividendPaymentsYear.reverse()) {
+    for (const dividend of dividendInfo.lastDividendPaymentsYear.reverse()) {
       if (lastDividendsPerYear.length === 10) break
       lastDividendsPerYear.push(dividend.value)
     }

@@ -1,13 +1,13 @@
-import { RequestHandler } from 'express'
+import type { RequestHandler } from 'express'
 
-import { Fundo } from '../Entities/Fundo.js'
+import type { Fundo } from '../Entities/Fundo.js'
 import { FundoDataBase } from '../useCases/fundoDataBase.js'
 import { errorResponse, response } from '../utils/Responses.js'
 
 const fundoRepository = new FundoDataBase()
 
 // Rota que retorna o detalhe de um fundo imobiliário (GET /fundos/:ticker)
-const index: RequestHandler = async (req, res) => {
+const index: RequestHandler<{ ticker: string }> = async (req, res) => {
   try {
     const ticker: string = req.params.ticker
     const fundo: Fundo = await fundoRepository.getFundo(ticker)

@@ -1,5 +1,5 @@
-import { BrapiHistoricalCandle } from '../types/Brapi.type.js'
-import { Segmento } from '../types/fundo.types.js'
+import type { BrapiHistoricalCandle } from '../types/Brapi.type.js'
+import type { Segmento } from '../types/fundo.types.js'
 import MathUtils from './MathUtils.js'
 
 const SEGMENTO_MAP: Record<string, Segmento> = {

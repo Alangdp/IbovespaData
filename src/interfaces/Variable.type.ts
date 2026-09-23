@@ -1,4 +1,4 @@
-import { PriceHistory } from '../types/stock.types'
+import type { PriceHistory } from '../types/stock.types'
 
 export interface VariableProps {
   ticker: string

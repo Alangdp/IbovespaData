@@ -1,17 +1,11 @@
-import { configDotenv } from 'dotenv'
 import { z } from 'zod'
 
-configDotenv()
-
+// O Bun carrega o .env automaticamente (não precisa de dotenv)
 const envSchema = z.object({
   NODE_ENV: z
     .enum(['development', 'test', 'production'])
     .default('development'),
   PORT: z.coerce.number().default(3000),
-
-  SECRET_TOKEN: z.string().default('secret'),
-  // Desabilitado por não ter uso, por enquanto
-  MONGOOSE_URI: z.string().default("localhost"),
 
   TOLERANCE_TIME_HOURS: z.coerce.number().default(1),
   TOLERANCE_TIME_HOURS_RANKING: z.coerce.number().default(24),
@@ -31,10 +25,11 @@ let env: z.infer<typeof envSchema>
 
 try {
   env = envSchema.parse(process.env)
-  console.log('Environment variables are valid:', env)
+  // Não loga o objeto inteiro: ele inclui o BRAPI_TOKEN
+  console.log(`Environment variables are valid (${env.NODE_ENV})`)
 } catch (error: unknown) {
   if (error instanceof z.ZodError) {
-    console.log('Invalid environment variables:', error.errors)
+    console.log('Invalid environment variables:', error.issues)
   } else {
     console.log('Unexpected error:', error)
   }

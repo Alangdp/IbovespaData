@@ -1,7 +1,7 @@
-import { VariableProps } from '../interfaces/Variable.type'
-import { Dividend, LastDividendPayment } from './dividends.type'
-import { FinancialIndicators } from './indicators.type'
-import { PassiveChartReturn } from './PassiveChart.type'
+import type { VariableProps } from '../interfaces/Variable.type'
+import type { Dividend, LastDividendPayment } from './dividends.type'
+import type { FinancialIndicators } from './indicators.type'
+import type { PassiveChartReturn } from './PassiveChart.type'
 
 export type NetLiquid = {
   year: string

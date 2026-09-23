@@ -1,0 +1,14 @@
+node_modules
+dist
+.git
+.github
+.vscode
+.claude
+.repowise
+.env
+.env.*
+!.env.example
+tests
+scripts
+json
+*.md

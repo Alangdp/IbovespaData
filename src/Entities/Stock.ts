@@ -1,8 +1,8 @@
-import { StockProtocol } from '../interfaces/StockProtocol.type.js'
-import { LastDividendPayment } from '../types/dividends.type.js'
-import { FinancialIndicators } from '../types/indicators.type.js'
-import { PassiveChartReturn } from '../types/PassiveChart.type.js'
-import { NetLiquid, StockProps } from '../types/stock.types.js'
+import type { StockProtocol } from '../interfaces/StockProtocol.type.js'
+import type { LastDividendPayment } from '../types/dividends.type.js'
+import type { FinancialIndicators } from '../types/indicators.type.js'
+import type { PassiveChartReturn } from '../types/PassiveChart.type.js'
+import type { NetLiquid, StockProps } from '../types/stock.types.js'
 import { Variable } from './Variable.js'
 
 export class Stock extends Variable implements StockProtocol {

@@ -1,6 +1,6 @@
-import { RequestHandler } from 'express'
+import type { RequestHandler } from 'express'
 
-import { Pontuation } from '@/entities/Pontuation.js'
+import type { Pontuation } from '@/Entities/Pontuation.js'
 import { Redis } from '@/global/Redis.js'
 import { PontuationDataBase } from '@/useCases/PontuationDatabase.js'
 
@@ -9,7 +9,7 @@ import { errorResponse, response } from '../utils/Responses.js'
 const pontuationDatabase = new PontuationDataBase()
 
 // Rota que retorna todos os dados relacionados ao calculo do Graham para X ticker
-const index: RequestHandler = async (req, res) => {
+const index: RequestHandler<{ ticker: string }> = async (req, res) => {
   try {
     const ticker: string = req.params.ticker
     const stock = await pontuationDatabase.getPoints({

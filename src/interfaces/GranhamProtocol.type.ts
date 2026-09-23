@@ -1,6 +1,6 @@
-import { Pontuation } from '../entities/Pontuation'
-import { NetLiquid } from '../types/stock.types'
-import { StockProtocol } from './StockProtocol.type'
+import type { Pontuation } from '../Entities/Pontuation'
+import type { NetLiquid } from '../types/stock.types'
+import type { StockProtocol } from './StockProtocol.type'
 
 // Princípios utilizados:
 

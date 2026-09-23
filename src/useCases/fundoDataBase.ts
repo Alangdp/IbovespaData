@@ -1,4 +1,4 @@
-import { Fundo } from '../Entities/Fundo.js'
+import type { Fundo } from '../Entities/Fundo.js'
 import { Redis } from '../global/Redis.js'
 import { FundoFetcher } from './FundoFetcher.js'
 

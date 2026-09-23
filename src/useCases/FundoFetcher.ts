@@ -1,13 +1,13 @@
 import { Fundo } from '../Entities/Fundo.js'
 import { CustomError } from '../errors/CustomError.js'
-import {
+import type {
   BrapiDividendEvent,
   BrapiFiiIndicator,
   BrapiHistoricalFii,
   BrapiPropertiesFii,
   BrapiReport,
 } from '../types/Brapi.type.js'
-import { FundoProps } from '../types/fundo.types.js'
+import type { FundoProps } from '../types/fundo.types.js'
 import FundoUtils from '../utils/FundoUtils.js'
 import { Brapi } from './BrapiClient.js'
 

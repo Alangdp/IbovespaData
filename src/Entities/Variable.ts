@@ -1,5 +1,5 @@
-import { VariableProps } from '../interfaces/Variable.type.js'
-import { PriceHistory } from '../types/stock.types.js'
+import type { VariableProps } from '../interfaces/Variable.type.js'
+import type { PriceHistory } from '../types/stock.types.js'
 
 export abstract class Variable implements VariableProps {
   ticker: string

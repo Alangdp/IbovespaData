@@ -1,0 +1,74 @@
+{
+  "id": "PETR4",
+  "subId": "GRAHAM",
+  "defaultIfTrue": 1,
+  "defaultIfFalse": 1,
+  "totalPoints": 0,
+  "totalEvaluate": [
+    {
+      "ruleName": "A empresa tem dados de \"Net Liquid\" para os últimos 10 anos",
+      "rule": false,
+      "scored": false
+    },
+    {
+      "ruleName": "\"Net Liquid\" crescente nos últimos 10 anos",
+      "rule": false,
+      "scored": false
+    },
+    {
+      "ruleName": "LPA crescente",
+      "rule": false,
+      "scored": false
+    },
+    {
+      "ruleName": "Pagamento constante de dividendos",
+      "rule": true,
+      "scored": true
+    },
+    {
+      "ruleName": "Fórmula de Benjamin Graham para Valor Intrínseco (Preço Justo)",
+      "rule": false,
+      "scored": false
+    },
+    {
+      "ruleName": "P/L (Preço/Lucro) entre 0 e 15",
+      "rule": true,
+      "scored": true
+    },
+    {
+      "ruleName": "P/VP (Preço/Valor Patrimonial) entre 0 e 1.5",
+      "rule": true,
+      "scored": true
+    },
+    {
+      "ruleName": "Crescimento médio em 5 anos é positivo",
+      "rule": true,
+      "scored": true
+    },
+    {
+      "ruleName": "ROE (Return On Equity) maior que 0.2",
+      "rule": true,
+      "scored": true
+    },
+    {
+      "ruleName": "Dividend Yield atual maior que a taxa CDI",
+      "rule": false,
+      "scored": false
+    },
+    {
+      "ruleName": "Índice de Liquidez Corrente maior que 1.5",
+      "rule": false,
+      "scored": false
+    },
+    {
+      "ruleName": "Dívida Bruta/Patrimônio inferior a 0.5",
+      "rule": true,
+      "scored": true
+    }
+  ],
+  "infoData": {
+    "actualPrice": 49.64,
+    "dy": 0.073865,
+    "maxPrice": 60.31696965756818
+  }
+}

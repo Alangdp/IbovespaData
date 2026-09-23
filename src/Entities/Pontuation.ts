@@ -1,8 +1,9 @@
-import {
+import type {
   InfoData,
   PontuationProps,
   PontuationRule,
 } from '../types/Pontuation.type'
+
 class Pontuation implements PontuationProps {
   // Identifier
   public id: string

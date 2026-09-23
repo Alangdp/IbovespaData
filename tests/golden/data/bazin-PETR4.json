@@ -1,0 +1,77 @@
+{
+  "id": "PETR4",
+  "subId": "BAZIN",
+  "defaultIfTrue": 1,
+  "defaultIfFalse": 1,
+  "totalPoints": 3,
+  "totalEvaluate": [
+    {
+      "ifFalse": 1,
+      "ifTrue": 2,
+      "rule": true,
+      "ruleName": "Média do Dividend Yield nos últimos 5 anos > 0.06 (5%)",
+      "scored": true
+    },
+    {
+      "ifFalse": 1,
+      "ifTrue": 2,
+      "rule": true,
+      "ruleName": "Mediana do Dividend Yield nos últimos 5 anos > 0.06 (5%)",
+      "scored": true
+    },
+    {
+      "ifFalse": 1,
+      "ifTrue": 2,
+      "rule": true,
+      "ruleName": "Dividend Yield Atual > 0.06 (6%)",
+      "scored": true
+    },
+    {
+      "ifFalse": 1,
+      "ifTrue": 2,
+      "rule": false,
+      "ruleName": "Dívida Bruta/Patrimônio < 0.5 (50%)",
+      "scored": false
+    },
+    {
+      "ifFalse": 1,
+      "ifTrue": 1,
+      "rule": true,
+      "ruleName": "Pagamento constante de dividendos nos últimos 5 anos",
+      "scored": true
+    },
+    {
+      "ifFalse": 1,
+      "ifTrue": 1,
+      "rule": false,
+      "ruleName": "Dividendos crescentes nos últimos 5 anos",
+      "scored": false
+    },
+    {
+      "ifFalse": 1,
+      "ifTrue": 1,
+      "rule": true,
+      "ruleName": "0 < Payout < 1",
+      "scored": true
+    },
+    {
+      "ifFalse": 1,
+      "ifTrue": 1,
+      "rule": true,
+      "ruleName": "Preço Atual < Preço Máximo",
+      "scored": true
+    },
+    {
+      "ifFalse": 4,
+      "ifTrue": 0,
+      "rule": false,
+      "ruleName": "Segmento válido",
+      "scored": false
+    }
+  ],
+  "infoData": {
+    "actualPrice": 49.64,
+    "dy": 19.7215,
+    "maxPrice": 120.984452
+  }
+}

@@ -1,9 +1,9 @@
 import { AxiosError } from 'axios'
-import { Response } from 'express'
-import { ValidationErrorItem } from 'sequelize'
+import type { Response } from 'express'
+import { ZodError } from 'zod'
 
 import { CustomError } from '../errors/CustomError'
-import { ErrorResponse, ResponseProps } from '../types/responses.type'
+import type { ErrorResponse, ResponseProps } from '../types/responses.type'
 
 export function response<T>(
   res: Response,
@@ -29,12 +29,10 @@ export function errorResponse(res: Response, error: any) {
     })
   }
 
-  if (error.errors) {
-    const returnErrors: ErrorResponse[] = []
-    const sequelizeErrors: ValidationErrorItem[] = error.errors
-    sequelizeErrors.map((error) => {
-      returnErrors.push(addError(error.message, error.value))
-    })
+  if (error instanceof ZodError) {
+    const returnErrors: ErrorResponse[] = error.issues.map((issue) =>
+      addError(issue.message, issue.path.join('.')),
+    )
 
     return response(res, { data: {}, status: 400, errors: returnErrors })
   }
@@ -50,13 +48,11 @@ export function errorResponse(res: Response, error: any) {
     }
 
     if (error.status) {
-      {
-        return response(res, {
-          data: {},
-          status: error.status ? 400 : 200,
-          errors: [addError(error.message, {})],
-        })
-      }
+      return response(res, {
+        data: {},
+        status: error.status ? 400 : 200,
+        errors: [addError(error.message, {})],
+      })
     }
 
     return response(res, {

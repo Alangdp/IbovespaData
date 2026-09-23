@@ -1,0 +1,2598 @@
+{
+  "ticker": "PETR4",
+  "name": "PETR4 - PETROBRAS PN: cotação e indicadores",
+  "activeValue": 481007506640.52,
+  "shareQuantity": 12888732761,
+  "actualPrice": 49.64,
+  "marketValue": 23877212629635.414,
+  "instanceTime": 1790175600000,
+  "dividendYield": 7.39,
+  "grossDebt": 366533000000,
+  "patrimony": 480950000000,
+  "lpa": 10.35,
+  "p_l": 0,
+  "freeFloat": 61.21,
+  "lastDividendsYieldYear": [
+    7.3865,
+    9.5268,
+    18.0474,
+    19.7215,
+    68.484,
+    19.8708,
+    0.0016,
+    3.1225,
+    3.9683,
+    0
+  ],
+  "lastDividendsValueYear": [
+    2.70498446,
+    2.93614547,
+    6.53133634,
+    7.34429163,
+    16.7785777,
+    5.653232,
+    0.000461,
+    0.942361,
+    0.9,
+    0.99757
+  ],
+  "lastDividendsValue": [
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2026",
+      "dataEx": "21/12/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.20250435
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2026",
+      "dataEx": "23/11/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.67407131
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2026",
+      "dataEx": "21/12/2026",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.47156696
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "01/06/2026",
+      "dataEx": "21/09/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.35048636
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "01/06/2026",
+      "dataEx": "20/08/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.35048636
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/04/2026",
+      "dataEx": "20/05/2026",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.01649003
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/04/2026",
+      "dataEx": "22/06/2026",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.01314955
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/04/2026",
+      "dataEx": "20/05/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.31311454
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/04/2026",
+      "dataEx": "22/06/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.313115
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/12/2025",
+      "dataEx": "20/03/2026",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.29642144
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/12/2025",
+      "dataEx": "20/03/2026",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.00895486
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/12/2025",
+      "dataEx": "20/03/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.1757968072
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/12/2025",
+      "dataEx": "20/02/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.47160378
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/12/2025",
+      "dataEx": "20/02/2026",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.00892089
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2025",
+      "dataEx": "22/12/2025",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.20092175
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2025",
+      "dataEx": "21/11/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.33596205
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2025",
+      "dataEx": "22/12/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.13504029
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/06/2025",
+      "dataEx": "20/08/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.4545831
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/06/2025",
+      "dataEx": "22/09/2025",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.30844749
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/06/2025",
+      "dataEx": "22/09/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.1461356
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "16/04/2025",
+      "dataEx": "20/06/2025",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.02152467
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "16/04/2025",
+      "dataEx": "20/05/2025",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.01706013
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "16/04/2025",
+      "dataEx": "20/05/2025",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.35477261
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/12/2024",
+      "dataEx": "20/02/2025",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.01134886
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/12/2024",
+      "dataEx": "20/02/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.66410331
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/12/2024",
+      "dataEx": "20/03/2025",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.65356508
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/12/2024",
+      "dataEx": "20/03/2025",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.01706074
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/12/2024",
+      "dataEx": "20/03/2025",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.00027509
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/12/2024",
+      "dataEx": "20/03/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01053822
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/12/2024",
+      "dataEx": "23/12/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.55174293
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2024",
+      "dataEx": "21/11/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.11384838
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2024",
+      "dataEx": "21/11/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.41275171
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2024",
+      "dataEx": "20/12/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.52660008
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/06/2024",
+      "dataEx": "20/09/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.44806667
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/06/2024",
+      "dataEx": "20/09/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.07355446
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/06/2024",
+      "dataEx": "20/08/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.52162113
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/05/2024",
+      "dataEx": "20/05/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.84962838
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/05/2024",
+      "dataEx": "20/05/2024",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.03454767
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/05/2024",
+      "dataEx": "20/06/2024",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.04221792
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "25/04/2024",
+      "dataEx": "20/06/2024",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.02733727
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "25/04/2024",
+      "dataEx": "20/05/2024",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.02237057
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "25/04/2024",
+      "dataEx": "20/05/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.55015787
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2023",
+      "dataEx": "20/03/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.6726735
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2023",
+      "dataEx": "20/02/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.2432872
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2023",
+      "dataEx": "20/02/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.4293868
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2023",
+      "dataEx": "20/02/2024",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.00359146
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2023",
+      "dataEx": "20/02/2024",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.00633872
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2023",
+      "dataEx": "20/03/2024",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.01596994
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2023",
+      "dataEx": "21/11/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.365476
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2023",
+      "dataEx": "21/11/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.209176
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/08/2023",
+      "dataEx": "15/12/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.574652
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "12/06/2023",
+      "dataEx": "18/08/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.668609
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "12/06/2023",
+      "dataEx": "18/08/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.278179
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "12/06/2023",
+      "dataEx": "20/09/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.946789
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "27/04/2023",
+      "dataEx": "19/05/2023",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.06784528
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "27/04/2023",
+      "dataEx": "27/12/2023",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.06445329
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "27/04/2023",
+      "dataEx": "16/06/2023",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.05213075
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "27/04/2023",
+      "dataEx": "19/05/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.37286685
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "27/04/2023",
+      "dataEx": "16/06/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.87479856
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "27/04/2023",
+      "dataEx": "27/12/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.49806828
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2022",
+      "dataEx": "19/01/2023",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.011415
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2022",
+      "dataEx": "19/01/2023",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.000529
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2022",
+      "dataEx": "20/12/2022",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.155823
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2022",
+      "dataEx": "19/01/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.074258
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2022",
+      "dataEx": "19/01/2023",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.600192
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2022",
+      "dataEx": "20/12/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.518627
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/08/2022",
+      "dataEx": "31/08/2022",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 2.938861
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/08/2022",
+      "dataEx": "20/09/2022",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 3.366001
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/08/2022",
+      "dataEx": "31/08/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.427141
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/05/2022",
+      "dataEx": "20/07/2022",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.857745
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/05/2022",
+      "dataEx": "20/06/2022",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.42756
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "23/05/2022",
+      "dataEx": "20/06/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.430177
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "13/04/2022",
+      "dataEx": "16/05/2022",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.1091725
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "13/04/2022",
+      "dataEx": "16/05/2022",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 2.8610762
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "01/12/2021",
+      "dataEx": "15/12/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 2.195126
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "01/12/2021",
+      "dataEx": "15/12/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 1.055361
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "16/08/2021",
+      "dataEx": "25/08/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.609911
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "14/04/2021",
+      "dataEx": "29/04/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.787446
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "14/04/2021",
+      "dataEx": "29/04/2021",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.005388
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/07/2020",
+      "dataEx": "15/12/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.000449
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/07/2020",
+      "dataEx": "15/12/2020",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.000012
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "26/12/2019",
+      "dataEx": "07/02/2020",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.42
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "26/12/2019",
+      "dataEx": "07/02/2020",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.001942
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/11/2019",
+      "dataEx": "07/02/2020",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/11/2019",
+      "dataEx": "07/02/2020",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.000925
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "12/08/2019",
+      "dataEx": "04/10/2019",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/05/2019",
+      "dataEx": "05/07/2019",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.1
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "25/04/2019",
+      "dataEx": "20/05/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.019043
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "25/04/2019",
+      "dataEx": "20/05/2019",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.000451
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/12/2018",
+      "dataEx": "20/05/2019",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.7
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/11/2018",
+      "dataEx": "03/12/2018",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.1
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "13/08/2018",
+      "dataEx": "23/08/2018",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.05
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/05/2018",
+      "dataEx": "29/05/2018",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.05
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/04/2014",
+      "dataEx": "25/04/2014",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.9672
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/04/2014",
+      "dataEx": "25/04/2014",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.03037
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "29/04/2013",
+      "dataEx": "30/08/2013",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.39443
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "29/04/2013",
+      "dataEx": "27/05/2013",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.38617
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/05/2012",
+      "dataEx": "31/05/2012",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "19/03/2012",
+      "dataEx": "18/05/2012",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.12
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "19/03/2012",
+      "dataEx": "18/05/2012",
+      "dividendType": "Rend. Tributado",
+      "dividendTypeName": "Rendimento Tributado",
+      "value": 0.0044
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/01/2012",
+      "dataEx": "29/02/2012",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/11/2011",
+      "dataEx": "30/11/2011",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "02/08/2011",
+      "dataEx": "31/08/2011",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/05/2011",
+      "dataEx": "31/05/2011",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "28/04/2011",
+      "dataEx": "27/06/2011",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.12
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/03/2011",
+      "dataEx": "31/03/2011",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.17
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/12/2010",
+      "dataEx": "30/12/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "01/11/2010",
+      "dataEx": "30/11/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.14
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "30/07/2010",
+      "dataEx": "31/08/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "21/05/2010",
+      "dataEx": "31/05/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/04/2010",
+      "dataEx": "30/04/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.12
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "22/04/2010",
+      "dataEx": "30/04/2010",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.13
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "18/12/2009",
+      "dataEx": "29/12/2009",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "30/09/2009",
+      "dataEx": "21/12/2009",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "03/07/2009",
+      "dataEx": "30/11/2009",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "08/04/2009",
+      "dataEx": "14/08/2009",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.33
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "26/12/2008",
+      "dataEx": "14/08/2009",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.04
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "26/12/2008",
+      "dataEx": "24/04/2009",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.38
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "04/04/2008",
+      "dataEx": "03/06/2008",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.15
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "04/04/2008",
+      "dataEx": "03/06/2008",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.05
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "11/01/2008",
+      "dataEx": "30/04/2008",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "05/10/2007",
+      "dataEx": "31/03/2008",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.5
+    },
+    {
+      "ticker": "PETR4",
+      "dataCom": "17/08/2007",
+      "dataEx": "23/01/2008",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.5
+    }
+  ],
+  "payout": 0.87,
+  "actualDividendYield": 0.073865,
+  "netLiquid": [
+    {
+      "year": "2025",
+      "value": 110605000000
+    },
+    {
+      "year": "2024",
+      "value": 37009000000
+    },
+    {
+      "year": "2023",
+      "value": 125166000000
+    },
+    {
+      "year": "2022",
+      "value": 189005000000
+    },
+    {
+      "year": "2021",
+      "value": 107264000000
+    },
+    {
+      "year": "2020",
+      "value": 6246000000
+    },
+    {
+      "year": "2019",
+      "value": 40970000000
+    },
+    {
+      "year": "2018",
+      "value": 26698000000
+    },
+    {
+      "year": "2017",
+      "value": 377000000
+    },
+    {
+      "year": "2016",
+      "value": -13045000000
+    },
+    {
+      "year": "2015",
+      "value": -35171000000
+    },
+    {
+      "year": "2014",
+      "value": -21924000000
+    },
+    {
+      "year": "2013",
+      "value": 23007000000
+    },
+    {
+      "year": "2012",
+      "value": 21182000000
+    },
+    {
+      "year": "2011",
+      "value": 33313097000
+    },
+    {
+      "year": "2010",
+      "value": 35189366000
+    },
+    {
+      "year": "2009",
+      "value": 30051190000
+    },
+    {
+      "year": "2008",
+      "value": 32987792000
+    }
+  ],
+  "passiveChart": [
+    {
+      "year": 2025,
+      "totalAssets": 1223389000000,
+      "totalLiabilities": 805802000000,
+      "currentAssets": 140026000000,
+      "nonCurrentAssets": 1083363000000,
+      "currentLiabilities": 198368000000,
+      "nonCurrentLiabilities": 607434000000,
+      "shareholdersEquity": 417587000000
+    },
+    {
+      "year": 2024,
+      "totalAssets": 1124797000000,
+      "totalLiabilities": 757283000000,
+      "currentAssets": 135212000000,
+      "nonCurrentAssets": 989585000000,
+      "currentLiabilities": 194808000000,
+      "nonCurrentLiabilities": 562475000000,
+      "shareholdersEquity": 367514000000
+    },
+    {
+      "year": 2023,
+      "totalAssets": 1050888000000,
+      "totalLiabilities": 668548000000,
+      "currentAssets": 157079000000,
+      "nonCurrentAssets": 893809000000,
+      "currentLiabilities": 163928000000,
+      "nonCurrentLiabilities": 504620000000,
+      "shareholdersEquity": 382340000000
+    },
+    {
+      "year": 2022,
+      "totalAssets": 976709000000,
+      "totalLiabilities": 612324000000,
+      "currentAssets": 163052000000,
+      "nonCurrentAssets": 813657000000,
+      "currentLiabilities": 163731000000,
+      "nonCurrentLiabilities": 448593000000,
+      "shareholdersEquity": 364385000000
+    },
+    {
+      "year": 2021,
+      "totalAssets": 972951000000,
+      "totalLiabilities": 583370000000,
+      "currentAssets": 168247000000,
+      "nonCurrentAssets": 804704000000,
+      "currentLiabilities": 134913000000,
+      "nonCurrentLiabilities": 448457000000,
+      "shareholdersEquity": 389581000000
+    },
+    {
+      "year": 2020,
+      "totalAssets": 987419000000,
+      "totalLiabilities": 676269000000,
+      "currentAssets": 142323000000,
+      "nonCurrentAssets": 845096000000,
+      "currentLiabilities": 136287000000,
+      "nonCurrentLiabilities": 539982000000,
+      "shareholdersEquity": 311150000000
+    },
+    {
+      "year": 2019,
+      "totalAssets": 926011000000,
+      "totalLiabilities": 626874000000,
+      "currentAssets": 112101000000,
+      "nonCurrentAssets": 813910000000,
+      "currentLiabilities": 116147000000,
+      "nonCurrentLiabilities": 510727000000,
+      "shareholdersEquity": 299137000000
+    },
+    {
+      "year": 2018,
+      "totalAssets": 860473000000,
+      "totalLiabilities": 576930000000,
+      "currentAssets": 143606000000,
+      "nonCurrentAssets": 716867000000,
+      "currentLiabilities": 97068000000,
+      "nonCurrentLiabilities": 479862000000,
+      "shareholdersEquity": 283543000000
+    },
+    {
+      "year": 2017,
+      "totalAssets": 831515000000,
+      "totalLiabilities": 561906000000,
+      "currentAssets": 155909000000,
+      "nonCurrentAssets": 675606000000,
+      "currentLiabilities": 82535000000,
+      "nonCurrentLiabilities": 479371000000,
+      "shareholdersEquity": 269609000000
+    },
+    {
+      "year": 2016,
+      "totalAssets": 804945000000,
+      "totalLiabilities": 552202000000,
+      "currentAssets": 145907000000,
+      "nonCurrentAssets": 659038000000,
+      "currentLiabilities": 81167000000,
+      "nonCurrentLiabilities": 471035000000,
+      "shareholdersEquity": 252743000000
+    }
+  ],
+  "segment": "Exploração. Refino e Distribuição",
+  "indicators": {
+    "dy": {
+      "actual": 7.3865,
+      "avg": 16.681044444444446,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 7.3865
+        },
+        {
+          "date": 2025,
+          "value": 9.5268
+        },
+        {
+          "date": 2024,
+          "value": 18.0474
+        },
+        {
+          "date": 2023,
+          "value": 19.7215
+        },
+        {
+          "date": 2022,
+          "value": 68.484
+        },
+        {
+          "date": 2021,
+          "value": 19.8708
+        },
+        {
+          "date": 2020,
+          "value": 0.0016
+        },
+        {
+          "date": 2019,
+          "value": 3.1225
+        },
+        {
+          "date": 2018,
+          "value": 3.9683
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "p_l": {
+      "actual": 4.7969,
+      "avg": -36.72198,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 4.7969
+        },
+        {
+          "date": 2025,
+          "value": 3.607
+        },
+        {
+          "date": 2024,
+          "value": 12.8963
+        },
+        {
+          "date": 2023,
+          "value": 3.8985
+        },
+        {
+          "date": 2022,
+          "value": 1.697
+        },
+        {
+          "date": 2021,
+          "value": 3.4792
+        },
+        {
+          "date": 2020,
+          "value": 52.0092
+        },
+        {
+          "date": 2019,
+          "value": 9.8085
+        },
+        {
+          "date": 2018,
+          "value": 11.4764
+        },
+        {
+          "date": 2017,
+          "value": -470.8888
+        }
+      ]
+    },
+    "p_vp": {
+      "actual": 1.3303,
+      "avg": 1.10855,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 1.3303
+        },
+        {
+          "date": 2025,
+          "value": 0.9554
+        },
+        {
+          "date": 2024,
+          "value": 1.2898
+        },
+        {
+          "date": 2023,
+          "value": 1.2769
+        },
+        {
+          "date": 2022,
+          "value": 0.8814
+        },
+        {
+          "date": 2021,
+          "value": 0.9581
+        },
+        {
+          "date": 2020,
+          "value": 1.1987
+        },
+        {
+          "date": 2019,
+          "value": 1.3321
+        },
+        {
+          "date": 2018,
+          "value": 1.0672
+        },
+        {
+          "date": 2017,
+          "value": 0.7956
+        }
+      ]
+    },
+    "p_ebita": {
+      "actual": 1.6063,
+      "avg": 1.81782,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 1.6063
+        },
+        {
+          "date": 2025,
+          "value": 1.1213
+        },
+        {
+          "date": 2024,
+          "value": 1.0395
+        },
+        {
+          "date": 2023,
+          "value": 0.7963
+        },
+        {
+          "date": 2022,
+          "value": 0.8817
+        },
+        {
+          "date": 2021,
+          "value": 1.355
+        },
+        {
+          "date": 2020,
+          "value": 3.4253
+        },
+        {
+          "date": 2019,
+          "value": 2.6188
+        },
+        {
+          "date": 2018,
+          "value": 2.717
+        },
+        {
+          "date": 2017,
+          "value": 2.617
+        }
+      ]
+    },
+    "p_ebit": {
+      "actual": 3.4445,
+      "avg": 3.75899,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 3.4445
+        },
+        {
+          "date": 2025,
+          "value": 2.7277
+        },
+        {
+          "date": 2024,
+          "value": 3.4408
+        },
+        {
+          "date": 2023,
+          "value": 2.5656
+        },
+        {
+          "date": 2022,
+          "value": 1.0861
+        },
+        {
+          "date": 2021,
+          "value": 1.7603
+        },
+        {
+          "date": 2020,
+          "value": 7.4501
+        },
+        {
+          "date": 2019,
+          "value": 4.8186
+        },
+        {
+          "date": 2018,
+          "value": 4.7362
+        },
+        {
+          "date": 2017,
+          "value": 5.56
+        }
+      ]
+    },
+    "p_sr": {
+      "actual": 1.1665,
+      "avg": 0.95489,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 1.1665
+        },
+        {
+          "date": 2025,
+          "value": 0.7984
+        },
+        {
+          "date": 2024,
+          "value": 0.9618
+        },
+        {
+          "date": 2023,
+          "value": 0.9488
+        },
+        {
+          "date": 2022,
+          "value": 0.4984
+        },
+        {
+          "date": 2021,
+          "value": 0.8198
+        },
+        {
+          "date": 2020,
+          "value": 1.3588
+        },
+        {
+          "date": 2019,
+          "value": 1.3025
+        },
+        {
+          "date": 2018,
+          "value": 0.9536
+        },
+        {
+          "date": 2017,
+          "value": 0.7403
+        }
+      ]
+    },
+    "p_ativo": {
+      "actual": 0.5002,
+      "avg": 0.38114,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.5002
+        },
+        {
+          "date": 2025,
+          "value": 0.3247
+        },
+        {
+          "date": 2024,
+          "value": 0.4197
+        },
+        {
+          "date": 2023,
+          "value": 0.4623
+        },
+        {
+          "date": 2022,
+          "value": 0.3272
+        },
+        {
+          "date": 2021,
+          "value": 0.3814
+        },
+        {
+          "date": 2020,
+          "value": 0.3744
+        },
+        {
+          "date": 2019,
+          "value": 0.4251
+        },
+        {
+          "date": 2018,
+          "value": 0.3438
+        },
+        {
+          "date": 2017,
+          "value": 0.2526
+        }
+      ]
+    },
+    "p_capitlgiro": {
+      "actual": -24.2338,
+      "avg": -59.62712,
+      "olds": [
+        {
+          "date": 2026,
+          "value": -24.2338
+        },
+        {
+          "date": 2025,
+          "value": -6.8087
+        },
+        {
+          "date": 2024,
+          "value": -7.9213
+        },
+        {
+          "date": 2023,
+          "value": -70.9267
+        },
+        {
+          "date": 2022,
+          "value": -470.6777
+        },
+        {
+          "date": 2021,
+          "value": 11.1333
+        },
+        {
+          "date": 2020,
+          "value": 61.246
+        },
+        {
+          "date": 2019,
+          "value": -97.3018
+        },
+        {
+          "date": 2018,
+          "value": 6.3572
+        },
+        {
+          "date": 2017,
+          "value": 2.8623
+        }
+      ]
+    },
+    "p_ativocirculante": {
+      "actual": -0.5692,
+      "avg": -0.44551,
+      "olds": [
+        {
+          "date": 2026,
+          "value": -0.5692
+        },
+        {
+          "date": 2025,
+          "value": -0.3667
+        },
+        {
+          "date": 2024,
+          "value": -0.477
+        },
+        {
+          "date": 2023,
+          "value": -0.5435
+        },
+        {
+          "date": 2022,
+          "value": -0.3928
+        },
+        {
+          "date": 2021,
+          "value": -0.4612
+        },
+        {
+          "date": 2020,
+          "value": -0.4374
+        },
+        {
+          "date": 2019,
+          "value": -0.4837
+        },
+        {
+          "date": 2018,
+          "value": -0.4127
+        },
+        {
+          "date": 2017,
+          "value": -0.3109
+        }
+      ]
+    },
+    "ev_ebitda": {
+      "actual": 2.4814,
+      "avg": 3.44315,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 2.4814
+        },
+        {
+          "date": 2025,
+          "value": 2.0992
+        },
+        {
+          "date": 2024,
+          "value": 1.8118
+        },
+        {
+          "date": 2023,
+          "value": 1.191
+        },
+        {
+          "date": 2022,
+          "value": 1.5738
+        },
+        {
+          "date": 2021,
+          "value": 2.3866
+        },
+        {
+          "date": 2020,
+          "value": 6.5021
+        },
+        {
+          "date": 2019,
+          "value": 4.8233
+        },
+        {
+          "date": 2018,
+          "value": 5.3718
+        },
+        {
+          "date": 2017,
+          "value": 6.1905
+        }
+      ]
+    },
+    "ev_ebit": {
+      "actual": 5.321,
+      "avg": 7.08344,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 5.321
+        },
+        {
+          "date": 2025,
+          "value": 5.1067
+        },
+        {
+          "date": 2024,
+          "value": 5.9975
+        },
+        {
+          "date": 2023,
+          "value": 3.8371
+        },
+        {
+          "date": 2022,
+          "value": 1.9386
+        },
+        {
+          "date": 2021,
+          "value": 3.1003
+        },
+        {
+          "date": 2020,
+          "value": 14.1421
+        },
+        {
+          "date": 2019,
+          "value": 8.875
+        },
+        {
+          "date": 2018,
+          "value": 9.3639
+        },
+        {
+          "date": 2017,
+          "value": 13.1522
+        }
+      ]
+    },
+    "lpa": {
+      "actual": 10.3483,
+      "avg": 5.94299,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 10.3483
+        },
+        {
+          "date": 2025,
+          "value": 8.5446
+        },
+        {
+          "date": 2024,
+          "value": 2.8062
+        },
+        {
+          "date": 2023,
+          "value": 9.5524
+        },
+        {
+          "date": 2022,
+          "value": 14.4374
+        },
+        {
+          "date": 2021,
+          "value": 8.1772
+        },
+        {
+          "date": 2020,
+          "value": 0.5449
+        },
+        {
+          "date": 2019,
+          "value": 3.0769
+        },
+        {
+          "date": 2018,
+          "value": 1.9762
+        },
+        {
+          "date": 2017,
+          "value": -0.0342
+        }
+      ]
+    },
+    "vpa": {
+      "actual": 37.3155,
+      "avg": 27.20768,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 37.3155
+        },
+        {
+          "date": 2025,
+          "value": 32.2596
+        },
+        {
+          "date": 2024,
+          "value": 28.0583
+        },
+        {
+          "date": 2023,
+          "value": 29.1649
+        },
+        {
+          "date": 2022,
+          "value": 27.7967
+        },
+        {
+          "date": 2021,
+          "value": 29.6929
+        },
+        {
+          "date": 2020,
+          "value": 23.6429
+        },
+        {
+          "date": 2019,
+          "value": 22.6564
+        },
+        {
+          "date": 2018,
+          "value": 21.2523
+        },
+        {
+          "date": 2017,
+          "value": 20.2373
+        }
+      ]
+    },
+    "peg_Ratio": {
+      "actual": 0.06627185,
+      "avg": 1.2343086,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.06627185
+        },
+        {
+          "date": 2025,
+          "value": 0.01795851
+        },
+        {
+          "date": 2024,
+          "value": 0
+        },
+        {
+          "date": 2023,
+          "value": 0
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": -0.00195175
+        },
+        {
+          "date": 2017,
+          "value": 4.85495579
+        }
+      ]
+    },
+    "dividaliquida_patrimonioliquido": {
+      "actual": 0.65,
+      "avg": 0.842,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.65
+        },
+        {
+          "date": 2025,
+          "value": 0.8
+        },
+        {
+          "date": 2024,
+          "value": 0.89
+        },
+        {
+          "date": 2023,
+          "value": 0.6
+        },
+        {
+          "date": 2022,
+          "value": 0.62
+        },
+        {
+          "date": 2021,
+          "value": 0.69
+        },
+        {
+          "date": 2020,
+          "value": 1.06
+        },
+        {
+          "date": 2019,
+          "value": 1.08
+        },
+        {
+          "date": 2018,
+          "value": 0.97
+        },
+        {
+          "date": 2017,
+          "value": 1.06
+        }
+      ]
+    },
+    "dividaliquida_ebitda": {
+      "actual": 0.79,
+      "avg": 1.553,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.79
+        },
+        {
+          "date": 2025,
+          "value": 0.94
+        },
+        {
+          "date": 2024,
+          "value": 0.72
+        },
+        {
+          "date": 2023,
+          "value": 0.37
+        },
+        {
+          "date": 2022,
+          "value": 0.62
+        },
+        {
+          "date": 2021,
+          "value": 0.97
+        },
+        {
+          "date": 2020,
+          "value": 3.04
+        },
+        {
+          "date": 2019,
+          "value": 2.11
+        },
+        {
+          "date": 2018,
+          "value": 2.47
+        },
+        {
+          "date": 2017,
+          "value": 3.5
+        }
+      ]
+    },
+    "dividaliquida_ebit": {
+      "actual": 1.68,
+      "avg": 3.181,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 1.68
+        },
+        {
+          "date": 2025,
+          "value": 2.29
+        },
+        {
+          "date": 2024,
+          "value": 2.38
+        },
+        {
+          "date": 2023,
+          "value": 1.2
+        },
+        {
+          "date": 2022,
+          "value": 0.76
+        },
+        {
+          "date": 2021,
+          "value": 1.26
+        },
+        {
+          "date": 2020,
+          "value": 6.62
+        },
+        {
+          "date": 2019,
+          "value": 3.89
+        },
+        {
+          "date": 2018,
+          "value": 4.3
+        },
+        {
+          "date": 2017,
+          "value": 7.43
+        }
+      ]
+    },
+    "patrimonio_ativo": {
+      "actual": 0.38,
+      "avg": 0.345,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.38
+        },
+        {
+          "date": 2025,
+          "value": 0.34
+        },
+        {
+          "date": 2024,
+          "value": 0.33
+        },
+        {
+          "date": 2023,
+          "value": 0.36
+        },
+        {
+          "date": 2022,
+          "value": 0.37
+        },
+        {
+          "date": 2021,
+          "value": 0.4
+        },
+        {
+          "date": 2020,
+          "value": 0.31
+        },
+        {
+          "date": 2019,
+          "value": 0.32
+        },
+        {
+          "date": 2018,
+          "value": 0.32
+        },
+        {
+          "date": 2017,
+          "value": 0.32
+        }
+      ]
+    },
+    "passivo_ativo": {
+      "actual": 0.62,
+      "avg": 0.653,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.62
+        },
+        {
+          "date": 2025,
+          "value": 0.66
+        },
+        {
+          "date": 2024,
+          "value": 0.67
+        },
+        {
+          "date": 2023,
+          "value": 0.64
+        },
+        {
+          "date": 2022,
+          "value": 0.63
+        },
+        {
+          "date": 2021,
+          "value": 0.6
+        },
+        {
+          "date": 2020,
+          "value": 0.68
+        },
+        {
+          "date": 2019,
+          "value": 0.68
+        },
+        {
+          "date": 2018,
+          "value": 0.67
+        },
+        {
+          "date": 2017,
+          "value": 0.68
+        }
+      ]
+    },
+    "liquidezcorrente": {
+      "actual": 0.85,
+      "avg": 1.084,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.85
+        },
+        {
+          "date": 2025,
+          "value": 0.71
+        },
+        {
+          "date": 2024,
+          "value": 0.69
+        },
+        {
+          "date": 2023,
+          "value": 0.96
+        },
+        {
+          "date": 2022,
+          "value": 1
+        },
+        {
+          "date": 2021,
+          "value": 1.25
+        },
+        {
+          "date": 2020,
+          "value": 1.04
+        },
+        {
+          "date": 2019,
+          "value": 0.97
+        },
+        {
+          "date": 2018,
+          "value": 1.48
+        },
+        {
+          "date": 2017,
+          "value": 1.89
+        }
+      ]
+    },
+    "margembruta": {
+      "actual": 50.6,
+      "avg": 45.828,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 50.6
+        },
+        {
+          "date": 2025,
+          "value": 47.63
+        },
+        {
+          "date": 2024,
+          "value": 50.21
+        },
+        {
+          "date": 2023,
+          "value": 52.72
+        },
+        {
+          "date": 2022,
+          "value": 52.1
+        },
+        {
+          "date": 2021,
+          "value": 48.52
+        },
+        {
+          "date": 2020,
+          "value": 45.56
+        },
+        {
+          "date": 2019,
+          "value": 40.4
+        },
+        {
+          "date": 2018,
+          "value": 38.25
+        },
+        {
+          "date": 2017,
+          "value": 32.29
+        }
+      ]
+    },
+    "margemebitda": {
+      "actual": 72.62,
+      "avg": 62.531,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 72.62
+        },
+        {
+          "date": 2025,
+          "value": 71.2
+        },
+        {
+          "date": 2024,
+          "value": 92.53
+        },
+        {
+          "date": 2023,
+          "value": 119.14
+        },
+        {
+          "date": 2022,
+          "value": 56.52
+        },
+        {
+          "date": 2021,
+          "value": 60.5
+        },
+        {
+          "date": 2020,
+          "value": 39.67
+        },
+        {
+          "date": 2019,
+          "value": 49.74
+        },
+        {
+          "date": 2018,
+          "value": 35.1
+        },
+        {
+          "date": 2017,
+          "value": 28.29
+        }
+      ]
+    },
+    "margemebit": {
+      "actual": 33.86,
+      "avg": 29.924,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 33.86
+        },
+        {
+          "date": 2025,
+          "value": 29.27
+        },
+        {
+          "date": 2024,
+          "value": 27.95
+        },
+        {
+          "date": 2023,
+          "value": 36.98
+        },
+        {
+          "date": 2022,
+          "value": 45.89
+        },
+        {
+          "date": 2021,
+          "value": 46.58
+        },
+        {
+          "date": 2020,
+          "value": 18.24
+        },
+        {
+          "date": 2019,
+          "value": 27.03
+        },
+        {
+          "date": 2018,
+          "value": 20.13
+        },
+        {
+          "date": 2017,
+          "value": 13.31
+        }
+      ]
+    },
+    "margemliquida": {
+      "actual": 24.32,
+      "avg": 15.522,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 24.32
+        },
+        {
+          "date": 2025,
+          "value": 22.13
+        },
+        {
+          "date": 2024,
+          "value": 7.46
+        },
+        {
+          "date": 2023,
+          "value": 24.34
+        },
+        {
+          "date": 2022,
+          "value": 29.37
+        },
+        {
+          "date": 2021,
+          "value": 23.56
+        },
+        {
+          "date": 2020,
+          "value": 2.61
+        },
+        {
+          "date": 2019,
+          "value": 13.28
+        },
+        {
+          "date": 2018,
+          "value": 8.31
+        },
+        {
+          "date": 2017,
+          "value": -0.16
+        }
+      ]
+    },
+    "roe": {
+      "actual": 27.73,
+      "avg": 20.146,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 27.73
+        },
+        {
+          "date": 2025,
+          "value": 26.49
+        },
+        {
+          "date": 2024,
+          "value": 10
+        },
+        {
+          "date": 2023,
+          "value": 32.75
+        },
+        {
+          "date": 2022,
+          "value": 51.94
+        },
+        {
+          "date": 2021,
+          "value": 27.54
+        },
+        {
+          "date": 2020,
+          "value": 2.3
+        },
+        {
+          "date": 2019,
+          "value": 13.58
+        },
+        {
+          "date": 2018,
+          "value": 9.3
+        },
+        {
+          "date": 2017,
+          "value": -0.17
+        }
+      ]
+    },
+    "roa": {
+      "actual": 10.43,
+      "avg": 7.278,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 10.43
+        },
+        {
+          "date": 2025,
+          "value": 9
+        },
+        {
+          "date": 2024,
+          "value": 3.25
+        },
+        {
+          "date": 2023,
+          "value": 11.86
+        },
+        {
+          "date": 2022,
+          "value": 19.28
+        },
+        {
+          "date": 2021,
+          "value": 10.96
+        },
+        {
+          "date": 2020,
+          "value": 0.72
+        },
+        {
+          "date": 2019,
+          "value": 4.33
+        },
+        {
+          "date": 2018,
+          "value": 3
+        },
+        {
+          "date": 2017,
+          "value": -0.05
+        }
+      ]
+    },
+    "roic": {
+      "actual": 11.11,
+      "avg": 11.263,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 11.11
+        },
+        {
+          "date": 2025,
+          "value": 8.59
+        },
+        {
+          "date": 2024,
+          "value": 10.21
+        },
+        {
+          "date": 2023,
+          "value": -1.75
+        },
+        {
+          "date": 2022,
+          "value": 32.28
+        },
+        {
+          "date": 2021,
+          "value": 23.21
+        },
+        {
+          "date": 2020,
+          "value": 6.17
+        },
+        {
+          "date": 2019,
+          "value": 10.04
+        },
+        {
+          "date": 2018,
+          "value": 7.7
+        },
+        {
+          "date": 2017,
+          "value": 5.07
+        }
+      ]
+    },
+    "giro_ativos": {
+      "actual": 0.43,
+      "avg": 0.421,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.43
+        },
+        {
+          "date": 2025,
+          "value": 0.41
+        },
+        {
+          "date": 2024,
+          "value": 0.44
+        },
+        {
+          "date": 2023,
+          "value": 0.49
+        },
+        {
+          "date": 2022,
+          "value": 0.66
+        },
+        {
+          "date": 2021,
+          "value": 0.47
+        },
+        {
+          "date": 2020,
+          "value": 0.28
+        },
+        {
+          "date": 2019,
+          "value": 0.33
+        },
+        {
+          "date": 2018,
+          "value": 0.36
+        },
+        {
+          "date": 2017,
+          "value": 0.34
+        }
+      ]
+    },
+    "receitas_cagr5": {
+      "actual": 12.83,
+      "avg": 6.903,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 12.83
+        },
+        {
+          "date": 2025,
+          "value": 12.83
+        },
+        {
+          "date": 2024,
+          "value": 10.18
+        },
+        {
+          "date": 2023,
+          "value": 10.54
+        },
+        {
+          "date": 2022,
+          "value": 17.72
+        },
+        {
+          "date": 2021,
+          "value": 9.88
+        },
+        {
+          "date": 2020,
+          "value": -3.29
+        },
+        {
+          "date": 2019,
+          "value": -2.17
+        },
+        {
+          "date": 2018,
+          "value": 0.35
+        },
+        {
+          "date": 2017,
+          "value": 0.16
+        }
+      ]
+    },
+    "lucros_cagr5": {
+      "actual": 79.75,
+      "avg": 37.954,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 79.75
+        },
+        {
+          "date": 2025,
+          "value": 72.99
+        },
+        {
+          "date": 2024,
+          "value": -1.82
+        },
+        {
+          "date": 2023,
+          "value": 37.04
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 1.81
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    }
+  },
+  "priceHistory": {
+    "length": 1250,
+    "first": {
+      "price": 7.86,
+      "date": "23/09/21 00:00"
+    },
+    "last": {
+      "price": 49.64,
+      "date": "23/09/26 00:00"
+    },
+    "sha256": "00c460fee7968fe5e0dc2ce3515e2c5182ac7bfe1a64fde65b851b344b055490"
+  }
+}

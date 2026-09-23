@@ -1,8 +1,13 @@
 {
     "code-runner.executorMap": {
-        "typescript": "npx ts-node --files --esm ",
+        "typescript": "bun run",
     },
     "typescript.tsdk": "node_modules\\typescript\\lib",
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports.biome": "explicit"
+    },
     "editor.tokenColorCustomizations": {
         "comments": "",
         "textMateRules": []

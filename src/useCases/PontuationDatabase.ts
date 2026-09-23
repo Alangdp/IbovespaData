@@ -1,10 +1,9 @@
-import { Stock } from '../Entities/Stock'
 import { CustomError } from '@/errors/CustomError.js'
 import { Redis } from '@/global/Redis.js'
-
 import { Bazin } from '../Entities/Bazin'
 import { Granham } from '../Entities/Graham'
-import { Pontuation } from '../Entities/Pontuation.js'
+import type { Pontuation } from '../Entities/Pontuation.js'
+import { Stock } from '../Entities/Stock'
 import env from '../env.js'
 import { StockDataBase } from './stockDataBase.js'
 

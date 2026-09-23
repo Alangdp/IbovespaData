@@ -18,4 +18,4 @@ interface PriceReturn {
 
 type RootPrices = MainPrices[]
 
-export { RootPrices, PriceObject, PriceReturn, MainPrices }
+export type { MainPrices, PriceObject, PriceReturn, RootPrices }

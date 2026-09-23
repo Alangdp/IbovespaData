@@ -1,8 +1,4 @@
-// Inicio o processamento das filas
-import '@/queues/StockQueue.js'
-
 import cors from 'cors'
-import dotenv from 'dotenv'
 import express from 'express'
 import path from 'path'
 
@@ -11,8 +7,6 @@ import fundoRoutes from './routes/fundo.routes.js'
 import grahamRoutes from './routes/graham.routes.js'
 import simulationRoutes from './routes/simulation.routes.js'
 import stockRoutes from './routes/stock.routes.js'
-
-dotenv.config()
 
 class App {
   app
@@ -33,17 +27,21 @@ class App {
   middlewares() {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
-    this.app.use('*', cors())
-    this.app.options('*', cors())
+    // Cobre todas as rotas, inclusive o preflight (OPTIONS)
+    this.app.use(cors())
 
     this.app.use(
       '/images/logos',
-      express.static(path.join(__dirname, '..', 'assets', 'imgs', 'logos')),
+      express.static(
+        path.join(import.meta.dir, '..', 'assets', 'imgs', 'logos'),
+      ),
     )
 
     this.app.use(
       '/images/avatar',
-      express.static(path.join(__dirname, '..', 'assets', 'imgs', 'avatar')),
+      express.static(
+        path.join(import.meta.dir, '..', 'assets', 'imgs', 'avatar'),
+      ),
     )
   }
 }
