@@ -7,6 +7,7 @@ import express from 'express'
 import path from 'path'
 
 import bazinRoutes from './routes/bazin.routes.js'
+import fundoRoutes from './routes/fundo.routes.js'
 import grahamRoutes from './routes/graham.routes.js'
 import simulationRoutes from './routes/simulation.routes.js'
 import stockRoutes from './routes/stock.routes.js'
@@ -26,6 +27,7 @@ class App {
     this.app.use('/', bazinRoutes)
     this.app.use('/', grahamRoutes)
     this.app.use('/', simulationRoutes)
+    this.app.use('/', fundoRoutes)
   }
 
   middlewares() {

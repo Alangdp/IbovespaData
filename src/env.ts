@@ -18,6 +18,13 @@ const envSchema = z.object({
 
   REDIS_PORT: z.coerce.number().default(6379),
   REDIS_HOST: z.string().default('localhost'),
+
+  // Fonte de dados dos fundos imobiliários (rotas /fundos).
+  // Sem token, a brapi.dev só responde para os tickers de sandbox
+  // MXRF11 e HGLG11. Para os demais FIIs é necessário um token do plano Pro
+  // (https://brapi.dev/dashboard). Ver useCases/BrapiClient.ts.
+  BRAPI_TOKEN: z.string().default(''),
+  BRAPI_BASE_URL: z.string().default('https://brapi.dev/api/v2/fii'),
 })
 
 let env: z.infer<typeof envSchema>
