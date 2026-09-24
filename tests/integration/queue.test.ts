@@ -75,8 +75,12 @@ describe.skipIf(!available)('fila de atualização (BullMQ + Redis real)', () =>
         const attempt = (attemptsByTicker.get(ticker) ?? 0) + 1
         attemptsByTicker.set(ticker, attempt)
 
-        if (ticker === 'FLAKY3' && attempt < 3) throw new Error('rede caiu')
-        if (ticker === 'ZZZZ99') throw new Error('INVALID TICKER CODE 404')
+        if (ticker === 'FLAKY3' && attempt < 3) {
+          throw new Error('rede caiu')
+        }
+        if (ticker === 'ZZZZ99') {
+          throw new Error('INVALID TICKER CODE 404')
+        }
         return { ticker }
       },
       saveToCache: async () => {},

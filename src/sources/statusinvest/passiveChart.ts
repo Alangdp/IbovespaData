@@ -4,28 +4,33 @@ import type {
 } from '../../types/PassiveChart.type.js'
 import { statusInvestApi } from './http.js'
 
-// Balanço patrimonial (ativos/passivos por ano). Devolve null se a API falhar.
+/**
+ * Busca o balanço patrimonial (ativos e passivos por ano)
+ *
+ * @param ticker - Código da ação (ex.: PETR4)
+ * @returns Um item por ano, ou `null` se a API falhar
+ */
 export async function fetchPassiveChart(
   ticker: string,
 ): Promise<PassiveChartReturn[] | null> {
-  try {
-    const data = await statusInvestApi<PassiveChart[]>(
-      { method: 'GET', headers: {} },
-      `getbsactivepassivechart?code=${ticker}&type=1`,
-    )
-    if (!data) throw new Error('Error Getting Passive Chart Data')
-
-    return data.map((item) => ({
-      year: item.year,
-      totalAssets: item.ativoTotal,
-      totalLiabilities: item.passivoTotal,
-      currentAssets: item.ativoCirculante,
-      nonCurrentAssets: item.ativoNaoCirculante,
-      currentLiabilities: item.passivoCirculante,
-      nonCurrentLiabilities: item.passivoNaoCirculante,
-      shareholdersEquity: item.patrimonioLiquido,
-    }))
-  } catch (error) {
+  // Busca o balanço
+  const data = await statusInvestApi<PassiveChart[]>(
+    `acao/getbsactivepassivechart?code=${ticker}&type=1`,
+  )
+  // Se a API falhou ou não devolveu uma lista
+  if (!Array.isArray(data)) {
     return null
   }
+
+  // Retorna o balanço com os nomes de campo da aplicação
+  return data.map((item) => ({
+    year: item.year,
+    totalAssets: item.ativoTotal,
+    totalLiabilities: item.passivoTotal,
+    currentAssets: item.ativoCirculante,
+    nonCurrentAssets: item.ativoNaoCirculante,
+    currentLiabilities: item.passivoCirculante,
+    nonCurrentLiabilities: item.passivoNaoCirculante,
+    shareholdersEquity: item.patrimonioLiquido,
+  }))
 }

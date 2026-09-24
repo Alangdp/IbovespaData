@@ -6,10 +6,6 @@
 // - Não considera aportes
 // - Dados de entrada dos ultimos 5 anos (Tempo máximo de simulação)
 
-import { fetchPrices } from '../sources/statusinvest'
-import type { PriceReturn } from '../types/prices.type'
-import { DateFormatter } from '../utils/DateFormater'
-
 // Deve conter:
 // [ ] Método para simular investimento ao longo do tempo
 // [ ] Método para calcular o valor futuro do investimento - Reconsiderar
@@ -24,91 +20,93 @@ import { DateFormatter } from '../utils/DateFormater'
 // [ ] Comparar com o S&P500
 // [ ] Calcular a perda ou lucro - GainOrLoss
 
-// Renomear o tipo
-type PriceHistory = PriceReturn | null
+import { fetchPrices } from '../sources/statusinvest'
+import type { PriceReturn } from '../types/prices.type'
+import { DateFormatter } from '../utils/DateFormater'
 
+/** Situação do investimento em um dia do histórico */
 type SimulationHistory = {
-  date: Date
+  date: Date | null
   price: number
+  /** Ganho ou perda por papel desde o início */
   gainOrLossIndividual: number
+  /** Ganho ou perda de todos os papéis desde o início */
   gainOrLossGeneral: number
   gainOrLossCDI: number
-
   totalCapital: number
 }
 
+/** Resultado da simulação */
 type SimulationType = {
-  startSimulation: Date
-  endSimulation: Date
+  startSimulation: Date | null
+  endSimulation: Date | null
+  /** Variação do preço de um papel entre o primeiro e o último dia */
   gainOrLoss: number
   history: SimulationHistory[]
 }
 
+/** Simula a compra da ação no início do histórico e a evolução até hoje */
 export class Simulation {
-  private ticker: string
-  public priceHistory: PriceHistory = null // Últimos 5 anos
-  private startInvestValue = 0
+  /** Histórico de preços (últimos 5 anos), carregado por `initialize` */
+  public priceHistory: PriceReturn | null = null
 
-  constructor(ticker: string, startInvestValue: number) {
-    this.ticker = ticker
-    this.startInvestValue = startInvestValue
-  }
+  /**
+   * @param ticker - Código da ação (ex.: PETR4)
+   * @param startInvestValue - Valor investido no primeiro dia (R$)
+   */
+  constructor(
+    private readonly ticker: string,
+    private readonly startInvestValue: number,
+  ) {}
 
+  /**
+   * Carrega o histórico de preços da ação
+   *
+   * @throws Error se o ticker for inválido ou o histórico não vier
+   */
   async initialize() {
-    try {
-      const prices = await fetchPrices(this.ticker)
-      if (!prices) throw new Error('Error getting price history')
-      this.priceHistory = prices
-    } catch (error) {
+    this.priceHistory = await fetchPrices(this.ticker)
+    // Se o histórico não foi carregado
+    if (!this.priceHistory) {
       throw new Error(`Invalid Ticker: ${this.ticker}`)
     }
   }
 
-  async execute(): Promise<SimulationType> {
-    const priceVariation = this.priceHistory?.priceVariation
-    if (!priceVariation) throw new Error('Error getting price')
+  /**
+   * Executa a simulação sobre o histórico carregado
+   *
+   * @throws Error se `initialize` não carregou o histórico
+   */
+  execute(): SimulationType {
+    const prices = this.priceHistory?.priceVariation
+    // Se o histórico não foi carregado
+    if (!prices) {
+      throw new Error('Error getting price')
+    }
 
-    const pricesLength = priceVariation.length || 0
+    const startPrice = prices[0].price
+    const endPrice = prices[prices.length - 1].price
+    const startDate = DateFormatter.stringToDate(prices[0].date)
+    const endDate = DateFormatter.stringToDate(prices[prices.length - 1].date)
 
-    // Datas inicio e fim
-    const startDate = DateFormatter.stringToDate(priceVariation[0].date)!
-    const endDate = DateFormatter.stringToDate(
-      priceVariation[pricesLength - 1].date,
-    )!
+    // Calcula quantos papéis o valor inicial compra (no mínimo 1)
+    const stocksQuantity = (this.startInvestValue / startPrice) | 0 || 1
 
-    // Preços
-    const startPrice = priceVariation[0].price
-    // Número de pápeis
-    let stocksQuantity = 0
-    // Calculo número de pápeis iniciais
-    stocksQuantity = (this.startInvestValue / startPrice) | 0
-    stocksQuantity = stocksQuantity === 0 ? 1 : stocksQuantity
-
-    const simulation: SimulationType = {
+    return {
+      startSimulation: startDate,
       endSimulation: endDate,
-      startSimulation: endDate,
-      gainOrLoss: priceVariation[pricesLength - 1].price - startPrice,
-      history: [],
+      gainOrLoss: endPrice - startPrice,
+      // Calcula a situação do investimento em cada dia
+      history: prices.map(
+        ({ date, price }): SimulationHistory => ({
+          date: DateFormatter.stringToDate(date),
+          price,
+          gainOrLossIndividual: price - startPrice,
+          gainOrLossGeneral: (price - startPrice) * stocksQuantity,
+          gainOrLossCDI: 0,
+          totalCapital: price * stocksQuantity,
+        }),
+      ),
     }
-
-    for (let i = 0; i < pricesLength; i++) {
-      const price = priceVariation[i]
-
-      const history: SimulationHistory = {
-        date: DateFormatter.stringToDate(priceVariation[i].date)!,
-
-        price: priceVariation[i].price,
-
-        gainOrLossIndividual: priceVariation[i].price - startPrice,
-        gainOrLossGeneral:
-          (priceVariation[i].price - startPrice) * stocksQuantity,
-
-        gainOrLossCDI: 0,
-        totalCapital: priceVariation[i].price * stocksQuantity,
-      }
-
-      simulation.history.push(history)
-    }
-    return simulation
   }
 }

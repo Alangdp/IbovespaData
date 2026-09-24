@@ -1,6 +1,6 @@
+import path from 'node:path'
 import cors from 'cors'
 import express from 'express'
-import path from 'path'
 
 import bazinRoutes from './routes/bazin.routes.js'
 import fundoRoutes from './routes/fundo.routes.js'
@@ -8,42 +8,26 @@ import grahamRoutes from './routes/graham.routes.js'
 import simulationRoutes from './routes/simulation.routes.js'
 import stockRoutes from './routes/stock.routes.js'
 
-class App {
-  app
-  constructor() {
-    this.app = express()
-    this.middlewares()
-    this.routes()
-  }
+const IMAGES_DIR = path.join(import.meta.dir, '..', 'assets', 'imgs')
 
-  routes() {
-    this.app.use('/', stockRoutes)
-    this.app.use('/', bazinRoutes)
-    this.app.use('/', grahamRoutes)
-    this.app.use('/', simulationRoutes)
-    this.app.use('/', fundoRoutes)
-  }
+/** Aplicação Express com middlewares, imagens estáticas e rotas */
+const app = express()
 
-  middlewares() {
-    this.app.use(express.json())
-    this.app.use(express.urlencoded({ extended: true }))
-    // Cobre todas as rotas, inclusive o preflight (OPTIONS)
-    this.app.use(cors())
+// Registra os middlewares; o cors cobre todas as rotas, inclusive o
+// preflight (OPTIONS)
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
-    this.app.use(
-      '/images/logos',
-      express.static(
-        path.join(import.meta.dir, '..', 'assets', 'imgs', 'logos'),
-      ),
-    )
+// Serve os logos e avatares das empresas
+app.use('/images/logos', express.static(path.join(IMAGES_DIR, 'logos')))
+app.use('/images/avatar', express.static(path.join(IMAGES_DIR, 'avatar')))
 
-    this.app.use(
-      '/images/avatar',
-      express.static(
-        path.join(import.meta.dir, '..', 'assets', 'imgs', 'avatar'),
-      ),
-    )
-  }
-}
+// Registra as rotas
+app.use('/', stockRoutes)
+app.use('/', bazinRoutes)
+app.use('/', grahamRoutes)
+app.use('/', simulationRoutes)
+app.use('/', fundoRoutes)
 
-export default new App().app
+export default app

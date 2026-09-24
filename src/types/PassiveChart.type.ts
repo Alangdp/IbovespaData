@@ -1,3 +1,4 @@
+/** Item da resposta de `getbsactivepassivechart` do statusinvest */
 export interface PassiveChart {
   year: number
   ativoTotal: number
@@ -9,6 +10,7 @@ export interface PassiveChart {
   patrimonioLiquido: number
 }
 
+/** Balanço patrimonial de um ano */
 export interface PassiveChartReturn {
   year: number
   totalAssets: number

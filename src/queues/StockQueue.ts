@@ -12,7 +12,7 @@ import { createStockRefresher } from './refreshStock'
 
 const stockDataBase = new StockDataBase()
 
-// Worker da fila de atualização de ações (iniciado pelo server.ts)
+/** Worker da fila de atualização de ações (iniciado pelo server.ts) */
 export const stockWorker = new Worker<stockQueueData>(
   STOCK_QUEUE,
   createStockRefresher({
@@ -23,6 +23,7 @@ export const stockWorker = new Worker<stockQueueData>(
   { connection: queueConnection, concurrency: 2 },
 )
 
+// Registra o log de cada tentativa que falhar
 stockWorker.on('failed', (job, error) => {
   console.error(
     `[stockQueue] falha ao atualizar ${job?.data.ticker} ` +
@@ -30,8 +31,8 @@ stockWorker.on('failed', (job, error) => {
   )
 })
 
-// Sem um listener de 'error' o EventEmitter derruba o processo quando o Redis
-// fica indisponível
+// Registra o listener de erro: sem ele o EventEmitter derruba o processo
+// quando o Redis fica indisponível
 stockWorker.on('error', (error) => {
   console.error('[stockQueue] erro no worker:', error.message)
 })

@@ -1,14 +1,17 @@
+/** Valor de um indicador em um ano passado */
 export interface OldData {
   date: number
   value: number
 }
 
+/** Valor atual, média e histórico de um indicador */
 export interface FinancialData {
   actual: number
   avg: number
   olds: OldData[]
 }
 
+/** Indicadores financeiros da ação, pela chave usada no statusinvest */
 export interface FinancialIndicators {
   dy: FinancialData
   p_l: FinancialData
@@ -68,24 +71,9 @@ export interface IndicatorResponse {
   maxValueRank_F: string
   ranks: Rank[]
 }
-export interface oldIndicator {
-  date: number
-  value?: number
-}
-
-export interface IndicatorsData {
-  [key: string]: {
-    actual: number
-    avg: number
-    olds: oldIndicator[]
-  }
-}
-
-export interface Data {
-  [ticker: string]: IndicatorResponse[]
-}
-
+/** Resposta de `indicatorhistoricallist` do statusinvest */
 export interface IndicatorRoot {
   success: boolean
-  data: Data
+  /** Indicadores de cada ticker consultado */
+  data: Record<string, IndicatorResponse[]>
 }

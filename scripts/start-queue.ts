@@ -7,18 +7,23 @@ import { join } from 'node:path'
 import { STOCK_JOB, stockQueue } from '../src/global/Queue'
 import { fetchAllTickers } from '../src/sources/fundamentus'
 
+/** Lê a lista de tickers a pular, ou lista vazia se o arquivo não existir */
 async function readInvalidTickers(): Promise<string[]> {
   const file = Bun.file(
     join(import.meta.dir, '..', 'json', 'invalidTickers.json'),
   )
-  if (!(await file.exists())) return []
+  if (!(await file.exists())) {
+    return []
+  }
   return file.json()
 }
 
+// Carrega os tickers válidos
 const invalidTickers = new Set(await readInvalidTickers())
 const allTickers = await fetchAllTickers()
 const validTickers = allTickers.filter((ticker) => !invalidTickers.has(ticker))
 
+// Enfileira um job por ticker
 await stockQueue.addBulk(
   validTickers.map((ticker) => ({ name: STOCK_JOB, data: { ticker } })),
 )

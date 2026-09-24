@@ -63,7 +63,9 @@ function toText(data: unknown): string {
 }
 
 function loadSet(): FixtureSet {
-  if (!existsSync(FIXTURE_FILE)) return {}
+  if (!existsSync(FIXTURE_FILE)) {
+    return {}
+  }
   const raw: FixtureSet = JSON.parse(
     new TextDecoder().decode(
       Bun.gunzipSync(new Uint8Array(readFileSync(FIXTURE_FILE))),
@@ -102,7 +104,9 @@ export function replayFixtures() {
       request: {},
     }
 
-    if (hit.status >= 200 && hit.status < 300) return response
+    if (hit.status >= 200 && hit.status < 300) {
+      return response
+    }
 
     throw new AxiosError(
       `Request failed with status code ${hit.status}`,

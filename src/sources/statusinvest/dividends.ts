@@ -5,17 +5,26 @@ import type {
 import Utilities from '../../utils/Utilities.js'
 import { statusInvestApi } from './http.js'
 
-// Dividendos pagos (por pagamento e por ano). Devolve null se a API falhar.
+/**
+ * Busca os dividendos pagos, por pagamento e por ano
+ *
+ * @param ticker - Código da ação (ex.: PETR4)
+ * @returns Os dividendos convertidos, ou `null` se a API falhar
+ */
 export async function fetchDividends(
   ticker: string,
 ): Promise<DividendReturn | null> {
-  try {
-    const data = await statusInvestApi<RootDividend>(
-      { method: 'GET', headers: {} },
-      `companytickerprovents?ticker=${ticker}&chartProventsType=2`,
-    )
-    if (!data) throw new Error('Error Getting Dividends Data')
+  // Busca os proventos da ação
+  const data = await statusInvestApi<RootDividend>(
+    `acao/companytickerprovents?ticker=${ticker}&chartProventsType=2`,
+  )
+  // Se a API falhou
+  if (!data) {
+    return null
+  }
 
+  try {
+    // Retorna os proventos com os nomes de campo da aplicação
     return {
       lastDividendPayments: data.assetEarningsModels.map((payment) => ({
         ticker,
@@ -38,7 +47,7 @@ export async function fetchDividends(
       dividendPaymentThisYear: Utilities.formateNumber(data.earningsThisYear),
       dividendPaymentLastYear: Utilities.formateNumber(data.earningsLastYear),
     }
-  } catch (error) {
+  } catch {
     return null
   }
 }

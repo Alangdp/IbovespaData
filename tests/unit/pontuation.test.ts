@@ -8,8 +8,6 @@ function makePontuation(defaultIfTrue = 1, defaultIfFalse = 1) {
     subId: 'BAZIN',
     defaultIfTrue,
     defaultIfFalse,
-    totalPoints: 0,
-    totalEvaluate: [],
     infoData: { actualPrice: 10, maxPrice: 20, dy: 0.06 },
   })
 }
@@ -42,8 +40,8 @@ describe('Pontuation', () => {
     expect(p.totalPoints).toBe(5 - 4)
   })
 
-  test('ifTrue/ifFalse iguais a 0 caem no default (0 é falsy no código atual)', () => {
-    const p = makePontuation(1, 1)
+  test('ifTrue/ifFalse iguais a 0 valem 0 pontos', () => {
+    const p = makePontuation(5, 5)
     p.addRule({ ruleName: 'ok', rule: true, ifTrue: 0 })
     p.addRule({ ruleName: 'nok', rule: false, ifFalse: 0 })
     p.calculate()

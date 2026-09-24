@@ -9,8 +9,7 @@ import {
 } from 'bun:test'
 import type { Server } from 'node:http'
 import type { AddressInfo } from 'node:net'
-
-import axios from 'axios'
+import { join } from 'node:path'
 
 import { replayFixtures } from '../support/http-fixtures'
 
@@ -42,36 +41,10 @@ mock.module('../../src/global/Queue', () => ({
   STOCK_JOB: 'refresh',
   queueConnection: {},
   stockQueue: { add: async () => {}, on: () => {} },
+  LTV_QUEUE: 'fnet ltv',
+  LTV_JOB: 'load',
+  ltvQueue: { add: async () => {}, on: () => {} },
 }))
-
-const BRAPI_INDICATOR = {
-  symbol: 'MXRF11',
-  name: 'Maxi Renda',
-  segmentType: 'papel',
-  segmentoAtuacao: 'Recebíveis',
-  administratorName: 'BTG Pactual',
-  price: 9.5,
-  navPerShare: 9.6,
-  dividendYield12m: 0.12,
-}
-
-function brapiResponse(url: string) {
-  if (url.endsWith('/indicators') || url.endsWith('/list'))
-    return { fiis: [BRAPI_INDICATOR] }
-  if (url.endsWith('/dividends'))
-    return {
-      dividends: [
-        {
-          symbol: 'MXRF11',
-          paymentDate: '2026-08-14',
-          exDate: '2026-07-31',
-          rate: 0.1,
-        },
-      ],
-    }
-  if (url.endsWith('/reports')) return { reports: [] }
-  return { fiis: [] }
-}
 
 let server: Server
 let base: string
@@ -83,20 +56,6 @@ async function get(path: string) {
 
 beforeAll(async () => {
   replayFixtures()
-  const replay = axios.defaults.adapter as (config: any) => Promise<any>
-  axios.defaults.adapter = async (config) => {
-    if (String(config.url).startsWith('https://brapi.dev')) {
-      return {
-        data: JSON.stringify(brapiResponse(String(config.url))),
-        status: 200,
-        statusText: 'OK',
-        headers: {},
-        config,
-        request: {},
-      }
-    }
-    return replay(config)
-  }
   setSystemTime(new Date('2026-09-23T15:00:00Z'))
 
   const { default: app } = await import('../../src/app')
@@ -246,26 +205,140 @@ describe('rota de simulação', () => {
 })
 
 describe('rotas de fundos', () => {
+  // Registro da CVM do MXRF11, como o job de carga grava no Redis
+  cache.set(
+    'CVM-FII-97521225000125',
+    JSON.stringify({
+      cnpj: '97521225000125',
+      isin: 'BRMXRFCTF008',
+      gestora: {
+        nome: 'XP VISTA ASSET MANAGEMENT LTDA.',
+        cnpj: '16789525000198',
+      },
+      patrimonio: [
+        { data: '2026-04-01', valor: 4000000000 },
+        { data: '2026-05-01', valor: 4000000000 },
+        { data: '2026-06-01', valor: 4000000000 },
+      ],
+      trimestres: [
+        {
+          data: '2026-06-30',
+          taxaAdministracao: 9000000,
+          resultadoSemestre: 100,
+          resultadoSemestre95: 95,
+          rendimentosDeclarados: 99,
+        },
+      ],
+      endividamento: { data: '2026-06-01', obrigacoes: 0, ativo: 4100000000 },
+    }),
+  )
+  cache.set('CVM-ISIN-MXRF', JSON.stringify('97521225000125'))
+  // LTV já lido do relatório gerencial (evita baixar o PDF no teste)
+  cache.set(
+    'FNET-LTV-97521225000125',
+    JSON.stringify({ ltv: 56, referencia: '31/07/2026' }),
+  )
+
   test('GET /fundos/:ticker', async () => {
     const { status, body } = await get('/fundos/mxrf11')
 
     expect(status).toBe(200)
     expect(body.data.ticker).toBe('MXRF11')
     expect(body.data.segmento).toBe('Papel')
-    expect(body.data.dividend_yield_12m).toBe(12)
+    expect(body.data.dividend_yield_12m).toBeNumber()
+    expect(body.data.dividendos_mensais).toHaveLength(12)
   })
 
-  test('GET /fundos?tickers=', async () => {
-    const { status, body } = await get('/fundos?tickers=MXRF11')
+  test('GET /fundos/:ticker segue o schema Fundo do openapi.yaml', async () => {
+    const spec = Bun.YAML.parse(
+      await Bun.file(join(import.meta.dir, '..', '..', 'openapi.yaml')).text(),
+    ) as any
+    const schema = spec.components.schemas.Fundo
+
+    for (const ticker of ['MXRF11', 'HGLG11', 'BCFF11']) {
+      const { body } = await get(`/fundos/${ticker}`)
+
+      expect(Object.keys(body.data).sort()).toEqual(
+        Object.keys(schema.properties).sort(),
+      )
+      for (const field of schema.required) {
+        expect(body.data[field]).toBeDefined()
+      }
+      expect(schema.properties.segmento).toBeDefined()
+      expect(spec.components.schemas.Segmento.enum).toContain(
+        body.data.segmento,
+      )
+    }
+  })
+
+  test('GET /fundos/:ticker usa os informes da CVM', async () => {
+    const { body } = await get('/fundos/MXRF11')
+
+    expect(body.data.gestora).toBe('XP VISTA ASSET MANAGEMENT LTDA.')
+    expect(body.data.gestora_cnpj).toBe('16789525000198')
+    expect(body.data.taxa_administracao).toBe(0.9)
+    expect(body.data.limite_distribuicao_respeitado).toBe(true)
+    expect(body.data.percentual_distribuido).toBe(99)
+    expect(body.data.alavancagem).toBe(0)
+    expect(body.data.ltv_medio).toBe(56)
+    expect(body.data.ltv_referencia).toBe('31/07/2026')
+    expect(body.data.dividendo_extraordinario_ultimo_ano).toBeBoolean()
+  })
+
+  test('GET /fundos/:ticker/taxas detalha o cálculo', async () => {
+    const { status, body } = await get('/fundos/mxrf11/taxas')
 
     expect(status).toBe(200)
-    expect(body.data.map((f: any) => f.ticker)).toEqual(['MXRF11'])
+    expect(body.data).toEqual({
+      ticker: 'MXRF11',
+      cnpj: '97521225000125',
+      taxa_administracao: 0.9,
+      trimestres: [
+        {
+          trimestre: '2026-06-30',
+          taxa_paga: 9000000,
+          patrimonio_medio: 4000000000,
+          percentual_anualizado: 0.9,
+        },
+      ],
+    })
   })
 
-  test('GET /fundos (todos) usa a listagem enxuta', async () => {
+  test('GET /fundos/:ticker/taxas de fundo inexistente vira 404', async () => {
+    const { status } = await get('/fundos/ZZZZ11/taxas')
+    expect(status).toBe(404)
+  })
+
+  test('GET /fundos/:ticker de tijolo traz imóveis e vacância', async () => {
+    const { body } = await get('/fundos/HGLG11')
+
+    expect(body.data.segmento).toBe('Tijolo')
+    expect(body.data.num_imoveis).toBeGreaterThan(0)
+    expect(body.data.vacancia_fisica).toBeNumber()
+    expect(body.data.area_total).toBeGreaterThan(0)
+  })
+
+  test('GET /fundos/:ticker inexistente vira 404', async () => {
+    const { status, body } = await get('/fundos/ZZZZ11')
+
+    expect(status).toBe(404)
+    expect(body.errors[0].message).toContain('ZZZZ11')
+  })
+
+  test('GET /fundos?tickers= omite os inválidos', async () => {
+    const { status, body } = await get('/fundos?tickers=MXRF11,ZZZZ11,HGLG11')
+
+    expect(status).toBe(200)
+    expect(body.data.map((f: any) => f.ticker)).toEqual(['MXRF11', 'HGLG11'])
+  })
+
+  test('GET /fundos (todos) usa a listagem resumida', async () => {
     const { status, body } = await get('/fundos')
 
     expect(status).toBe(200)
-    expect(body.data[0].ticker).toBe('MXRF11')
+    expect(body.data.length).toBeGreaterThan(500)
+    expect(body.data.every((f: any) => f.dividendos_mensais.length === 0)).toBe(
+      true,
+    )
   })
 })

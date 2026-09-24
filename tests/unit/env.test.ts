@@ -38,7 +38,6 @@ describe('src/env.ts', () => {
       REDIS_PORT: 6379,
       TOLERANCE_TIME_HOURS: 1,
       TOLERANCE_TIME_HOURS_RANKING: 24,
-      BRAPI_TOKEN: '',
     })
   })
 
@@ -60,13 +59,5 @@ describe('src/env.ts', () => {
 
   test('NODE_ENV fora da lista encerra o processo com código 1', () => {
     expect(importEnv({ NODE_ENV: 'staging' }).exitCode).toBe(1)
-  })
-
-  test('não imprime o BRAPI_TOKEN no log', () => {
-    const { stdout } = importEnv({ BRAPI_TOKEN: 'segredo-super-secreto' })
-
-    expect(stdout).toContain('Environment variables are valid')
-    // o JSON final do teste contém o token; o log de startup, não
-    expect(stdout.split('\n')[0]).not.toContain('segredo-super-secreto')
   })
 })

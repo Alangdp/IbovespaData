@@ -1,17 +1,20 @@
 {
   "ticker": "PETR4",
-  "name": "PETR4 - PETROBRAS PN: cotação e indicadores",
+  "name": "PETROBRAS",
+  "segment": "Exploração. Refino e Distribuição",
   "activeValue": 481007506640.52,
   "shareQuantity": 12888732761,
   "actualPrice": 49.64,
   "marketValue": 23877212629635.414,
   "instanceTime": 1790175600000,
+  "lpa": 10.35,
+  "p_l": 4.7969,
+  "freeFloat": 61.21,
   "dividendYield": 7.39,
   "grossDebt": 366533000000,
   "patrimony": 480950000000,
-  "lpa": 10.35,
-  "p_l": 0,
-  "freeFloat": 61.21,
+  "payout": 0.8678703399935077,
+  "actualDividendYield": 0.073865,
   "lastDividendsYieldYear": [
     7.3865,
     9.5268,
@@ -1022,185 +1025,6 @@
       "value": 0.5
     }
   ],
-  "payout": 0.87,
-  "actualDividendYield": 0.073865,
-  "netLiquid": [
-    {
-      "year": "2025",
-      "value": 110605000000
-    },
-    {
-      "year": "2024",
-      "value": 37009000000
-    },
-    {
-      "year": "2023",
-      "value": 125166000000
-    },
-    {
-      "year": "2022",
-      "value": 189005000000
-    },
-    {
-      "year": "2021",
-      "value": 107264000000
-    },
-    {
-      "year": "2020",
-      "value": 6246000000
-    },
-    {
-      "year": "2019",
-      "value": 40970000000
-    },
-    {
-      "year": "2018",
-      "value": 26698000000
-    },
-    {
-      "year": "2017",
-      "value": 377000000
-    },
-    {
-      "year": "2016",
-      "value": -13045000000
-    },
-    {
-      "year": "2015",
-      "value": -35171000000
-    },
-    {
-      "year": "2014",
-      "value": -21924000000
-    },
-    {
-      "year": "2013",
-      "value": 23007000000
-    },
-    {
-      "year": "2012",
-      "value": 21182000000
-    },
-    {
-      "year": "2011",
-      "value": 33313097000
-    },
-    {
-      "year": "2010",
-      "value": 35189366000
-    },
-    {
-      "year": "2009",
-      "value": 30051190000
-    },
-    {
-      "year": "2008",
-      "value": 32987792000
-    }
-  ],
-  "passiveChart": [
-    {
-      "year": 2025,
-      "totalAssets": 1223389000000,
-      "totalLiabilities": 805802000000,
-      "currentAssets": 140026000000,
-      "nonCurrentAssets": 1083363000000,
-      "currentLiabilities": 198368000000,
-      "nonCurrentLiabilities": 607434000000,
-      "shareholdersEquity": 417587000000
-    },
-    {
-      "year": 2024,
-      "totalAssets": 1124797000000,
-      "totalLiabilities": 757283000000,
-      "currentAssets": 135212000000,
-      "nonCurrentAssets": 989585000000,
-      "currentLiabilities": 194808000000,
-      "nonCurrentLiabilities": 562475000000,
-      "shareholdersEquity": 367514000000
-    },
-    {
-      "year": 2023,
-      "totalAssets": 1050888000000,
-      "totalLiabilities": 668548000000,
-      "currentAssets": 157079000000,
-      "nonCurrentAssets": 893809000000,
-      "currentLiabilities": 163928000000,
-      "nonCurrentLiabilities": 504620000000,
-      "shareholdersEquity": 382340000000
-    },
-    {
-      "year": 2022,
-      "totalAssets": 976709000000,
-      "totalLiabilities": 612324000000,
-      "currentAssets": 163052000000,
-      "nonCurrentAssets": 813657000000,
-      "currentLiabilities": 163731000000,
-      "nonCurrentLiabilities": 448593000000,
-      "shareholdersEquity": 364385000000
-    },
-    {
-      "year": 2021,
-      "totalAssets": 972951000000,
-      "totalLiabilities": 583370000000,
-      "currentAssets": 168247000000,
-      "nonCurrentAssets": 804704000000,
-      "currentLiabilities": 134913000000,
-      "nonCurrentLiabilities": 448457000000,
-      "shareholdersEquity": 389581000000
-    },
-    {
-      "year": 2020,
-      "totalAssets": 987419000000,
-      "totalLiabilities": 676269000000,
-      "currentAssets": 142323000000,
-      "nonCurrentAssets": 845096000000,
-      "currentLiabilities": 136287000000,
-      "nonCurrentLiabilities": 539982000000,
-      "shareholdersEquity": 311150000000
-    },
-    {
-      "year": 2019,
-      "totalAssets": 926011000000,
-      "totalLiabilities": 626874000000,
-      "currentAssets": 112101000000,
-      "nonCurrentAssets": 813910000000,
-      "currentLiabilities": 116147000000,
-      "nonCurrentLiabilities": 510727000000,
-      "shareholdersEquity": 299137000000
-    },
-    {
-      "year": 2018,
-      "totalAssets": 860473000000,
-      "totalLiabilities": 576930000000,
-      "currentAssets": 143606000000,
-      "nonCurrentAssets": 716867000000,
-      "currentLiabilities": 97068000000,
-      "nonCurrentLiabilities": 479862000000,
-      "shareholdersEquity": 283543000000
-    },
-    {
-      "year": 2017,
-      "totalAssets": 831515000000,
-      "totalLiabilities": 561906000000,
-      "currentAssets": 155909000000,
-      "nonCurrentAssets": 675606000000,
-      "currentLiabilities": 82535000000,
-      "nonCurrentLiabilities": 479371000000,
-      "shareholdersEquity": 269609000000
-    },
-    {
-      "year": 2016,
-      "totalAssets": 804945000000,
-      "totalLiabilities": 552202000000,
-      "currentAssets": 145907000000,
-      "nonCurrentAssets": 659038000000,
-      "currentLiabilities": 81167000000,
-      "nonCurrentLiabilities": 471035000000,
-      "shareholdersEquity": 252743000000
-    }
-  ],
-  "segment": "Exploração. Refino e Distribuição",
   "indicators": {
     "dy": {
       "actual": 7.3865,
@@ -2583,6 +2407,182 @@
       ]
     }
   },
+  "netLiquid": [
+    {
+      "year": "2025",
+      "value": 110605000000
+    },
+    {
+      "year": "2024",
+      "value": 37009000000
+    },
+    {
+      "year": "2023",
+      "value": 125166000000
+    },
+    {
+      "year": "2022",
+      "value": 189005000000
+    },
+    {
+      "year": "2021",
+      "value": 107264000000
+    },
+    {
+      "year": "2020",
+      "value": 6246000000
+    },
+    {
+      "year": "2019",
+      "value": 40970000000
+    },
+    {
+      "year": "2018",
+      "value": 26698000000
+    },
+    {
+      "year": "2017",
+      "value": 377000000
+    },
+    {
+      "year": "2016",
+      "value": -13045000000
+    },
+    {
+      "year": "2015",
+      "value": -35171000000
+    },
+    {
+      "year": "2014",
+      "value": -21924000000
+    },
+    {
+      "year": "2013",
+      "value": 23007000000
+    },
+    {
+      "year": "2012",
+      "value": 21182000000
+    },
+    {
+      "year": "2011",
+      "value": 33313097000
+    },
+    {
+      "year": "2010",
+      "value": 35189366000
+    },
+    {
+      "year": "2009",
+      "value": 30051190000
+    },
+    {
+      "year": "2008",
+      "value": 32987792000
+    }
+  ],
+  "passiveChart": [
+    {
+      "year": 2025,
+      "totalAssets": 1223389000000,
+      "totalLiabilities": 805802000000,
+      "currentAssets": 140026000000,
+      "nonCurrentAssets": 1083363000000,
+      "currentLiabilities": 198368000000,
+      "nonCurrentLiabilities": 607434000000,
+      "shareholdersEquity": 417587000000
+    },
+    {
+      "year": 2024,
+      "totalAssets": 1124797000000,
+      "totalLiabilities": 757283000000,
+      "currentAssets": 135212000000,
+      "nonCurrentAssets": 989585000000,
+      "currentLiabilities": 194808000000,
+      "nonCurrentLiabilities": 562475000000,
+      "shareholdersEquity": 367514000000
+    },
+    {
+      "year": 2023,
+      "totalAssets": 1050888000000,
+      "totalLiabilities": 668548000000,
+      "currentAssets": 157079000000,
+      "nonCurrentAssets": 893809000000,
+      "currentLiabilities": 163928000000,
+      "nonCurrentLiabilities": 504620000000,
+      "shareholdersEquity": 382340000000
+    },
+    {
+      "year": 2022,
+      "totalAssets": 976709000000,
+      "totalLiabilities": 612324000000,
+      "currentAssets": 163052000000,
+      "nonCurrentAssets": 813657000000,
+      "currentLiabilities": 163731000000,
+      "nonCurrentLiabilities": 448593000000,
+      "shareholdersEquity": 364385000000
+    },
+    {
+      "year": 2021,
+      "totalAssets": 972951000000,
+      "totalLiabilities": 583370000000,
+      "currentAssets": 168247000000,
+      "nonCurrentAssets": 804704000000,
+      "currentLiabilities": 134913000000,
+      "nonCurrentLiabilities": 448457000000,
+      "shareholdersEquity": 389581000000
+    },
+    {
+      "year": 2020,
+      "totalAssets": 987419000000,
+      "totalLiabilities": 676269000000,
+      "currentAssets": 142323000000,
+      "nonCurrentAssets": 845096000000,
+      "currentLiabilities": 136287000000,
+      "nonCurrentLiabilities": 539982000000,
+      "shareholdersEquity": 311150000000
+    },
+    {
+      "year": 2019,
+      "totalAssets": 926011000000,
+      "totalLiabilities": 626874000000,
+      "currentAssets": 112101000000,
+      "nonCurrentAssets": 813910000000,
+      "currentLiabilities": 116147000000,
+      "nonCurrentLiabilities": 510727000000,
+      "shareholdersEquity": 299137000000
+    },
+    {
+      "year": 2018,
+      "totalAssets": 860473000000,
+      "totalLiabilities": 576930000000,
+      "currentAssets": 143606000000,
+      "nonCurrentAssets": 716867000000,
+      "currentLiabilities": 97068000000,
+      "nonCurrentLiabilities": 479862000000,
+      "shareholdersEquity": 283543000000
+    },
+    {
+      "year": 2017,
+      "totalAssets": 831515000000,
+      "totalLiabilities": 561906000000,
+      "currentAssets": 155909000000,
+      "nonCurrentAssets": 675606000000,
+      "currentLiabilities": 82535000000,
+      "nonCurrentLiabilities": 479371000000,
+      "shareholdersEquity": 269609000000
+    },
+    {
+      "year": 2016,
+      "totalAssets": 804945000000,
+      "totalLiabilities": 552202000000,
+      "currentAssets": 145907000000,
+      "nonCurrentAssets": 659038000000,
+      "currentLiabilities": 81167000000,
+      "nonCurrentLiabilities": 471035000000,
+      "shareholdersEquity": 252743000000
+    }
+  ],
   "priceHistory": {
     "length": 1250,
     "first": {

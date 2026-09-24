@@ -1,6 +1,12 @@
 export { parseBasicInfo } from './basicInfo.js'
 export { fetchCashFlow } from './cashFlow.js'
 export { fetchDividends } from './dividends.js'
+export {
+  fetchFiiDividends,
+  fetchFiiList,
+  fetchFiiPage,
+  parseFiiPage,
+} from './fii.js'
 export { fetchIndicators } from './indicators.js'
 export { fetchStockPage } from './page.js'
 export { fetchPassiveChart } from './passiveChart.js'

@@ -1,9 +1,10 @@
+/** Erro devolvido no campo `errors` das respostas da API */
 export interface ErrorResponse {
   message: string
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  data?: any
+  data?: unknown
 }
 
+/** Corpo padrão das respostas da API */
 export interface ResponseProps<T> {
   status: number
   data?: T

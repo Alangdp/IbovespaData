@@ -1,6 +1,10 @@
 import express from 'express'
 
-import { index, listFundos } from '../controllers/fundo.controller.js'
+import {
+  index,
+  indexTaxas,
+  listFundos,
+} from '../controllers/fundo.controller.js'
 
 const router = express.Router()
 
@@ -9,5 +13,8 @@ router.get('/fundos', listFundos)
 
 // Rota que retorna o detalhe de um fundo imobiliário
 router.get('/fundos/:ticker', index)
+
+// Rota que retorna o cálculo da taxa de administração, trimestre a trimestre
+router.get('/fundos/:ticker/taxas', indexTaxas)
 
 export default router

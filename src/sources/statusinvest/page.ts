@@ -1,26 +1,44 @@
 import axios, { AxiosError } from 'axios'
 
-// Baixa o HTML da página da ação (https://statusinvest.com.br/acoes/:ticker).
-// Erros conhecidos viram mensagens estáveis que o errorResponse reconhece.
-export async function fetchStockPage(ticker: string): Promise<string> {
+/**
+ * Baixa o HTML de uma página do statusinvest
+ *
+ * @param path - Caminho da página (ex.: `acoes/petr4`)
+ * @returns O HTML da página
+ * @throws Error com `403`/`404` na mensagem, que o `errorResponse` reconhece
+ */
+export async function fetchStatusInvestPage(path: string): Promise<string> {
   try {
-    const response = await axios.get(
-      `https://statusinvest.com.br/acoes/${ticker}`,
+    // Busca a página
+    const response = await axios.get<string>(
+      `https://statusinvest.com.br/${path}`,
       { headers: { 'User-Agent': 'CPI/V1' } },
     )
     return response.data
   } catch (err) {
-    if (err instanceof AxiosError) {
-      const status = err.response?.status
+    const status = err instanceof AxiosError ? err.response?.status : undefined
 
-      if (status === 403) throw new Error('BLOCKED REQUEST CODE 403')
-      if (status === 404) throw new Error('INVALID TICKER CODE 404')
+    // Se o statusinvest bloqueou a requisição
+    if (status === 403) {
+      throw new Error('BLOCKED REQUEST CODE 403')
     }
-
-    if (err instanceof Error) {
-      throw new Error(err.message)
-    } else {
-      throw new Error('An unknown error occurred')
+    // Se o ticker não existe
+    if (status === 404) {
+      throw new Error('INVALID TICKER CODE 404')
     }
+    // Retorna um Error simples: um AxiosError cairia no ramo de erro da
+    // própria API no errorResponse
+    throw new Error(err instanceof Error ? err.message : String(err))
   }
+}
+
+/**
+ * Baixa o HTML da página da ação (https://statusinvest.com.br/acoes/:ticker)
+ *
+ * @param ticker - Código da ação (ex.: PETR4)
+ * @returns O HTML da página
+ * @throws Error com `403`/`404` na mensagem, que o `errorResponse` reconhece
+ */
+export async function fetchStockPage(ticker: string): Promise<string> {
+  return fetchStatusInvestPage(`acoes/${ticker}`)
 }

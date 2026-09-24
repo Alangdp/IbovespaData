@@ -1,25 +1,22 @@
 import axios from 'axios'
 import * as cheerio from 'cheerio'
 
-// Lista todos os tickers negociados, lida da tabela de resultados do
-// fundamentus (https://www.fundamentus.com.br/resultado.php).
+/**
+ * Lista todos os tickers negociados na B3, lidos da tabela de resultados do
+ * fundamentus (https://www.fundamentus.com.br/resultado.php)
+ *
+ * @throws AxiosError se a página não puder ser baixada
+ */
 export async function fetchAllTickers(): Promise<string[]> {
-  try {
-    const response = await axios.request({
-      method: 'GET',
-      url: 'https://www.fundamentus.com.br/resultado.php',
-      headers: { 'user-agent': 'CPI/V1', 'content-length': 0 },
-    })
+  // Busca a tabela de resultados
+  const response = await axios.get<string>(
+    'https://www.fundamentus.com.br/resultado.php',
+    { headers: { 'user-agent': 'CPI/V1', 'content-length': 0 } },
+  )
 
-    const $ = cheerio.load(response.data)
-    return $('td span a')
-      .map((index, element) => $(element).text())
-      .get()
-  } catch (err) {
-    if (err instanceof Error) {
-      throw new Error(err.message)
-    } else {
-      throw new Error('An unknown error occurred')
-    }
-  }
+  // Retorna o texto dos links da tabela (um por ticker)
+  const $ = cheerio.load(response.data)
+  return $('td span a')
+    .map((_index, element) => $(element).text())
+    .get()
 }

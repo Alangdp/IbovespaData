@@ -9,14 +9,14 @@
       "ifFalse": 1,
       "ifTrue": 2,
       "rule": true,
-      "ruleName": "Média do Dividend Yield nos últimos 5 anos > 0.06 (5%)",
+      "ruleName": "Média do Dividend Yield nos últimos 5 anos > 0.06 (6%)",
       "scored": true
     },
     {
       "ifFalse": 1,
       "ifTrue": 2,
       "rule": true,
-      "ruleName": "Mediana do Dividend Yield nos últimos 5 anos > 0.06 (5%)",
+      "ruleName": "Mediana do Dividend Yield nos últimos 5 anos > 0.06 (6%)",
       "scored": true
     },
     {
@@ -71,7 +71,7 @@
   ],
   "infoData": {
     "actualPrice": 49.64,
-    "dy": 19.7215,
+    "dy": 0.073865,
     "maxPrice": 120.984452
   }
 }

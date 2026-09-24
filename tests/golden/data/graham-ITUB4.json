@@ -6,7 +6,7 @@
   "totalPoints": 0,
   "totalEvaluate": [
     {
-      "ruleName": "A empresa tem dados de \"Net Liquid\" para os últimos 10 anos",
+      "ruleName": "Lucro líquido positivo nos últimos 10 anos",
       "rule": true,
       "scored": true
     },
@@ -41,7 +41,7 @@
       "scored": false
     },
     {
-      "ruleName": "Crescimento médio em 5 anos é positivo",
+      "ruleName": "Crescimento do lucro líquido em 5 anos maior que 5%",
       "rule": true,
       "scored": true
     },

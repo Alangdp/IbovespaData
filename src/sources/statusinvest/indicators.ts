@@ -4,7 +4,7 @@ import type {
 } from '../../types/indicators.type.js'
 import { statusInvestApi } from './http.js'
 
-// Todo indicador começa zerado; os que a API devolver sobrescrevem o padrão.
+/** Indicadores esperados; os que a API não devolver ficam zerados */
 const INDICATOR_KEYS: (keyof FinancialIndicators)[] = [
   'dy',
   'p_l',
@@ -37,31 +37,40 @@ const INDICATOR_KEYS: (keyof FinancialIndicators)[] = [
   'receitas_cagr5',
 ]
 
-function emptyIndicators(): FinancialIndicators {
-  return Object.fromEntries(
-    INDICATOR_KEYS.map((key) => [key, { actual: 0, avg: 0, olds: [] }]),
-  ) as unknown as FinancialIndicators
-}
-
-// Indicadores históricos (últimos 7 anos). Ao contrário das demais consultas,
-// falha de forma explícita: o Stock não faz sentido sem indicadores.
+/**
+ * Busca os indicadores históricos da ação (últimos 7 anos)
+ *
+ * Ao contrário das demais consultas, falha de forma explícita: o Stock não faz
+ * sentido sem indicadores
+ *
+ * @param ticker - Código da ação (ex.: PETR4)
+ * @throws Error se a API falhar
+ */
 export async function fetchIndicators(
   ticker: string,
 ): Promise<FinancialIndicators> {
+  // Busca o histórico de indicadores
   const data = await statusInvestApi<IndicatorRoot>(
+    'acao/indicatorhistoricallist',
     {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      params: `codes%5B%5D=${ticker}&time=7&byQuarter=false&futureData=false`,
+      form: `codes%5B%5D=${ticker}&time=7&byQuarter=false&futureData=false`,
     },
-    'indicatorhistoricallist',
   )
-  if (!data) throw new Error('Error Getting Indicators Data')
+  // Se a API falhou
+  if (!data) {
+    throw new Error('Error Getting Indicators Data')
+  }
 
-  const indicators = emptyIndicators()
+  // Presume que todo indicador está zerado
+  const indicators = {} as FinancialIndicators
+  for (const key of INDICATOR_KEYS) {
+    indicators[key] = { actual: 0, avg: 0, olds: [] }
+  }
 
-  const tickerReference = Object.keys(data.data)[0]
-  for (const item of data.data[tickerReference]) {
+  // Atualiza os indicadores devolvidos pela API (a resposta vem por ticker)
+  const [items] = Object.values(data.data)
+  for (const item of items) {
     indicators[item.key as keyof FinancialIndicators] = {
       actual: item.actual,
       avg: item.avg,

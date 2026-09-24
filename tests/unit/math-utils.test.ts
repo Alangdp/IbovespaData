@@ -17,12 +17,10 @@ describe('MathUtils', () => {
     expect(MathUtils.makeMedian([0.4, 0.1, 0.3, 0.2])).toBeCloseTo(0.25)
   })
 
-  // Bug conhecido: makeMedian usa `.sort()` sem comparador (ordem
-  // lexicográfica) e ordena o array recebido no lugar. Com números >= 10 o
-  // resultado é errado. Quando for corrigido este teste passa a falhar e
-  // deve virar `test`.
-  test.failing('makeMedian ordena numericamente', () => {
-    expect(MathUtils.makeMedian([10, 9, 100])).toBe(10)
+  test('makeMedian ordena numericamente sem alterar a lista', () => {
+    const values = [10, 9, 100]
+    expect(MathUtils.makeMedian(values)).toBe(10)
+    expect(values).toEqual([10, 9, 100])
   })
 
   test('abbreviateNumber', () => {

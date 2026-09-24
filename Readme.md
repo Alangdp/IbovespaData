@@ -1,7 +1,7 @@
 # IbovespaData
 
 API que consome o histórico de 5 anos de preços e dividendos de ações brasileiras
-(statusinvest / fundamentus) e de FIIs (brapi.dev), pontua os papéis pelos métodos
+(statusinvest / fundamentus) e de FIIs (statusinvest), pontua os papéis pelos métodos
 de Bazin e Graham e simula investimentos ao longo do tempo. Tudo é guardado em
 cache no Redis.
 
@@ -36,6 +36,27 @@ Docker: `docker build -t ibovespadata .` gera a imagem da API (a API precisa de
 `/dividends/history`), `GET /bazin/:ticker`, `GET /graham/:ticker`,
 `GET /simulation/:ticker`, `GET /fundos` (`?tickers=A,B`), `GET /fundos/:ticker` e
 imagens em `/images/avatar/*` e `/images/logos/*`.
+
+`GET /fundos/:ticker/taxas` mostra o cálculo da taxa de administração trimestre a
+trimestre.
+
+Os campos `gestora`, `taxa_administracao` e `limite_distribuicao_respeitado` vêm
+dos dados abertos da CVM (informes mensal, trimestral e anual de todos os FIIs).
+Um job diário (6h) consulta o ETag dos zips e só baixa quando a CVM republica
+(em geral 1x por semana); para carregar na hora: `bun run cvm:refresh` (ou
+`bun run cvm:refresh -- --force`).
+
+O `ltv_medio` (fundos de Papel e Híbrido) é lido do relatório gerencial mais
+recente no FNET, procurando "LTV médio" ou "LTV consolidado" no texto do PDF;
+fica `null` quando a gestora não publica a média. Como o FNET é lento (de 2 s a
+mais de 1 min por PDF), a leitura roda numa fila em segundo plano: a primeira
+consulta do fundo volta sem LTV e as seguintes já trazem o valor (cache de 7
+dias).
+
+As rotas `/fundos` estão documentadas em `openapi.yaml`: o `data` segue o schema
+`Fundo` do contrato do comparador de FIIs (`fii-api.yaml`), com campos extras
+marcados como "Extra". Um teste em `tests/http/routes.test.ts` falha se a
+resposta e o schema divergirem.
 
 ## Testes
 

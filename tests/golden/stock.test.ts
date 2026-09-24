@@ -8,21 +8,23 @@ import {
 } from 'bun:test'
 
 import { Bazin } from '../../src/Entities/Bazin'
-import { Granham } from '../../src/Entities/Graham'
+import { Graham } from '../../src/Entities/Graham'
 import { Simulation } from '../../src/Entities/Simulation'
-import { Stock } from '../../src/Entities/Stock'
 import { fetchAllTickers } from '../../src/sources/fundamentus'
 import { fetchStockPage } from '../../src/sources/statusinvest'
-import { InstanceStock } from '../../src/useCases/instanceStock'
+import { instanceStock } from '../../src/useCases/instanceStock'
 import { expectGolden } from '../support/golden'
 import { replayFixtures } from '../support/http-fixtures'
 
 // Caracterização do fluxo de scraping -> Stock -> pontuações, com as respostas
 // HTTP gravadas em tests/fixtures. Serve de rede de segurança para refatorar
-// Fetcher/InstanceStock sem mudar o resultado. Para regravar as fixtures:
+// fontes/instanceStock sem mudar o resultado. Para regravar as fixtures:
 //   bun tests/support/record.ts && UPDATE_GOLDEN=1 bun test
 
 const TICKERS = ['PETR4', 'ITUB4']
+
+// CDI anual fixo (BCB, série 4389, 22/09/2026) para o Graham não depender da rede
+const CDI = 0.1365
 
 function digest(value: unknown) {
   return new Bun.CryptoHasher('sha256')
@@ -40,8 +42,8 @@ afterAll(() => {
 })
 
 describe.each(TICKERS)('%s', (ticker) => {
-  test('InstanceStock.execute monta o Stock completo', async () => {
-    const stock = await InstanceStock.execute(ticker)
+  test('instanceStock monta o Stock completo', async () => {
+    const stock = await instanceStock(ticker)
 
     // priceHistory é longo (5 anos diários): guarda o resumo + hash
     const { priceHistory, ...rest } = JSON.parse(JSON.stringify(stock))
@@ -57,19 +59,19 @@ describe.each(TICKERS)('%s', (ticker) => {
   })
 
   test('pontuação Bazin', async () => {
-    const stock = await InstanceStock.execute(ticker)
-    expectGolden(`bazin-${ticker}`, new Bazin(stock).makePoints(stock))
+    const stock = await instanceStock(ticker)
+    expectGolden(`bazin-${ticker}`, new Bazin(stock).makePoints())
   })
 
   test('pontuação Graham', async () => {
-    const stock = new Stock(await InstanceStock.execute(ticker))
-    expectGolden(`graham-${ticker}`, await new Granham(stock).makePoints(stock))
+    const stock = await instanceStock(ticker)
+    expectGolden(`graham-${ticker}`, new Graham(stock, CDI).makePoints())
   })
 
   test('simulação de investimento', async () => {
     const simulation = new Simulation(ticker, 1000)
     await simulation.initialize()
-    const result = await simulation.execute()
+    const result = simulation.execute()
 
     expectGolden(`simulation-${ticker}`, {
       startSimulation: result.startSimulation,

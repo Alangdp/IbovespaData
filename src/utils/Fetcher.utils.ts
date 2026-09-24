@@ -1,35 +1,43 @@
 import * as cheerio from 'cheerio'
 
-import type { FetcherUtilsProtocol } from './../interfaces/FetcherUtils.type'
 import Utilities from './Utilities.js'
 
-export default class FetcherUtils implements FetcherUtilsProtocol {
-  private $?: cheerio.CheerioAPI
+const PLACEHOLDER_IMAGE =
+  'https://spassodourado.com.br/wp-content/uploads/2015/01/default-placeholder.png'
 
-  constructor(html?: string) {
-    if (html) this.$ = cheerio.load(html)
+/** Extrai textos, números e imagens de uma página HTML por seletor CSS */
+export default class FetcherUtils {
+  private readonly $: cheerio.CheerioAPI
+
+  /** @param html - HTML completo da página */
+  constructor(html: string) {
+    this.$ = cheerio.load(html)
   }
 
+  /** Retorna o texto do elemento, ou string vazia se ele não existir */
   extractText(selector: string): string {
-    if (!this.$) throw new Error('Invalid $')
-    return this.$(selector).text() || ''
+    return this.$(selector).text()
   }
 
+  /**
+   * Retorna a URL da imagem guardada no atributo `data-img` (formato
+   * `url(/caminho)`), ou uma imagem genérica se o atributo não existir
+   */
   extractImage(selector: string): string {
-    if (!this.$) throw new Error('Invalid $')
-    const element = this.$(selector)
-    try {
-      let img = element.attr('data-img') || ''
-      img = img.split('(')[1].split(')')[0]
-      img = `https://statusinvest.com.br/${img}`
-      return img
-    } catch (err) {
-      return 'https://spassodourado.com.br/wp-content/uploads/2015/01/default-placeholder.png'
+    // Busca o caminho entre os parênteses
+    const path = this.$(selector)
+      .attr('data-img')
+      ?.match(/\(([^)]*)\)/)?.[1]
+
+    // Se o elemento não tem imagem
+    if (path === undefined) {
+      return PLACEHOLDER_IMAGE
     }
+    return `https://statusinvest.com.br/${path}`
   }
 
+  /** Retorna o texto do elemento convertido para número (ver `formateNumber`) */
   extractNumber(selector: string): number {
-    if (!this.$) throw new Error('Invalid $')
     return Utilities.formateNumber(this.extractText(selector))
   }
 }

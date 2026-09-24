@@ -1,47 +1,39 @@
 import { Redis } from '@/global/Redis.js'
-import type { IStockDatabase } from '@/types/Database/StockRepository.type.js'
 import type { StockProps } from '@/types/stock.types.js'
 
-// import env from '../env.js'
-import { InstanceStock } from './instanceStock.js'
+import { instanceStock } from './instanceStock.js'
 
-// const HOUR_IN_MILISECONDS = 3600000
-
-// const TOLERANCE_UPDATE = env.TOLERANCE_TIME_HOURS * HOUR_IN_MILISECONDS
-
+/** Ação como fica guardada no cache, com o momento da gravação */
 interface StockCache extends StockProps {
   lastUpdate: number
 }
 
-export class StockDataBase implements IStockDatabase {
+/** Acesso às ações, com cache no Redis (chave `STOCK-<ticker>`) */
+export class StockDataBase {
+  /**
+   * Retorna a ação do cache ou, se não estiver lá, busca nas fontes e grava
+   *
+   * @param ticker - Código da ação (ex.: PETR4)
+   * @param timeExpireSeconds - Validade do cache (padrão do `Redis`)
+   */
   async getStock(
     ticker: string,
     timeExpireSeconds?: number,
   ): Promise<StockProps> {
+    // Busca a ação no cache
     const cachedStock = await Redis.getObjectFromCache<StockCache>(
       `STOCK-${ticker}`,
     )
-
+    // Se a ação está no cache
     if (cachedStock) {
-      return cachedStock as StockProps
+      return cachedStock
     }
 
-    const newStock = await this.getNewStock(ticker)
-    const stockCache: StockCache = {
-      ...newStock,
-      lastUpdate: Date.now(),
-    }
-    Redis.saveObjectToCache(
-      `STOCK-${ticker}`,
-      stockCache,
-      timeExpireSeconds || undefined,
-    )
+    // Busca a ação nas fontes e grava no cache sem esperar a gravação
+    const stock = await instanceStock(ticker)
+    const stockCache: StockCache = { ...stock, lastUpdate: Date.now() }
+    Redis.saveObjectToCache(`STOCK-${ticker}`, stockCache, timeExpireSeconds)
 
-    return newStock
-  }
-
-  async getNewStock(ticker: string): Promise<StockProps> {
-    const newStock = await InstanceStock.execute(ticker)
-    return newStock
+    return stock
   }
 }

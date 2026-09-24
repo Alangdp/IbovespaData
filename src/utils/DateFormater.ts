@@ -1,35 +1,34 @@
-// FIXME Revisar SOLID mais tarde
+/** Conversões entre `Date` e datas no formato brasileiro (`dd/mm/aaaa`) */
 export class DateFormatter {
+  /** Formata a data como `dd/mm/aaaa` */
   static dateToString(date: Date): string {
-    const year = date.getFullYear()
-    const month = date.getMonth()
-    const day = date.getDate()
-
-    const addZero = (value: number) => {
-      return value < 10 ? '0' + value : value
-    }
-
-    return `${addZero(day)}/${addZero(month + 1)}/${year}`
+    const day = String(date.getDate()).padStart(2, '0')
+    const month = String(date.getMonth() + 1).padStart(2, '0')
+    return `${day}/${month}/${date.getFullYear()}`
   }
 
+  /**
+   * Converte `dd/mm/aaaa` ou `dd/mm/aa` (com ou sem ` 00:00`) em `Date`
+   *
+   * @returns `null` se o texto não estiver no formato esperado
+   */
   static stringToDate(dataString: string): Date | null {
-    if (dataString.includes('00:00'))
-      dataString = dataString.replace('00:00', '').trim()
+    // Remove o horário zerado, se houver
+    const partes = dataString.replace('00:00', '').trim().split('/')
 
-    const partes = dataString.split('/')
-
+    // Se não tem dia, mês e ano
     if (partes.length !== 3) {
       console.error('Date format invalid, use: "dd/mm/yyyy".')
       return null
     }
 
+    // Se alguma parte não é número
     const [day, month, year] = partes.map(Number)
-
-    if (isNaN(day) || isNaN(month) || isNaN(year)) {
+    if (Number.isNaN(day) || Number.isNaN(month) || Number.isNaN(year)) {
       return null
     }
-    const date = new Date(year > 100 ? year : year + 2000, month - 1, day)
 
-    return date
+    // Retorna a data, completando anos de 2 dígitos com 2000
+    return new Date(year > 100 ? year : year + 2000, month - 1, day)
   }
 }

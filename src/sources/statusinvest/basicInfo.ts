@@ -1,8 +1,12 @@
 import type { BasicInfoReturn } from '../../types/BasicInfo.type.js'
 import Scrapper from '../../utils/Fetcher.utils.js'
 
-// Seletores CSS dos campos da página da ação. São frágeis: qualquer mudança
-// no layout do statusinvest quebra a extração (o teste golden acusa).
+/**
+ * Seletores CSS dos campos da página da ação
+ *
+ * São frágeis: qualquer mudança no layout do statusinvest quebra a extração
+ * (o teste golden acusa)
+ */
 const selectors = {
   imageURL:
     '#company-section > div:nth-child(1) > div > div.d-block.d-md-flex.mb-5.img-lazy-group > div.company-brand.w-100.w-md-30.p-3.rounded.mb-3.mb-md-0.bg-lazy',
@@ -20,7 +24,7 @@ const selectors = {
     '#main-2 > div:nth-child(4) > div > div.pb-3.pb-md-5 > div > div:nth-child(5) > div > div:nth-child(1) > strong',
   dividendPorcent:
     '#main-2 > div:nth-child(4) > div > div.pb-3.pb-md-5 > div > div:nth-child(4) > div > div:nth-child(1) > strong',
-  name: 'title',
+  name: 'h1 small',
   LPA: '#indicators-section > div.indicator-today-container > div > div:nth-child(1) > div > div:nth-child(11) > div > div > strong',
   VPA: '#indicators-section > div.indicator-today-container > div > div:nth-child(1) > div > div:nth-child(9) > div > div > strong',
   liquidPatrimony:
@@ -33,12 +37,19 @@ const selectors = {
     '#company-section > div:nth-child(1) > div > div.card.bg-main-gd-h.white-text.rounded.ov-hidden.pt-0.pb-0 > div > div:nth-child(3) > div > div > div > a > strong',
 }
 
-// Extrai os dados básicos da ação a partir do HTML da página.
+/**
+ * Extrai os dados básicos da ação a partir do HTML da página
+ *
+ * @param html - HTML de https://statusinvest.com.br/acoes/:ticker
+ * @param ticker - Código da ação (ex.: PETR4)
+ */
 export function parseBasicInfo(html: string, ticker: string): BasicInfoReturn {
   const page = new Scrapper(html)
 
+  // Carrega o dividend yield, usado em percentual e em decimal
   const dividendPorcent = page.extractNumber(selectors.dividendPorcent)
 
+  // Retorna os campos lidos da página
   return {
     ticker,
     image: page.extractImage(selectors.imageURL),

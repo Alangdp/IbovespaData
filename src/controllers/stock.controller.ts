@@ -6,150 +6,55 @@ import { errorResponse, response } from '../utils/Responses.js'
 
 const stockRepository = new StockDataBase()
 
-// Rota que retorna todos os dados relacionados ao StockProps
-const index: RequestHandler<{ ticker: string }> = async (req, res) => {
-  try {
-    const ticker: string = req.params.ticker
-    const stock: StockProps = await stockRepository.getStock(ticker)
-
-    return response(res, {
-      status: 200,
-      data: stock,
-    })
-  } catch (error) {
-    return errorResponse(res, error)
+/**
+ * Cria uma rota `/:ticker` que busca a ação e devolve o recorte escolhido
+ *
+ * @param select - Extrai da ação o que vai no campo `data` da resposta
+ */
+function stockRoute(
+  select: (stock: StockProps) => unknown,
+): RequestHandler<{ ticker: string }> {
+  return async (req, res) => {
+    try {
+      // Busca a ação
+      const stock = await stockRepository.getStock(req.params.ticker)
+      return response(res, { status: 200, data: select(stock) })
+    } catch (error) {
+      return errorResponse(res, error)
+    }
   }
 }
 
-// Rota que retorna apenas as informações relacionadas ao preço
-const indexPrice: RequestHandler<{ ticker: string }> = async (req, res) => {
-  try {
-    const ticker: string = req.params.ticker
-    const stock: StockProps = await stockRepository.getStock(ticker)
+/** Retorna todos os dados da ação */
+export const index = stockRoute((stock) => stock)
 
-    return response(res, {
-      status: 200,
-      data: {
-        ticker: stock.ticker,
-        price: stock.priceHistory,
-        actualPrice: stock.actualPrice,
-      },
-    })
-  } catch (error) {
-    return errorResponse(res, error)
-  }
-}
+/** Retorna apenas as informações relacionadas ao preço */
+export const indexPrice = stockRoute((stock) => ({
+  ticker: stock.ticker,
+  price: stock.priceHistory,
+  actualPrice: stock.actualPrice,
+}))
 
-// Rota que retorna as informações sobre dividendos
-const indexDividends: RequestHandler<{ ticker: string }> = async (req, res) => {
-  try {
-    const ticker: string = req.params.ticker
-    const stock: StockProps = await stockRepository.getStock(ticker)
+/** Retorna as informações sobre dividendos */
+export const indexDividends = stockRoute((stock) => ({
+  dividendYield: stock.dividendYield,
+  lastDividendsValueYear: stock.lastDividendsValueYear,
+  lastDividendsValue: stock.lastDividendsValue,
+}))
 
-    return response(res, {
-      status: 200,
-      data: {
-        dividendYield: stock.dividendYield,
-        lastDividendsValueYear: stock.lastDividendsValueYear,
-        lastDividendsValue: stock.lastDividendsValue,
-      },
-    })
-  } catch (error) {
-    return errorResponse(res, error)
-  }
-}
+/** Retorna os indicadores financeiros da ação */
+export const indexIndicators = stockRoute((stock) => stock.indicators)
 
-// Rota que retorna os indicadores financeiros da ação
-const indexIndicators: RequestHandler<{ ticker: string }> = async (
-  req,
-  res,
-) => {
-  try {
-    const ticker: string = req.params.ticker
-    const stock: StockProps = await stockRepository.getStock(ticker)
+/** Retorna as variáveis usadas por Graham */
+export const indexGraham = stockRoute((stock) => ({
+  netLiquid: stock.netLiquid,
+  passiveChart: stock.passiveChart,
+}))
 
-    return response(res, {
-      status: 200,
-      data: stock.indicators,
-    })
-  } catch (error) {
-    return errorResponse(res, error)
-  }
-}
+/** Retorna o histórico de preços */
+export const indexHistory = stockRoute((stock) => stock.priceHistory)
 
-// Rota que retorna as variáveis de Graham
-const indexGraham: RequestHandler<{ ticker: string }> = async (req, res) => {
-  try {
-    const ticker: string = req.params.ticker
-    const stock: StockProps = await stockRepository.getStock(ticker)
-
-    return response(res, {
-      status: 200,
-      data: {
-        netLiquid: stock.netLiquid,
-        passiveChart: stock.passiveChart,
-      },
-    })
-  } catch (error) {
-    return errorResponse(res, error)
-  }
-}
-
-// // Rota que retorna o fluxo de caixa
-// const indexCashFlow: RequestHandler<{ ticker: string }> = async (req, res) => {
-//   try {
-//     const ticker: string = req.params.ticker
-//     const stock: StockProps = await stockRepository.getStock(ticker)
-
-//     return response(res, {
-//       status: 200,
-//       data: stock.,
-//     })
-//   } catch (error) {
-//     return errorResponse(res, error)
-//   }
-// }
-
-// Rota que retorna o histórico de preços
-const indexHistory: RequestHandler<{ ticker: string }> = async (req, res) => {
-  try {
-    const ticker: string = req.params.ticker
-    const stock: StockProps = await stockRepository.getStock(ticker)
-
-    return response(res, {
-      status: 200,
-      data: stock.priceHistory,
-    })
-  } catch (error) {
-    return errorResponse(res, error)
-  }
-}
-
-// Rota que retorna o histórico de dividendos
-const indexDividendsHistory: RequestHandler<{ ticker: string }> = async (
-  req,
-  res,
-) => {
-  try {
-    const ticker: string = req.params.ticker
-    const stock: StockProps = await stockRepository.getStock(ticker)
-
-    return response(res, {
-      status: 200,
-      data: stock.lastDividendsValue,
-    })
-  } catch (error) {
-    return errorResponse(res, error)
-  }
-}
-
-export {
-  index,
-  indexDividends,
-  indexDividendsHistory,
-  indexGraham,
-  //   indexCashFlow,
-  indexHistory,
-  indexIndicators,
-  indexPrice,
-}
+/** Retorna o histórico de dividendos */
+export const indexDividendsHistory = stockRoute(
+  (stock) => stock.lastDividendsValue,
+)

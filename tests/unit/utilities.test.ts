@@ -13,6 +13,15 @@ describe('Utilities.formateNumber', () => {
     expect(Utilities.formateNumber('1.234.567')).toBe(1234567)
   })
 
+  test('milhar com ponto e decimal com vírgula', () => {
+    expect(Utilities.formateNumber('58.671,52m²')).toBe(58671.52)
+    expect(Utilities.formateNumber('R$ 7.589.554.105')).toBe(7589554105)
+  })
+
+  test('mantém o sinal negativo', () => {
+    expect(Utilities.formateNumber('-0,19%')).toBe(-0.19)
+  })
+
   test('texto sem dígitos vira 0', () => {
     expect(Utilities.formateNumber('-')).toBe(0)
     expect(Utilities.formateNumber('')).toBe(0)

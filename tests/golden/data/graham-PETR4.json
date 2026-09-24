@@ -6,7 +6,7 @@
   "totalPoints": 0,
   "totalEvaluate": [
     {
-      "ruleName": "A empresa tem dados de \"Net Liquid\" para os últimos 10 anos",
+      "ruleName": "Lucro líquido positivo nos últimos 10 anos",
       "rule": false,
       "scored": false
     },
@@ -17,8 +17,8 @@
     },
     {
       "ruleName": "LPA crescente",
-      "rule": false,
-      "scored": false
+      "rule": true,
+      "scored": true
     },
     {
       "ruleName": "Pagamento constante de dividendos",
@@ -41,7 +41,7 @@
       "scored": true
     },
     {
-      "ruleName": "Crescimento médio em 5 anos é positivo",
+      "ruleName": "Crescimento do lucro líquido em 5 anos maior que 5%",
       "rule": true,
       "scored": true
     },
@@ -62,8 +62,8 @@
     },
     {
       "ruleName": "Dívida Bruta/Patrimônio inferior a 0.5",
-      "rule": true,
-      "scored": true
+      "rule": false,
+      "scored": false
     }
   ],
   "infoData": {

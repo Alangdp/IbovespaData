@@ -3,20 +3,20 @@
   "subId": "BAZIN",
   "defaultIfTrue": 1,
   "defaultIfFalse": 1,
-  "totalPoints": 9,
+  "totalPoints": 6,
   "totalEvaluate": [
     {
       "ifFalse": 1,
       "ifTrue": 2,
       "rule": true,
-      "ruleName": "Média do Dividend Yield nos últimos 5 anos > 0.06 (5%)",
+      "ruleName": "Média do Dividend Yield nos últimos 5 anos > 0.06 (6%)",
       "scored": true
     },
     {
       "ifFalse": 1,
       "ifTrue": 2,
       "rule": true,
-      "ruleName": "Mediana do Dividend Yield nos últimos 5 anos > 0.06 (5%)",
+      "ruleName": "Mediana do Dividend Yield nos últimos 5 anos > 0.06 (6%)",
       "scored": true
     },
     {
@@ -36,9 +36,9 @@
     {
       "ifFalse": 1,
       "ifTrue": 1,
-      "rule": true,
+      "rule": false,
       "ruleName": "Pagamento constante de dividendos nos últimos 5 anos",
-      "scored": true
+      "scored": false
     },
     {
       "ifFalse": 1,
@@ -71,7 +71,7 @@
   ],
   "infoData": {
     "actualPrice": 42.3,
-    "dy": 3.6993,
+    "dy": 0.074683,
     "maxPrice": 34.33201000000001
   }
 }
