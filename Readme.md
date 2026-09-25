@@ -38,17 +38,32 @@ Docker: `docker build -t ibovespadata .` gera a imagem da API (a API precisa de
 imagens em `/images/avatar/*` e `/images/logos/*`.
 
 `GET /fundos/:ticker/taxas` mostra o cálculo da taxa de administração trimestre a
-trimestre.
+trimestre, e `GET /fundos/:ticker/criterios` o de `diversificado`,
+`boa_localizacao` e `gestora_confiavel`. `GET /fundos/regioes` lista a
+classificação das cidades (base da localização) e `GET /gestoras` as gestoras
+de FII, para montar a lista de confiáveis.
 
-Os campos `gestora`, `taxa_administracao` e `limite_distribuicao_respeitado` vêm
-dos dados abertos da CVM (informes mensal, trimestral e anual de todos os FIIs).
+Os campos `gestora`, `taxa_administracao`, `limite_distribuicao_respeitado`,
+`diversificado` e `boa_localizacao` vêm dos dados abertos da CVM (informes
+mensal, trimestral e anual de todos os FIIs); a cidade de cada imóvel sai do
+endereço, comparado com os municípios do IBGE. Os limites das regras ficam em
+`src/config/fiiCriterios.ts`. O `gestora_confiavel` compara o CNPJ da gestora
+com `data/gestoras-confiaveis.json` (lista mantida à mão, relida quando muda;
+vazia, o campo fica `null`):
+
+```json
+{ "gestoras": [{ "cnpj": "16789525000198", "nome": "XP Vista" }] }
+```
+
+
 Um job diário (6h) consulta o ETag dos zips e só baixa quando a CVM republica
 (em geral 1x por semana); para carregar na hora: `bun run cvm:refresh` (ou
 `bun run cvm:refresh -- --force`).
 
-O `ltv_medio` (fundos de Papel e Híbrido) é lido do relatório gerencial mais
-recente no FNET, procurando "LTV médio" ou "LTV consolidado" no texto do PDF;
-fica `null` quando a gestora não publica a média. Como o FNET é lento (de 2 s a
+O `ltv_medio` e o `spread_credito` (fundos de Papel e Híbrido) são lidos do
+relatório gerencial mais recente no FNET, procurando "LTV médio"/"LTV
+consolidado" e "spread médio"/"spread de crédito" no texto do PDF; ficam
+`null` quando a gestora não publica a média. Como o FNET é lento (de 2 s a
 mais de 1 min por PDF), a leitura roda numa fila em segundo plano: a primeira
 consulta do fundo volta sem LTV e as seguintes já trazem o valor (cache de 7
 dias).
