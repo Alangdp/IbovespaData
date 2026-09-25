@@ -8,19 +8,20 @@ interface Dependencies {
 }
 
 /**
- * Cria o processador dos jobs da fila: lê o LTV do relatório gerencial do
- * fundo e invalida o cache do detalhe, para a próxima requisição já trazer o
- * LTV. A montagem real está em LtvQueue.ts
+ * Cria o processador dos jobs da fila: lê o LTV e o spread do relatório
+ * gerencial do fundo e invalida o cache do detalhe, para a próxima
+ * requisição já trazer os dois. A montagem real está em LtvQueue.ts
  */
 export function createLtvRefresher({ loadLtv, invalidateFundo }: Dependencies) {
   return async (job: { data: ltvQueueData }) => {
     const { cnpj, ticker } = job.data
 
-    // Lê o LTV do relatório gerencial
+    // Lê o LTV e o spread do relatório gerencial
     const ltv = await loadLtv(cnpj)
-    // Se encontrou o LTV, invalida o detalhe do fundo em cache (sem LTV o
-    // detalhe em cache já está correto e não precisa ser raspado de novo)
-    if (ltv.ltv !== null) {
+    // Se encontrou o LTV ou o spread, invalida o detalhe do fundo em cache
+    // (sem nenhum dos dois o detalhe em cache já está correto e não precisa
+    // ser raspado de novo)
+    if (ltv.ltv !== null || ltv.spread !== null) {
       await invalidateFundo(ticker)
     }
     return ltv

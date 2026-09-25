@@ -207,6 +207,49 @@ export function extractLtvMedio(text: string): number | null {
   return null
 }
 
+/**
+ * "Spread médio", "spread ponderado" ou "spread de crédito", seguido do valor
+ * em % ou bps em até 30 caracteres sem números (ex.: "spread médio de 1,5%
+ * a.a.", "Spread de Crédito 148 bps"). "spread de 2,10%" sozinho é de uma
+ * compra do mês, não da carteira
+ */
+const SPREAD_PATTERN =
+  /spread\s+(?:m[ée]dio(?:\s+ponderado)?|ponderado|de\s+cr[ée]dito)([^0-9%]{0,30}?)(\d{1,4}(?:[.,]\d{1,2})?)\s*(%|bps)/gi
+
+/** Maior spread aceito (%): acima disso é taxa total, não spread */
+const MAX_SPREAD = 20
+
+/**
+ * Indexador antes do valor: "SPREAD Médio IPCA + 10,15%" é a taxa acima da
+ * inflação, não o spread sobre o título público
+ */
+const SPREAD_INDEXADOR = /IPCA|CDI|IGP|INCC|\+/i
+
+/**
+ * Extrai o spread de crédito médio da carteira de CRIs do texto do relatório
+ * gerencial
+ *
+ * @returns O spread em % ao ano com vírgula (ex.: "1,48%"), ou `null` se o
+ * relatório não informar
+ */
+export function extractSpreadCredito(text: string): string | null {
+  for (const match of text.matchAll(SPREAD_PATTERN)) {
+    const [, between, value, unit] = match
+    // Se o trecho é um limite, uma faixa ou uma taxa com indexador
+    if (LTV_LIMIT_WORDS.test(between) || SPREAD_INDEXADOR.test(between)) {
+      continue
+    }
+    const number = Number(value.replace(',', '.'))
+    const spread = unit.toLowerCase() === 'bps' ? number / 100 : number
+    // Se o valor está fora da faixa possível
+    if (spread <= 0 || spread > MAX_SPREAD) {
+      continue
+    }
+    return `${spread.toFixed(2).replace('.', ',')}%`
+  }
+  return null
+}
+
 /** Soma meses a um `AAAA-MM` */
 function shiftMonth(yearMonth: string, months: number): string {
   const [year, month] = yearMonth.split('-').map(Number)

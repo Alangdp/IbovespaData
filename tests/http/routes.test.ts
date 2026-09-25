@@ -230,13 +230,70 @@ describe('rotas de fundos', () => {
         },
       ],
       endividamento: { data: '2026-06-01', obrigacoes: 0, ativo: 4100000000 },
+      segmentoAtuacao: 'Outros',
+      imoveis: [],
+      imoveisData: null,
+      carteira: {
+        data: '2026-06-30',
+        patrimonio: 4000000000,
+        cri: { quantidade: 90, total: 3200000000, maior: 120000000 },
+        fii: { quantidade: 10, total: 600000000, maior: 90000000 },
+      },
+      composicao: {
+        data: '2026-07-01',
+        imoveis: 150000000,
+        cri: 3200000000,
+        fii: 600000000,
+      },
     }),
   )
   cache.set('CVM-ISIN-MXRF', JSON.stringify('97521225000125'))
-  // LTV já lido do relatório gerencial (evita baixar o PDF no teste)
+  // LTV e spread já lidos do relatório gerencial (evita baixar o PDF no
+  // teste)
   cache.set(
-    'FNET-LTV-97521225000125',
-    JSON.stringify({ ltv: 56, referencia: '31/07/2026' }),
+    'FNET-LTV-v2-97521225000125',
+    JSON.stringify({ ltv: 56, spread: '1,48%', referencia: '31/07/2026' }),
+  )
+  // Classificação das cidades e gestoras, como o job de carga grava
+  cache.set(
+    'CVM-REGIOES',
+    JSON.stringify([
+      {
+        tipo: 'Logística',
+        cidade: 'Extrema',
+        uf: 'MG',
+        municipioId: 3125101,
+        imoveis: 40,
+        fundos: 12,
+        vacanciaMedia: 2.1,
+        vacanciaMercado: 8.4,
+        boa: true,
+        fonte: 'vacancia_tipo',
+      },
+      {
+        tipo: 'Escritórios',
+        cidade: 'São Paulo',
+        uf: 'SP',
+        municipioId: 3550308,
+        imoveis: 300,
+        fundos: 60,
+        vacanciaMedia: 12,
+        vacanciaMercado: 15,
+        boa: true,
+        fonte: 'vacancia_tipo',
+      },
+    ]),
+  )
+  cache.set(
+    'CVM-GESTORAS',
+    JSON.stringify([
+      {
+        cnpj: '16789525000198',
+        nome: 'XP VISTA ASSET MANAGEMENT LTDA.',
+        fundos: 30,
+      },
+      { cnpj: '33333333000133', nome: 'GESTORA ÁGUA LTDA', fundos: 2 },
+    ]),
   )
 
   test('GET /fundos/:ticker', async () => {
@@ -282,7 +339,77 @@ describe('rotas de fundos', () => {
     expect(body.data.alavancagem).toBe(0)
     expect(body.data.ltv_medio).toBe(56)
     expect(body.data.ltv_referencia).toBe('31/07/2026')
+    expect(body.data.spread_credito).toBe('1,48%')
     expect(body.data.dividendo_extraordinario_ultimo_ano).toBeBoolean()
+    // 90 CRIs e o maior com 3% do PL
+    expect(body.data.diversificado).toBe(true)
+    // Papel não tem localização
+    expect(body.data.boa_localizacao).toBeNull()
+  })
+
+  test('GET /fundos/:ticker/criterios detalha os critérios', async () => {
+    const { status, body } = await get('/fundos/mxrf11/criterios')
+
+    expect(status).toBe(200)
+    expect(body.data.ticker).toBe('MXRF11')
+    expect(body.data.segmento).toBe('Papel')
+    expect(body.data.diversificacao).toEqual({
+      diversificado: true,
+      classe: 'cri',
+      data: '2026-06-30',
+      criterios: [
+        {
+          criterio: 'quantidade_cri',
+          valor: 90,
+          limite: 10,
+          tipo: 'minimo',
+          ok: true,
+        },
+        {
+          criterio: 'maior_cri_sobre_pl',
+          valor: 3,
+          limite: 15,
+          tipo: 'maximo',
+          ok: true,
+        },
+      ],
+    })
+    expect(body.data.localizacao.boa_localizacao).toBeNull()
+    expect(body.data.gestora.cnpj).toBe('16789525000198')
+  })
+
+  test('GET /fundos/regioes filtra por tipo, UF e cidade', async () => {
+    const todas = await get('/fundos/regioes')
+    expect(todas.status).toBe(200)
+    expect(todas.body.data).toHaveLength(2)
+
+    const logistica = await get('/fundos/regioes?tipo=logistica&uf=mg')
+    expect(logistica.body.data.map((r: any) => r.cidade)).toEqual(['Extrema'])
+
+    const cidade = await get('/fundos/regioes?cidade=sao%20paulo')
+    expect(cidade.body.data.map((r: any) => r.cidade)).toEqual(['São Paulo'])
+  })
+
+  test('GET /gestoras busca por nome ou CNPJ', async () => {
+    const todas = await get('/gestoras')
+    expect(todas.status).toBe(200)
+    expect(todas.body.data).toHaveLength(2)
+    expect(Object.keys(todas.body.data[0]).sort()).toEqual([
+      'cnpj',
+      'confiavel',
+      'fundos',
+      'nome',
+    ])
+
+    const porNome = await get('/gestoras?busca=agua')
+    expect(porNome.body.data.map((g: any) => g.cnpj)).toEqual([
+      '33333333000133',
+    ])
+
+    const porCnpj = await get('/gestoras?busca=16.789.525')
+    expect(porCnpj.body.data.map((g: any) => g.cnpj)).toEqual([
+      '16789525000198',
+    ])
   })
 
   test('GET /fundos/:ticker/taxas detalha o cálculo', async () => {

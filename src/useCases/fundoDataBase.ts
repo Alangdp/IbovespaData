@@ -1,18 +1,26 @@
 import { CustomError } from '../errors/CustomError.js'
 import { LTV_JOB, ltvQueue } from '../global/Queue.js'
 import { Redis } from '../global/Redis.js'
+import { cnpjDigits } from '../sources/cvm/build.js'
+import type { CvmGestora, CvmRegiao } from '../types/cvm.type.js'
 import type { FiiListItem } from '../types/fii.type.js'
 import type { Fundo } from '../types/fundo.types.js'
+import { normalizeNome } from '../utils/Cidades.js'
 import FiiIndicators, { type TaxaTrimestre } from '../utils/FiiIndicators.js'
+import FiiQualidade, {
+  type Diversificacao,
+  type Localizacao,
+} from '../utils/FiiQualidade.js'
 import { CvmDataBase } from './cvmDataBase.js'
 import { FundoFetcher, type FundoLookups } from './FundoFetcher.js'
+import { isGestoraConfiavel } from './gestorasConfiaveis.js'
 import { LtvDataBase } from './ltvDataBase.js'
 
 /**
  * Versão do formato do Fundo no cache: aumente quando mudar os campos, para o
  * cache antigo (sem os campos novos) deixar de ser usado
  */
-const CACHE_VERSION = 4
+const CACHE_VERSION = 5
 const CACHE_PREFIX = `FUNDO-v${CACHE_VERSION}-`
 const LIST_CACHE_KEY = 'FUNDOS-LISTA'
 
@@ -35,6 +43,8 @@ const lookups: FundoLookups = {
   findCvm: async (cnpj, ticker) =>
     (cnpj ? await cvmDataBase.getByCnpj(cnpj) : null) ??
     (await cvmDataBase.getByTicker(ticker)),
+
+  isGestoraConfiavel,
 
   // Retorna o LTV já lido; se ainda não foi, enfileira a leitura (o job
   // invalida o cache do fundo ao terminar) e segue sem ele
@@ -60,6 +70,32 @@ export interface FundoTaxas {
   taxa_administracao: number | null
   /** Do mais antigo ao mais recente */
   trimestres: TaxaTrimestre[]
+}
+
+/** Detalhe dos critérios de qualidade do fundo */
+export interface FundoCriterios {
+  ticker: string
+  cnpj: string | null
+  segmento: Fundo['segmento']
+  diversificacao: Diversificacao
+  localizacao: Localizacao
+  gestora: {
+    nome: string | null
+    cnpj: string | null
+    confiavel: boolean | null
+  }
+}
+
+/** Gestora de FII com a marcação da lista de confiáveis */
+export interface GestoraListada extends CvmGestora {
+  confiavel: boolean | null
+}
+
+/** Filtros da classificação de cidades */
+export interface RegioesFiltro {
+  tipo?: string
+  uf?: string
+  cidade?: string
 }
 
 /** Acesso aos fundos, com cache no Redis */
@@ -141,6 +177,75 @@ export class FundoDataBase {
       taxa_administracao: FiiIndicators.taxaAdministracao(cvm),
       trimestres: cvm ? FiiIndicators.taxaPorTrimestre(cvm) : [],
     }
+  }
+
+  /**
+   * Retorna o cálculo de diversificado, boa_localizacao e gestora_confiavel
+   *
+   * @throws CustomError 404 se o ticker não for um FII listado
+   * @throws CustomError 422 se o fundo for de um segmento fora do contrato
+   */
+  async getCriterios(ticker: string): Promise<FundoCriterios> {
+    // Busca o fundo (valida o ticker e traz o segmento e o CNPJ) e os
+    // informes da CVM
+    const fundo = await this.getFundo(ticker)
+    const cvm =
+      (fundo.cnpj ? await cvmDataBase.getByCnpj(fundo.cnpj) : null) ??
+      (await cvmDataBase.getByTicker(fundo.ticker))
+    const gestoraCnpj = cvm?.gestora?.cnpj || null
+
+    return {
+      ticker: fundo.ticker,
+      cnpj: cvm?.cnpj ?? fundo.cnpj,
+      segmento: fundo.segmento,
+      diversificacao: FiiQualidade.diversificacao(fundo.segmento, cvm),
+      localizacao: FiiQualidade.localizacao(fundo.segmento, cvm),
+      gestora: {
+        nome: cvm?.gestora?.nome ?? null,
+        cnpj: gestoraCnpj,
+        confiavel: isGestoraConfiavel(gestoraCnpj),
+      },
+    }
+  }
+
+  /**
+   * Retorna a classificação das cidades por tipo de imóvel
+   *
+   * Os filtros ignoram maiúsculas e acentos; `cidade` aceita parte do nome
+   */
+  async getRegioes(filtro: RegioesFiltro = {}): Promise<CvmRegiao[]> {
+    const tipo = filtro.tipo ? normalizeNome(filtro.tipo) : null
+    const uf = filtro.uf ? normalizeNome(filtro.uf) : null
+    const cidade = filtro.cidade ? normalizeNome(filtro.cidade) : null
+
+    return (await cvmDataBase.getRegioes()).filter(
+      (regiao) =>
+        (!tipo || normalizeNome(regiao.tipo) === tipo) &&
+        (!uf || regiao.uf === uf) &&
+        (!cidade || normalizeNome(regiao.cidade).includes(cidade)),
+    )
+  }
+
+  /**
+   * Retorna as gestoras de FII com a marcação da lista de confiáveis
+   *
+   * @param busca - Parte do nome ou do CNPJ (ignora maiúsculas e acentos)
+   */
+  async getGestoras(busca?: string): Promise<GestoraListada[]> {
+    const termo = busca ? normalizeNome(busca) : null
+    const digitos = busca ? cnpjDigits(busca) : ''
+
+    return (await cvmDataBase.getGestoras())
+      .filter(
+        (gestora) =>
+          !termo ||
+          normalizeNome(gestora.nome).includes(termo) ||
+          (digitos.length > 0 && gestora.cnpj.includes(digitos)),
+      )
+      .map((gestora) => ({
+        ...gestora,
+        confiavel: isGestoraConfiavel(gestora.cnpj),
+      }))
   }
 
   /**

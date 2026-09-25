@@ -54,3 +54,53 @@ export const listFundos: RequestHandler = async (req, res) => {
     return errorResponse(res, error)
   }
 }
+
+/**
+ * Retorna o cálculo de diversificado, boa_localizacao e gestora_confiavel
+ * (GET /fundos/:ticker/criterios)
+ */
+export const indexCriterios: RequestHandler<{ ticker: string }> = async (
+  req,
+  res,
+) => {
+  try {
+    const criterios = await fundoRepository.getCriterios(req.params.ticker)
+    return response(res, { status: 200, data: criterios })
+  } catch (error) {
+    return errorResponse(res, error)
+  }
+}
+
+/**
+ * Retorna a classificação das cidades por tipo de imóvel
+ * (GET /fundos/regioes?tipo=&uf=&cidade=)
+ */
+export const listRegioes: RequestHandler = async (req, res) => {
+  try {
+    const { tipo, uf, cidade } = req.query
+    const text = (value: unknown) =>
+      typeof value === 'string' && value ? value : undefined
+
+    const regioes = await fundoRepository.getRegioes({
+      tipo: text(tipo),
+      uf: text(uf),
+      cidade: text(cidade),
+    })
+    return response(res, { status: 200, data: regioes })
+  } catch (error) {
+    return errorResponse(res, error)
+  }
+}
+
+/** Retorna as gestoras de FII (GET /gestoras?busca=) */
+export const listGestoras: RequestHandler = async (req, res) => {
+  try {
+    const { busca } = req.query
+    const gestoras = await fundoRepository.getGestoras(
+      typeof busca === 'string' && busca ? busca : undefined,
+    )
+    return response(res, { status: 200, data: gestoras })
+  } catch (error) {
+    return errorResponse(res, error)
+  }
+}

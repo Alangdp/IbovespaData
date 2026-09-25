@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: API de Fundos Imobiliarios — IbovespaData
-  version: 0.5.0
+  version: 0.6.0
   description: |
     Rotas de FIIs do IbovespaData, baseadas no contrato `fii-api.yaml` do
     comparador de FIIs (modelo Pydantic `FundoFII`).
@@ -12,14 +12,20 @@ info:
     - O schema `Fundo` ganhou campos extras (marcados como "Extra" na descricao)
       com dados que a fonte fornece e o contrato nao previa. Os campos do
       contrato original nao mudaram de nome nem de significado.
-    - `gestora`, `taxa_administracao` e `limite_distribuicao_respeitado` vem
-      dos informes da CVM (dados.cvm.gov.br), atualizados por um job diario;
-      ficam `null` para fundos sem o informe correspondente.
+    - `gestora`, `taxa_administracao`, `limite_distribuicao_respeitado`,
+      `diversificado` e `boa_localizacao` vem dos informes da CVM
+      (dados.cvm.gov.br), atualizados por um job diario; ficam `null` para
+      fundos sem o informe correspondente. Os limites das regras ficam em
+      `src/config/fiiCriterios.ts`.
+    - `gestora_confiavel` compara o CNPJ da gestora com a lista mantida em
+      `data/gestoras-confiaveis.json` (`null` enquanto a lista estiver vazia).
     - So entram fundos de Tijolo, Papel, Hibrido e FoF; Fiagro e FI-Infra
       ficam de fora da listagem e respondem 422 no detalhe.
 
     Fontes: statusinvest.com.br (busca avancada de FIIs, pagina do fundo e
-    proventos) e dados abertos da CVM (informes mensal, trimestral e anual).
+    proventos), dados abertos da CVM (informes mensal, trimestral e anual),
+    relatorio gerencial no FNET (LTV e spread) e IBGE (municipios, populacao e
+    regioes metropolitanas).
     Cache de 6h no Redis.
 paths:
   /fundos:
@@ -52,6 +58,111 @@ paths:
                       type: array
                       items:
                         $ref: '#/components/schemas/Fundo'
+  /fundos/regioes:
+    get:
+      summary: Classificacao das cidades por tipo de imovel
+      description: |
+        Base do `boa_localizacao`. Para cada tipo de imovel (segmento do
+        statusinvest ou, sem ele, segmento de atuacao da CVM) e cidade dos
+        imoveis de FII:
+        1. `vacancia_tipo`: com ao menos 3 imoveis de renda prontos de 2
+           fundos no mesmo tipo, a cidade e boa se a vacancia media for menor
+           que a do mercado no tipo;
+        2. `vacancia_cidade`: senao, a mesma comparacao com todos os tipos;
+        3. `ibge`: senao, boa se o municipio for da regiao metropolitana de
+           uma capital ou tiver ao menos 500 mil habitantes (Censo 2022).
+        Fundos que informam vacancia e receita zeradas em todos os imoveis
+        ficam fora das medias. A cidade vem do endereco em texto livre do
+        informe trimestral.
+      operationId: listarRegioes
+      parameters:
+      - name: tipo
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Logistica, Escritorios, Shoppings, Varejo, Residencial, Hospital, Hotel, Educacional ou Outros (ignora acentos)
+      - name: uf
+        in: query
+        required: false
+        schema:
+          type: string
+        example: SP
+      - name: cidade
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Parte do nome (ignora acentos)
+      responses:
+        '200':
+          description: Cidades classificadas
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Resposta'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Regiao'
+  /gestoras:
+    get:
+      summary: Gestoras de FII, para montar a lista de confiaveis
+      description: Gestoras do informe anual da CVM, da que gere mais fundos para a que gere menos. Copie o CNPJ para data/gestoras-confiaveis.json
+      operationId: listarGestoras
+      parameters:
+      - name: busca
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Parte do nome ou do CNPJ (ignora acentos e pontuacao)
+      responses:
+        '200':
+          description: Gestoras
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Resposta'
+                - type: object
+                  properties:
+                    data:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/Gestora'
+  /fundos/{ticker}/criterios:
+    get:
+      summary: Calculo de diversificado, boa_localizacao e gestora_confiavel
+      operationId: obterCriteriosFundo
+      parameters:
+      - name: ticker
+        in: path
+        required: true
+        schema:
+          type: string
+        example: GGRC11
+      responses:
+        '200':
+          description: Cada criterio com o valor apurado e o limite
+          content:
+            application/json:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/Resposta'
+                - type: object
+                  properties:
+                    data:
+                      $ref: '#/components/schemas/FundoCriterios'
+        '404':
+          description: Ticker nao encontrado
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RespostaErro'
   /fundos/{ticker}/taxas:
     get:
       summary: Calculo da taxa de administracao, trimestre a trimestre
@@ -188,6 +299,162 @@ components:
               percentual_anualizado:
                 type: number
                 description: taxa_paga / patrimonio_medio * 4 * 100
+    Criterio:
+      type: object
+      properties:
+        criterio:
+          type: string
+          description: quantidade_imoveis, maior_participacao_imovel, estados, quantidade_cri, maior_cri_sobre_pl, quantidade_fii ou maior_fii_sobre_pl
+        valor:
+          anyOf:
+          - type: number
+          - type: 'null'
+          description: Valor apurado (participacoes em %)
+        limite:
+          type: number
+        tipo:
+          type: string
+          enum: [minimo, maximo]
+        ok:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          description: null quando falta dado para avaliar
+        base:
+          type: string
+          description: So em maior_participacao_imovel; receita ou area (sem receita informada)
+    FundoCriterios:
+      type: object
+      properties:
+        ticker:
+          type: string
+        cnpj:
+          anyOf:
+          - type: string
+          - type: 'null'
+        segmento:
+          $ref: '#/components/schemas/Segmento'
+        diversificacao:
+          type: object
+          properties:
+            diversificado:
+              anyOf:
+              - type: boolean
+              - type: 'null'
+            classe:
+              anyOf:
+              - type: string
+                enum: [imoveis, cri, fii]
+              - type: 'null'
+              description: Tijolo = imoveis, Papel = cri, FoF = fii; Hibrido = classe com mais dinheiro no informe mensal
+            data:
+              anyOf:
+              - type: string
+                format: date
+              - type: 'null'
+              description: Data do informe usado
+            criterios:
+              type: array
+              items:
+                $ref: '#/components/schemas/Criterio'
+        localizacao:
+          type: object
+          properties:
+            boa_localizacao:
+              anyOf:
+              - type: boolean
+              - type: 'null'
+            percentual_area_boa:
+              anyOf:
+              - type: number
+              - type: 'null'
+              description: Area em cidades boas / area com cidade classificada (%)
+            percentual_area_classificada:
+              anyOf:
+              - type: number
+              - type: 'null'
+              description: Area com cidade classificada / area total (%)
+            imoveis:
+              type: array
+              items:
+                type: object
+                properties:
+                  nome:
+                    type: string
+                  cidade:
+                    anyOf:
+                    - type: string
+                    - type: 'null'
+                    description: Municipio/UF identificado no endereco; null se nao achou
+                  area:
+                    type: number
+                  boa:
+                    anyOf:
+                    - type: boolean
+                    - type: 'null'
+        gestora:
+          type: object
+          properties:
+            nome:
+              anyOf:
+              - type: string
+              - type: 'null'
+            cnpj:
+              anyOf:
+              - type: string
+              - type: 'null'
+            confiavel:
+              anyOf:
+              - type: boolean
+              - type: 'null'
+    Regiao:
+      type: object
+      properties:
+        tipo:
+          type: string
+        cidade:
+          type: string
+        uf:
+          type: string
+        municipioId:
+          type: integer
+          description: Codigo IBGE do municipio
+        imoveis:
+          type: integer
+          description: Imoveis de renda prontos de FII na cidade (no tipo; em vacancia_cidade, todos os tipos)
+        fundos:
+          type: integer
+        vacanciaMedia:
+          anyOf:
+          - type: number
+          - type: 'null'
+          description: '%; null na fonte ibge'
+        vacanciaMercado:
+          anyOf:
+          - type: number
+          - type: 'null'
+          description: '%; media do mercado usada na comparacao'
+        boa:
+          type: boolean
+        fonte:
+          type: string
+          enum: [vacancia_tipo, vacancia_cidade, ibge]
+    Gestora:
+      type: object
+      properties:
+        cnpj:
+          type: string
+          description: So digitos
+        nome:
+          type: string
+        fundos:
+          type: integer
+          description: Quantidade de FIIs geridos
+        confiavel:
+          anyOf:
+          - type: boolean
+          - type: 'null'
+          description: Esta em data/gestoras-confiaveis.json; null com a lista vazia
     Fundo:
       additionalProperties: false
       description: Um fundo imobiliario, normalizado, pronto para o pipeline consumir.
@@ -280,18 +547,21 @@ components:
           - type: boolean
           - type: 'null'
           default: null
+          description: 'Tijolo: >= 5 imoveis, nenhum com mais de 30% da receita (ou da area, sem receita informada) e imoveis em >= 2 estados. Papel: >= 10 CRIs e nenhum com mais de 15% do PL. FoF: >= 10 FIIs e nenhum com mais de 20% do PL. Hibrido: regra da classe com mais dinheiro. Informes da CVM; null quando falta dado. Ver /fundos/{ticker}/criterios'
           title: Diversificado
         gestora_confiavel:
           anyOf:
           - type: boolean
           - type: 'null'
           default: null
+          description: CNPJ da gestora (informe anual da CVM) esta em data/gestoras-confiaveis.json. null sem gestora ou com a lista vazia. Ver /gestoras
           title: Gestora Confiavel
         boa_localizacao:
           anyOf:
           - type: boolean
           - type: 'null'
           default: null
+          description: 'So Tijolo e Hibrido. >= 60% da area em cidades boas (ver /fundos/regioes); null se menos de 50% da area tiver cidade identificada. Ver /fundos/{ticker}/criterios'
           title: Boa Localizacao
         limite_distribuicao_respeitado:
           anyOf:
@@ -321,6 +591,7 @@ components:
           - type: string
           - type: 'null'
           default: null
+          description: 'Spread de credito medio da carteira sobre o titulo publico, em % ao ano (ex.: "1,48%"), lido do relatorio gerencial mais recente no FNET ("spread medio", "spread ponderado" ou "spread de credito", em % ou bps). So para Papel e Hibrido; null quando o relatorio nao informa a media ou so traz a taxa com indexador (IPCA + X%)'
           title: Spread Credito
         administradora:
           anyOf:

@@ -10,11 +10,18 @@ import {
   fetchCvmCsvs,
   fetchCvmEtag,
 } from '../sources/cvm/download.js'
-import type { CvmFundo } from '../types/cvm.type.js'
+import { classificarRegioes, listarGestoras } from '../sources/cvm/regioes.js'
+import { fetchMunicipios, type Municipio } from '../sources/ibge.js'
+import { fetchFiiList } from '../sources/statusinvest/index.js'
+import type { CvmFundo, CvmGestora, CvmRegiao } from '../types/cvm.type.js'
+import { CidadeResolver } from '../utils/Cidades.js'
 
 const FUNDO_PREFIX = 'CVM-FII-'
 const ISIN_PREFIX = 'CVM-ISIN-'
 const ETAGS_KEY = 'CVM-ETAGS'
+const REGIOES_KEY = 'CVM-REGIOES'
+const GESTORAS_KEY = 'CVM-GESTORAS'
+const MUNICIPIOS_KEY = 'IBGE-MUNICIPIOS'
 
 /**
  * Validade das chaves: bem acima do intervalo do job (diário), para os dados
@@ -22,13 +29,16 @@ const ETAGS_KEY = 'CVM-ETAGS'
  */
 const TTL_SECONDS = 30 * 24 * 60 * 60
 
+/** Municípios do IBGE mudam raramente (censo, criação de município) */
+const MUNICIPIOS_TTL_SECONDS = 90 * 24 * 60 * 60
+
 const INFORMES = Object.keys(CVM_FILES) as CvmInforme[]
 
 /**
  * Versão do formato do registro gravado: aumente ao mudar `CvmFundo` ou os
  * CSVs lidos, para a próxima execução refazer a base mesmo sem mudança na CVM
  */
-const DATA_VERSION = 2
+const DATA_VERSION = 3
 
 /** Resultado de uma atualização da base */
 export interface CvmRefreshResult {
@@ -82,9 +92,23 @@ export class CvmDataBase {
       }
     }
 
-    // Consolida um registro por fundo e grava tudo, com o índice por ISIN
-    const fundos = buildCvmFundos(csvs)
-    const entries: [string, unknown][] = []
+    // Consolida um registro por fundo, com a cidade de cada imóvel e a
+    // classificação das cidades
+    const municipios = await this.getMunicipios()
+    const resolver = new CidadeResolver(municipios)
+    const fundos = buildCvmFundos(csvs, (endereco) =>
+      resolver.resolve(endereco),
+    )
+    const segmentos = await this.getSegmentosStatusinvest()
+    const regioes = classificarRegioes(fundos.values(), municipios, (fundo) =>
+      fundo.isin ? (segmentos.get(fundo.isin.slice(2, 6)) ?? null) : null,
+    )
+
+    // Grava tudo, com o índice por ISIN, as regiões e as gestoras
+    const entries: [string, unknown][] = [
+      [REGIOES_KEY, regioes],
+      [GESTORAS_KEY, listarGestoras(fundos.values())],
+    ]
     for (const fundo of fundos.values()) {
       entries.push([`${FUNDO_PREFIX}${fundo.cnpj}`, fundo])
       if (fundo.isin) {
@@ -93,11 +117,70 @@ export class CvmDataBase {
     }
     await Redis.saveObjectsToCache(entries, TTL_SECONDS)
 
-    // Grava os ETags por último: se algo falhar antes, a próxima execução
-    // baixa tudo de novo
-    await Redis.saveObjectToCache(ETAGS_KEY, etags, TTL_SECONDS)
+    // Grava os ETags por último: se algo falhar antes (inclusive o IBGE), a
+    // próxima execução baixa tudo de novo
+    if (municipios.length > 0) {
+      await Redis.saveObjectToCache(ETAGS_KEY, etags, TTL_SECONDS)
+    }
 
     return { atualizado: true, fundos: fundos.size }
+  }
+
+  /**
+   * Retorna os municípios do IBGE do cache ou, se não estiverem lá, busca e
+   * grava
+   *
+   * Se o IBGE falhar, segue sem municípios: os imóveis ficam sem cidade e a
+   * boa_localizacao fica null até a próxima carga
+   */
+  private async getMunicipios(): Promise<Municipio[]> {
+    const cached = await Redis.getObjectFromCache<Municipio[]>(MUNICIPIOS_KEY)
+    // Se os municípios estão no cache
+    if (cached) {
+      return cached
+    }
+
+    try {
+      const municipios = await fetchMunicipios()
+      await Redis.saveObjectToCache(
+        MUNICIPIOS_KEY,
+        municipios,
+        MUNICIPIOS_TTL_SECONDS,
+      )
+      return municipios
+    } catch (error) {
+      console.error(
+        '[cvm] erro ao buscar os municípios do IBGE:',
+        (error as Error).message,
+      )
+      return []
+    }
+  }
+
+  /**
+   * Busca o segmento de cada FII no statusinvest, pelo código do ticker
+   * (GGRC11 → GGRC, o mesmo trecho do ISIN)
+   *
+   * Se o statusinvest falhar, segue sem: o tipo de imóvel vem só da CVM
+   */
+  private async getSegmentosStatusinvest(): Promise<Map<string, string>> {
+    const list = await fetchFiiList().catch(() => null)
+    // Se o statusinvest falhou
+    if (!list) {
+      console.error('[cvm] statusinvest indisponível: tipos só pela CVM')
+      return new Map()
+    }
+    return new Map(list.map((item) => [item.ticker.slice(0, 4), item.segment]))
+  }
+
+  /** Retorna a classificação das cidades por tipo de imóvel */
+  async getRegioes(): Promise<CvmRegiao[]> {
+    return (await Redis.getObjectFromCache<CvmRegiao[]>(REGIOES_KEY)) ?? []
+  }
+
+  /** Retorna as gestoras de FII, da que gere mais fundos para a que gere menos */
+  async getGestoras(): Promise<CvmGestora[]> {
+    return (await Redis.getObjectFromCache<CvmGestora[]>(GESTORAS_KEY)) ?? []
   }
 
   /** Retorna o fundo pelo CNPJ (com ou sem pontuação) */

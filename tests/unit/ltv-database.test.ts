@@ -31,7 +31,7 @@ mock.module('../../src/sources/fnet', () => ({
 const { LtvDataBase } = await import('../../src/useCases/ltvDataBase')
 
 const CNPJ = '11111111000111'
-const KEY = `FNET-LTV-${CNPJ}`
+const KEY = `FNET-LTV-v2-${CNPJ}`
 
 beforeEach(() => {
   saved.clear()
@@ -40,26 +40,31 @@ beforeEach(() => {
 })
 
 describe('LtvDataBase.load', () => {
-  test('sem relatório gerencial grava o marcador sem LTV', async () => {
+  test('sem relatório gerencial grava o marcador sem LTV nem spread', async () => {
     const db = new LtvDataBase()
 
     const ltv = await db.load(CNPJ)
 
-    expect(ltv).toEqual({ ltv: null, referencia: '' })
+    expect(ltv).toEqual({ ltv: null, spread: null, referencia: '' })
     expect(saved.get(KEY)?.data).toEqual(ltv)
     expect(saved.get(KEY)?.ttl).toBeGreaterThan(0)
     // O marcador impede que o findLtv enfileire a leitura de novo
     expect(await db.getCached(CNPJ)).toEqual(ltv)
   })
 
-  test('com relatório extrai o LTV do texto e grava no cache', async () => {
+  test('com relatório extrai o LTV e o spread do texto e grava no cache', async () => {
     documento = { id: 1, dataReferencia: '31/07/2026' }
-    texto = 'Book de CRIs LTV médio 56% *Considerando o MtM'
+    texto =
+      'Spread de Crédito 148 bps* (Book de CRIs + Permutas) LTV médio 56% *Considerando o MtM'
     const db = new LtvDataBase()
 
     const ltv = await db.load(CNPJ)
 
-    expect(ltv).toEqual({ ltv: 56, referencia: '31/07/2026' })
+    expect(ltv).toEqual({
+      ltv: 56,
+      spread: '1,48%',
+      referencia: '31/07/2026',
+    })
     expect(saved.get(KEY)?.data).toEqual(ltv)
   })
 })

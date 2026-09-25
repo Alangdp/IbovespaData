@@ -85,6 +85,11 @@ describe('buildCvmFundos', () => {
         },
       ],
       endividamento: { data: '2026-01-01', obrigacoes: 400, ativo: 2000 },
+      segmentoAtuacao: null,
+      imoveis: [],
+      imoveisData: null,
+      carteira: null,
+      composicao: { data: '2026-01-01', imoveis: 0, cri: 0, fii: 0 },
     })
   })
 })
@@ -119,6 +124,11 @@ function fundo(overrides: Partial<CvmFundo> = {}): CvmFundo {
       },
     ],
     endividamento: { data: '2026-06-01', obrigacoes: 250, ativo: 1000 },
+    segmentoAtuacao: null,
+    imoveis: [],
+    imoveisData: null,
+    carteira: null,
+    composicao: null,
     ...overrides,
   }
 }

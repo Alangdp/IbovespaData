@@ -13,14 +13,17 @@ import type {
 } from '../types/fii.type.js'
 import type { Fundo, Segmento } from '../types/fundo.types.js'
 import FiiIndicators from '../utils/FiiIndicators.js'
+import FiiQualidade from '../utils/FiiQualidade.js'
 import FundoUtils from '../utils/FundoUtils.js'
 
 /** Quantidade de meses em `dividendos_mensais` */
 const MONTHS = 12
 
-/** LTV médio lido do relatório gerencial */
+/** LTV médio e spread de crédito lidos do relatório gerencial */
 export interface LtvRelatorio {
   ltv: number | null
+  /** Spread de crédito médio da carteira (ex.: "1,48%") */
+  spread: string | null
   /** Data de referência do relatório (dd/mm/aaaa) */
   referencia: string
 }
@@ -31,6 +34,7 @@ interface FundoDetail {
   dividends: FiiDividend[]
   cvm: CvmFundo | null
   ltv: LtvRelatorio | null
+  gestoraConfiavel: boolean | null
 }
 
 /**
@@ -42,18 +46,19 @@ export interface FundoLookups {
   findCvm?: (cnpj: string | null, ticker: string) => Promise<CvmFundo | null>
   /** Busca o LTV médio já lido do relatório gerencial mais recente */
   findLtv?: (cnpj: string, ticker: string) => Promise<LtvRelatorio | null>
+  /** Verifica se a gestora (CNPJ) está na lista de confiáveis */
+  isGestoraConfiavel?: (cnpj: string | null) => boolean | null
 }
 
-/** Segmentos com carteira de CRIs, onde o LTV médio faz sentido */
+/** Segmentos com carteira de CRIs, onde o LTV médio e o spread fazem sentido */
 const LTV_SEGMENTOS: Segmento[] = ['Papel', 'Híbrido']
 
 /**
  * Monta o Fundo a partir da listagem do statusinvest e, no detalhe, da
  * página, dos proventos, dos informes da CVM e do relatório gerencial
  *
- * Campos sem fonte ainda (spread_credito, diversificado,
- * gestora_confiavel, boa_localizacao) ficam null — o schema já os define
- * como opcionais com default null
+ * Sem o detalhe (resumo da listagem), os campos que dependem dessas fontes
+ * ficam null — o schema já os define como opcionais com default null
  */
 function buildFundo(
   item: FiiListItem,
@@ -97,15 +102,15 @@ function buildFundo(
     vacancia_fisica: FundoUtils.computeVacancia(imoveis),
     liquidez_diaria: FundoUtils.roundOrNull(item.liquidezmediadiaria),
     num_imoveis: imoveis ? imoveis.length : null,
-    diversificado: null,
-    gestora_confiavel: null,
-    boa_localizacao: null,
+    diversificado: FiiQualidade.diversificacao(segmento, cvm).diversificado,
+    gestora_confiavel: detail?.gestoraConfiavel ?? null,
+    boa_localizacao: FiiQualidade.localizacao(segmento, cvm).boa_localizacao,
     limite_distribuicao_respeitado: limite.respeitado,
     dividendo_extraordinario_ultimo_ano: detail
       ? FiiIndicators.dividendoExtraordinario(detail.dividends)
       : null,
     ltv_medio: detail?.ltv?.ltv ?? null,
-    spread_credito: null,
+    spread_credito: detail?.ltv?.spread ?? null,
 
     // Campos extras, fora do contrato original
     administradora,
@@ -167,13 +172,14 @@ export class FundoFetcher {
 
   /**
    * Monta o fundo completo, buscando a página, os proventos e, com as
-   * buscas informadas, os dados da CVM e o LTV do relatório gerencial
+   * buscas informadas, os dados da CVM, o LTV e o spread do relatório
+   * gerencial e a lista de gestoras confiáveis
    *
    * @throws CustomError 422 se o fundo não for de um segmento do contrato
    */
   static async buildDetail(
     item: FiiListItem,
-    { findCvm, findLtv }: FundoLookups = {},
+    { findCvm, findLtv, isGestoraConfiavel }: FundoLookups = {},
   ): Promise<Fundo> {
     const segmento = FundoUtils.mapSegmento(item)
     // Se o segmento está fora do contrato
@@ -193,7 +199,7 @@ export class FundoFetcher {
     // Busca os dados da CVM do fundo
     const cvm = findCvm ? await findCvm(page.cnpj, item.ticker) : null
 
-    // Busca o LTV médio só para fundos com carteira de CRIs
+    // Busca o LTV médio e o spread só para fundos com carteira de CRIs
     const cnpj = page.cnpj ?? cvm?.cnpj ?? null
     const ltv =
       findLtv && cnpj && LTV_SEGMENTOS.includes(segmento)
@@ -205,6 +211,9 @@ export class FundoFetcher {
       dividends: dividends ?? [],
       cvm,
       ltv,
+      gestoraConfiavel: isGestoraConfiavel
+        ? isGestoraConfiavel(cvm?.gestora?.cnpj || null)
+        : null,
     })
   }
 }
