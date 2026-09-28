@@ -1,12 +1,5 @@
-import { MacroInfo } from '../global/MacroInfo.js'
-import {
-  GranhamMethods,
-  GranhamProtocol,
-} from '../interfaces/GranhamProtocol.type.js'
-import { StockProtocol } from '../interfaces/StockProtocol.type.js'
-import { oldIndicator } from '../types/indicators.type.js'
-import { PontuationRule } from '../types/Pontuation.type.js'
-import { NetLiquid } from '../types/stock.types.js'
+import type { PontuationRule } from '../types/Pontuation.type.js'
+import type { NetLiquid, StockProps } from '../types/stock.types.js'
 import MathUtils from '../utils/MathUtils.js'
 import { Pontuation } from './Pontuation.js'
 
@@ -40,69 +33,67 @@ import { Pontuation } from './Pontuation.js'
 // Lucros para fazer o Gráfico ;)
 // https://api-analitica.sunoresearch.com.br/api/Statement/GetStatementResultsReportByTicker?type=y&ticker=WEGE3&period=10
 
-// TODO - REFAZER TUDO
+/** Pontuação de uma ação pelos princípios de Benjamin Graham (listados acima) */
+export class Graham {
+  /**
+   * @param stock - Ação avaliada
+   * @param cdi - Taxa CDI anual em decimal (`null` se indisponível, e aí a
+   * regra do CDI não pontua)
+   */
+  constructor(
+    private readonly stock: StockProps,
+    private readonly cdi: number | null,
+  ) {}
 
-// @ts-ignore
-export class Granham extends GranhamProtocol implements GranhamMethods {
-  constructor(stock: StockProtocol) {
-    super()
+  /**
+   * Calcula a pontuação da ação
+   *
+   * @throws TypeError se a ação não tiver balanço patrimonial
+   */
+  makePoints(): Pontuation {
+    const { stock } = this
     const { indicators, passiveChart } = stock
-    const { currentLiabilities, currentAssets } = passiveChart[0]
 
-    this.p_l = Number(indicators.p_l.actual)
-    this.p_vp = Number(indicators.p_vp.actual)
-    this.roe = Number(indicators.roe.actual) / 100
+    // Carrega os indicadores atuais
+    const p_l = Number(indicators.p_l.actual)
+    const p_vp = Number(indicators.p_vp.actual)
+    const roe = Number(indicators.roe.actual) / 100
+    const { currentAssets, currentLiabilities } = passiveChart[0]
+    const currentRatio = currentAssets / currentLiabilities
 
-    indicators.lpa.olds.map((indicator: oldIndicator) => {
-      this.lpa.push(Number(indicator.value))
-    })
+    // Calcula o valor intrínseco pela média histórica de LPA e VPA
+    const lpa = indicators.lpa.olds.map((indicator) => Number(indicator.value))
+    const vpa = indicators.vpa.olds.map((indicator) => Number(indicator.value))
+    const intrinsicValue = Math.sqrt(
+      22.5 * MathUtils.makeAverage(vpa) * MathUtils.makeAverage(lpa),
+    )
 
-    indicators.vpa.olds.map((indicator: oldIndicator) => {
-      this.vpa.push(Number(indicator.value))
-    })
+    const netLiquidOn10Years = stock.netLiquid.slice(0, 10)
 
-    this.netLiquid = stock.netLiquid
-    this.currentRatio = currentAssets / currentLiabilities
-
-    this.grossDebt = stock.grossDebt
-    this.patrimony = stock.patrimony
-    if (this.patrimony === 0) this.patrimony = 1
-    if (this.grossDebt === 0) this.grossDebt = 1
-
-    this.gb_p = this.grossDebt / this.patrimony
-    this.actualPrice = stock.actualPrice
-    this.ticker = stock.ticker
-    this.dy = stock.actualDividendYield
-  }
-
-  async makePoints(stock: StockProtocol) {
-    const { netLiquid, vpa, lpa, p_l, p_vp, roe } = this
-
-    const lpaAverage = MathUtils.makeAverage(lpa)
-    const vpaAverage = MathUtils.makeAverage(vpa)
-    const netLiquidOn10Years = netLiquid.slice(0, 10)
+    // Carrega as regras do método
     const rules: PontuationRule[] = [
       {
-        ruleName: 'A empresa tem dados de "Net Liquid" para os últimos 10 anos',
-        rule: netLiquidOn10Years.every((value) => value.value > 0),
+        ruleName: 'Lucro líquido positivo nos últimos 10 anos',
+        rule:
+          netLiquidOn10Years.length === 10 &&
+          netLiquidOn10Years.every((value) => value.value > 0),
       },
       {
         ruleName: '"Net Liquid" crescente nos últimos 10 anos',
-        rule: this.crescentNetLiquid(netLiquidOn10Years),
+        rule: isStrictlyGrowing(netLiquidOn10Years),
       },
       {
         ruleName: 'LPA crescente',
-        rule: this.crescentLpa(),
+        rule: isLpaGrowing(lpa),
       },
       {
         ruleName: 'Pagamento constante de dividendos',
-        rule: this.constantDividend(stock),
+        rule: !stock.lastDividendsValue.some((dividend) => dividend.value <= 0),
       },
       {
         ruleName:
           'Fórmula de Benjamin Graham para Valor Intrínseco (Preço Justo)',
-        rule:
-          Math.sqrt(22.5 * vpaAverage * lpaAverage) > 1.5 * stock.actualPrice,
+        rule: intrinsicValue > 1.5 * stock.actualPrice,
       },
       {
         ruleName: 'P/L (Preço/Lucro) entre 0 e 15',
@@ -113,8 +104,8 @@ export class Granham extends GranhamProtocol implements GranhamMethods {
         rule: p_vp > 0 && p_vp < 1.5,
       },
       {
-        ruleName: 'Crescimento médio em 5 anos é positivo',
-        rule: this.calculateYearGrowth(stock, 5),
+        ruleName: 'Crescimento do lucro líquido em 5 anos maior que 5%',
+        rule: hasGrown(stock.netLiquid, 5),
       },
       {
         ruleName: 'ROE (Return On Equity) maior que 0.2',
@@ -122,99 +113,87 @@ export class Granham extends GranhamProtocol implements GranhamMethods {
       },
       {
         ruleName: 'Dividend Yield atual maior que a taxa CDI',
-        rule: stock.actualDividendYield > MacroInfo.CDI,
+        rule: this.cdi !== null && stock.actualDividendYield > this.cdi,
       },
       {
         ruleName: 'Índice de Liquidez Corrente maior que 1.5',
-        rule: this.currentRatio > 1.5,
+        rule: currentRatio > 1.5,
       },
       {
         ruleName: 'Dívida Bruta/Patrimônio inferior a 0.5',
-        rule: this.patrimony > 2000000000,
+        // Patrimônio negativo daria uma razão negativa e passaria na regra
+        rule: stock.patrimony > 0 && stock.grossDebt / stock.patrimony < 0.5,
       },
     ]
 
+    // Instancia a pontuação
     const pontuation = new Pontuation({
       infoData: {
-        actualPrice: this.actualPrice,
-        dy: this.dy,
-        maxPrice: Math.sqrt(22.5 * vpaAverage * lpaAverage),
+        actualPrice: stock.actualPrice,
+        dy: stock.actualDividendYield,
+        maxPrice: intrinsicValue,
       },
-      id: this.ticker,
+      id: stock.ticker,
       subId: 'GRAHAM',
       defaultIfFalse: 1,
       defaultIfTrue: 1,
-      totalPoints: 0,
-      totalEvaluate: [],
     })
 
-    rules.forEach((rule) => {
+    // Calcula os pontos
+    for (const rule of rules) {
       pontuation.addRule(rule)
-    })
-
+    }
     pontuation.calculate()
 
     return pontuation
   }
+}
 
-  crescentNetLiquid(netLiquidOn10Years: NetLiquid[]): boolean {
-    let crescent = true
-    for (let i = 0; i < netLiquidOn10Years.length; i++) {
-      if (netLiquidOn10Years[i + 1] === undefined) break
-      if (!(netLiquidOn10Years[i].value < netLiquidOn10Years[i + 1].value))
-        crescent = false
-    }
-    return crescent
+/**
+ * Verifica se o lucro líquido cresceu todo ano
+ *
+ * @param netLiquid - Lucros do mais recente ao mais antigo
+ */
+function isStrictlyGrowing(netLiquid: NetLiquid[]): boolean {
+  // Carrega os lucros em ordem cronológica
+  const chronological = netLiquid.toReversed()
+
+  return !chronological.some(
+    (item, index) =>
+      index > 0 && !(chronological[index - 1].value < item.value),
+  )
+}
+
+/**
+ * Verifica se a média do LPA dos 3 anos mais recentes supera em 33% a média
+ * dos 3 anos mais antigos do período
+ *
+ * @param lpa - LPA do mais recente ao mais antigo
+ */
+function isLpaGrowing(lpa: number[]): boolean {
+  const recent = MathUtils.makeAverage(lpa.slice(0, 3))
+  const oldest = MathUtils.makeAverage(lpa.slice(-3))
+  return recent > 1.33 * oldest
+}
+
+/**
+ * Verifica se o lucro líquido cresceu mais de 5% em relação a `numberYears`
+ * anos antes do mais recente
+ */
+function hasGrown(netLiquid: NetLiquid[], numberYears: number): boolean {
+  const [latest] = netLiquid
+  // Se não há lucro líquido
+  if (!latest) {
+    return false
   }
 
-  crescentLpa(): boolean {
-    const { lpa } = this
-
-    const lpaInitial = (lpa[0] + lpa[1] + lpa[2]) / 3
-    const lpaFinal =
-      (lpa[lpa.length - 3] + lpa[lpa.length - 2] + lpa[lpa.length - 1]) / 3
-
-    const crescent = lpa[lpa.length - 1] > 1.33 * lpaInitial
-
-    return crescent
+  // Busca o lucro líquido do ano de comparação
+  const pastYear = String(Number(latest.year) - numberYears)
+  const past = netLiquid.find((item) => item.year === pastYear)
+  // Se não há dado para o ano de comparação
+  if (!past) {
+    return false
   }
 
-  constantDividend(stock: StockProtocol): boolean {
-    const { lastDividendsValue } = stock
-    let crescent = true
-
-    lastDividendsValue.map((dividend) => {
-      if (dividend.value <= 0) crescent = false
-    })
-
-    return crescent
-  }
-
-  calculateYearGrowth(stock: StockProtocol, numberYears: number): boolean {
-    try {
-      const { netLiquid } = stock
-
-      const actualYear = netLiquid[0].year
-      const lastYear = (Number(actualYear) - numberYears).toString()
-
-      const actualNetLiquid = netLiquid.find(
-        (netLiquid) => netLiquid.year === actualYear,
-      )
-      const lastNetLiquid = netLiquid.find(
-        (netLiquid) => netLiquid.year === lastYear,
-      )
-
-      if (!actualNetLiquid || !lastNetLiquid)
-        throw new Error('Invalid NetLiquid')
-
-      const growth =
-        (actualNetLiquid.value - lastNetLiquid.value) / lastNetLiquid.value
-
-      if (growth > 0.05) return true
-      return false
-    } catch (error) {
-      console.error(error)
-      return false
-    }
-  }
+  return (latest.value - past.value) / past.value > 0.05
 }

@@ -1,5 +1,3 @@
-// BRUTO
-
 export interface Percentual {
   value: number
   value_F: string
@@ -29,6 +27,7 @@ export interface Chart {
   series: Series
 }
 
+/** Resposta de `payoutresult` do statusinvest */
 export interface RootPayout {
   actual: number
   avg: number
@@ -46,8 +45,8 @@ export interface RootPayout {
   maxValueRank_F: string
   chart: Chart
 }
-// FORMATADO
 
+/** Payout da ação (percentual) */
 export interface PayoutReturn {
   actual: number
   average: number

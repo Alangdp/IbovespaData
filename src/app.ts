@@ -1,10 +1,6 @@
-// Inicio o processamento das filas
-import '@/queues/StockQueue.js'
-
+import path from 'node:path'
 import cors from 'cors'
-import dotenv from 'dotenv'
 import express from 'express'
-import path from 'path'
 
 import bazinRoutes from './routes/bazin.routes.js'
 import fundoRoutes from './routes/fundo.routes.js'
@@ -12,40 +8,26 @@ import grahamRoutes from './routes/graham.routes.js'
 import simulationRoutes from './routes/simulation.routes.js'
 import stockRoutes from './routes/stock.routes.js'
 
-dotenv.config()
+const IMAGES_DIR = path.join(import.meta.dir, '..', 'assets', 'imgs')
 
-class App {
-  app
-  constructor() {
-    this.app = express()
-    this.middlewares()
-    this.routes()
-  }
+/** Aplicação Express com middlewares, imagens estáticas e rotas */
+const app = express()
 
-  routes() {
-    this.app.use('/', stockRoutes)
-    this.app.use('/', bazinRoutes)
-    this.app.use('/', grahamRoutes)
-    this.app.use('/', simulationRoutes)
-    this.app.use('/', fundoRoutes)
-  }
+// Registra os middlewares; o cors cobre todas as rotas, inclusive o
+// preflight (OPTIONS)
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+app.use(cors())
 
-  middlewares() {
-    this.app.use(express.json())
-    this.app.use(express.urlencoded({ extended: true }))
-    this.app.use('*', cors())
-    this.app.options('*', cors())
+// Serve os logos e avatares das empresas
+app.use('/images/logos', express.static(path.join(IMAGES_DIR, 'logos')))
+app.use('/images/avatar', express.static(path.join(IMAGES_DIR, 'avatar')))
 
-    this.app.use(
-      '/images/logos',
-      express.static(path.join(__dirname, '..', 'assets', 'imgs', 'logos')),
-    )
+// Registra as rotas
+app.use('/', stockRoutes)
+app.use('/', bazinRoutes)
+app.use('/', grahamRoutes)
+app.use('/', simulationRoutes)
+app.use('/', fundoRoutes)
 
-    this.app.use(
-      '/images/avatar',
-      express.static(path.join(__dirname, '..', 'assets', 'imgs', 'avatar')),
-    )
-  }
-}
-
-export default new App().app
+export default app

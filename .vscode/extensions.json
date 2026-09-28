@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "repowise-dev.repowise"
+    "repowise-dev.repowise",
+    "biomejs.biome",
+    "oven.bun-vscode"
   ]
 }

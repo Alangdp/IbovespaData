@@ -4,21 +4,21 @@
   "project": {
     "name": "IbovespaData",
     "is_monorepo": false,
-    "total_files": 105,
+    "total_files": 111,
     "entry_points": [
       "src/app.ts",
       "src/server.ts"
     ],
     "tech_stack": [
       {
-        "name": "Sequelize",
-        "version": "6.32.1",
-        "category": "database"
+        "name": "Express",
+        "version": "5.2.1",
+        "category": "framework"
       },
       {
-        "name": "Express",
-        "version": "4.18.2",
-        "category": "framework"
+        "name": "Docker",
+        "version": null,
+        "category": "infra"
       },
       {
         "name": "Docker Compose",
@@ -32,7 +32,7 @@
       },
       {
         "name": "TypeScript",
-        "version": "5.1.6",
+        "version": "7.0.2",
         "category": "language"
       }
     ],
@@ -62,55 +62,86 @@
       "summary": ""
     },
     {
-      "id": "class:src/useCases/Fetcher.ts:TickerFetcher",
+      "id": "class:src/utils/Axios.Utils.ts:AxiosUtils",
       "type": "class",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "TickerFetcher",
+      "filePath": "src/utils/Axios.Utils.ts",
+      "name": "AxiosUtils",
       "language": "typescript",
       "tags": [],
       "summary": ""
     },
     {
-      "id": "class:src/useCases/stockDataBase.ts:StockDataBase",
+      "id": "class:src/utils/Utilities.ts:Utilities",
       "type": "class",
-      "filePath": "src/useCases/stockDataBase.ts",
-      "name": "StockDataBase",
+      "filePath": "src/utils/Utilities.ts",
+      "name": "Utilities",
       "language": "typescript",
       "tags": [],
       "summary": ""
     },
     {
-      "id": "class:src/utils/Json.ts:Json",
-      "type": "class",
-      "filePath": "src/utils/Json.ts",
-      "name": "Json",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "class:src/utils/JsonDatabase.ts:Database",
-      "type": "class",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "Database",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "file:.eslintrc.json",
+      "id": "file:.claude/settings.local.json",
       "type": "config",
-      "filePath": ".eslintrc.json",
+      "filePath": ".claude/settings.local.json",
       "language": "json",
       "symbolCount": 0,
-      "lineCount": 4,
+      "lineCount": 2,
       "complexity": "simple",
-      "pagerank": 0.004588,
+      "pagerank": 0.004464,
+      "communityId": 7,
+      "tags": [
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: settings.local.json."
+    },
+    {
+      "id": "file:.github/workflows/ci.yml",
+      "type": "pipeline",
+      "filePath": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 19,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 8,
+      "tags": [
+        "config",
+        "ci"
+      ],
+      "summary": "GitHub Actions CI/CD workflow definition."
+    },
+    {
+      "id": "file:.mcp.json",
+      "type": "config",
+      "filePath": ".mcp.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 8,
+      "complexity": "simple",
+      "pagerank": 0.004464,
       "communityId": 9,
       "tags": [
-        "config"
+        "config",
+        "low_signal_summary"
       ],
-      "summary": "ESLint linting rules."
+      "summary": "Configuration file: .mcp.json."
+    },
+    {
+      "id": "file:Dockerfile",
+      "type": "service",
+      "filePath": "Dockerfile",
+      "language": "dockerfile",
+      "symbolCount": 2,
+      "lineCount": 9,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 10,
+      "tags": [
+        "config",
+        "infra"
+      ],
+      "summary": "Container image build definition."
     },
     {
       "id": "file:Readme.md",
@@ -118,12 +149,44 @@
       "filePath": "Readme.md",
       "language": "markdown",
       "symbolCount": 0,
-      "lineCount": 23,
+      "lineCount": 72,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 10,
+      "pagerank": 0.004464,
+      "communityId": 11,
       "tags": [],
       "summary": "Project overview and entry point for new readers."
+    },
+    {
+      "id": "file:biome.json",
+      "type": "config",
+      "filePath": "biome.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 19,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 12,
+      "tags": [
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: biome.json."
+    },
+    {
+      "id": "file:bunfig.toml",
+      "type": "config",
+      "filePath": "bunfig.toml",
+      "language": "toml",
+      "symbolCount": 0,
+      "lineCount": 3,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 13,
+      "tags": [
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: bunfig.toml."
     },
     {
       "id": "file:docker-compose.yml",
@@ -133,8 +196,8 @@
       "symbolCount": 0,
       "lineCount": 8,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 11,
+      "pagerank": 0.004464,
+      "communityId": 14,
       "tags": [
         "config",
         "infra"
@@ -147,14 +210,28 @@
       "filePath": "package.json",
       "language": "json",
       "symbolCount": 0,
-      "lineCount": 31,
+      "lineCount": 22,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 12,
+      "pagerank": 0.004464,
+      "communityId": 19,
       "tags": [
         "config"
       ],
       "summary": "Node package manifest: dependencies, scripts, and metadata."
+    },
+    {
+      "id": "file:scripts/start-queue.ts",
+      "type": "file",
+      "filePath": "scripts/start-queue.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 23,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Docs & Tooling module start-queue defining readInvalidTickers.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:src/Entities/Bazin.ts",
@@ -162,27 +239,13 @@
       "filePath": "src/Entities/Bazin.ts",
       "language": "typescript",
       "symbolCount": 6,
-      "lineCount": 116,
+      "lineCount": 112,
       "complexity": "moderate",
-      "pagerank": 0.005262,
+      "pagerank": 0.005317,
       "communityId": 2,
       "tags": [],
       "summary": "Data module Bazin defining Bazin, constructor, validate.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/Entities/Chart.ts",
-      "type": "file",
-      "filePath": "src/Entities/Chart.ts",
-      "language": "typescript",
-      "symbolCount": 12,
-      "lineCount": 194,
-      "complexity": "moderate",
-      "pagerank": 0.004978,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Data module Chart defining Chart, constructor, makeEmptyChart.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
       "id": "file:src/Entities/Fundo.ts",
@@ -190,10 +253,10 @@
       "filePath": "src/Entities/Fundo.ts",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 53,
+      "lineCount": 52,
       "complexity": "simple",
-      "pagerank": 0.008621,
-      "communityId": 6,
+      "pagerank": 0.008405,
+      "communityId": 5,
       "tags": [],
       "summary": "Data module Fundo defining Fundo, constructor.",
       "primaryOwner": "Claude"
@@ -204,26 +267,12 @@
       "filePath": "src/Entities/Graham.ts",
       "language": "typescript",
       "symbolCount": 7,
-      "lineCount": 226,
+      "lineCount": 221,
       "complexity": "moderate",
-      "pagerank": 0.005262,
+      "pagerank": 0.005317,
       "communityId": 2,
       "tags": [],
       "summary": "Data module Graham defining Granham, constructor, makePoints.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/Entities/History.ts",
-      "type": "file",
-      "filePath": "src/Entities/History.ts",
-      "language": "typescript",
-      "symbolCount": 7,
-      "lineCount": 150,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Data module History defining History, constructor, getDividendsOnDate.",
       "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
@@ -232,9 +281,9 @@
       "filePath": "src/Entities/Pontuation.ts",
       "language": "typescript",
       "symbolCount": 4,
-      "lineCount": 30,
+      "lineCount": 29,
       "complexity": "moderate",
-      "pagerank": 0.009046,
+      "pagerank": 0.01201,
       "communityId": 2,
       "tags": [],
       "summary": "Data module Pontuation defining Pontuation, constructor, addRule.",
@@ -246,10 +295,10 @@
       "filePath": "src/Entities/Simulation.ts",
       "language": "typescript",
       "symbolCount": 7,
-      "lineCount": 92,
+      "lineCount": 87,
       "complexity": "moderate",
-      "pagerank": 0.006501,
-      "communityId": 0,
+      "pagerank": 0.007481,
+      "communityId": 1,
       "tags": [],
       "summary": "Data module Simulation defining Simulation, constructor, initialize.",
       "primaryOwner": "\u00c1lan Gabriel Dias pedon"
@@ -260,26 +309,12 @@
       "filePath": "src/Entities/Stock.ts",
       "language": "typescript",
       "symbolCount": 3,
-      "lineCount": 53,
+      "lineCount": 52,
       "complexity": "simple",
-      "pagerank": 0.007353,
-      "communityId": 0,
+      "pagerank": 0.007349,
+      "communityId": 2,
       "tags": [],
       "summary": "Data module Stock defining Stock, calculateRentability, constructor.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/Entities/Transaction.ts",
-      "type": "file",
-      "filePath": "src/Entities/Transaction.ts",
-      "language": "typescript",
-      "symbolCount": 2,
-      "lineCount": 15,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 8,
-      "tags": [],
-      "summary": "Data module Transaction defining Transaction, constructor.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
@@ -288,10 +323,10 @@
       "filePath": "src/Entities/Variable.ts",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 22,
+      "lineCount": 21,
       "complexity": "simple",
-      "pagerank": 0.010595,
-      "communityId": 4,
+      "pagerank": 0.009659,
+      "communityId": 2,
       "tags": [],
       "summary": "Data module Variable defining Variable, constructor.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -302,10 +337,10 @@
       "filePath": "src/app.ts",
       "language": "typescript",
       "symbolCount": 4,
-      "lineCount": 31,
+      "lineCount": 29,
       "complexity": "moderate",
-      "pagerank": 0.005888,
-      "communityId": 3,
+      "pagerank": 0.006044,
+      "communityId": 0,
       "tags": [
         "entry_point"
       ],
@@ -318,10 +353,10 @@
       "filePath": "src/controllers/bazin.controller.ts",
       "language": "typescript",
       "symbolCount": 3,
-      "lineCount": 29,
+      "lineCount": 28,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 1,
+      "pagerank": 0.006634,
+      "communityId": 0,
       "tags": [],
       "summary": "API module bazin.controller defining index, indexAll.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -334,8 +369,8 @@
       "symbolCount": 3,
       "lineCount": 33,
       "complexity": "simple",
-      "pagerank": 0.006751,
-      "communityId": 1,
+      "pagerank": 0.006634,
+      "communityId": 5,
       "tags": [],
       "summary": "API module fundo.controller defining index, listFundos.",
       "primaryOwner": "Claude"
@@ -348,38 +383,10 @@
       "symbolCount": 3,
       "lineCount": 29,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 1,
+      "pagerank": 0.006634,
+      "communityId": 0,
       "tags": [],
       "summary": "API module graham.controller defining index, indexAll.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/controllers/history.controller.ts",
-      "type": "file",
-      "filePath": "src/controllers/history.controller.ts",
-      "language": "typescript",
-      "symbolCount": 0,
-      "lineCount": 59,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 13,
-      "tags": [],
-      "summary": "API module history.controller.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/controllers/ranking.controller.ts",
-      "type": "file",
-      "filePath": "src/controllers/ranking.controller.ts",
-      "language": "typescript",
-      "symbolCount": 0,
-      "lineCount": 18,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 14,
-      "tags": [],
-      "summary": "API module ranking.controller.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
@@ -390,8 +397,8 @@
       "symbolCount": 1,
       "lineCount": 16,
       "complexity": "simple",
-      "pagerank": 0.006751,
-      "communityId": 1,
+      "pagerank": 0.006634,
+      "communityId": 0,
       "tags": [],
       "summary": "API module simulation.controller defining index.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -404,25 +411,11 @@
       "symbolCount": 8,
       "lineCount": 99,
       "complexity": "moderate",
-      "pagerank": 0.006751,
-      "communityId": 1,
+      "pagerank": 0.006634,
+      "communityId": 0,
       "tags": [],
       "summary": "API module stock.controller defining index, indexPrice, indexDividends.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/controllers/variations.controller.ts",
-      "type": "file",
-      "filePath": "src/controllers/variations.controller.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 33,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 1,
-      "tags": [],
-      "summary": "API module variations.controller defining getVariations.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
       "id": "file:src/env.ts",
@@ -430,10 +423,10 @@
       "filePath": "src/env.ts",
       "language": "typescript",
       "symbolCount": 1,
-      "lineCount": 34,
+      "lineCount": 32,
       "complexity": "simple",
-      "pagerank": 0.00909,
-      "communityId": 3,
+      "pagerank": 0.014843,
+      "communityId": 4,
       "tags": [],
       "summary": "Application module env (1 symbols).",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -446,11 +439,10 @@
       "symbolCount": 2,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.007449,
-      "communityId": 6,
+      "pagerank": 0.008161,
+      "communityId": 0,
       "tags": [],
-      "summary": "Application module CustomError defining CustomError, constructor.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+      "summary": "Application module CustomError defining CustomError, constructor."
     },
     {
       "id": "file:src/global/MacroInfo.ts",
@@ -458,10 +450,10 @@
       "filePath": "src/global/MacroInfo.ts",
       "language": "typescript",
       "symbolCount": 11,
-      "lineCount": 71,
+      "lineCount": 68,
       "complexity": "moderate",
-      "pagerank": 0.005147,
-      "communityId": 0,
+      "pagerank": 0.005029,
+      "communityId": 3,
       "tags": [],
       "summary": "Application module MacroInfo defining Value, RootSelic, RootIPCA.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -471,11 +463,11 @@
       "type": "file",
       "filePath": "src/global/Queue.ts",
       "language": "typescript",
-      "symbolCount": 2,
-      "lineCount": 6,
-      "complexity": "simple",
-      "pagerank": 0.006372,
-      "communityId": 5,
+      "symbolCount": 5,
+      "lineCount": 25,
+      "complexity": "moderate",
+      "pagerank": 0.012822,
+      "communityId": 4,
       "tags": [],
       "summary": "Application module Queue defining stockQueueData.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -486,10 +478,10 @@
       "filePath": "src/global/Redis.ts",
       "language": "typescript",
       "symbolCount": 10,
-      "lineCount": 109,
+      "lineCount": 104,
       "complexity": "moderate",
-      "pagerank": 0.006295,
-      "communityId": 5,
+      "pagerank": 0.007048,
+      "communityId": 4,
       "tags": [],
       "summary": "Application module Redis defining Redis, constructor, activeSubcribe.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -500,41 +492,27 @@
       "filePath": "src/interfaces/BazinProtocol.type.ts",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 20,
+      "lineCount": 19,
       "complexity": "simple",
-      "pagerank": 0.005483,
+      "pagerank": 0.005368,
       "communityId": 2,
       "tags": [],
       "summary": "Types module BazinProtocol.type defining BazinMethods, BazinProtocol.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
-      "id": "file:src/interfaces/ChartProtocol.type.ts",
-      "type": "file",
-      "filePath": "src/interfaces/ChartProtocol.type.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 31,
-      "complexity": "simple",
-      "pagerank": 0.00653,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Types module ChartProtocol.type defining ChartProtocol.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
       "id": "file:src/interfaces/FetcherUtils.type.ts",
       "type": "file",
       "filePath": "src/interfaces/FetcherUtils.type.ts",
       "language": "typescript",
-      "symbolCount": 2,
-      "lineCount": 7,
+      "symbolCount": 1,
+      "lineCount": 4,
       "complexity": "simple",
-      "pagerank": 0.006043,
-      "communityId": 0,
+      "pagerank": 0.006372,
+      "communityId": 1,
       "tags": [],
       "summary": "Types module FetcherUtils.type defining FetcherUtilsProtocol.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:src/interfaces/GranhamProtocol.type.ts",
@@ -542,26 +520,12 @@
       "filePath": "src/interfaces/GranhamProtocol.type.ts",
       "language": "typescript",
       "symbolCount": 3,
-      "lineCount": 115,
+      "lineCount": 114,
       "complexity": "moderate",
-      "pagerank": 0.005147,
+      "pagerank": 0.005029,
       "communityId": 2,
       "tags": [],
       "summary": "Types module GranhamProtocol.type defining GranhamMethods, GranhamProtocol, constructor.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/interfaces/SegmentProtocol.ts",
-      "type": "file",
-      "filePath": "src/interfaces/SegmentProtocol.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 7,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 0,
-      "tags": [],
-      "summary": "Types module SegmentProtocol defining SegmentProtocol.",
       "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
@@ -572,53 +536,11 @@
       "symbolCount": 1,
       "lineCount": 6,
       "complexity": "simple",
-      "pagerank": 0.011682,
+      "pagerank": 0.009776,
       "communityId": 2,
       "tags": [],
       "summary": "Types module StockProtocol.type defining StockProtocol.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/interfaces/Transaction.ts",
-      "type": "file",
-      "filePath": "src/interfaces/Transaction.ts",
-      "language": "typescript",
-      "symbolCount": 3,
-      "lineCount": 10,
-      "complexity": "simple",
-      "pagerank": 0.008488,
-      "communityId": 8,
-      "tags": [],
-      "summary": "Types module Transaction defining TransactionsProps, TransactionHistory.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/interfaces/TransactionManagerProtocol.type.ts",
-      "type": "file",
-      "filePath": "src/interfaces/TransactionManagerProtocol.type.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 6,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 1,
-      "tags": [],
-      "summary": "Types module TransactionManagerProtocol.type defining TransactionManagerProtocol.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/interfaces/TransactionProtocol.ts",
-      "type": "file",
-      "filePath": "src/interfaces/TransactionProtocol.ts",
-      "language": "typescript",
-      "symbolCount": 6,
-      "lineCount": 38,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 7,
-      "tags": [],
-      "summary": "Types module TransactionProtocol defining Transaction, constructor, makeDescription.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
       "id": "file:src/interfaces/Variable.type.ts",
@@ -628,8 +550,8 @@
       "symbolCount": 1,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.019761,
-      "communityId": 4,
+      "pagerank": 0.016282,
+      "communityId": 2,
       "tags": [],
       "summary": "Types module Variable.type defining VariableProps.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -639,13 +561,27 @@
       "type": "file",
       "filePath": "src/queues/StockQueue.ts",
       "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 13,
+      "symbolCount": 2,
+      "lineCount": 27,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 5,
+      "pagerank": 0.005412,
+      "communityId": 4,
       "tags": [],
       "summary": "Application module StockQueue (1 symbols).",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/queues/refreshStock.ts",
+      "type": "file",
+      "filePath": "src/queues/refreshStock.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 29,
+      "complexity": "simple",
+      "pagerank": 0.007597,
+      "communityId": 4,
+      "tags": [],
+      "summary": "Application module refreshStock defining Dependencies, createStockRefresher.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
@@ -656,11 +592,10 @@
       "symbolCount": 1,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.005089,
-      "communityId": 3,
+      "pagerank": 0.005106,
+      "communityId": 0,
       "tags": [],
-      "summary": "API module bazin.routes (1 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "API module bazin.routes (1 symbols)."
     },
     {
       "id": "file:src/routes/fundo.routes.ts",
@@ -670,11 +605,10 @@
       "symbolCount": 1,
       "lineCount": 9,
       "complexity": "simple",
-      "pagerank": 0.005089,
-      "communityId": 1,
+      "pagerank": 0.005106,
+      "communityId": 0,
       "tags": [],
-      "summary": "API module fundo.routes (1 symbols).",
-      "primaryOwner": "Claude"
+      "summary": "API module fundo.routes (1 symbols)."
     },
     {
       "id": "file:src/routes/graham.routes.ts",
@@ -684,11 +618,10 @@
       "symbolCount": 1,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.005089,
-      "communityId": 3,
+      "pagerank": 0.005106,
+      "communityId": 0,
       "tags": [],
-      "summary": "API module graham.routes (1 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "API module graham.routes (1 symbols)."
     },
     {
       "id": "file:src/routes/simulation.routes.ts",
@@ -696,13 +629,13 @@
       "filePath": "src/routes/simulation.routes.ts",
       "language": "typescript",
       "symbolCount": 1,
-      "lineCount": 5,
+      "lineCount": 4,
       "complexity": "simple",
-      "pagerank": 0.005089,
-      "communityId": 1,
+      "pagerank": 0.005106,
+      "communityId": 0,
       "tags": [],
       "summary": "API module simulation.routes (1 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:src/routes/stock.routes.ts",
@@ -712,27 +645,180 @@
       "symbolCount": 1,
       "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.005089,
-      "communityId": 1,
+      "pagerank": 0.005106,
+      "communityId": 0,
       "tags": [],
-      "summary": "API module stock.routes (1 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "API module stock.routes (1 symbols)."
     },
     {
       "id": "file:src/server.ts",
       "type": "file",
       "filePath": "src/server.ts",
       "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 4,
+      "symbolCount": 3,
+      "lineCount": 17,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 3,
+      "pagerank": 0.004464,
+      "communityId": 4,
       "tags": [
         "entry_point"
       ],
       "summary": "Application module server (1 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/fundamentus.ts",
+      "type": "file",
+      "filePath": "src/sources/fundamentus.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 18,
+      "complexity": "simple",
+      "pagerank": 0.008291,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Application module fundamentus defining fetchAllTickers.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/basicInfo.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/basicInfo.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 89,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module basicInfo defining parseBasicInfo.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/cashFlow.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/cashFlow.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 43,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module cashFlow defining fetchCashFlow.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/dividends.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/dividends.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 37,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module dividends defining fetchDividends.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/http.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/http.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 8,
+      "complexity": "simple",
+      "pagerank": 0.016587,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module http.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/index.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/index.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 9,
+      "complexity": "simple",
+      "pagerank": 0.008329,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module index.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/indicators.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/indicators.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 47,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module indicators defining emptyIndicators, fetchIndicators.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/page.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/page.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 20,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Application module page defining fetchStockPage.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/passiveChart.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/passiveChart.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 24,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module passiveChart defining fetchPassiveChart.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/payout.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/payout.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 22,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module payout defining fetchPayout.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/prices.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/prices.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 20,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module prices defining fetchPrices.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:src/types/AxiosOptions.type.ts",
@@ -742,11 +828,10 @@
       "symbolCount": 1,
       "lineCount": 6,
       "complexity": "simple",
-      "pagerank": 0.01118,
-      "communityId": 0,
+      "pagerank": 0.017989,
+      "communityId": 3,
       "tags": [],
-      "summary": "Types module AxiosOptions.type defining AxiosOptions.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module AxiosOptions.type defining AxiosOptions."
     },
     {
       "id": "file:src/types/BasicInfo.type.ts",
@@ -754,13 +839,12 @@
       "filePath": "src/types/BasicInfo.type.ts",
       "language": "typescript",
       "symbolCount": 1,
-      "lineCount": 10,
+      "lineCount": 9,
       "complexity": "simple",
-      "pagerank": 0.005768,
-      "communityId": 0,
+      "pagerank": 0.007344,
+      "communityId": 1,
       "tags": [],
-      "summary": "Types module BasicInfo.type (1 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module BasicInfo.type (1 symbols)."
     },
     {
       "id": "file:src/types/Brapi.type.ts",
@@ -768,55 +852,12 @@
       "filePath": "src/types/Brapi.type.ts",
       "language": "typescript",
       "symbolCount": 13,
-      "lineCount": 47,
+      "lineCount": 45,
       "complexity": "moderate",
-      "pagerank": 0.008586,
-      "communityId": 6,
+      "pagerank": 0.008353,
+      "communityId": 5,
       "tags": [],
-      "summary": "Types module Brapi.type defining BrapiFiiIndicator, BrapiIndicatorsResponse, BrapiListResponse.",
-      "primaryOwner": "Claude"
-    },
-    {
-      "id": "file:src/types/Cache.type.ts",
-      "type": "file",
-      "filePath": "src/types/Cache.type.ts",
-      "language": "typescript",
-      "symbolCount": 2,
-      "lineCount": 4,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 15,
-      "tags": [],
-      "summary": "Types module Cache.type defining CacheProps, CacheJSONProps.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/Chart.type.ts",
-      "type": "file",
-      "filePath": "src/types/Chart.type.ts",
-      "language": "typescript",
-      "symbolCount": 7,
-      "lineCount": 31,
-      "complexity": "moderate",
-      "pagerank": 0.007528,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Types module Chart.type defining ChartPortifolio, DividendPayment, StockData.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/Comparator.type.ts",
-      "type": "file",
-      "filePath": "src/types/Comparator.type.ts",
-      "language": "typescript",
-      "symbolCount": 3,
-      "lineCount": 6,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 16,
-      "tags": [],
-      "summary": "Types module Comparator.type defining ComparatorProps.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module Brapi.type defining BrapiFiiIndicator, BrapiIndicatorsResponse, BrapiListResponse."
     },
     {
       "id": "file:src/types/DRE.type.ts",
@@ -824,13 +865,12 @@
       "filePath": "src/types/DRE.type.ts",
       "language": "typescript",
       "symbolCount": 7,
-      "lineCount": 27,
+      "lineCount": 25,
       "complexity": "moderate",
-      "pagerank": 0.005135,
-      "communityId": 0,
+      "pagerank": 0.004464,
+      "communityId": 20,
       "tags": [],
-      "summary": "Types module DRE.type defining Column, GridLineModel, Grid.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module DRE.type defining Column, GridLineModel, Grid."
     },
     {
       "id": "file:src/types/Database/StockRepository.type.ts",
@@ -840,52 +880,10 @@
       "symbolCount": 1,
       "lineCount": 4,
       "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 4,
+      "pagerank": 0.004464,
+      "communityId": 2,
       "tags": [],
       "summary": "Types module StockRepository.type defining IStockDatabase.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/Dividend.type.ts",
-      "type": "file",
-      "filePath": "src/types/Dividend.type.ts",
-      "language": "typescript",
-      "symbolCount": 0,
-      "lineCount": 0,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 17,
-      "tags": [],
-      "summary": "Types module Dividend.type.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/types/FundamentalIndicators.type.ts",
-      "type": "file",
-      "filePath": "src/types/FundamentalIndicators.type.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 14,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 18,
-      "tags": [],
-      "summary": "Types module FundamentalIndicators.type defining FinancialMetrics.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/History.type.ts",
-      "type": "file",
-      "filePath": "src/types/History.type.ts",
-      "language": "typescript",
-      "symbolCount": 5,
-      "lineCount": 31,
-      "complexity": "moderate",
-      "pagerank": 0.004978,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Types module History.type defining HistoryData, HistoryProps, SimplifiedHistoryData.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
@@ -894,27 +892,12 @@
       "filePath": "src/types/HomeItens.type.ts",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 6,
+      "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.005785,
-      "communityId": 1,
+      "pagerank": 0.004464,
+      "communityId": 21,
       "tags": [],
-      "summary": "Types module HomeItens.type defining ItemData, HomeItens.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/Index.type.ts",
-      "type": "file",
-      "filePath": "src/types/Index.type.ts",
-      "language": "typescript",
-      "symbolCount": 2,
-      "lineCount": 6,
-      "complexity": "simple",
-      "pagerank": 0.007094,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Types module Index.type (2 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module HomeItens.type defining ItemData, HomeItens."
     },
     {
       "id": "file:src/types/News.type.ts",
@@ -922,13 +905,12 @@
       "filePath": "src/types/News.type.ts",
       "language": "typescript",
       "symbolCount": 7,
-      "lineCount": 37,
+      "lineCount": 35,
       "complexity": "moderate",
-      "pagerank": 0.005135,
-      "communityId": 0,
+      "pagerank": 0.004464,
+      "communityId": 22,
       "tags": [],
-      "summary": "Types module News.type defining News, User, RelatedSymbol.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module News.type defining News, User, RelatedSymbol."
     },
     {
       "id": "file:src/types/PassiveChart.type.ts",
@@ -938,11 +920,10 @@
       "symbolCount": 2,
       "lineCount": 12,
       "complexity": "simple",
-      "pagerank": 0.01748,
-      "communityId": 0,
+      "pagerank": 0.016099,
+      "communityId": 2,
       "tags": [],
-      "summary": "Types module PassiveChart.type defining PassiveChart, PassiveChartReturn.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+      "summary": "Types module PassiveChart.type defining PassiveChart, PassiveChartReturn."
     },
     {
       "id": "file:src/types/Payout.type.ts",
@@ -950,13 +931,12 @@
       "filePath": "src/types/Payout.type.ts",
       "language": "typescript",
       "symbolCount": 7,
-      "lineCount": 25,
+      "lineCount": 23,
       "complexity": "moderate",
-      "pagerank": 0.005768,
-      "communityId": 0,
+      "pagerank": 0.007344,
+      "communityId": 1,
       "tags": [],
-      "summary": "Types module Payout.type defining Percentual, Provento, LucroLiquido.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module Payout.type defining Percentual, Provento, LucroLiquido."
     },
     {
       "id": "file:src/types/Pontuation.type.ts",
@@ -966,11 +946,10 @@
       "symbolCount": 3,
       "lineCount": 10,
       "complexity": "simple",
-      "pagerank": 0.015032,
+      "pagerank": 0.016141,
       "communityId": 2,
       "tags": [],
-      "summary": "Types module Pontuation.type defining PontuationRule, InfoData, PontuationProps.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module Pontuation.type defining PontuationRule, InfoData, PontuationProps."
     },
     {
       "id": "file:src/types/QueryStock.type.ts",
@@ -980,25 +959,10 @@
       "symbolCount": 1,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.006435,
-      "communityId": 0,
+      "pagerank": 0.004464,
+      "communityId": 23,
       "tags": [],
-      "summary": "Types module QueryStock.type defining StockQuery.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/types/Reponse.type.ts",
-      "type": "file",
-      "filePath": "src/types/Reponse.type.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 3,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 19,
-      "tags": [],
-      "summary": "Types module Reponse.type defining Response.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module QueryStock.type defining StockQuery."
     },
     {
       "id": "file:src/types/Segment.type.ts",
@@ -1006,69 +970,12 @@
       "filePath": "src/types/Segment.type.ts",
       "language": "typescript",
       "symbolCount": 5,
-      "lineCount": 13,
+      "lineCount": 12,
       "complexity": "moderate",
-      "pagerank": 0.009035,
-      "communityId": 0,
+      "pagerank": 0.004464,
+      "communityId": 24,
       "tags": [],
-      "summary": "Types module Segment.type defining Segment, SegmentData, Root.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/StockIndicators.type.ts",
-      "type": "file",
-      "filePath": "src/types/StockIndicators.type.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 25,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 20,
-      "tags": [],
-      "summary": "Types module StockIndicators.type defining Indicators.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/StockPropReturn.type.ts",
-      "type": "file",
-      "filePath": "src/types/StockPropReturn.type.ts",
-      "language": "typescript",
-      "symbolCount": 2,
-      "lineCount": 9,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 21,
-      "tags": [],
-      "summary": "Types module StockPropReturn.type (2 symbols).",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/Task.type.ts",
-      "type": "file",
-      "filePath": "src/types/Task.type.ts",
-      "language": "typescript",
-      "symbolCount": 2,
-      "lineCount": 8,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 22,
-      "tags": [],
-      "summary": "Types module Task.type defining TaskInput, Task.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/types/UserProps.ts",
-      "type": "file",
-      "filePath": "src/types/UserProps.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 5,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 23,
-      "tags": [],
-      "summary": "Types module UserProps defining UserProps.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module Segment.type defining Segment, SegmentData, Root."
     },
     {
       "id": "file:src/types/cashFlow.type.ts",
@@ -1076,13 +983,13 @@
       "filePath": "src/types/cashFlow.type.ts",
       "language": "typescript",
       "symbolCount": 5,
-      "lineCount": 21,
+      "lineCount": 19,
       "complexity": "moderate",
-      "pagerank": 0.005135,
-      "communityId": 0,
+      "pagerank": 0.005979,
+      "communityId": 1,
       "tags": [],
       "summary": "Types module cashFlow.type defining RootCashFlow, Data, Grid.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:src/types/dividends.type.ts",
@@ -1090,13 +997,12 @@
       "filePath": "src/types/dividends.type.ts",
       "language": "typescript",
       "symbolCount": 10,
-      "lineCount": 38,
+      "lineCount": 36,
       "complexity": "moderate",
-      "pagerank": 0.031449,
-      "communityId": 4,
+      "pagerank": 0.015341,
+      "communityId": 2,
       "tags": [],
-      "summary": "Types module dividends.type defining Helpers, AssetEarningsModel, AssetEarningsYearlyModel.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module dividends.type defining Helpers, AssetEarningsModel, AssetEarningsYearlyModel."
     },
     {
       "id": "file:src/types/fundo.types.ts",
@@ -1104,13 +1010,12 @@
       "filePath": "src/types/fundo.types.ts",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 26,
+      "lineCount": 25,
       "complexity": "simple",
-      "pagerank": 0.014361,
-      "communityId": 6,
+      "pagerank": 0.013987,
+      "communityId": 5,
       "tags": [],
-      "summary": "Types module fundo.types defining FundoProps.",
-      "primaryOwner": "Claude"
+      "summary": "Types module fundo.types defining FundoProps."
     },
     {
       "id": "file:src/types/get.type.ts",
@@ -1120,8 +1025,8 @@
       "symbolCount": 3,
       "lineCount": 8,
       "complexity": "simple",
-      "pagerank": 0.005768,
-      "communityId": 0,
+      "pagerank": 0.006586,
+      "communityId": 1,
       "tags": [],
       "summary": "Types module get.type defining Dividend, Dividends.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -1132,13 +1037,12 @@
       "filePath": "src/types/indicators.type.ts",
       "language": "typescript",
       "symbolCount": 9,
-      "lineCount": 47,
+      "lineCount": 45,
       "complexity": "moderate",
-      "pagerank": 0.018039,
-      "communityId": 0,
+      "pagerank": 0.016664,
+      "communityId": 2,
       "tags": [],
-      "summary": "Types module indicators.type defining OldData, FinancialData, FinancialIndicators.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module indicators.type defining OldData, FinancialData, FinancialIndicators."
     },
     {
       "id": "file:src/types/prices.type.ts",
@@ -1146,10 +1050,10 @@
       "filePath": "src/types/prices.type.ts",
       "language": "typescript",
       "symbolCount": 4,
-      "lineCount": 9,
+      "lineCount": 8,
       "complexity": "moderate",
-      "pagerank": 0.00761,
-      "communityId": 0,
+      "pagerank": 0.009464,
+      "communityId": 1,
       "tags": [],
       "summary": "Types module prices.type defining PriceObject, MainPrices, PriceReturn.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -1162,11 +1066,10 @@
       "symbolCount": 3,
       "lineCount": 10,
       "complexity": "simple",
-      "pagerank": 0.005135,
-      "communityId": 0,
+      "pagerank": 0.004464,
+      "communityId": 25,
       "tags": [],
-      "summary": "Types module report.type defining Report, RootReport, ReportReturn.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module report.type defining Report, RootReport, ReportReturn."
     },
     {
       "id": "file:src/types/responses.type.ts",
@@ -1176,11 +1079,10 @@
       "symbolCount": 2,
       "lineCount": 5,
       "complexity": "simple",
-      "pagerank": 0.006557,
-      "communityId": 1,
+      "pagerank": 0.006534,
+      "communityId": 0,
       "tags": [],
-      "summary": "Types module responses.type defining ErrorResponse, ResponseProps.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+      "summary": "Types module responses.type defining ErrorResponse, ResponseProps."
     },
     {
       "id": "file:src/types/stock.types.ts",
@@ -1188,27 +1090,13 @@
       "filePath": "src/types/stock.types.ts",
       "language": "typescript",
       "symbolCount": 6,
-      "lineCount": 36,
+      "lineCount": 34,
       "complexity": "moderate",
-      "pagerank": 0.050224,
-      "communityId": 4,
+      "pagerank": 0.036309,
+      "communityId": 2,
       "tags": [],
       "summary": "Types module stock.types defining PriceHistory, StockProps, StockInfo.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/types/transaction.type.ts",
-      "type": "file",
-      "filePath": "src/types/transaction.type.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 6,
-      "complexity": "simple",
-      "pagerank": 0.009218,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Types module transaction.type defining TransactionsProps.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
       "id": "file:src/useCases/BrapiClient.ts",
@@ -1216,27 +1104,13 @@
       "filePath": "src/useCases/BrapiClient.ts",
       "language": "typescript",
       "symbolCount": 4,
-      "lineCount": 56,
+      "lineCount": 54,
       "complexity": "moderate",
-      "pagerank": 0.00548,
-      "communityId": 6,
+      "pagerank": 0.005332,
+      "communityId": 5,
       "tags": [],
       "summary": "Service module BrapiClient defining authHeaders, safeGet.",
       "primaryOwner": "Claude"
-    },
-    {
-      "id": "file:src/useCases/Fetcher.ts",
-      "type": "file",
-      "filePath": "src/useCases/Fetcher.ts",
-      "language": "typescript",
-      "symbolCount": 20,
-      "lineCount": 656,
-      "complexity": "complex",
-      "pagerank": 0.012226,
-      "communityId": 0,
-      "tags": [],
-      "summary": "Service module Fetcher defining TickerFetcher, constructor, initialize.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
       "id": "file:src/useCases/FundoFetcher.ts",
@@ -1244,10 +1118,10 @@
       "filePath": "src/useCases/FundoFetcher.ts",
       "language": "typescript",
       "symbolCount": 5,
-      "lineCount": 135,
+      "lineCount": 131,
       "complexity": "moderate",
-      "pagerank": 0.006295,
-      "communityId": 6,
+      "pagerank": 0.006128,
+      "communityId": 5,
       "tags": [],
       "summary": "Service module FundoFetcher defining buildFundoProps, FundoFetcher, execute.",
       "primaryOwner": "Claude"
@@ -1258,26 +1132,12 @@
       "filePath": "src/useCases/PontuationDatabase.ts",
       "language": "typescript",
       "symbolCount": 7,
-      "lineCount": 61,
+      "lineCount": 59,
       "complexity": "moderate",
-      "pagerank": 0.006343,
+      "pagerank": 0.004464,
       "communityId": 2,
       "tags": [],
       "summary": "Service module PontuationDatabase defining DatabaseProps, PontuationCache, PontuationDataBase.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/useCases/RankingCsv.ts",
-      "type": "file",
-      "filePath": "src/useCases/RankingCsv.ts",
-      "language": "typescript",
-      "symbolCount": 9,
-      "lineCount": 50,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 2,
-      "tags": [],
-      "summary": "Service module RankingCsv defining IPontuationService, PontuationService, createPontuationInstances.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
@@ -1286,54 +1146,26 @@
       "filePath": "src/useCases/fundoDataBase.ts",
       "language": "typescript",
       "symbolCount": 6,
-      "lineCount": 45,
+      "lineCount": 44,
       "complexity": "moderate",
-      "pagerank": 0.006023,
-      "communityId": 6,
+      "pagerank": 0.005873,
+      "communityId": 5,
       "tags": [],
       "summary": "Service module fundoDataBase defining FundoCache, FundoDataBase, getFundo.",
       "primaryOwner": "Claude"
-    },
-    {
-      "id": "file:src/useCases/getStockImage.ts",
-      "type": "file",
-      "filePath": "src/useCases/getStockImage.ts",
-      "language": "typescript",
-      "symbolCount": 5,
-      "lineCount": 44,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 0,
-      "tags": [],
-      "summary": "Service module getStockImage defining GetStockImage, constructor, execute.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
       "id": "file:src/useCases/instanceStock.ts",
       "type": "file",
       "filePath": "src/useCases/instanceStock.ts",
       "language": "typescript",
-      "symbolCount": 11,
-      "lineCount": 133,
+      "symbolCount": 10,
+      "lineCount": 131,
       "complexity": "moderate",
-      "pagerank": 0.007442,
-      "communityId": 0,
+      "pagerank": 0.007146,
+      "communityId": 2,
       "tags": [],
       "summary": "Service module instanceStock defining InstanceStock, constructor, execute.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/useCases/jsonStockDataBase.ts",
-      "type": "file",
-      "filePath": "src/useCases/jsonStockDataBase.ts",
-      "language": "typescript",
-      "symbolCount": 8,
-      "lineCount": 38,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 3,
-      "tags": [],
-      "summary": "Service module jsonStockDataBase defining StockDataBase, constructor, remakeStock.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
@@ -1342,10 +1174,10 @@
       "filePath": "src/useCases/stockDataBase.ts",
       "language": "typescript",
       "symbolCount": 4,
-      "lineCount": 30,
+      "lineCount": 29,
       "complexity": "moderate",
-      "pagerank": 0.008842,
-      "communityId": 2,
+      "pagerank": 0.007268,
+      "communityId": 0,
       "tags": [],
       "summary": "Service module stockDataBase defining StockCache, StockDataBase, getStock.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -1358,8 +1190,8 @@
       "symbolCount": 1,
       "lineCount": 12,
       "complexity": "simple",
-      "pagerank": 0.005135,
-      "communityId": 0,
+      "pagerank": 0.018563,
+      "communityId": 3,
       "tags": [],
       "summary": "Utility module ApiGetter defining apiGetter.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -1370,41 +1202,13 @@
       "filePath": "src/utils/Axios.Utils.ts",
       "language": "typescript",
       "symbolCount": 2,
-      "lineCount": 21,
+      "lineCount": 20,
       "complexity": "simple",
-      "pagerank": 0.006043,
-      "communityId": 0,
+      "pagerank": 0.009723,
+      "communityId": 3,
       "tags": [],
       "summary": "Utility module Axios.Utils defining AxiosUtils, makeOptionsJson.",
       "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/utils/CacheJson.ts",
-      "type": "file",
-      "filePath": "src/utils/CacheJson.ts",
-      "language": "typescript",
-      "symbolCount": 4,
-      "lineCount": 21,
-      "complexity": "moderate",
-      "pagerank": 0.005238,
-      "communityId": 1,
-      "tags": [],
-      "summary": "Utility module CacheJson defining CacheJSON, constructor, replaceData.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
-    },
-    {
-      "id": "file:src/utils/DatabaseSeed.ts",
-      "type": "file",
-      "filePath": "src/utils/DatabaseSeed.ts",
-      "language": "typescript",
-      "symbolCount": 6,
-      "lineCount": 39,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 2,
-      "tags": [],
-      "summary": "Utility module DatabaseSeed defining DatabaseSeedProps, DatabaseSeed, constructor.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:src/utils/DateFormater.ts",
@@ -1412,24 +1216,23 @@
       "filePath": "src/utils/DateFormater.ts",
       "language": "typescript",
       "symbolCount": 3,
-      "lineCount": 23,
+      "lineCount": 22,
       "complexity": "simple",
-      "pagerank": 0.00773,
-      "communityId": 7,
+      "pagerank": 0.00848,
+      "communityId": 1,
       "tags": [],
-      "summary": "Utility module DateFormater defining DateFormatter, dateToString, stringToDate.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+      "summary": "Utility module DateFormater defining DateFormatter, dateToString, stringToDate."
     },
     {
       "id": "file:src/utils/Fetcher.utils.ts",
       "type": "file",
       "filePath": "src/utils/Fetcher.utils.ts",
       "language": "typescript",
-      "symbolCount": 7,
-      "lineCount": 36,
+      "symbolCount": 5,
+      "lineCount": 26,
       "complexity": "moderate",
-      "pagerank": 0.005135,
-      "communityId": 0,
+      "pagerank": 0.006737,
+      "communityId": 1,
       "tags": [],
       "summary": "Utility module Fetcher.utils defining FetcherUtils, constructor, extractText.",
       "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
@@ -1440,55 +1243,13 @@
       "filePath": "src/utils/FundoUtils.ts",
       "language": "typescript",
       "symbolCount": 8,
-      "lineCount": 80,
+      "lineCount": 78,
       "complexity": "moderate",
-      "pagerank": 0.00548,
-      "communityId": 6,
+      "pagerank": 0.005332,
+      "communityId": 5,
       "tags": [],
       "summary": "Utility module FundoUtils defining FundoUtils, round, mapSegmento.",
       "primaryOwner": "Claude"
-    },
-    {
-      "id": "file:src/utils/History.Utils.ts",
-      "type": "file",
-      "filePath": "src/utils/History.Utils.ts",
-      "language": "typescript",
-      "symbolCount": 6,
-      "lineCount": 64,
-      "complexity": "moderate",
-      "pagerank": 0.004978,
-      "communityId": 4,
-      "tags": [],
-      "summary": "Utility module History.Utils defining HistoryUtils, convertLastDividendToDividend, stringToDate.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/utils/Json.ts",
-      "type": "file",
-      "filePath": "src/utils/Json.ts",
-      "language": "typescript",
-      "symbolCount": 4,
-      "lineCount": 28,
-      "complexity": "moderate",
-      "pagerank": 0.008943,
-      "communityId": 2,
-      "tags": [],
-      "summary": "Utility module Json defining Json, readJSONFromFile, saveJSONToFile.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/utils/JsonDatabase.ts",
-      "type": "file",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "language": "typescript",
-      "symbolCount": 9,
-      "lineCount": 40,
-      "complexity": "moderate",
-      "pagerank": 0.010016,
-      "communityId": 3,
-      "tags": [],
-      "summary": "Utility module JsonDatabase defining Database, constructor, add.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
       "id": "file:src/utils/MathUtils.ts",
@@ -1496,26 +1257,12 @@
       "filePath": "src/utils/MathUtils.ts",
       "language": "typescript",
       "symbolCount": 4,
-      "lineCount": 25,
+      "lineCount": 23,
       "complexity": "moderate",
-      "pagerank": 0.007595,
+      "pagerank": 0.00934,
       "communityId": 2,
       "tags": [],
       "summary": "Utility module MathUtils defining MathUtils, makeMedian, makeAverage.",
-      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/utils/RankingSystem.ts",
-      "type": "file",
-      "filePath": "src/utils/RankingSystem.ts",
-      "language": "typescript",
-      "symbolCount": 5,
-      "lineCount": 24,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 2,
-      "tags": [],
-      "summary": "Utility module RankingSystem defining Ranking, RankingSystyem, execute.",
       "primaryOwner": "\u00c1lan Gabriel Dias pedon"
     },
     {
@@ -1524,41 +1271,404 @@
       "filePath": "src/utils/Responses.ts",
       "language": "typescript",
       "symbolCount": 3,
-      "lineCount": 55,
+      "lineCount": 50,
       "complexity": "simple",
-      "pagerank": 0.01158,
-      "communityId": 1,
+      "pagerank": 0.012177,
+      "communityId": 0,
       "tags": [],
       "summary": "Utility module Responses defining response, errorResponse, addError.",
       "primaryOwner": "\u00c1lan Gabriel Dias pedon"
-    },
-    {
-      "id": "file:src/utils/StartQueue.ts",
-      "type": "file",
-      "filePath": "src/utils/StartQueue.ts",
-      "language": "typescript",
-      "symbolCount": 1,
-      "lineCount": 12,
-      "complexity": "simple",
-      "pagerank": 0.004588,
-      "communityId": 5,
-      "tags": [],
-      "summary": "Utility module StartQueue defining startQueue.",
-      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:src/utils/Utilities.ts",
       "type": "file",
       "filePath": "src/utils/Utilities.ts",
       "language": "typescript",
-      "symbolCount": 6,
-      "lineCount": 47,
-      "complexity": "moderate",
-      "pagerank": 0.00698,
-      "communityId": 0,
+      "symbolCount": 2,
+      "lineCount": 11,
+      "complexity": "simple",
+      "pagerank": 0.009785,
+      "communityId": 1,
       "tags": [],
       "summary": "Utility module Utilities defining Utilities, formateNumber, msToHours.",
       "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:tests/golden/data/all-tickers.json",
+      "type": "config",
+      "filePath": "tests/golden/data/all-tickers.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 6,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: all-tickers.json."
+    },
+    {
+      "id": "file:tests/golden/data/bazin-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/bazin-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 40,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: bazin-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/bazin-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/bazin-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 39,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: bazin-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/data/graham-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/graham-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 41,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: graham-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/graham-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/graham-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 41,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: graham-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/data/simulation-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/simulation-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 17,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: simulation-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/simulation-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/simulation-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 16,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: simulation-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/data/stock-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/stock-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 1700,
+      "complexity": "complex",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: stock-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/stock-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/stock-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 1367,
+      "complexity": "complex",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: stock-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/stock.test.ts",
+      "type": "file",
+      "filePath": "tests/golden/stock.test.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 79,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for stock.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/http/routes.test.ts",
+      "type": "file",
+      "filePath": "tests/http/routes.test.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 195,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 0,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for routes.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/integration/queue.test.ts",
+      "type": "file",
+      "filePath": "tests/integration/queue.test.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 91,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 4,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for queue.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/golden.ts",
+      "type": "file",
+      "filePath": "tests/support/golden.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 25,
+      "complexity": "simple",
+      "pagerank": 0.004843,
+      "communityId": 3,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for golden.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/http-fixtures.ts",
+      "type": "file",
+      "filePath": "tests/support/http-fixtures.ts",
+      "language": "typescript",
+      "symbolCount": 12,
+      "lineCount": 101,
+      "complexity": "moderate",
+      "pagerank": 0.006234,
+      "communityId": 3,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for http-fixtures.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/preload.ts",
+      "type": "file",
+      "filePath": "tests/support/preload.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 6,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for preload.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/record.ts",
+      "type": "file",
+      "filePath": "tests/support/record.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 27,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 1,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for record.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/date-formatter.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/date-formatter.test.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 29,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 1,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for date-formatter.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/env.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/env.test.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 56,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 3,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for env.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/math-utils.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/math-utils.test.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 32,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for math-utils.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/pontuation.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/pontuation.test.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 45,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for pontuation.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/refresh-stock.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/refresh-stock.test.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 43,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 4,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for refresh-stock.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/responses.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/responses.test.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 66,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 0,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for responses.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/utilities.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/utilities.test.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 16,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 1,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for utilities.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
     },
     {
       "id": "file:tsconfig.json",
@@ -1566,10 +1676,10 @@
       "filePath": "tsconfig.json",
       "language": "json",
       "symbolCount": 0,
-      "lineCount": 299,
-      "complexity": "moderate",
-      "pagerank": 0.004588,
-      "communityId": 24,
+      "lineCount": 10,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 6,
       "tags": [
         "config"
       ],
@@ -1612,280 +1722,19 @@
       "summary": ""
     },
     {
-      "id": "function:src/useCases/Fetcher.ts:constructor",
+      "id": "function:src/utils/ApiGetter.ts:apiGetter",
       "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "constructor",
+      "filePath": "src/utils/ApiGetter.ts",
+      "name": "apiGetter",
       "language": "typescript",
       "tags": [],
       "summary": ""
     },
     {
-      "id": "function:src/useCases/Fetcher.ts:getAllTickers",
+      "id": "function:src/utils/Axios.Utils.ts:makeOptionsJson",
       "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getAllTickers",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getBasicInfo",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getBasicInfo",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getCashFlow",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getCashFlow",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getDividendInfo",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getDividendInfo",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getDreInfo",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getDreInfo",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getHighsAndLows",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getHighsAndLows",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getHtmlPage",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getHtmlPage",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getImage",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getImage",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getIndicatorsInfo",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getIndicatorsInfo",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getNewContent",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getNewContent",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getNews",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getNews",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getPassiveChart",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getPassiveChart",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getPayout",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getPayout",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getPrice",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getPrice",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getReports",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getReports",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getSegment",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getSegment",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:getStockrebuy",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "getStockrebuy",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/Fetcher.ts:initialize",
-      "type": "function",
-      "filePath": "src/useCases/Fetcher.ts",
-      "name": "initialize",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/stockDataBase.ts:getNewStock",
-      "type": "function",
-      "filePath": "src/useCases/stockDataBase.ts",
-      "name": "getNewStock",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/useCases/stockDataBase.ts:getStock",
-      "type": "function",
-      "filePath": "src/useCases/stockDataBase.ts",
-      "name": "getStock",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/Json.ts:readJSONFromFile",
-      "type": "function",
-      "filePath": "src/utils/Json.ts",
-      "name": "readJSONFromFile",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/Json.ts:saveJSONToFile",
-      "type": "function",
-      "filePath": "src/utils/Json.ts",
-      "name": "saveJSONToFile",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:add",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "add",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:clear",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "clear",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:commit",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "commit",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:constructor",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "constructor",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:deleteBy",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "deleteBy",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:find",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "find",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:findAll",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "findAll",
-      "language": "typescript",
-      "tags": [],
-      "summary": ""
-    },
-    {
-      "id": "function:src/utils/JsonDatabase.ts:get",
-      "type": "function",
-      "filePath": "src/utils/JsonDatabase.ts",
-      "name": "get",
+      "filePath": "src/utils/Axios.Utils.ts",
+      "name": "makeOptionsJson",
       "language": "typescript",
       "tags": [],
       "summary": ""
@@ -1916,9 +1765,39 @@
       "language": "typescript",
       "tags": [],
       "summary": ""
+    },
+    {
+      "id": "function:src/utils/Utilities.ts:formateNumber",
+      "type": "function",
+      "filePath": "src/utils/Utilities.ts",
+      "name": "formateNumber",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
     }
   ],
   "edges": [
+    {
+      "source": "file:scripts/start-queue.ts",
+      "target": "file:external:node:path",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/start-queue.ts",
+      "target": "file:src/global/Queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/start-queue.ts",
+      "target": "file:src/sources/fundamentus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
     {
       "source": "file:src/Entities/Bazin.ts",
       "target": "file:src/Entities/Pontuation.ts",
@@ -1950,41 +1829,6 @@
     {
       "source": "file:src/Entities/Bazin.ts",
       "target": "file:src/utils/MathUtils.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/Chart.ts",
-      "target": "file:src/interfaces/ChartProtocol.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/Chart.ts",
-      "target": "file:src/types/Chart.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/Chart.ts",
-      "target": "file:src/types/dividends.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/Chart.ts",
-      "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/Chart.ts",
-      "target": "file:src/types/transaction.type.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2053,76 +1897,6 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/Entities/Chart.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/interfaces/ChartProtocol.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/types/History.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/types/Index.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/types/dividends.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/types/transaction.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/useCases/stockDataBase.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/utils/History.Utils.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/Entities/History.ts",
-      "target": "file:src/utils/Utilities.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/Entities/Pontuation.ts",
       "target": "class:src/Entities/Pontuation.ts:Pontuation",
       "type": "contains",
@@ -2180,14 +1954,14 @@
     },
     {
       "source": "file:src/Entities/Simulation.ts",
-      "target": "file:src/types/prices.type.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/Entities/Simulation.ts",
-      "target": "file:src/useCases/Fetcher.ts",
+      "target": "file:src/types/prices.type.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2242,13 +2016,6 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/Entities/Transaction.ts",
-      "target": "file:src/interfaces/Transaction.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/Entities/Variable.ts",
       "target": "class:src/Entities/Variable.ts:Variable",
       "type": "contains",
@@ -2285,21 +2052,7 @@
     },
     {
       "source": "file:src/app.ts",
-      "target": "file:external:@/queues/StockQueue.js",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/app.ts",
       "target": "file:external:cors",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/app.ts",
-      "target": "file:external:dotenv",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2355,7 +2108,7 @@
     },
     {
       "source": "file:src/controllers/bazin.controller.ts",
-      "target": "file:external:@/entities/Pontuation.js",
+      "target": "file:external:@/Entities/Pontuation.js",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2418,7 +2171,7 @@
     },
     {
       "source": "file:src/controllers/graham.controller.ts",
-      "target": "file:external:@/entities/Pontuation.js",
+      "target": "file:external:@/Entities/Pontuation.js",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2501,55 +2254,6 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/controllers/variations.controller.ts",
-      "target": "file:external:express",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/controllers/variations.controller.ts",
-      "target": "file:external:plotly.js",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/controllers/variations.controller.ts",
-      "target": "file:src/types/HomeItens.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/controllers/variations.controller.ts",
-      "target": "file:src/useCases/Fetcher.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/controllers/variations.controller.ts",
-      "target": "file:src/utils/CacheJson.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/controllers/variations.controller.ts",
-      "target": "file:src/utils/Responses.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/env.ts",
-      "target": "file:external:dotenv",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/env.ts",
       "target": "file:external:zod",
       "type": "imports",
@@ -2568,32 +2272,25 @@
       "target": "file:src/Entities/Stock.ts",
       "type": "imports",
       "direction": "forward",
-      "weight": 0.8
+      "weight": 1.0
     },
     {
       "source": "file:src/global/MacroInfo.ts",
-      "target": "file:src/useCases/Fetcher.ts",
+      "target": "file:src/sources/fundamentus.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/global/Queue.ts",
-      "target": "file:external:@/env",
+      "target": "file:external:bullmq",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/global/Queue.ts",
-      "target": "file:external:bull",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/global/Redis.ts",
-      "target": "file:external:@/env",
+      "target": "file:src/env.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2601,6 +2298,13 @@
     {
       "source": "file:src/global/Redis.ts",
       "target": "file:external:ioredis",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/Redis.ts",
+      "target": "file:src/env.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2617,7 +2321,7 @@
       "target": "file:src/Entities/Pontuation.ts",
       "type": "imports",
       "direction": "forward",
-      "weight": 0.8
+      "weight": 1.0
     },
     {
       "source": "file:src/interfaces/BazinProtocol.type.ts",
@@ -2627,29 +2331,8 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/interfaces/ChartProtocol.type.ts",
-      "target": "file:src/types/Chart.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/interfaces/ChartProtocol.type.ts",
-      "target": "file:src/types/dividends.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/interfaces/ChartProtocol.type.ts",
-      "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/interfaces/ChartProtocol.type.ts",
-      "target": "file:src/types/transaction.type.ts",
+      "source": "file:src/interfaces/GranhamProtocol.type.ts",
+      "target": "file:src/Entities/Pontuation.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2669,50 +2352,15 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/interfaces/SegmentProtocol.ts",
-      "target": "file:src/types/Segment.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/interfaces/StockProtocol.type.ts",
       "target": "file:src/Entities/Variable.ts",
       "type": "imports",
       "direction": "forward",
-      "weight": 0.8
+      "weight": 1.0
     },
     {
       "source": "file:src/interfaces/StockProtocol.type.ts",
       "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/interfaces/TransactionManagerProtocol.type.ts",
-      "target": "file:external:sequelize",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/interfaces/TransactionProtocol.ts",
-      "target": "file:external:crypto",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/interfaces/TransactionProtocol.ts",
-      "target": "file:src/types/transaction.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/interfaces/TransactionProtocol.ts",
-      "target": "file:src/utils/DateFormater.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2726,35 +2374,49 @@
     },
     {
       "source": "file:src/queues/StockQueue.ts",
-      "target": "file:external:@/global/Queue",
+      "target": "file:external:bullmq",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/queues/StockQueue.ts",
-      "target": "file:external:@/global/Redis",
+      "target": "file:src/global/Queue.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/queues/StockQueue.ts",
-      "target": "file:external:@/useCases/stockDataBase",
+      "target": "file:src/global/Redis.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/queues/StockQueue.ts",
-      "target": "file:external:bull",
+      "target": "file:src/queues/refreshStock.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
-      "source": "file:src/routes/bazin.routes.ts",
-      "target": "file:external:@/controllers/bazin.controller",
+      "source": "file:src/queues/StockQueue.ts",
+      "target": "file:src/useCases/stockDataBase.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/refreshStock.ts",
+      "target": "file:external:bullmq",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/refreshStock.ts",
+      "target": "file:src/global/Queue.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2762,6 +2424,13 @@
     {
       "source": "file:src/routes/bazin.routes.ts",
       "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/bazin.routes.ts",
+      "target": "file:src/controllers/bazin.controller.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2782,14 +2451,14 @@
     },
     {
       "source": "file:src/routes/graham.routes.ts",
-      "target": "file:external:@/controllers/graham.controller",
+      "target": "file:external:express",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/routes/graham.routes.ts",
-      "target": "file:external:express",
+      "target": "file:src/controllers/graham.controller.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2824,13 +2493,6 @@
     },
     {
       "source": "file:src/server.ts",
-      "target": "file:external:dotenv",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/server.ts",
       "target": "file:src/app.ts",
       "type": "imports",
       "direction": "forward",
@@ -2844,15 +2506,211 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/types/Chart.type.ts",
+      "source": "file:src/server.ts",
+      "target": "file:src/global/Queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/server.ts",
+      "target": "file:src/queues/StockQueue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/fundamentus.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/fundamentus.ts",
+      "target": "file:external:cheerio",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/basicInfo.ts",
+      "target": "file:src/types/BasicInfo.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/basicInfo.ts",
+      "target": "file:src/utils/Fetcher.utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/cashFlow.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/cashFlow.ts",
+      "target": "file:src/types/cashFlow.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/cashFlow.ts",
+      "target": "file:src/types/get.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/dividends.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/dividends.ts",
       "target": "file:src/types/dividends.type.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
-      "source": "file:src/types/Chart.type.ts",
-      "target": "file:src/types/stock.types.ts",
+      "source": "file:src/sources/statusinvest/dividends.ts",
+      "target": "file:src/utils/Utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/http.ts",
+      "target": "file:src/utils/ApiGetter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/basicInfo.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/cashFlow.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/dividends.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/indicators.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/page.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/passiveChart.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/payout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/prices.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/indicators.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/indicators.ts",
+      "target": "file:src/types/indicators.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/page.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/passiveChart.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/passiveChart.ts",
+      "target": "file:src/types/PassiveChart.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/payout.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/payout.ts",
+      "target": "file:src/types/Payout.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/prices.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/prices.ts",
+      "target": "file:src/types/prices.type.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2860,55 +2718,6 @@
     {
       "source": "file:src/types/Database/StockRepository.type.ts",
       "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/types/History.type.ts",
-      "target": "file:src/interfaces/ChartProtocol.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/types/History.type.ts",
-      "target": "file:src/types/Chart.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/types/History.type.ts",
-      "target": "file:src/types/Index.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/types/History.type.ts",
-      "target": "file:src/types/dividends.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/types/History.type.ts",
-      "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/types/History.type.ts",
-      "target": "file:src/types/transaction.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/types/Index.type.ts",
-      "target": "file:src/types/dividends.type.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -2959,412 +2768,6 @@
       "source": "file:src/useCases/BrapiClient.ts",
       "target": "file:src/types/Brapi.type.ts",
       "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "class:src/useCases/Fetcher.ts:TickerFetcher",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:external:axios",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:external:cheerio",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/BasicInfo.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/DRE.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/HomeItens.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/News.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/PassiveChart.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/Payout.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/QueryStock.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/Segment.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/cashFlow.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/dividends.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/get.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/indicators.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/prices.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/types/report.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/utils/ApiGetter.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/utils/Fetcher.utils.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "file:src/utils/Utilities.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:constructor",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getAllTickers",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getBasicInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getCashFlow",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getDividendInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getDreInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getHighsAndLows",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getHtmlPage",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getImage",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getIndicatorsInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getNewContent",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getNews",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getPassiveChart",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getPayout",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getPrice",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getReports",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getSegment",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:getStockrebuy",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts",
-      "target": "function:src/useCases/Fetcher.ts:initialize",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:constructor",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getAllTickers",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getBasicInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getCashFlow",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getDividendInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getDreInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getHighsAndLows",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getHtmlPage",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getImage",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getIndicatorsInfo",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getNewContent",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getNews",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getPassiveChart",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getPayout",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getPrice",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getReports",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getSegment",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:getStockrebuy",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/Fetcher.ts::TickerFetcher",
-      "target": "function:src/useCases/Fetcher.ts:initialize",
-      "type": "contains",
       "direction": "forward",
       "weight": 1.0
     },
@@ -3467,27 +2870,6 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/useCases/RankingCsv.ts",
-      "target": "file:external:fs",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/RankingCsv.ts",
-      "target": "file:src/types/Pontuation.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/RankingCsv.ts",
-      "target": "file:src/utils/Json.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/useCases/fundoDataBase.ts",
       "target": "file:src/Entities/Fundo.ts",
       "type": "imports",
@@ -3509,29 +2891,15 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/useCases/getStockImage.ts",
-      "target": "file:external:fs",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/getStockImage.ts",
-      "target": "file:src/types/QueryStock.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/getStockImage.ts",
-      "target": "file:src/useCases/Fetcher.ts",
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/Entities/Stock.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
       "source": "file:src/useCases/instanceStock.ts",
-      "target": "file:src/Entities/Stock.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -3593,48 +2961,6 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/useCases/instanceStock.ts",
-      "target": "file:src/useCases/Fetcher.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/jsonStockDataBase.ts",
-      "target": "file:src/env.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/jsonStockDataBase.ts",
-      "target": "file:src/interfaces/StockProtocol.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/jsonStockDataBase.ts",
-      "target": "file:src/useCases/instanceStock.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/jsonStockDataBase.ts",
-      "target": "file:src/utils/JsonDatabase.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/stockDataBase.ts",
-      "target": "class:src/useCases/stockDataBase.ts:StockDataBase",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/useCases/stockDataBase.ts",
       "target": "file:external:@/global/Redis.js",
       "type": "imports",
@@ -3663,34 +2989,6 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/useCases/stockDataBase.ts",
-      "target": "function:src/useCases/stockDataBase.ts:getNewStock",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/stockDataBase.ts",
-      "target": "function:src/useCases/stockDataBase.ts:getStock",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/stockDataBase.ts::StockDataBase",
-      "target": "function:src/useCases/stockDataBase.ts:getNewStock",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/useCases/stockDataBase.ts::StockDataBase",
-      "target": "function:src/useCases/stockDataBase.ts:getStock",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/utils/ApiGetter.ts",
       "target": "file:external:axios",
       "type": "imports",
@@ -3712,6 +3010,20 @@
       "weight": 1.0
     },
     {
+      "source": "file:src/utils/ApiGetter.ts",
+      "target": "function:src/utils/ApiGetter.ts:apiGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Axios.Utils.ts",
+      "target": "class:src/utils/Axios.Utils.ts:AxiosUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
       "source": "file:src/utils/Axios.Utils.ts",
       "target": "file:src/types/AxiosOptions.type.ts",
       "type": "imports",
@@ -3719,37 +3031,16 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/utils/CacheJson.ts",
-      "target": "file:src/utils/JsonDatabase.ts",
-      "type": "imports",
+      "source": "file:src/utils/Axios.Utils.ts",
+      "target": "function:src/utils/Axios.Utils.ts:makeOptionsJson",
+      "type": "contains",
       "direction": "forward",
       "weight": 1.0
     },
     {
-      "source": "file:src/utils/DatabaseSeed.ts",
-      "target": "file:src/useCases/Fetcher.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/DatabaseSeed.ts",
-      "target": "file:src/useCases/PontuationDatabase.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/DatabaseSeed.ts",
-      "target": "file:src/useCases/stockDataBase.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/DatabaseSeed.ts",
-      "target": "file:src/utils/Json.ts",
-      "type": "imports",
+      "source": "file:src/utils/Axios.Utils.ts::AxiosUtils",
+      "target": "function:src/utils/Axios.Utils.ts:makeOptionsJson",
+      "type": "contains",
       "direction": "forward",
       "weight": 1.0
     },
@@ -3796,251 +3087,6 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/utils/History.Utils.ts",
-      "target": "file:src/types/Index.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/History.Utils.ts",
-      "target": "file:src/types/dividends.type.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/History.Utils.ts",
-      "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts",
-      "target": "class:src/utils/Json.ts:Json",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts",
-      "target": "file:external:fs",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts",
-      "target": "file:external:path",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts",
-      "target": "file:external:url",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts",
-      "target": "function:src/utils/Json.ts:readJSONFromFile",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts",
-      "target": "function:src/utils/Json.ts:saveJSONToFile",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts::Json",
-      "target": "function:src/utils/Json.ts:readJSONFromFile",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/Json.ts::Json",
-      "target": "function:src/utils/Json.ts:saveJSONToFile",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "class:src/utils/JsonDatabase.ts:Database",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "file:external:lowdb/lib",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "file:external:lowdb/node",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:add",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:clear",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:commit",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:constructor",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:deleteBy",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:find",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:findAll",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts",
-      "target": "function:src/utils/JsonDatabase.ts:get",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:add",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:clear",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:commit",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:constructor",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:deleteBy",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:find",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:findAll",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/JsonDatabase.ts::Database",
-      "target": "function:src/utils/JsonDatabase.ts:get",
-      "type": "contains",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/RankingSystem.ts",
-      "target": "file:src/types/stock.types.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/RankingSystem.ts",
-      "target": "file:src/useCases/Fetcher.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/RankingSystem.ts",
-      "target": "file:src/useCases/PontuationDatabase.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/RankingSystem.ts",
-      "target": "file:src/useCases/stockDataBase.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
-      "source": "file:src/utils/RankingSystem.ts",
-      "target": "file:src/utils/Json.ts",
-      "type": "imports",
-      "direction": "forward",
-      "weight": 1.0
-    },
-    {
       "source": "file:src/utils/Responses.ts",
       "target": "file:external:axios",
       "type": "imports",
@@ -4056,7 +3102,7 @@
     },
     {
       "source": "file:src/utils/Responses.ts",
-      "target": "file:external:sequelize",
+      "target": "file:external:zod",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
@@ -4097,95 +3143,404 @@
       "weight": 1.0
     },
     {
-      "source": "file:src/utils/StartQueue.ts",
-      "target": "file:external:@/global/Queue",
+      "source": "file:src/utils/Utilities.ts",
+      "target": "class:src/utils/Utilities.ts:Utilities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Utilities.ts",
+      "target": "function:src/utils/Utilities.ts:formateNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Utilities.ts::Utilities",
+      "target": "function:src/utils/Utilities.ts:formateNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Bazin.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Graham.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Simulation.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Stock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/sources/fundamentus.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/useCases/instanceStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:tests/support/golden.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
-      "source": "file:src/utils/StartQueue.ts",
-      "target": "file:external:@/useCases/Fetcher",
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:tests/support/http-fixtures.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
     },
     {
-      "source": "file:src/utils/StartQueue.ts",
-      "target": "file:src/utils/Json.ts",
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:axios",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:node:http",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:node:net",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:src/app.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:tests/support/http-fixtures.ts",
       "type": "imports",
       "direction": "forward",
       "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:external:bullmq",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:external:ioredis",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:src/queues/refreshStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/golden.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/golden.ts",
+      "target": "file:external:node:fs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/golden.ts",
+      "target": "file:external:node:path",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/http-fixtures.ts",
+      "target": "file:external:axios",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/http-fixtures.ts",
+      "target": "file:external:node:fs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/http-fixtures.ts",
+      "target": "file:external:node:path",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/Entities/Simulation.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/sources/fundamentus.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/useCases/instanceStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:tests/support/http-fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/date-formatter.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/date-formatter.test.ts",
+      "target": "file:src/utils/DateFormater.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/env.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/env.test.ts",
+      "target": "file:external:node:path",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/math-utils.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/math-utils.test.ts",
+      "target": "file:src/utils/MathUtils.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/pontuation.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/pontuation.test.ts",
+      "target": "file:src/Entities/Pontuation.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/refresh-stock.test.ts",
+      "target": "file:external:bullmq",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/refresh-stock.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/refresh-stock.test.ts",
+      "target": "file:src/queues/refreshStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:external:axios",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:external:zod",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:src/errors/CustomError.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:src/utils/Responses.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/utilities.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/utilities.test.ts",
+      "target": "file:src/utils/Utilities.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "file:src",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0,
+      "hint": "node_package"
     }
   ],
   "layers": [
     {
       "id": "layer:service",
-      "name": "Financial Data Operations",
-      "description": "Orchestrates fetching, transformation, and persistence of financial market and fund data from external sources.",
+      "name": "Market Data Sources",
+      "description": "Fetches and manages market data from external APIs and databases for stocks and investment funds.",
       "nodeIds": [
         "file:src/useCases/BrapiClient.ts",
-        "file:src/useCases/Fetcher.ts",
         "file:src/useCases/FundoFetcher.ts",
         "file:src/useCases/PontuationDatabase.ts",
-        "file:src/useCases/RankingCsv.ts",
         "file:src/useCases/fundoDataBase.ts",
-        "file:src/useCases/getStockImage.ts",
         "file:src/useCases/instanceStock.ts",
-        "file:src/useCases/jsonStockDataBase.ts",
         "file:src/useCases/stockDataBase.ts"
       ],
       "display_order": 0,
       "order_basis": "imports"
     },
     {
-      "id": "layer:data",
-      "name": "Domain Models",
-      "description": "Defines core domain entities representing financial instruments, valuations, and analysis metrics.",
-      "nodeIds": [
-        "file:src/Entities/Bazin.ts",
-        "file:src/Entities/Chart.ts",
-        "file:src/Entities/Fundo.ts",
-        "file:src/Entities/Graham.ts",
-        "file:src/Entities/History.ts",
-        "file:src/Entities/Pontuation.ts",
-        "file:src/Entities/Simulation.ts",
-        "file:src/Entities/Stock.ts",
-        "file:src/Entities/Transaction.ts",
-        "file:src/Entities/Variable.ts"
-      ],
-      "display_order": 1,
-      "order_basis": "imports"
-    },
-    {
-      "id": "layer:api",
-      "name": "API Endpoints",
-      "description": "Exposes HTTP endpoints for financial data operations including stocks, funds, and analysis tools.",
-      "nodeIds": [
-        "file:src/controllers/bazin.controller.ts",
-        "file:src/controllers/fundo.controller.ts",
-        "file:src/controllers/graham.controller.ts",
-        "file:src/controllers/history.controller.ts",
-        "file:src/controllers/ranking.controller.ts",
-        "file:src/controllers/simulation.controller.ts",
-        "file:src/controllers/stock.controller.ts",
-        "file:src/controllers/variations.controller.ts",
-        "file:src/routes/bazin.routes.ts",
-        "file:src/routes/fundo.routes.ts",
-        "file:src/routes/graham.routes.ts",
-        "file:src/routes/simulation.routes.ts",
-        "file:src/routes/stock.routes.ts"
-      ],
-      "display_order": 2,
-      "order_basis": "imports"
-    },
-    {
       "id": "layer:application",
-      "name": "Application Infrastructure",
-      "description": "Provides application entry points, configuration, and core services including Redis caching and message queue management.",
+      "name": "Application Core",
+      "description": "Core application infrastructure including queues, caching, Redis integration, external data sources, and error handling.",
       "nodeIds": [
-        "file:.eslintrc.json",
+        "file:.mcp.json",
+        "file:Dockerfile",
         "file:Readme.md",
+        "file:biome.json",
+        "file:bunfig.toml",
         "file:docker-compose.yml",
         "file:package.json",
         "file:src/app.ts",
@@ -4195,75 +3550,109 @@
         "file:src/global/Queue.ts",
         "file:src/global/Redis.ts",
         "file:src/queues/StockQueue.ts",
+        "file:src/queues/refreshStock.ts",
         "file:src/server.ts",
+        "file:src/sources/fundamentus.ts",
+        "file:src/sources/statusinvest/basicInfo.ts",
+        "file:src/sources/statusinvest/cashFlow.ts",
+        "file:src/sources/statusinvest/dividends.ts",
+        "file:src/sources/statusinvest/http.ts",
+        "file:src/sources/statusinvest/index.ts",
+        "file:src/sources/statusinvest/indicators.ts",
+        "file:src/sources/statusinvest/page.ts",
+        "file:src/sources/statusinvest/passiveChart.ts",
+        "file:src/sources/statusinvest/payout.ts",
+        "file:src/sources/statusinvest/prices.ts",
         "file:tsconfig.json"
+      ],
+      "display_order": 1,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:data",
+      "name": "Domain Models",
+      "description": "Core entity classes representing stocks, funds, simulations, and investment analysis strategies.",
+      "nodeIds": [
+        "file:src/Entities/Bazin.ts",
+        "file:src/Entities/Fundo.ts",
+        "file:src/Entities/Graham.ts",
+        "file:src/Entities/Pontuation.ts",
+        "file:src/Entities/Simulation.ts",
+        "file:src/Entities/Stock.ts",
+        "file:src/Entities/Variable.ts"
+      ],
+      "display_order": 2,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:api",
+      "name": "HTTP Endpoints",
+      "description": "Express route handlers and controllers for REST API endpoints serving stock, fund, and simulation data.",
+      "nodeIds": [
+        "file:src/controllers/bazin.controller.ts",
+        "file:src/controllers/fundo.controller.ts",
+        "file:src/controllers/graham.controller.ts",
+        "file:src/controllers/simulation.controller.ts",
+        "file:src/controllers/stock.controller.ts",
+        "file:src/routes/bazin.routes.ts",
+        "file:src/routes/fundo.routes.ts",
+        "file:src/routes/graham.routes.ts",
+        "file:src/routes/simulation.routes.ts",
+        "file:src/routes/stock.routes.ts"
       ],
       "display_order": 3,
       "order_basis": "imports"
     },
     {
-      "id": "layer:utility",
-      "name": "Helper Functions",
-      "description": "Provides reusable helper functions for data formatting, HTTP operations, caching, and mathematical calculations.",
+      "id": "layer:config",
+      "name": "Build Configuration",
+      "description": "Development settings and GitHub Actions CI/CD workflow configuration.",
       "nodeIds": [
-        "file:src/utils/ApiGetter.ts",
-        "file:src/utils/Axios.Utils.ts",
-        "file:src/utils/CacheJson.ts",
-        "file:src/utils/DatabaseSeed.ts",
-        "file:src/utils/DateFormater.ts",
-        "file:src/utils/Fetcher.utils.ts",
-        "file:src/utils/FundoUtils.ts",
-        "file:src/utils/History.Utils.ts",
-        "file:src/utils/Json.ts",
-        "file:src/utils/JsonDatabase.ts",
-        "file:src/utils/MathUtils.ts",
-        "file:src/utils/RankingSystem.ts",
-        "file:src/utils/Responses.ts",
-        "file:src/utils/StartQueue.ts",
-        "file:src/utils/Utilities.ts"
+        "file:.claude/settings.local.json",
+        "file:.github/workflows/ci.yml"
       ],
       "display_order": 4,
       "order_basis": "imports"
     },
     {
+      "id": "layer:utility",
+      "name": "Utility Helpers",
+      "description": "Reusable utility functions for API operations, data formatting, mathematical calculations, and common application needs.",
+      "nodeIds": [
+        "file:src/utils/ApiGetter.ts",
+        "file:src/utils/Axios.Utils.ts",
+        "file:src/utils/DateFormater.ts",
+        "file:src/utils/Fetcher.utils.ts",
+        "file:src/utils/FundoUtils.ts",
+        "file:src/utils/MathUtils.ts",
+        "file:src/utils/Responses.ts",
+        "file:src/utils/Utilities.ts"
+      ],
+      "display_order": 5,
+      "order_basis": "imports"
+    },
+    {
       "id": "layer:types",
       "name": "Domain Types",
-      "description": "TypeScript type definitions and interfaces for financial trading domain entities and data structures.",
+      "description": "TypeScript type definitions and interfaces for financial domain models including stocks, indicators, dividends, and prices.",
       "nodeIds": [
         "file:src/interfaces/BazinProtocol.type.ts",
-        "file:src/interfaces/ChartProtocol.type.ts",
         "file:src/interfaces/FetcherUtils.type.ts",
         "file:src/interfaces/GranhamProtocol.type.ts",
-        "file:src/interfaces/SegmentProtocol.ts",
         "file:src/interfaces/StockProtocol.type.ts",
-        "file:src/interfaces/Transaction.ts",
-        "file:src/interfaces/TransactionManagerProtocol.type.ts",
-        "file:src/interfaces/TransactionProtocol.ts",
         "file:src/interfaces/Variable.type.ts",
         "file:src/types/AxiosOptions.type.ts",
         "file:src/types/BasicInfo.type.ts",
         "file:src/types/Brapi.type.ts",
-        "file:src/types/Cache.type.ts",
-        "file:src/types/Chart.type.ts",
-        "file:src/types/Comparator.type.ts",
         "file:src/types/DRE.type.ts",
         "file:src/types/Database/StockRepository.type.ts",
-        "file:src/types/Dividend.type.ts",
-        "file:src/types/FundamentalIndicators.type.ts",
-        "file:src/types/History.type.ts",
         "file:src/types/HomeItens.type.ts",
-        "file:src/types/Index.type.ts",
         "file:src/types/News.type.ts",
         "file:src/types/PassiveChart.type.ts",
         "file:src/types/Payout.type.ts",
         "file:src/types/Pontuation.type.ts",
         "file:src/types/QueryStock.type.ts",
-        "file:src/types/Reponse.type.ts",
         "file:src/types/Segment.type.ts",
-        "file:src/types/StockIndicators.type.ts",
-        "file:src/types/StockPropReturn.type.ts",
-        "file:src/types/Task.type.ts",
-        "file:src/types/UserProps.ts",
         "file:src/types/cashFlow.type.ts",
         "file:src/types/dividends.type.ts",
         "file:src/types/fundo.types.ts",
@@ -4272,10 +3661,51 @@
         "file:src/types/prices.type.ts",
         "file:src/types/report.type.ts",
         "file:src/types/responses.type.ts",
-        "file:src/types/stock.types.ts",
-        "file:src/types/transaction.type.ts"
+        "file:src/types/stock.types.ts"
       ],
-      "display_order": 5,
+      "display_order": 6,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:docs-tooling",
+      "name": "Worker Scripts",
+      "description": "Startup script for initializing and running background queue worker processes.",
+      "nodeIds": [
+        "file:scripts/start-queue.ts"
+      ],
+      "display_order": 7,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:test",
+      "name": "Integration Tests",
+      "description": "Integration tests with golden fixtures for validating stock analysis and financial data calculations.",
+      "nodeIds": [
+        "file:tests/golden/data/all-tickers.json",
+        "file:tests/golden/data/bazin-ITUB4.json",
+        "file:tests/golden/data/bazin-PETR4.json",
+        "file:tests/golden/data/graham-ITUB4.json",
+        "file:tests/golden/data/graham-PETR4.json",
+        "file:tests/golden/data/simulation-ITUB4.json",
+        "file:tests/golden/data/simulation-PETR4.json",
+        "file:tests/golden/data/stock-ITUB4.json",
+        "file:tests/golden/data/stock-PETR4.json",
+        "file:tests/golden/stock.test.ts",
+        "file:tests/http/routes.test.ts",
+        "file:tests/integration/queue.test.ts",
+        "file:tests/support/golden.ts",
+        "file:tests/support/http-fixtures.ts",
+        "file:tests/support/preload.ts",
+        "file:tests/support/record.ts",
+        "file:tests/unit/date-formatter.test.ts",
+        "file:tests/unit/env.test.ts",
+        "file:tests/unit/math-utils.test.ts",
+        "file:tests/unit/pontuation.test.ts",
+        "file:tests/unit/refresh-stock.test.ts",
+        "file:tests/unit/responses.test.ts",
+        "file:tests/unit/utilities.test.ts"
+      ],
+      "display_order": 8,
       "order_basis": "imports"
     }
   ],
@@ -4288,7 +3718,8 @@
       "depth": 0,
       "kind": "overview",
       "reason": "Start here for the end-to-end picture before diving into the code.",
-      "layer_id": "layer:application"
+      "layer_id": "layer:application",
+      "wikiPageIds": []
     },
     {
       "order": 2,
@@ -4298,7 +3729,8 @@
       "depth": 0,
       "kind": "code",
       "reason": "An entry point \u2014 execution and imports fan out from here.",
-      "layer_id": "layer:application"
+      "layer_id": "layer:application",
+      "wikiPageIds": []
     },
     {
       "order": 3,
@@ -4308,7 +3740,8 @@
       "depth": 0,
       "kind": "code",
       "reason": "An entry point \u2014 execution and imports fan out from here.",
-      "layer_id": "layer:application"
+      "layer_id": "layer:application",
+      "wikiPageIds": []
     },
     {
       "order": 4,
@@ -4318,87 +3751,96 @@
       "depth": 1,
       "kind": "code",
       "reason": "Directly used by the entry points above; a core collaborator.",
-      "layer_id": "layer:application"
+      "layer_id": "layer:application",
+      "wikiPageIds": []
     },
     {
       "order": 5,
+      "target_path": "src/global/Queue.ts",
+      "page_type": "file_page",
+      "title": "Queue.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:application",
+      "wikiPageIds": []
+    },
+    {
+      "order": 6,
+      "target_path": "scripts/start-queue.ts",
+      "page_type": "file_page",
+      "title": "start-queue.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Docs & Tooling layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:docs-tooling",
+      "wikiPageIds": []
+    },
+    {
+      "order": 7,
       "target_path": "src/routes/bazin.routes.ts",
       "page_type": "file_page",
       "title": "bazin.routes.ts",
       "depth": 1,
       "kind": "code",
       "reason": "Directly used by the entry points above; a core collaborator.",
-      "layer_id": "layer:api"
-    },
-    {
-      "order": 6,
-      "target_path": "src/routes/fundo.routes.ts",
-      "page_type": "file_page",
-      "title": "fundo.routes.ts",
-      "depth": 1,
-      "kind": "code",
-      "reason": "Directly used by the entry points above; a core collaborator.",
-      "layer_id": "layer:api"
-    },
-    {
-      "order": 7,
-      "target_path": "src/routes/graham.routes.ts",
-      "page_type": "file_page",
-      "title": "graham.routes.ts",
-      "depth": 1,
-      "kind": "code",
-      "reason": "Directly used by the entry points above; a core collaborator.",
-      "layer_id": "layer:api"
+      "layer_id": "layer:api",
+      "wikiPageIds": []
     },
     {
       "order": 8,
-      "target_path": "src/routes/simulation.routes.ts",
-      "page_type": "file_page",
-      "title": "simulation.routes.ts",
-      "depth": 1,
-      "kind": "code",
-      "reason": "Directly used by the entry points above; a core collaborator.",
-      "layer_id": "layer:api"
-    },
-    {
-      "order": 9,
       "target_path": "src/types/stock.types.ts",
       "page_type": "file_page",
       "title": "stock.types.ts",
       "depth": 1,
       "kind": "code",
       "reason": "The Types layer's anchor \u2014 its most depended-on file.",
-      "layer_id": "layer:types"
+      "layer_id": "layer:types",
+      "wikiPageIds": []
+    },
+    {
+      "order": 9,
+      "target_path": "src/utils/ApiGetter.ts",
+      "page_type": "file_page",
+      "title": "ApiGetter.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Utility layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:utility",
+      "wikiPageIds": []
     },
     {
       "order": 10,
-      "target_path": "src/utils/Responses.ts",
+      "target_path": "src/Entities/Pontuation.ts",
       "page_type": "file_page",
-      "title": "Responses.ts",
-      "depth": 2,
+      "title": "Pontuation.ts",
+      "depth": 1,
       "kind": "code",
-      "reason": "The Utility layer's anchor \u2014 its most depended-on file.",
-      "layer_id": "layer:utility"
+      "reason": "The Data layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:data",
+      "wikiPageIds": []
     },
     {
       "order": 11,
-      "target_path": "src/Entities/Variable.ts",
+      "target_path": "src/useCases/stockDataBase.ts",
       "page_type": "file_page",
-      "title": "Variable.ts",
-      "depth": 2,
+      "title": "stockDataBase.ts",
+      "depth": 1,
       "kind": "code",
-      "reason": "The Data layer's anchor \u2014 its most depended-on file.",
-      "layer_id": "layer:data"
+      "reason": "The Service layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:service",
+      "wikiPageIds": []
     },
     {
       "order": 12,
-      "target_path": "src/useCases/Fetcher.ts",
+      "target_path": "tests/golden/stock.test.ts",
       "page_type": "file_page",
-      "title": "Fetcher.ts",
+      "title": "stock.test.ts",
       "depth": 2,
       "kind": "code",
-      "reason": "The Service layer's anchor \u2014 its most depended-on file.",
-      "layer_id": "layer:service"
+      "reason": "The test suite \u2014 how the system's behavior is verified.",
+      "layer_id": "layer:test",
+      "wikiPageIds": []
     }
   ],
   "modules": [
@@ -4409,15 +3851,49 @@
       "layerId": "layer:service",
       "nodeIds": [
         "file:src/useCases/BrapiClient.ts",
-        "file:src/useCases/Fetcher.ts",
         "file:src/useCases/FundoFetcher.ts",
         "file:src/useCases/PontuationDatabase.ts",
-        "file:src/useCases/RankingCsv.ts",
         "file:src/useCases/fundoDataBase.ts",
-        "file:src/useCases/getStockImage.ts",
         "file:src/useCases/instanceStock.ts",
-        "file:src/useCases/jsonStockDataBase.ts",
         "file:src/useCases/stockDataBase.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:application",
+      "name": "Application",
+      "path": "",
+      "layerId": "layer:application",
+      "nodeIds": [
+        "file:.mcp.json",
+        "file:Dockerfile",
+        "file:Readme.md",
+        "file:biome.json",
+        "file:bunfig.toml",
+        "file:docker-compose.yml",
+        "file:package.json",
+        "file:src/app.ts",
+        "file:src/env.ts",
+        "file:src/errors/CustomError.ts",
+        "file:src/global/MacroInfo.ts",
+        "file:src/global/Queue.ts",
+        "file:src/global/Redis.ts",
+        "file:src/queues/StockQueue.ts",
+        "file:src/queues/refreshStock.ts",
+        "file:src/server.ts",
+        "file:src/sources/fundamentus.ts",
+        "file:src/sources/statusinvest/basicInfo.ts",
+        "file:src/sources/statusinvest/cashFlow.ts",
+        "file:src/sources/statusinvest/dividends.ts",
+        "file:src/sources/statusinvest/http.ts",
+        "file:src/sources/statusinvest/index.ts",
+        "file:src/sources/statusinvest/indicators.ts",
+        "file:src/sources/statusinvest/page.ts",
+        "file:src/sources/statusinvest/passiveChart.ts",
+        "file:src/sources/statusinvest/payout.ts",
+        "file:src/sources/statusinvest/prices.ts",
+        "file:tsconfig.json"
       ],
       "wholeLayer": true,
       "language": "typescript"
@@ -4429,14 +3905,11 @@
       "layerId": "layer:data",
       "nodeIds": [
         "file:src/Entities/Bazin.ts",
-        "file:src/Entities/Chart.ts",
         "file:src/Entities/Fundo.ts",
         "file:src/Entities/Graham.ts",
-        "file:src/Entities/History.ts",
         "file:src/Entities/Pontuation.ts",
         "file:src/Entities/Simulation.ts",
         "file:src/Entities/Stock.ts",
-        "file:src/Entities/Transaction.ts",
         "file:src/Entities/Variable.ts"
       ],
       "wholeLayer": true,
@@ -4451,39 +3924,13 @@
         "file:src/controllers/bazin.controller.ts",
         "file:src/controllers/fundo.controller.ts",
         "file:src/controllers/graham.controller.ts",
-        "file:src/controllers/history.controller.ts",
-        "file:src/controllers/ranking.controller.ts",
         "file:src/controllers/simulation.controller.ts",
         "file:src/controllers/stock.controller.ts",
-        "file:src/controllers/variations.controller.ts",
         "file:src/routes/bazin.routes.ts",
         "file:src/routes/fundo.routes.ts",
         "file:src/routes/graham.routes.ts",
         "file:src/routes/simulation.routes.ts",
         "file:src/routes/stock.routes.ts"
-      ],
-      "wholeLayer": true,
-      "language": "typescript"
-    },
-    {
-      "id": "module:application",
-      "name": "Application",
-      "path": "",
-      "layerId": "layer:application",
-      "nodeIds": [
-        "file:.eslintrc.json",
-        "file:Readme.md",
-        "file:docker-compose.yml",
-        "file:package.json",
-        "file:src/app.ts",
-        "file:src/env.ts",
-        "file:src/errors/CustomError.ts",
-        "file:src/global/MacroInfo.ts",
-        "file:src/global/Queue.ts",
-        "file:src/global/Redis.ts",
-        "file:src/queues/StockQueue.ts",
-        "file:src/server.ts",
-        "file:tsconfig.json"
       ],
       "wholeLayer": true,
       "language": "typescript"
@@ -4496,18 +3943,11 @@
       "nodeIds": [
         "file:src/utils/ApiGetter.ts",
         "file:src/utils/Axios.Utils.ts",
-        "file:src/utils/CacheJson.ts",
-        "file:src/utils/DatabaseSeed.ts",
         "file:src/utils/DateFormater.ts",
         "file:src/utils/Fetcher.utils.ts",
         "file:src/utils/FundoUtils.ts",
-        "file:src/utils/History.Utils.ts",
-        "file:src/utils/Json.ts",
-        "file:src/utils/JsonDatabase.ts",
         "file:src/utils/MathUtils.ts",
-        "file:src/utils/RankingSystem.ts",
         "file:src/utils/Responses.ts",
-        "file:src/utils/StartQueue.ts",
         "file:src/utils/Utilities.ts"
       ],
       "wholeLayer": true,
@@ -4520,39 +3960,22 @@
       "layerId": "layer:types",
       "nodeIds": [
         "file:src/interfaces/BazinProtocol.type.ts",
-        "file:src/interfaces/ChartProtocol.type.ts",
         "file:src/interfaces/FetcherUtils.type.ts",
         "file:src/interfaces/GranhamProtocol.type.ts",
-        "file:src/interfaces/SegmentProtocol.ts",
         "file:src/interfaces/StockProtocol.type.ts",
-        "file:src/interfaces/Transaction.ts",
-        "file:src/interfaces/TransactionManagerProtocol.type.ts",
-        "file:src/interfaces/TransactionProtocol.ts",
         "file:src/interfaces/Variable.type.ts",
         "file:src/types/AxiosOptions.type.ts",
         "file:src/types/BasicInfo.type.ts",
         "file:src/types/Brapi.type.ts",
-        "file:src/types/Cache.type.ts",
-        "file:src/types/Chart.type.ts",
-        "file:src/types/Comparator.type.ts",
         "file:src/types/DRE.type.ts",
         "file:src/types/Database/StockRepository.type.ts",
-        "file:src/types/Dividend.type.ts",
-        "file:src/types/FundamentalIndicators.type.ts",
-        "file:src/types/History.type.ts",
         "file:src/types/HomeItens.type.ts",
-        "file:src/types/Index.type.ts",
         "file:src/types/News.type.ts",
         "file:src/types/PassiveChart.type.ts",
         "file:src/types/Payout.type.ts",
         "file:src/types/Pontuation.type.ts",
         "file:src/types/QueryStock.type.ts",
-        "file:src/types/Reponse.type.ts",
         "file:src/types/Segment.type.ts",
-        "file:src/types/StockIndicators.type.ts",
-        "file:src/types/StockPropReturn.type.ts",
-        "file:src/types/Task.type.ts",
-        "file:src/types/UserProps.ts",
         "file:src/types/cashFlow.type.ts",
         "file:src/types/dividends.type.ts",
         "file:src/types/fundo.types.ts",
@@ -4561,8 +3984,40 @@
         "file:src/types/prices.type.ts",
         "file:src/types/report.type.ts",
         "file:src/types/responses.type.ts",
-        "file:src/types/stock.types.ts",
-        "file:src/types/transaction.type.ts"
+        "file:src/types/stock.types.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:tests",
+      "name": "Test",
+      "path": "tests",
+      "layerId": "layer:test",
+      "nodeIds": [
+        "file:tests/golden/data/all-tickers.json",
+        "file:tests/golden/data/bazin-ITUB4.json",
+        "file:tests/golden/data/bazin-PETR4.json",
+        "file:tests/golden/data/graham-ITUB4.json",
+        "file:tests/golden/data/graham-PETR4.json",
+        "file:tests/golden/data/simulation-ITUB4.json",
+        "file:tests/golden/data/simulation-PETR4.json",
+        "file:tests/golden/data/stock-ITUB4.json",
+        "file:tests/golden/data/stock-PETR4.json",
+        "file:tests/golden/stock.test.ts",
+        "file:tests/http/routes.test.ts",
+        "file:tests/integration/queue.test.ts",
+        "file:tests/support/golden.ts",
+        "file:tests/support/http-fixtures.ts",
+        "file:tests/support/preload.ts",
+        "file:tests/support/record.ts",
+        "file:tests/unit/date-formatter.test.ts",
+        "file:tests/unit/env.test.ts",
+        "file:tests/unit/math-utils.test.ts",
+        "file:tests/unit/pontuation.test.ts",
+        "file:tests/unit/refresh-stock.test.ts",
+        "file:tests/unit/responses.test.ts",
+        "file:tests/unit/utilities.test.ts"
       ],
       "wholeLayer": true,
       "language": "typescript"
