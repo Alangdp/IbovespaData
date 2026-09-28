@@ -1,0 +1,6 @@
+[install]
+# Salva versões exatas no package.json (equivale ao antigo .npmrc save-exact=true)
+exact = true
+
+[test]
+preload = ["./tests/support/preload.ts"]

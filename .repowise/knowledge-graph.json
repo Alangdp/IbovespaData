@@ -1,0 +1,4026 @@
+{
+  "version": "1.0.0",
+  "schema_version": 1,
+  "project": {
+    "name": "IbovespaData",
+    "is_monorepo": false,
+    "total_files": 111,
+    "entry_points": [
+      "src/app.ts",
+      "src/server.ts"
+    ],
+    "tech_stack": [
+      {
+        "name": "Express",
+        "version": "5.2.1",
+        "category": "framework"
+      },
+      {
+        "name": "Docker",
+        "version": null,
+        "category": "infra"
+      },
+      {
+        "name": "Docker Compose",
+        "version": null,
+        "category": "infra"
+      },
+      {
+        "name": "Node.js",
+        "version": null,
+        "category": "language"
+      },
+      {
+        "name": "TypeScript",
+        "version": "7.0.2",
+        "category": "language"
+      }
+    ],
+    "entry_candidates": [
+      "src/app.ts",
+      "src/server.ts"
+    ],
+    "graph_mode": "flow"
+  },
+  "nodes": [
+    {
+      "id": "class:src/Entities/Pontuation.ts:Pontuation",
+      "type": "class",
+      "filePath": "src/Entities/Pontuation.ts",
+      "name": "Pontuation",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:src/Entities/Variable.ts:Variable",
+      "type": "class",
+      "filePath": "src/Entities/Variable.ts",
+      "name": "Variable",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:src/utils/Axios.Utils.ts:AxiosUtils",
+      "type": "class",
+      "filePath": "src/utils/Axios.Utils.ts",
+      "name": "AxiosUtils",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "class:src/utils/Utilities.ts:Utilities",
+      "type": "class",
+      "filePath": "src/utils/Utilities.ts",
+      "name": "Utilities",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "file:.claude/settings.local.json",
+      "type": "config",
+      "filePath": ".claude/settings.local.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 2,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 7,
+      "tags": [
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: settings.local.json."
+    },
+    {
+      "id": "file:.github/workflows/ci.yml",
+      "type": "pipeline",
+      "filePath": ".github/workflows/ci.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 19,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 8,
+      "tags": [
+        "config",
+        "ci"
+      ],
+      "summary": "GitHub Actions CI/CD workflow definition."
+    },
+    {
+      "id": "file:.mcp.json",
+      "type": "config",
+      "filePath": ".mcp.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 8,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 9,
+      "tags": [
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: .mcp.json."
+    },
+    {
+      "id": "file:Dockerfile",
+      "type": "service",
+      "filePath": "Dockerfile",
+      "language": "dockerfile",
+      "symbolCount": 2,
+      "lineCount": 9,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 10,
+      "tags": [
+        "config",
+        "infra"
+      ],
+      "summary": "Container image build definition."
+    },
+    {
+      "id": "file:Readme.md",
+      "type": "document",
+      "filePath": "Readme.md",
+      "language": "markdown",
+      "symbolCount": 0,
+      "lineCount": 72,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 11,
+      "tags": [],
+      "summary": "Project overview and entry point for new readers."
+    },
+    {
+      "id": "file:biome.json",
+      "type": "config",
+      "filePath": "biome.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 19,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 12,
+      "tags": [
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: biome.json."
+    },
+    {
+      "id": "file:bunfig.toml",
+      "type": "config",
+      "filePath": "bunfig.toml",
+      "language": "toml",
+      "symbolCount": 0,
+      "lineCount": 3,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 13,
+      "tags": [
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: bunfig.toml."
+    },
+    {
+      "id": "file:docker-compose.yml",
+      "type": "service",
+      "filePath": "docker-compose.yml",
+      "language": "yaml",
+      "symbolCount": 0,
+      "lineCount": 8,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 14,
+      "tags": [
+        "config",
+        "infra"
+      ],
+      "summary": "Multi-container service orchestration for local development."
+    },
+    {
+      "id": "file:package.json",
+      "type": "config",
+      "filePath": "package.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 22,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 19,
+      "tags": [
+        "config"
+      ],
+      "summary": "Node package manifest: dependencies, scripts, and metadata."
+    },
+    {
+      "id": "file:scripts/start-queue.ts",
+      "type": "file",
+      "filePath": "scripts/start-queue.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 23,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Docs & Tooling module start-queue defining readInvalidTickers.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/Entities/Bazin.ts",
+      "type": "file",
+      "filePath": "src/Entities/Bazin.ts",
+      "language": "typescript",
+      "symbolCount": 6,
+      "lineCount": 112,
+      "complexity": "moderate",
+      "pagerank": 0.005317,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Data module Bazin defining Bazin, constructor, validate.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/Entities/Fundo.ts",
+      "type": "file",
+      "filePath": "src/Entities/Fundo.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 52,
+      "complexity": "simple",
+      "pagerank": 0.008405,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Data module Fundo defining Fundo, constructor.",
+      "primaryOwner": "Claude"
+    },
+    {
+      "id": "file:src/Entities/Graham.ts",
+      "type": "file",
+      "filePath": "src/Entities/Graham.ts",
+      "language": "typescript",
+      "symbolCount": 7,
+      "lineCount": 221,
+      "complexity": "moderate",
+      "pagerank": 0.005317,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Data module Graham defining Granham, constructor, makePoints.",
+      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:src/Entities/Pontuation.ts",
+      "type": "file",
+      "filePath": "src/Entities/Pontuation.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 29,
+      "complexity": "moderate",
+      "pagerank": 0.01201,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Data module Pontuation defining Pontuation, constructor, addRule.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/Entities/Simulation.ts",
+      "type": "file",
+      "filePath": "src/Entities/Simulation.ts",
+      "language": "typescript",
+      "symbolCount": 7,
+      "lineCount": 87,
+      "complexity": "moderate",
+      "pagerank": 0.007481,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Data module Simulation defining Simulation, constructor, initialize.",
+      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:src/Entities/Stock.ts",
+      "type": "file",
+      "filePath": "src/Entities/Stock.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 52,
+      "complexity": "simple",
+      "pagerank": 0.007349,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Data module Stock defining Stock, calculateRentability, constructor.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/Entities/Variable.ts",
+      "type": "file",
+      "filePath": "src/Entities/Variable.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 21,
+      "complexity": "simple",
+      "pagerank": 0.009659,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Data module Variable defining Variable, constructor.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/app.ts",
+      "type": "file",
+      "filePath": "src/app.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 29,
+      "complexity": "moderate",
+      "pagerank": 0.006044,
+      "communityId": 0,
+      "tags": [
+        "entry_point"
+      ],
+      "summary": "Application module app defining App, constructor, routes.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/controllers/bazin.controller.ts",
+      "type": "file",
+      "filePath": "src/controllers/bazin.controller.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 28,
+      "complexity": "simple",
+      "pagerank": 0.006634,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module bazin.controller defining index, indexAll.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/controllers/fundo.controller.ts",
+      "type": "file",
+      "filePath": "src/controllers/fundo.controller.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 33,
+      "complexity": "simple",
+      "pagerank": 0.006634,
+      "communityId": 5,
+      "tags": [],
+      "summary": "API module fundo.controller defining index, listFundos.",
+      "primaryOwner": "Claude"
+    },
+    {
+      "id": "file:src/controllers/graham.controller.ts",
+      "type": "file",
+      "filePath": "src/controllers/graham.controller.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 29,
+      "complexity": "simple",
+      "pagerank": 0.006634,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module graham.controller defining index, indexAll.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/controllers/simulation.controller.ts",
+      "type": "file",
+      "filePath": "src/controllers/simulation.controller.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 16,
+      "complexity": "simple",
+      "pagerank": 0.006634,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module simulation.controller defining index.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/controllers/stock.controller.ts",
+      "type": "file",
+      "filePath": "src/controllers/stock.controller.ts",
+      "language": "typescript",
+      "symbolCount": 8,
+      "lineCount": 99,
+      "complexity": "moderate",
+      "pagerank": 0.006634,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module stock.controller defining index, indexPrice, indexDividends.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/env.ts",
+      "type": "file",
+      "filePath": "src/env.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 32,
+      "complexity": "simple",
+      "pagerank": 0.014843,
+      "communityId": 4,
+      "tags": [],
+      "summary": "Application module env (1 symbols).",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/errors/CustomError.ts",
+      "type": "file",
+      "filePath": "src/errors/CustomError.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.008161,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Application module CustomError defining CustomError, constructor."
+    },
+    {
+      "id": "file:src/global/MacroInfo.ts",
+      "type": "file",
+      "filePath": "src/global/MacroInfo.ts",
+      "language": "typescript",
+      "symbolCount": 11,
+      "lineCount": 68,
+      "complexity": "moderate",
+      "pagerank": 0.005029,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Application module MacroInfo defining Value, RootSelic, RootIPCA.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/global/Queue.ts",
+      "type": "file",
+      "filePath": "src/global/Queue.ts",
+      "language": "typescript",
+      "symbolCount": 5,
+      "lineCount": 25,
+      "complexity": "moderate",
+      "pagerank": 0.012822,
+      "communityId": 4,
+      "tags": [],
+      "summary": "Application module Queue defining stockQueueData.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/global/Redis.ts",
+      "type": "file",
+      "filePath": "src/global/Redis.ts",
+      "language": "typescript",
+      "symbolCount": 10,
+      "lineCount": 104,
+      "complexity": "moderate",
+      "pagerank": 0.007048,
+      "communityId": 4,
+      "tags": [],
+      "summary": "Application module Redis defining Redis, constructor, activeSubcribe.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/interfaces/BazinProtocol.type.ts",
+      "type": "file",
+      "filePath": "src/interfaces/BazinProtocol.type.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 19,
+      "complexity": "simple",
+      "pagerank": 0.005368,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module BazinProtocol.type defining BazinMethods, BazinProtocol.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/interfaces/FetcherUtils.type.ts",
+      "type": "file",
+      "filePath": "src/interfaces/FetcherUtils.type.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 4,
+      "complexity": "simple",
+      "pagerank": 0.006372,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Types module FetcherUtils.type defining FetcherUtilsProtocol.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/interfaces/GranhamProtocol.type.ts",
+      "type": "file",
+      "filePath": "src/interfaces/GranhamProtocol.type.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 114,
+      "complexity": "moderate",
+      "pagerank": 0.005029,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module GranhamProtocol.type defining GranhamMethods, GranhamProtocol, constructor.",
+      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:src/interfaces/StockProtocol.type.ts",
+      "type": "file",
+      "filePath": "src/interfaces/StockProtocol.type.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 6,
+      "complexity": "simple",
+      "pagerank": 0.009776,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module StockProtocol.type defining StockProtocol.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/interfaces/Variable.type.ts",
+      "type": "file",
+      "filePath": "src/interfaces/Variable.type.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.016282,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module Variable.type defining VariableProps.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/queues/StockQueue.ts",
+      "type": "file",
+      "filePath": "src/queues/StockQueue.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 27,
+      "complexity": "simple",
+      "pagerank": 0.005412,
+      "communityId": 4,
+      "tags": [],
+      "summary": "Application module StockQueue (1 symbols).",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/queues/refreshStock.ts",
+      "type": "file",
+      "filePath": "src/queues/refreshStock.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 29,
+      "complexity": "simple",
+      "pagerank": 0.007597,
+      "communityId": 4,
+      "tags": [],
+      "summary": "Application module refreshStock defining Dependencies, createStockRefresher.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/routes/bazin.routes.ts",
+      "type": "file",
+      "filePath": "src/routes/bazin.routes.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.005106,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module bazin.routes (1 symbols)."
+    },
+    {
+      "id": "file:src/routes/fundo.routes.ts",
+      "type": "file",
+      "filePath": "src/routes/fundo.routes.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 9,
+      "complexity": "simple",
+      "pagerank": 0.005106,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module fundo.routes (1 symbols)."
+    },
+    {
+      "id": "file:src/routes/graham.routes.ts",
+      "type": "file",
+      "filePath": "src/routes/graham.routes.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.005106,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module graham.routes (1 symbols)."
+    },
+    {
+      "id": "file:src/routes/simulation.routes.ts",
+      "type": "file",
+      "filePath": "src/routes/simulation.routes.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 4,
+      "complexity": "simple",
+      "pagerank": 0.005106,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module simulation.routes (1 symbols).",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/routes/stock.routes.ts",
+      "type": "file",
+      "filePath": "src/routes/stock.routes.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 25,
+      "complexity": "simple",
+      "pagerank": 0.005106,
+      "communityId": 0,
+      "tags": [],
+      "summary": "API module stock.routes (1 symbols)."
+    },
+    {
+      "id": "file:src/server.ts",
+      "type": "file",
+      "filePath": "src/server.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 17,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 4,
+      "tags": [
+        "entry_point"
+      ],
+      "summary": "Application module server (1 symbols).",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/fundamentus.ts",
+      "type": "file",
+      "filePath": "src/sources/fundamentus.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 18,
+      "complexity": "simple",
+      "pagerank": 0.008291,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Application module fundamentus defining fetchAllTickers.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/basicInfo.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/basicInfo.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 89,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module basicInfo defining parseBasicInfo.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/cashFlow.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/cashFlow.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 43,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module cashFlow defining fetchCashFlow.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/dividends.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/dividends.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 37,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module dividends defining fetchDividends.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/http.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/http.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 8,
+      "complexity": "simple",
+      "pagerank": 0.016587,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module http.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/index.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/index.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 9,
+      "complexity": "simple",
+      "pagerank": 0.008329,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module index.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/indicators.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/indicators.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 47,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module indicators defining emptyIndicators, fetchIndicators.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/page.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/page.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 20,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Application module page defining fetchStockPage.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/passiveChart.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/passiveChart.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 24,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module passiveChart defining fetchPassiveChart.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/payout.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/payout.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 22,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module payout defining fetchPayout.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/sources/statusinvest/prices.ts",
+      "type": "file",
+      "filePath": "src/sources/statusinvest/prices.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 20,
+      "complexity": "simple",
+      "pagerank": 0.005349,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Application module prices defining fetchPrices.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/types/AxiosOptions.type.ts",
+      "type": "file",
+      "filePath": "src/types/AxiosOptions.type.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 6,
+      "complexity": "simple",
+      "pagerank": 0.017989,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Types module AxiosOptions.type defining AxiosOptions."
+    },
+    {
+      "id": "file:src/types/BasicInfo.type.ts",
+      "type": "file",
+      "filePath": "src/types/BasicInfo.type.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 9,
+      "complexity": "simple",
+      "pagerank": 0.007344,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Types module BasicInfo.type (1 symbols)."
+    },
+    {
+      "id": "file:src/types/Brapi.type.ts",
+      "type": "file",
+      "filePath": "src/types/Brapi.type.ts",
+      "language": "typescript",
+      "symbolCount": 13,
+      "lineCount": 45,
+      "complexity": "moderate",
+      "pagerank": 0.008353,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Types module Brapi.type defining BrapiFiiIndicator, BrapiIndicatorsResponse, BrapiListResponse."
+    },
+    {
+      "id": "file:src/types/DRE.type.ts",
+      "type": "file",
+      "filePath": "src/types/DRE.type.ts",
+      "language": "typescript",
+      "symbolCount": 7,
+      "lineCount": 25,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 20,
+      "tags": [],
+      "summary": "Types module DRE.type defining Column, GridLineModel, Grid."
+    },
+    {
+      "id": "file:src/types/Database/StockRepository.type.ts",
+      "type": "file",
+      "filePath": "src/types/Database/StockRepository.type.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 4,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module StockRepository.type defining IStockDatabase.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/types/HomeItens.type.ts",
+      "type": "file",
+      "filePath": "src/types/HomeItens.type.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 21,
+      "tags": [],
+      "summary": "Types module HomeItens.type defining ItemData, HomeItens."
+    },
+    {
+      "id": "file:src/types/News.type.ts",
+      "type": "file",
+      "filePath": "src/types/News.type.ts",
+      "language": "typescript",
+      "symbolCount": 7,
+      "lineCount": 35,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 22,
+      "tags": [],
+      "summary": "Types module News.type defining News, User, RelatedSymbol."
+    },
+    {
+      "id": "file:src/types/PassiveChart.type.ts",
+      "type": "file",
+      "filePath": "src/types/PassiveChart.type.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 12,
+      "complexity": "simple",
+      "pagerank": 0.016099,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module PassiveChart.type defining PassiveChart, PassiveChartReturn."
+    },
+    {
+      "id": "file:src/types/Payout.type.ts",
+      "type": "file",
+      "filePath": "src/types/Payout.type.ts",
+      "language": "typescript",
+      "symbolCount": 7,
+      "lineCount": 23,
+      "complexity": "moderate",
+      "pagerank": 0.007344,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Types module Payout.type defining Percentual, Provento, LucroLiquido."
+    },
+    {
+      "id": "file:src/types/Pontuation.type.ts",
+      "type": "file",
+      "filePath": "src/types/Pontuation.type.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 10,
+      "complexity": "simple",
+      "pagerank": 0.016141,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module Pontuation.type defining PontuationRule, InfoData, PontuationProps."
+    },
+    {
+      "id": "file:src/types/QueryStock.type.ts",
+      "type": "file",
+      "filePath": "src/types/QueryStock.type.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 23,
+      "tags": [],
+      "summary": "Types module QueryStock.type defining StockQuery."
+    },
+    {
+      "id": "file:src/types/Segment.type.ts",
+      "type": "file",
+      "filePath": "src/types/Segment.type.ts",
+      "language": "typescript",
+      "symbolCount": 5,
+      "lineCount": 12,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 24,
+      "tags": [],
+      "summary": "Types module Segment.type defining Segment, SegmentData, Root."
+    },
+    {
+      "id": "file:src/types/cashFlow.type.ts",
+      "type": "file",
+      "filePath": "src/types/cashFlow.type.ts",
+      "language": "typescript",
+      "symbolCount": 5,
+      "lineCount": 19,
+      "complexity": "moderate",
+      "pagerank": 0.005979,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Types module cashFlow.type defining RootCashFlow, Data, Grid.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/types/dividends.type.ts",
+      "type": "file",
+      "filePath": "src/types/dividends.type.ts",
+      "language": "typescript",
+      "symbolCount": 10,
+      "lineCount": 36,
+      "complexity": "moderate",
+      "pagerank": 0.015341,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module dividends.type defining Helpers, AssetEarningsModel, AssetEarningsYearlyModel."
+    },
+    {
+      "id": "file:src/types/fundo.types.ts",
+      "type": "file",
+      "filePath": "src/types/fundo.types.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 25,
+      "complexity": "simple",
+      "pagerank": 0.013987,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Types module fundo.types defining FundoProps."
+    },
+    {
+      "id": "file:src/types/get.type.ts",
+      "type": "file",
+      "filePath": "src/types/get.type.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 8,
+      "complexity": "simple",
+      "pagerank": 0.006586,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Types module get.type defining Dividend, Dividends.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/types/indicators.type.ts",
+      "type": "file",
+      "filePath": "src/types/indicators.type.ts",
+      "language": "typescript",
+      "symbolCount": 9,
+      "lineCount": 45,
+      "complexity": "moderate",
+      "pagerank": 0.016664,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module indicators.type defining OldData, FinancialData, FinancialIndicators."
+    },
+    {
+      "id": "file:src/types/prices.type.ts",
+      "type": "file",
+      "filePath": "src/types/prices.type.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 8,
+      "complexity": "moderate",
+      "pagerank": 0.009464,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Types module prices.type defining PriceObject, MainPrices, PriceReturn.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/types/report.type.ts",
+      "type": "file",
+      "filePath": "src/types/report.type.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 10,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 25,
+      "tags": [],
+      "summary": "Types module report.type defining Report, RootReport, ReportReturn."
+    },
+    {
+      "id": "file:src/types/responses.type.ts",
+      "type": "file",
+      "filePath": "src/types/responses.type.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 5,
+      "complexity": "simple",
+      "pagerank": 0.006534,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Types module responses.type defining ErrorResponse, ResponseProps."
+    },
+    {
+      "id": "file:src/types/stock.types.ts",
+      "type": "file",
+      "filePath": "src/types/stock.types.ts",
+      "language": "typescript",
+      "symbolCount": 6,
+      "lineCount": 34,
+      "complexity": "moderate",
+      "pagerank": 0.036309,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Types module stock.types defining PriceHistory, StockProps, StockInfo.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/useCases/BrapiClient.ts",
+      "type": "file",
+      "filePath": "src/useCases/BrapiClient.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 54,
+      "complexity": "moderate",
+      "pagerank": 0.005332,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Service module BrapiClient defining authHeaders, safeGet.",
+      "primaryOwner": "Claude"
+    },
+    {
+      "id": "file:src/useCases/FundoFetcher.ts",
+      "type": "file",
+      "filePath": "src/useCases/FundoFetcher.ts",
+      "language": "typescript",
+      "symbolCount": 5,
+      "lineCount": 131,
+      "complexity": "moderate",
+      "pagerank": 0.006128,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Service module FundoFetcher defining buildFundoProps, FundoFetcher, execute.",
+      "primaryOwner": "Claude"
+    },
+    {
+      "id": "file:src/useCases/PontuationDatabase.ts",
+      "type": "file",
+      "filePath": "src/useCases/PontuationDatabase.ts",
+      "language": "typescript",
+      "symbolCount": 7,
+      "lineCount": 59,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Service module PontuationDatabase defining DatabaseProps, PontuationCache, PontuationDataBase.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/useCases/fundoDataBase.ts",
+      "type": "file",
+      "filePath": "src/useCases/fundoDataBase.ts",
+      "language": "typescript",
+      "symbolCount": 6,
+      "lineCount": 44,
+      "complexity": "moderate",
+      "pagerank": 0.005873,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Service module fundoDataBase defining FundoCache, FundoDataBase, getFundo.",
+      "primaryOwner": "Claude"
+    },
+    {
+      "id": "file:src/useCases/instanceStock.ts",
+      "type": "file",
+      "filePath": "src/useCases/instanceStock.ts",
+      "language": "typescript",
+      "symbolCount": 10,
+      "lineCount": 131,
+      "complexity": "moderate",
+      "pagerank": 0.007146,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Service module instanceStock defining InstanceStock, constructor, execute.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/useCases/stockDataBase.ts",
+      "type": "file",
+      "filePath": "src/useCases/stockDataBase.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 29,
+      "complexity": "moderate",
+      "pagerank": 0.007268,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Service module stockDataBase defining StockCache, StockDataBase, getStock.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/utils/ApiGetter.ts",
+      "type": "file",
+      "filePath": "src/utils/ApiGetter.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 12,
+      "complexity": "simple",
+      "pagerank": 0.018563,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Utility module ApiGetter defining apiGetter.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/utils/Axios.Utils.ts",
+      "type": "file",
+      "filePath": "src/utils/Axios.Utils.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 20,
+      "complexity": "simple",
+      "pagerank": 0.009723,
+      "communityId": 3,
+      "tags": [],
+      "summary": "Utility module Axios.Utils defining AxiosUtils, makeOptionsJson.",
+      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:src/utils/DateFormater.ts",
+      "type": "file",
+      "filePath": "src/utils/DateFormater.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 22,
+      "complexity": "simple",
+      "pagerank": 0.00848,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Utility module DateFormater defining DateFormatter, dateToString, stringToDate."
+    },
+    {
+      "id": "file:src/utils/Fetcher.utils.ts",
+      "type": "file",
+      "filePath": "src/utils/Fetcher.utils.ts",
+      "language": "typescript",
+      "symbolCount": 5,
+      "lineCount": 26,
+      "complexity": "moderate",
+      "pagerank": 0.006737,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Utility module Fetcher.utils defining FetcherUtils, constructor, extractText.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:src/utils/FundoUtils.ts",
+      "type": "file",
+      "filePath": "src/utils/FundoUtils.ts",
+      "language": "typescript",
+      "symbolCount": 8,
+      "lineCount": 78,
+      "complexity": "moderate",
+      "pagerank": 0.005332,
+      "communityId": 5,
+      "tags": [],
+      "summary": "Utility module FundoUtils defining FundoUtils, round, mapSegmento.",
+      "primaryOwner": "Claude"
+    },
+    {
+      "id": "file:src/utils/MathUtils.ts",
+      "type": "file",
+      "filePath": "src/utils/MathUtils.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 23,
+      "complexity": "moderate",
+      "pagerank": 0.00934,
+      "communityId": 2,
+      "tags": [],
+      "summary": "Utility module MathUtils defining MathUtils, makeMedian, makeAverage.",
+      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:src/utils/Responses.ts",
+      "type": "file",
+      "filePath": "src/utils/Responses.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 50,
+      "complexity": "simple",
+      "pagerank": 0.012177,
+      "communityId": 0,
+      "tags": [],
+      "summary": "Utility module Responses defining response, errorResponse, addError.",
+      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:src/utils/Utilities.ts",
+      "type": "file",
+      "filePath": "src/utils/Utilities.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 11,
+      "complexity": "simple",
+      "pagerank": 0.009785,
+      "communityId": 1,
+      "tags": [],
+      "summary": "Utility module Utilities defining Utilities, formateNumber, msToHours.",
+      "primaryOwner": "\u00c1lan Gabriel Dias pedon"
+    },
+    {
+      "id": "file:tests/golden/data/all-tickers.json",
+      "type": "config",
+      "filePath": "tests/golden/data/all-tickers.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 6,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: all-tickers.json."
+    },
+    {
+      "id": "file:tests/golden/data/bazin-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/bazin-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 40,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: bazin-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/bazin-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/bazin-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 39,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: bazin-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/data/graham-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/graham-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 41,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: graham-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/graham-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/graham-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 41,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: graham-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/data/simulation-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/simulation-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 17,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: simulation-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/simulation-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/simulation-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 16,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: simulation-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/data/stock-ITUB4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/stock-ITUB4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 1700,
+      "complexity": "complex",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: stock-ITUB4.json."
+    },
+    {
+      "id": "file:tests/golden/data/stock-PETR4.json",
+      "type": "config",
+      "filePath": "tests/golden/data/stock-PETR4.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 1367,
+      "complexity": "complex",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test",
+        "config",
+        "low_signal_summary"
+      ],
+      "summary": "Configuration file: stock-PETR4.json."
+    },
+    {
+      "id": "file:tests/golden/stock.test.ts",
+      "type": "file",
+      "filePath": "tests/golden/stock.test.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 79,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for stock.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/http/routes.test.ts",
+      "type": "file",
+      "filePath": "tests/http/routes.test.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 195,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 0,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for routes.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/integration/queue.test.ts",
+      "type": "file",
+      "filePath": "tests/integration/queue.test.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 91,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 4,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for queue.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/golden.ts",
+      "type": "file",
+      "filePath": "tests/support/golden.ts",
+      "language": "typescript",
+      "symbolCount": 3,
+      "lineCount": 25,
+      "complexity": "simple",
+      "pagerank": 0.004843,
+      "communityId": 3,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for golden.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/http-fixtures.ts",
+      "type": "file",
+      "filePath": "tests/support/http-fixtures.ts",
+      "language": "typescript",
+      "symbolCount": 12,
+      "lineCount": 101,
+      "complexity": "moderate",
+      "pagerank": 0.006234,
+      "communityId": 3,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for http-fixtures.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/preload.ts",
+      "type": "file",
+      "filePath": "tests/support/preload.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 6,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 26,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for preload.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/support/record.ts",
+      "type": "file",
+      "filePath": "tests/support/record.ts",
+      "language": "typescript",
+      "symbolCount": 4,
+      "lineCount": 27,
+      "complexity": "moderate",
+      "pagerank": 0.004464,
+      "communityId": 1,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for record.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/date-formatter.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/date-formatter.test.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 29,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 1,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for date-formatter.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/env.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/env.test.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 56,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 3,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for env.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/math-utils.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/math-utils.test.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 32,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for math-utils.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/pontuation.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/pontuation.test.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 45,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 2,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for pontuation.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/refresh-stock.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/refresh-stock.test.ts",
+      "language": "typescript",
+      "symbolCount": 1,
+      "lineCount": 43,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 4,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for refresh-stock.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/responses.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/responses.test.ts",
+      "language": "typescript",
+      "symbolCount": 2,
+      "lineCount": 66,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 0,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for responses.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tests/unit/utilities.test.ts",
+      "type": "file",
+      "filePath": "tests/unit/utilities.test.ts",
+      "language": "typescript",
+      "symbolCount": 0,
+      "lineCount": 16,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 1,
+      "tags": [
+        "test"
+      ],
+      "summary": "Tests for utilities.",
+      "primaryOwner": "\u00c1lan Gabriel Dias Pedon"
+    },
+    {
+      "id": "file:tsconfig.json",
+      "type": "config",
+      "filePath": "tsconfig.json",
+      "language": "json",
+      "symbolCount": 0,
+      "lineCount": 10,
+      "complexity": "simple",
+      "pagerank": 0.004464,
+      "communityId": 6,
+      "tags": [
+        "config"
+      ],
+      "summary": "TypeScript compiler configuration."
+    },
+    {
+      "id": "function:src/Entities/Pontuation.ts:addRule",
+      "type": "function",
+      "filePath": "src/Entities/Pontuation.ts",
+      "name": "addRule",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/Entities/Pontuation.ts:calculate",
+      "type": "function",
+      "filePath": "src/Entities/Pontuation.ts",
+      "name": "calculate",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/Entities/Pontuation.ts:constructor",
+      "type": "function",
+      "filePath": "src/Entities/Pontuation.ts",
+      "name": "constructor",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/Entities/Variable.ts:constructor",
+      "type": "function",
+      "filePath": "src/Entities/Variable.ts",
+      "name": "constructor",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/utils/ApiGetter.ts:apiGetter",
+      "type": "function",
+      "filePath": "src/utils/ApiGetter.ts",
+      "name": "apiGetter",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/utils/Axios.Utils.ts:makeOptionsJson",
+      "type": "function",
+      "filePath": "src/utils/Axios.Utils.ts",
+      "name": "makeOptionsJson",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/utils/Responses.ts:addError",
+      "type": "function",
+      "filePath": "src/utils/Responses.ts",
+      "name": "addError",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/utils/Responses.ts:errorResponse",
+      "type": "function",
+      "filePath": "src/utils/Responses.ts",
+      "name": "errorResponse",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/utils/Responses.ts:response",
+      "type": "function",
+      "filePath": "src/utils/Responses.ts",
+      "name": "response",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    },
+    {
+      "id": "function:src/utils/Utilities.ts:formateNumber",
+      "type": "function",
+      "filePath": "src/utils/Utilities.ts",
+      "name": "formateNumber",
+      "language": "typescript",
+      "tags": [],
+      "summary": ""
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/start-queue.ts",
+      "target": "file:external:node:path",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/start-queue.ts",
+      "target": "file:src/global/Queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/start-queue.ts",
+      "target": "file:src/sources/fundamentus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Bazin.ts",
+      "target": "file:src/Entities/Pontuation.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Bazin.ts",
+      "target": "file:src/interfaces/BazinProtocol.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Bazin.ts",
+      "target": "file:src/types/Pontuation.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Bazin.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Bazin.ts",
+      "target": "file:src/utils/MathUtils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Fundo.ts",
+      "target": "file:src/types/fundo.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/Entities/Pontuation.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/global/MacroInfo.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/interfaces/GranhamProtocol.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/interfaces/StockProtocol.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/types/Pontuation.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/types/indicators.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Graham.ts",
+      "target": "file:src/utils/MathUtils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts",
+      "target": "class:src/Entities/Pontuation.ts:Pontuation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts",
+      "target": "file:src/types/Pontuation.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts",
+      "target": "function:src/Entities/Pontuation.ts:addRule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts",
+      "target": "function:src/Entities/Pontuation.ts:calculate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts",
+      "target": "function:src/Entities/Pontuation.ts:constructor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts::Pontuation",
+      "target": "function:src/Entities/Pontuation.ts:addRule",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts::Pontuation",
+      "target": "function:src/Entities/Pontuation.ts:calculate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Pontuation.ts::Pontuation",
+      "target": "function:src/Entities/Pontuation.ts:constructor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Simulation.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Simulation.ts",
+      "target": "file:src/types/prices.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Simulation.ts",
+      "target": "file:src/utils/DateFormater.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Stock.ts",
+      "target": "file:src/Entities/Variable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Stock.ts",
+      "target": "file:src/interfaces/StockProtocol.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Stock.ts",
+      "target": "file:src/types/PassiveChart.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Stock.ts",
+      "target": "file:src/types/dividends.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Stock.ts",
+      "target": "file:src/types/indicators.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Stock.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Variable.ts",
+      "target": "class:src/Entities/Variable.ts:Variable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Variable.ts",
+      "target": "file:src/interfaces/Variable.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Variable.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Variable.ts",
+      "target": "function:src/Entities/Variable.ts:constructor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/Entities/Variable.ts::Variable",
+      "target": "function:src/Entities/Variable.ts:constructor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:external:cors",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:external:path",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/routes/bazin.routes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/routes/fundo.routes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/routes/graham.routes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/routes/simulation.routes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/app.ts",
+      "target": "file:src/routes/stock.routes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/bazin.controller.ts",
+      "target": "file:external:@/Entities/Pontuation.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/bazin.controller.ts",
+      "target": "file:external:@/global/Redis.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/bazin.controller.ts",
+      "target": "file:external:@/useCases/PontuationDatabase.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/bazin.controller.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/bazin.controller.ts",
+      "target": "file:src/utils/Responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/fundo.controller.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/fundo.controller.ts",
+      "target": "file:src/Entities/Fundo.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/fundo.controller.ts",
+      "target": "file:src/useCases/fundoDataBase.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/fundo.controller.ts",
+      "target": "file:src/utils/Responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/graham.controller.ts",
+      "target": "file:external:@/Entities/Pontuation.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/graham.controller.ts",
+      "target": "file:external:@/global/Redis.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/graham.controller.ts",
+      "target": "file:external:@/useCases/PontuationDatabase.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/graham.controller.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/graham.controller.ts",
+      "target": "file:src/utils/Responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/simulation.controller.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/simulation.controller.ts",
+      "target": "file:src/Entities/Simulation.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/simulation.controller.ts",
+      "target": "file:src/utils/Responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/stock.controller.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/stock.controller.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/stock.controller.ts",
+      "target": "file:src/useCases/stockDataBase.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/controllers/stock.controller.ts",
+      "target": "file:src/utils/Responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/env.ts",
+      "target": "file:external:zod",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/MacroInfo.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/MacroInfo.ts",
+      "target": "file:src/Entities/Stock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/MacroInfo.ts",
+      "target": "file:src/sources/fundamentus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/Queue.ts",
+      "target": "file:external:bullmq",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/Queue.ts",
+      "target": "file:src/env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/Redis.ts",
+      "target": "file:external:ioredis",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/Redis.ts",
+      "target": "file:src/env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/global/Redis.ts",
+      "target": "file:src/global/Queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/BazinProtocol.type.ts",
+      "target": "file:src/Entities/Pontuation.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/BazinProtocol.type.ts",
+      "target": "file:src/interfaces/StockProtocol.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/GranhamProtocol.type.ts",
+      "target": "file:src/Entities/Pontuation.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/GranhamProtocol.type.ts",
+      "target": "file:src/interfaces/StockProtocol.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/GranhamProtocol.type.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/StockProtocol.type.ts",
+      "target": "file:src/Entities/Variable.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/StockProtocol.type.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/interfaces/Variable.type.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/StockQueue.ts",
+      "target": "file:external:bullmq",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/StockQueue.ts",
+      "target": "file:src/global/Queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/StockQueue.ts",
+      "target": "file:src/global/Redis.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/StockQueue.ts",
+      "target": "file:src/queues/refreshStock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/StockQueue.ts",
+      "target": "file:src/useCases/stockDataBase.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/refreshStock.ts",
+      "target": "file:external:bullmq",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/queues/refreshStock.ts",
+      "target": "file:src/global/Queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/bazin.routes.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/bazin.routes.ts",
+      "target": "file:src/controllers/bazin.controller.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/fundo.routes.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/fundo.routes.ts",
+      "target": "file:src/controllers/fundo.controller.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/graham.routes.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/graham.routes.ts",
+      "target": "file:src/controllers/graham.controller.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/simulation.routes.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/simulation.routes.ts",
+      "target": "file:src/controllers/simulation.controller.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/stock.routes.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/routes/stock.routes.ts",
+      "target": "file:src/controllers/stock.controller.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/server.ts",
+      "target": "file:src/app.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/server.ts",
+      "target": "file:src/env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/server.ts",
+      "target": "file:src/global/Queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/server.ts",
+      "target": "file:src/queues/StockQueue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/fundamentus.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/fundamentus.ts",
+      "target": "file:external:cheerio",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/basicInfo.ts",
+      "target": "file:src/types/BasicInfo.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/basicInfo.ts",
+      "target": "file:src/utils/Fetcher.utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/cashFlow.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/cashFlow.ts",
+      "target": "file:src/types/cashFlow.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/cashFlow.ts",
+      "target": "file:src/types/get.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/dividends.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/dividends.ts",
+      "target": "file:src/types/dividends.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/dividends.ts",
+      "target": "file:src/utils/Utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/http.ts",
+      "target": "file:src/utils/ApiGetter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/basicInfo.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/cashFlow.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/dividends.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/indicators.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/page.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/passiveChart.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/payout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/index.ts",
+      "target": "file:src/sources/statusinvest/prices.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/indicators.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/indicators.ts",
+      "target": "file:src/types/indicators.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/page.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/passiveChart.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/passiveChart.ts",
+      "target": "file:src/types/PassiveChart.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/payout.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/payout.ts",
+      "target": "file:src/types/Payout.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/prices.ts",
+      "target": "file:src/sources/statusinvest/http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/sources/statusinvest/prices.ts",
+      "target": "file:src/types/prices.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/types/Database/StockRepository.type.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/types/stock.types.ts",
+      "target": "file:src/interfaces/Variable.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/types/stock.types.ts",
+      "target": "file:src/types/PassiveChart.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/types/stock.types.ts",
+      "target": "file:src/types/dividends.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/types/stock.types.ts",
+      "target": "file:src/types/indicators.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/BrapiClient.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/BrapiClient.ts",
+      "target": "file:src/env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/BrapiClient.ts",
+      "target": "file:src/types/Brapi.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/FundoFetcher.ts",
+      "target": "file:src/Entities/Fundo.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/FundoFetcher.ts",
+      "target": "file:src/errors/CustomError.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/FundoFetcher.ts",
+      "target": "file:src/types/Brapi.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/FundoFetcher.ts",
+      "target": "file:src/types/fundo.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/FundoFetcher.ts",
+      "target": "file:src/useCases/BrapiClient.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/FundoFetcher.ts",
+      "target": "file:src/utils/FundoUtils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:external:@/errors/CustomError.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:external:@/global/Redis.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:src/Entities/Bazin.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:src/Entities/Graham.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:src/Entities/Pontuation.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:src/Entities/Stock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:src/env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/PontuationDatabase.ts",
+      "target": "file:src/useCases/stockDataBase.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/fundoDataBase.ts",
+      "target": "file:src/Entities/Fundo.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/fundoDataBase.ts",
+      "target": "file:src/global/Redis.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/fundoDataBase.ts",
+      "target": "file:src/useCases/FundoFetcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/Entities/Stock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/BasicInfo.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/PassiveChart.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/Payout.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/dividends.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/get.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/indicators.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/prices.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/instanceStock.ts",
+      "target": "file:src/types/stock.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/stockDataBase.ts",
+      "target": "file:external:@/global/Redis.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/stockDataBase.ts",
+      "target": "file:external:@/types/Database/StockRepository.type.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/stockDataBase.ts",
+      "target": "file:external:@/types/stock.types.js",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/useCases/stockDataBase.ts",
+      "target": "file:src/useCases/instanceStock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/ApiGetter.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/ApiGetter.ts",
+      "target": "file:src/types/AxiosOptions.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/ApiGetter.ts",
+      "target": "file:src/utils/Axios.Utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/ApiGetter.ts",
+      "target": "function:src/utils/ApiGetter.ts:apiGetter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Axios.Utils.ts",
+      "target": "class:src/utils/Axios.Utils.ts:AxiosUtils",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Axios.Utils.ts",
+      "target": "file:src/types/AxiosOptions.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Axios.Utils.ts",
+      "target": "function:src/utils/Axios.Utils.ts:makeOptionsJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Axios.Utils.ts::AxiosUtils",
+      "target": "function:src/utils/Axios.Utils.ts:makeOptionsJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Fetcher.utils.ts",
+      "target": "file:external:cheerio",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Fetcher.utils.ts",
+      "target": "file:src/interfaces/FetcherUtils.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Fetcher.utils.ts",
+      "target": "file:src/utils/Utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/FundoUtils.ts",
+      "target": "file:src/types/Brapi.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/FundoUtils.ts",
+      "target": "file:src/types/fundo.types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/FundoUtils.ts",
+      "target": "file:src/utils/MathUtils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "file:external:axios",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "file:external:express",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "file:external:zod",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "file:src/errors/CustomError.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "file:src/types/responses.type.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "function:src/utils/Responses.ts:addError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "function:src/utils/Responses.ts:errorResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Responses.ts",
+      "target": "function:src/utils/Responses.ts:response",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Utilities.ts",
+      "target": "class:src/utils/Utilities.ts:Utilities",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Utilities.ts",
+      "target": "function:src/utils/Utilities.ts:formateNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/utils/Utilities.ts::Utilities",
+      "target": "function:src/utils/Utilities.ts:formateNumber",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Bazin.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Graham.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Simulation.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/Entities/Stock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/sources/fundamentus.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:src/useCases/instanceStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:tests/support/golden.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/golden/stock.test.ts",
+      "target": "file:tests/support/http-fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:axios",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:node:http",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:external:node:net",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:src/app.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/http/routes.test.ts",
+      "target": "file:tests/support/http-fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:external:bullmq",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:external:ioredis",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/integration/queue.test.ts",
+      "target": "file:src/queues/refreshStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/golden.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/golden.ts",
+      "target": "file:external:node:fs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/golden.ts",
+      "target": "file:external:node:path",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/http-fixtures.ts",
+      "target": "file:external:axios",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/http-fixtures.ts",
+      "target": "file:external:node:fs",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/http-fixtures.ts",
+      "target": "file:external:node:path",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/Entities/Simulation.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/sources/fundamentus.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/sources/statusinvest/index.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:src/useCases/instanceStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/support/record.ts",
+      "target": "file:tests/support/http-fixtures.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/date-formatter.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/date-formatter.test.ts",
+      "target": "file:src/utils/DateFormater.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/env.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/env.test.ts",
+      "target": "file:external:node:path",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/math-utils.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/math-utils.test.ts",
+      "target": "file:src/utils/MathUtils.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/pontuation.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/pontuation.test.ts",
+      "target": "file:src/Entities/Pontuation.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/refresh-stock.test.ts",
+      "target": "file:external:bullmq",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/refresh-stock.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/refresh-stock.test.ts",
+      "target": "file:src/queues/refreshStock.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:external:axios",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:external:zod",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:src/errors/CustomError.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/responses.test.ts",
+      "target": "file:src/utils/Responses.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/utilities.test.ts",
+      "target": "file:external:bun:test",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/unit/utilities.test.ts",
+      "target": "file:src/utils/Utilities.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tsconfig.json",
+      "target": "file:src",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 1.0,
+      "hint": "node_package"
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:service",
+      "name": "Market Data Sources",
+      "description": "Fetches and manages market data from external APIs and databases for stocks and investment funds.",
+      "nodeIds": [
+        "file:src/useCases/BrapiClient.ts",
+        "file:src/useCases/FundoFetcher.ts",
+        "file:src/useCases/PontuationDatabase.ts",
+        "file:src/useCases/fundoDataBase.ts",
+        "file:src/useCases/instanceStock.ts",
+        "file:src/useCases/stockDataBase.ts"
+      ],
+      "display_order": 0,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:application",
+      "name": "Application Core",
+      "description": "Core application infrastructure including queues, caching, Redis integration, external data sources, and error handling.",
+      "nodeIds": [
+        "file:.mcp.json",
+        "file:Dockerfile",
+        "file:Readme.md",
+        "file:biome.json",
+        "file:bunfig.toml",
+        "file:docker-compose.yml",
+        "file:package.json",
+        "file:src/app.ts",
+        "file:src/env.ts",
+        "file:src/errors/CustomError.ts",
+        "file:src/global/MacroInfo.ts",
+        "file:src/global/Queue.ts",
+        "file:src/global/Redis.ts",
+        "file:src/queues/StockQueue.ts",
+        "file:src/queues/refreshStock.ts",
+        "file:src/server.ts",
+        "file:src/sources/fundamentus.ts",
+        "file:src/sources/statusinvest/basicInfo.ts",
+        "file:src/sources/statusinvest/cashFlow.ts",
+        "file:src/sources/statusinvest/dividends.ts",
+        "file:src/sources/statusinvest/http.ts",
+        "file:src/sources/statusinvest/index.ts",
+        "file:src/sources/statusinvest/indicators.ts",
+        "file:src/sources/statusinvest/page.ts",
+        "file:src/sources/statusinvest/passiveChart.ts",
+        "file:src/sources/statusinvest/payout.ts",
+        "file:src/sources/statusinvest/prices.ts",
+        "file:tsconfig.json"
+      ],
+      "display_order": 1,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:data",
+      "name": "Domain Models",
+      "description": "Core entity classes representing stocks, funds, simulations, and investment analysis strategies.",
+      "nodeIds": [
+        "file:src/Entities/Bazin.ts",
+        "file:src/Entities/Fundo.ts",
+        "file:src/Entities/Graham.ts",
+        "file:src/Entities/Pontuation.ts",
+        "file:src/Entities/Simulation.ts",
+        "file:src/Entities/Stock.ts",
+        "file:src/Entities/Variable.ts"
+      ],
+      "display_order": 2,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:api",
+      "name": "HTTP Endpoints",
+      "description": "Express route handlers and controllers for REST API endpoints serving stock, fund, and simulation data.",
+      "nodeIds": [
+        "file:src/controllers/bazin.controller.ts",
+        "file:src/controllers/fundo.controller.ts",
+        "file:src/controllers/graham.controller.ts",
+        "file:src/controllers/simulation.controller.ts",
+        "file:src/controllers/stock.controller.ts",
+        "file:src/routes/bazin.routes.ts",
+        "file:src/routes/fundo.routes.ts",
+        "file:src/routes/graham.routes.ts",
+        "file:src/routes/simulation.routes.ts",
+        "file:src/routes/stock.routes.ts"
+      ],
+      "display_order": 3,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:config",
+      "name": "Build Configuration",
+      "description": "Development settings and GitHub Actions CI/CD workflow configuration.",
+      "nodeIds": [
+        "file:.claude/settings.local.json",
+        "file:.github/workflows/ci.yml"
+      ],
+      "display_order": 4,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:utility",
+      "name": "Utility Helpers",
+      "description": "Reusable utility functions for API operations, data formatting, mathematical calculations, and common application needs.",
+      "nodeIds": [
+        "file:src/utils/ApiGetter.ts",
+        "file:src/utils/Axios.Utils.ts",
+        "file:src/utils/DateFormater.ts",
+        "file:src/utils/Fetcher.utils.ts",
+        "file:src/utils/FundoUtils.ts",
+        "file:src/utils/MathUtils.ts",
+        "file:src/utils/Responses.ts",
+        "file:src/utils/Utilities.ts"
+      ],
+      "display_order": 5,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:types",
+      "name": "Domain Types",
+      "description": "TypeScript type definitions and interfaces for financial domain models including stocks, indicators, dividends, and prices.",
+      "nodeIds": [
+        "file:src/interfaces/BazinProtocol.type.ts",
+        "file:src/interfaces/FetcherUtils.type.ts",
+        "file:src/interfaces/GranhamProtocol.type.ts",
+        "file:src/interfaces/StockProtocol.type.ts",
+        "file:src/interfaces/Variable.type.ts",
+        "file:src/types/AxiosOptions.type.ts",
+        "file:src/types/BasicInfo.type.ts",
+        "file:src/types/Brapi.type.ts",
+        "file:src/types/DRE.type.ts",
+        "file:src/types/Database/StockRepository.type.ts",
+        "file:src/types/HomeItens.type.ts",
+        "file:src/types/News.type.ts",
+        "file:src/types/PassiveChart.type.ts",
+        "file:src/types/Payout.type.ts",
+        "file:src/types/Pontuation.type.ts",
+        "file:src/types/QueryStock.type.ts",
+        "file:src/types/Segment.type.ts",
+        "file:src/types/cashFlow.type.ts",
+        "file:src/types/dividends.type.ts",
+        "file:src/types/fundo.types.ts",
+        "file:src/types/get.type.ts",
+        "file:src/types/indicators.type.ts",
+        "file:src/types/prices.type.ts",
+        "file:src/types/report.type.ts",
+        "file:src/types/responses.type.ts",
+        "file:src/types/stock.types.ts"
+      ],
+      "display_order": 6,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:docs-tooling",
+      "name": "Worker Scripts",
+      "description": "Startup script for initializing and running background queue worker processes.",
+      "nodeIds": [
+        "file:scripts/start-queue.ts"
+      ],
+      "display_order": 7,
+      "order_basis": "imports"
+    },
+    {
+      "id": "layer:test",
+      "name": "Integration Tests",
+      "description": "Integration tests with golden fixtures for validating stock analysis and financial data calculations.",
+      "nodeIds": [
+        "file:tests/golden/data/all-tickers.json",
+        "file:tests/golden/data/bazin-ITUB4.json",
+        "file:tests/golden/data/bazin-PETR4.json",
+        "file:tests/golden/data/graham-ITUB4.json",
+        "file:tests/golden/data/graham-PETR4.json",
+        "file:tests/golden/data/simulation-ITUB4.json",
+        "file:tests/golden/data/simulation-PETR4.json",
+        "file:tests/golden/data/stock-ITUB4.json",
+        "file:tests/golden/data/stock-PETR4.json",
+        "file:tests/golden/stock.test.ts",
+        "file:tests/http/routes.test.ts",
+        "file:tests/integration/queue.test.ts",
+        "file:tests/support/golden.ts",
+        "file:tests/support/http-fixtures.ts",
+        "file:tests/support/preload.ts",
+        "file:tests/support/record.ts",
+        "file:tests/unit/date-formatter.test.ts",
+        "file:tests/unit/env.test.ts",
+        "file:tests/unit/math-utils.test.ts",
+        "file:tests/unit/pontuation.test.ts",
+        "file:tests/unit/refresh-stock.test.ts",
+        "file:tests/unit/responses.test.ts",
+        "file:tests/unit/utilities.test.ts"
+      ],
+      "display_order": 8,
+      "order_basis": "imports"
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "target_path": "Readme.md",
+      "page_type": "repo_overview",
+      "title": "Readme.md",
+      "depth": 0,
+      "kind": "overview",
+      "reason": "Start here for the end-to-end picture before diving into the code.",
+      "layer_id": "layer:application",
+      "wikiPageIds": []
+    },
+    {
+      "order": 2,
+      "target_path": "src/app.ts",
+      "page_type": "file_page",
+      "title": "app.ts",
+      "depth": 0,
+      "kind": "code",
+      "reason": "An entry point \u2014 execution and imports fan out from here.",
+      "layer_id": "layer:application",
+      "wikiPageIds": []
+    },
+    {
+      "order": 3,
+      "target_path": "src/server.ts",
+      "page_type": "file_page",
+      "title": "server.ts",
+      "depth": 0,
+      "kind": "code",
+      "reason": "An entry point \u2014 execution and imports fan out from here.",
+      "layer_id": "layer:application",
+      "wikiPageIds": []
+    },
+    {
+      "order": 4,
+      "target_path": "src/env.ts",
+      "page_type": "file_page",
+      "title": "env.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:application",
+      "wikiPageIds": []
+    },
+    {
+      "order": 5,
+      "target_path": "src/global/Queue.ts",
+      "page_type": "file_page",
+      "title": "Queue.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:application",
+      "wikiPageIds": []
+    },
+    {
+      "order": 6,
+      "target_path": "scripts/start-queue.ts",
+      "page_type": "file_page",
+      "title": "start-queue.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Docs & Tooling layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:docs-tooling",
+      "wikiPageIds": []
+    },
+    {
+      "order": 7,
+      "target_path": "src/routes/bazin.routes.ts",
+      "page_type": "file_page",
+      "title": "bazin.routes.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "Directly used by the entry points above; a core collaborator.",
+      "layer_id": "layer:api",
+      "wikiPageIds": []
+    },
+    {
+      "order": 8,
+      "target_path": "src/types/stock.types.ts",
+      "page_type": "file_page",
+      "title": "stock.types.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Types layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:types",
+      "wikiPageIds": []
+    },
+    {
+      "order": 9,
+      "target_path": "src/utils/ApiGetter.ts",
+      "page_type": "file_page",
+      "title": "ApiGetter.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Utility layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:utility",
+      "wikiPageIds": []
+    },
+    {
+      "order": 10,
+      "target_path": "src/Entities/Pontuation.ts",
+      "page_type": "file_page",
+      "title": "Pontuation.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Data layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:data",
+      "wikiPageIds": []
+    },
+    {
+      "order": 11,
+      "target_path": "src/useCases/stockDataBase.ts",
+      "page_type": "file_page",
+      "title": "stockDataBase.ts",
+      "depth": 1,
+      "kind": "code",
+      "reason": "The Service layer's anchor \u2014 its most depended-on file.",
+      "layer_id": "layer:service",
+      "wikiPageIds": []
+    },
+    {
+      "order": 12,
+      "target_path": "tests/golden/stock.test.ts",
+      "page_type": "file_page",
+      "title": "stock.test.ts",
+      "depth": 2,
+      "kind": "code",
+      "reason": "The test suite \u2014 how the system's behavior is verified.",
+      "layer_id": "layer:test",
+      "wikiPageIds": []
+    }
+  ],
+  "modules": [
+    {
+      "id": "module:src-usecases",
+      "name": "Service",
+      "path": "src/useCases",
+      "layerId": "layer:service",
+      "nodeIds": [
+        "file:src/useCases/BrapiClient.ts",
+        "file:src/useCases/FundoFetcher.ts",
+        "file:src/useCases/PontuationDatabase.ts",
+        "file:src/useCases/fundoDataBase.ts",
+        "file:src/useCases/instanceStock.ts",
+        "file:src/useCases/stockDataBase.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:application",
+      "name": "Application",
+      "path": "",
+      "layerId": "layer:application",
+      "nodeIds": [
+        "file:.mcp.json",
+        "file:Dockerfile",
+        "file:Readme.md",
+        "file:biome.json",
+        "file:bunfig.toml",
+        "file:docker-compose.yml",
+        "file:package.json",
+        "file:src/app.ts",
+        "file:src/env.ts",
+        "file:src/errors/CustomError.ts",
+        "file:src/global/MacroInfo.ts",
+        "file:src/global/Queue.ts",
+        "file:src/global/Redis.ts",
+        "file:src/queues/StockQueue.ts",
+        "file:src/queues/refreshStock.ts",
+        "file:src/server.ts",
+        "file:src/sources/fundamentus.ts",
+        "file:src/sources/statusinvest/basicInfo.ts",
+        "file:src/sources/statusinvest/cashFlow.ts",
+        "file:src/sources/statusinvest/dividends.ts",
+        "file:src/sources/statusinvest/http.ts",
+        "file:src/sources/statusinvest/index.ts",
+        "file:src/sources/statusinvest/indicators.ts",
+        "file:src/sources/statusinvest/page.ts",
+        "file:src/sources/statusinvest/passiveChart.ts",
+        "file:src/sources/statusinvest/payout.ts",
+        "file:src/sources/statusinvest/prices.ts",
+        "file:tsconfig.json"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:src-entities",
+      "name": "Data",
+      "path": "src/Entities",
+      "layerId": "layer:data",
+      "nodeIds": [
+        "file:src/Entities/Bazin.ts",
+        "file:src/Entities/Fundo.ts",
+        "file:src/Entities/Graham.ts",
+        "file:src/Entities/Pontuation.ts",
+        "file:src/Entities/Simulation.ts",
+        "file:src/Entities/Stock.ts",
+        "file:src/Entities/Variable.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:src--api",
+      "name": "API",
+      "path": "src",
+      "layerId": "layer:api",
+      "nodeIds": [
+        "file:src/controllers/bazin.controller.ts",
+        "file:src/controllers/fundo.controller.ts",
+        "file:src/controllers/graham.controller.ts",
+        "file:src/controllers/simulation.controller.ts",
+        "file:src/controllers/stock.controller.ts",
+        "file:src/routes/bazin.routes.ts",
+        "file:src/routes/fundo.routes.ts",
+        "file:src/routes/graham.routes.ts",
+        "file:src/routes/simulation.routes.ts",
+        "file:src/routes/stock.routes.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:src-utils",
+      "name": "Utility",
+      "path": "src/utils",
+      "layerId": "layer:utility",
+      "nodeIds": [
+        "file:src/utils/ApiGetter.ts",
+        "file:src/utils/Axios.Utils.ts",
+        "file:src/utils/DateFormater.ts",
+        "file:src/utils/Fetcher.utils.ts",
+        "file:src/utils/FundoUtils.ts",
+        "file:src/utils/MathUtils.ts",
+        "file:src/utils/Responses.ts",
+        "file:src/utils/Utilities.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:src",
+      "name": "Types",
+      "path": "src",
+      "layerId": "layer:types",
+      "nodeIds": [
+        "file:src/interfaces/BazinProtocol.type.ts",
+        "file:src/interfaces/FetcherUtils.type.ts",
+        "file:src/interfaces/GranhamProtocol.type.ts",
+        "file:src/interfaces/StockProtocol.type.ts",
+        "file:src/interfaces/Variable.type.ts",
+        "file:src/types/AxiosOptions.type.ts",
+        "file:src/types/BasicInfo.type.ts",
+        "file:src/types/Brapi.type.ts",
+        "file:src/types/DRE.type.ts",
+        "file:src/types/Database/StockRepository.type.ts",
+        "file:src/types/HomeItens.type.ts",
+        "file:src/types/News.type.ts",
+        "file:src/types/PassiveChart.type.ts",
+        "file:src/types/Payout.type.ts",
+        "file:src/types/Pontuation.type.ts",
+        "file:src/types/QueryStock.type.ts",
+        "file:src/types/Segment.type.ts",
+        "file:src/types/cashFlow.type.ts",
+        "file:src/types/dividends.type.ts",
+        "file:src/types/fundo.types.ts",
+        "file:src/types/get.type.ts",
+        "file:src/types/indicators.type.ts",
+        "file:src/types/prices.type.ts",
+        "file:src/types/report.type.ts",
+        "file:src/types/responses.type.ts",
+        "file:src/types/stock.types.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    },
+    {
+      "id": "module:tests",
+      "name": "Test",
+      "path": "tests",
+      "layerId": "layer:test",
+      "nodeIds": [
+        "file:tests/golden/data/all-tickers.json",
+        "file:tests/golden/data/bazin-ITUB4.json",
+        "file:tests/golden/data/bazin-PETR4.json",
+        "file:tests/golden/data/graham-ITUB4.json",
+        "file:tests/golden/data/graham-PETR4.json",
+        "file:tests/golden/data/simulation-ITUB4.json",
+        "file:tests/golden/data/simulation-PETR4.json",
+        "file:tests/golden/data/stock-ITUB4.json",
+        "file:tests/golden/data/stock-PETR4.json",
+        "file:tests/golden/stock.test.ts",
+        "file:tests/http/routes.test.ts",
+        "file:tests/integration/queue.test.ts",
+        "file:tests/support/golden.ts",
+        "file:tests/support/http-fixtures.ts",
+        "file:tests/support/preload.ts",
+        "file:tests/support/record.ts",
+        "file:tests/unit/date-formatter.test.ts",
+        "file:tests/unit/env.test.ts",
+        "file:tests/unit/math-utils.test.ts",
+        "file:tests/unit/pontuation.test.ts",
+        "file:tests/unit/refresh-stock.test.ts",
+        "file:tests/unit/responses.test.ts",
+        "file:tests/unit/utilities.test.ts"
+      ],
+      "wholeLayer": true,
+      "language": "typescript"
+    }
+  ]
+}

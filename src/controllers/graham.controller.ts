@@ -1,6 +1,6 @@
-import { RequestHandler } from 'express'
+import type { RequestHandler } from 'express'
 
-import { Pontuation } from '@/entities/Pontuation.js'
+import type { Pontuation } from '@/Entities/Pontuation.js'
 import { Redis } from '@/global/Redis.js'
 import { PontuationDataBase } from '@/useCases/PontuationDatabase.js'
 
@@ -8,37 +8,27 @@ import { errorResponse, response } from '../utils/Responses.js'
 
 const pontuationDatabase = new PontuationDataBase()
 
-// Rota que retorna todos os dados relacionados ao calculo do Graham para X ticker
-const index: RequestHandler = async (req, res) => {
+/** Retorna a pontuação Graham de uma ação (GET /graham/:ticker) */
+export const index: RequestHandler<{ ticker: string }> = async (req, res) => {
   try {
-    const ticker: string = req.params.ticker
-    const stock = await pontuationDatabase.getPoints({
+    // Busca a pontuação
+    const pontuation = await pontuationDatabase.getPoints({
       type: 'GRAHAM',
-      ticker,
+      ticker: req.params.ticker,
     })
-
-    return response(res, {
-      status: 200,
-      data: stock,
-    })
+    return response(res, { status: 200, data: pontuation })
   } catch (error) {
     return errorResponse(res, error)
   }
 }
 
-// Rota que retorna todos os dados relacionados ao calculo do Graham
-const indexAll: RequestHandler = async (req, res) => {
+/** Retorna todas as pontuações Graham do cache (GET /graham) */
+export const indexAll: RequestHandler = async (_req, res) => {
   try {
     const grahamList =
       await Redis.getAllObjectWithFromCache<Pontuation>('points-GRAHAM-')
-
-    return response(res, {
-      status: 200,
-      data: grahamList,
-    })
+    return response(res, { status: 200, data: grahamList })
   } catch (error) {
     return errorResponse(res, error)
   }
 }
-
-export { index, indexAll }

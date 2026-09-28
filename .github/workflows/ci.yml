@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    # Redis real para os testes de integração da fila (sem ele eles são pulados)
+    services:
+      redis:
+        image: redis:alpine
+        ports:
+          - 6379:6379
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version-file: .tool-versions
+
+      - run: bun install --frozen-lockfile
+
+      - run: bun run lint
+
+      # Em Linux o sistema de arquivos diferencia maiúsculas/minúsculas:
+      # o typecheck acusa imports com casing errado (ex.: entities/ vs Entities/)
+      - run: bun run typecheck
+
+      # Scraping e HTTP usam fixtures gravadas em tests/fixtures: sem rede
+      - run: bun test

@@ -1,3 +1,4 @@
+/** Dados básicos lidos da página da ação no statusinvest */
 export type BasicInfoReturn = {
   ticker: string
   image: string

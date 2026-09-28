@@ -1,61 +1,30 @@
-// Alter import type
-
-// Não existe funções ou váriavies em interfaces Typescript
-// Logo torna inviável a criação de um Protocol para a classe de utilidades.
-// FIXME Revisar SOLID mais tarde
-
+/** Conversões de texto usadas no scraping */
 export default class Utilities {
+  /**
+   * Converte números no formato dos sites brasileiros ("R$ 12,50", "7,39%",
+   * "1.234.567", "58.671,52", "-0,19%") para number
+   *
+   * @returns 0 para texto sem dígitos
+   */
   static formateNumber(stringToFormat: string): number {
-    const stringToFormatArray = stringToFormat.split('.');
-    if (stringToFormatArray.length > 2)
-      return Number(stringToFormatArray.join(''));
-    stringToFormat = stringToFormat.replace(/[^\d,.]/g, '');
-    stringToFormat = stringToFormat.replace(',', '.');
-
-    try {
-      return Number(stringToFormat);
-    } catch (err: any) {
-      throw new Error('Invalid String');
-    }
-  }
-
-  static msToHours(ms: number): number {
-    return ms / (1000 * 60 * 60);
-  }
-
-  static uniqueElements<T>(array: T[]): T[] {
-    return array.filter((value, index, self) => self.indexOf(value) === index);
-  }
-
-  static findIndexOfGreatest(array: number[]): number {
-    var greatest;
-    var indexOfGreatest = -1;
-    for (var i = 0; i < array.length; i++) {
-      if (!greatest || array[i] > greatest) {
-        greatest = array[i];
-        indexOfGreatest = i;
-      }
-    }
-    return indexOfGreatest;
-  }
-
-  static removeKeyRecursively(obj: any, keyToRemove: string): any {
-    if (Array.isArray(obj)) {
-      return obj.map((item) => this.removeKeyRecursively(item, keyToRemove));
-    } else if (typeof obj === 'object' && obj !== null) {
-      // Verifica se o objeto tem a chave e ignora se for um documento do mongoose
-      if (obj.constructor && obj.constructor.name !== 'Object') {
-        return obj;
-      }
-
-      return Object.keys(obj).reduce((acc, key) => {
-        if (key !== keyToRemove) {
-          acc[key] = this.removeKeyRecursively(obj[key], keyToRemove);
-        }
-        return acc;
-      }, {} as any);
+    // Se o texto não tem número
+    if (!/\d/.test(stringToFormat)) {
+      return 0
     }
 
-    return obj;
+    // Remove símbolos, mantendo dígitos, separadores e sinal
+    const cleaned = stringToFormat.replace(/[^\d,.-]/g, '')
+
+    // Se tem vírgula, ela é o decimal e os pontos são separadores de milhar
+    if (cleaned.includes(',')) {
+      return Number(cleaned.replaceAll('.', '').replace(',', '.'))
+    }
+
+    // Se tem mais de um ponto, os pontos são separadores de milhar
+    if (cleaned.split('.').length > 2) {
+      return Number(cleaned.replaceAll('.', ''))
+    }
+
+    return Number(cleaned)
   }
 }

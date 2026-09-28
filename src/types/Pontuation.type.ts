@@ -1,3 +1,4 @@
+/** Regra de pontuação e quantos pontos ela soma (verdadeira) ou subtrai (falsa) */
 export interface PontuationRule {
   ruleName: string
   rule: boolean
@@ -6,18 +7,18 @@ export interface PontuationRule {
   scored?: boolean
 }
 
+/** Dados de apoio exibidos junto com a pontuação */
 export interface InfoData {
   actualPrice: number
   maxPrice: number
   dy: number
 }
 
+/** Dados para criar uma `Pontuation` */
 export interface PontuationProps {
   defaultIfTrue: number
   defaultIfFalse: number
   id: string
   subId?: string
-  totalPoints: number
-  totalEvaluate: PontuationRule[]
   infoData: InfoData
 }

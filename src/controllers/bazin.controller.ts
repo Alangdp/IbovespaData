@@ -1,6 +1,6 @@
-import { RequestHandler } from 'express'
+import type { RequestHandler } from 'express'
 
-import { Pontuation } from '@/entities/Pontuation.js'
+import type { Pontuation } from '@/Entities/Pontuation.js'
 import { Redis } from '@/global/Redis.js'
 import { PontuationDataBase } from '@/useCases/PontuationDatabase.js'
 
@@ -8,37 +8,27 @@ import { errorResponse, response } from '../utils/Responses.js'
 
 const pontuationDatabase = new PontuationDataBase()
 
-// Rota que retorna todos os dados relacionados ao calculo do Bazin
-const index: RequestHandler = async (req, res) => {
+/** Retorna a pontuação Bazin de uma ação (GET /bazin/:ticker) */
+export const index: RequestHandler<{ ticker: string }> = async (req, res) => {
   try {
-    const ticker: string = req.params.ticker
-    const stock = await pontuationDatabase.getPoints({
+    // Busca a pontuação
+    const pontuation = await pontuationDatabase.getPoints({
       type: 'BAZIN',
-      ticker,
+      ticker: req.params.ticker,
     })
-
-    return response(res, {
-      status: 200,
-      data: stock,
-    })
+    return response(res, { status: 200, data: pontuation })
   } catch (error) {
     return errorResponse(res, error)
   }
 }
 
-// Rota que retorna todos os dados relacionados ao calculo do Bazin
-const indexAll: RequestHandler = async (req, res) => {
+/** Retorna todas as pontuações Bazin do cache (GET /bazin) */
+export const indexAll: RequestHandler = async (_req, res) => {
   try {
     const bazinList =
-      await Redis.getAllObjectWithFromCache<Pontuation>('points-GRAHAM-')
-
-    return response(res, {
-      status: 200,
-      data: bazinList,
-    })
+      await Redis.getAllObjectWithFromCache<Pontuation>('points-BAZIN-')
+    return response(res, { status: 200, data: bazinList })
   } catch (error) {
     return errorResponse(res, error)
   }
 }
-
-export { index, indexAll }

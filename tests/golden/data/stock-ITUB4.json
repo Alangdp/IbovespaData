@@ -1,0 +1,3142 @@
+{
+  "ticker": "ITUB4",
+  "name": "BANCO ITAU UNIBANCO",
+  "segment": "Bancos",
+  "activeValue": 217780666542,
+  "shareQuantity": 11026869192,
+  "actualPrice": 42.3,
+  "marketValue": 9212122194726.6,
+  "instanceTime": 1790175600000,
+  "lpa": 4.25,
+  "p_l": 9.9606,
+  "freeFloat": 52.54,
+  "dividendYield": 7.47,
+  "grossDebt": 0,
+  "patrimony": 217779000000,
+  "payout": 0.5828937221726737,
+  "actualDividendYield": 0.074683,
+  "lastDividendsYieldYear": [
+    7.4683,
+    12.1076,
+    7.8531,
+    3.6993,
+    4.0726,
+    4.3406,
+    4.1239,
+    7.5595,
+    6.2507,
+    0.7621
+  ],
+  "lastDividendsValueYear": [
+    0.8617445,
+    4.7498135,
+    2.413265,
+    1.25664,
+    1.01814,
+    0.909348,
+    1.30356,
+    2.80456,
+    1.49286667,
+    0.21633333
+  ],
+  "lastDividendsValue": [
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2026",
+      "dataEx": "04/01/2027",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2026",
+      "dataEx": "01/09/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.018182
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/06/2026",
+      "dataEx": "03/08/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.018182
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "18/06/2026",
+      "dataEx": "28/08/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.36188
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/05/2026",
+      "dataEx": "01/07/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.018182
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/04/2026",
+      "dataEx": "01/06/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.018182
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2026",
+      "dataEx": "04/05/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.018182
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "19/03/2026",
+      "dataEx": "31/08/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.34888
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "27/02/2026",
+      "dataEx": "01/04/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.0242425
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/01/2026",
+      "dataEx": "02/03/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.018182
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/12/2025",
+      "dataEx": "02/02/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.018182
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "09/12/2025",
+      "dataEx": "06/03/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.36975
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "09/12/2025",
+      "dataEx": "19/12/2025",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.868223
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/11/2025",
+      "dataEx": "02/01/2026",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.0235295
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2025",
+      "dataEx": "01/12/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/09/2025",
+      "dataEx": "03/11/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/08/2025",
+      "dataEx": "01/10/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.0235295
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "18/08/2025",
+      "dataEx": "29/08/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3634
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2025",
+      "dataEx": "01/09/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/06/2025",
+      "dataEx": "01/08/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "09/06/2025",
+      "dataEx": "29/08/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3341
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/05/2025",
+      "dataEx": "01/07/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/04/2025",
+      "dataEx": "02/06/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2025",
+      "dataEx": "02/05/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/02/2025",
+      "dataEx": "01/04/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.0235295
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "17/02/2025",
+      "dataEx": "07/03/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.33344
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "17/02/2025",
+      "dataEx": "07/03/2025",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.25093
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/01/2025",
+      "dataEx": "06/03/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/12/2024",
+      "dataEx": "03/02/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "09/12/2024",
+      "dataEx": "07/03/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.31056
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/11/2024",
+      "dataEx": "02/01/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2024",
+      "dataEx": "02/12/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/09/2024",
+      "dataEx": "01/11/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "19/09/2024",
+      "dataEx": "07/03/2025",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.27298
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/08/2024",
+      "dataEx": "01/10/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2024",
+      "dataEx": "02/09/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/06/2024",
+      "dataEx": "01/08/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "20/06/2024",
+      "dataEx": "30/08/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.251
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/05/2024",
+      "dataEx": "01/07/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/04/2024",
+      "dataEx": "03/06/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/03/2024",
+      "dataEx": "02/05/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "21/03/2024",
+      "dataEx": "30/08/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2418
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/02/2024",
+      "dataEx": "01/04/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "21/02/2024",
+      "dataEx": "08/03/2024",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.125125
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/01/2024",
+      "dataEx": "01/03/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/12/2023",
+      "dataEx": "01/02/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "06/12/2023",
+      "dataEx": "08/03/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.24724
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2023",
+      "dataEx": "02/01/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2023",
+      "dataEx": "01/12/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/09/2023",
+      "dataEx": "01/11/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "18/09/2023",
+      "dataEx": "08/03/2024",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2693
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/08/2023",
+      "dataEx": "02/10/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2023",
+      "dataEx": "01/09/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/06/2023",
+      "dataEx": "01/08/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "19/06/2023",
+      "dataEx": "25/08/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2663
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/05/2023",
+      "dataEx": "03/07/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/04/2023",
+      "dataEx": "01/06/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2023",
+      "dataEx": "02/05/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "23/03/2023",
+      "dataEx": "25/08/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.262
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/02/2023",
+      "dataEx": "03/04/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/01/2023",
+      "dataEx": "01/03/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/12/2022",
+      "dataEx": "01/02/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "08/12/2022",
+      "dataEx": "10/03/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.48618
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2022",
+      "dataEx": "02/01/2023",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2022",
+      "dataEx": "01/12/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/09/2022",
+      "dataEx": "01/11/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/08/2022",
+      "dataEx": "03/10/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "18/08/2022",
+      "dataEx": "30/08/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3065
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/07/2022",
+      "dataEx": "01/09/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/06/2022",
+      "dataEx": "01/08/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/05/2022",
+      "dataEx": "01/07/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/04/2022",
+      "dataEx": "01/06/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2022",
+      "dataEx": "02/05/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "25/02/2022",
+      "dataEx": "01/04/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "21/02/2022",
+      "dataEx": "11/03/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01366
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/01/2022",
+      "dataEx": "02/03/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/12/2021",
+      "dataEx": "01/02/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2021",
+      "dataEx": "03/01/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "19/11/2021",
+      "dataEx": "11/03/2022",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.264551
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/10/2021",
+      "dataEx": "01/12/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.01765
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/09/2021",
+      "dataEx": "01/11/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/08/2021",
+      "dataEx": "01/10/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "13/08/2021",
+      "dataEx": "26/08/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.10384
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/07/2021",
+      "dataEx": "01/09/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/06/2021",
+      "dataEx": "02/08/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/05/2021",
+      "dataEx": "01/07/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "24/05/2021",
+      "dataEx": "26/08/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.04874
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/04/2021",
+      "dataEx": "01/06/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "27/04/2021",
+      "dataEx": "26/08/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.05648
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2021",
+      "dataEx": "03/05/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "25/03/2021",
+      "dataEx": "26/08/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.05064
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "26/02/2021",
+      "dataEx": "01/04/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "25/02/2021",
+      "dataEx": "12/03/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.096407
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "25/02/2021",
+      "dataEx": "12/03/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.05058
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/01/2021",
+      "dataEx": "01/03/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "22/01/2021",
+      "dataEx": "12/03/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.05016
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/12/2020",
+      "dataEx": "01/02/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "10/12/2020",
+      "dataEx": "12/03/2021",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.06396
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2020",
+      "dataEx": "04/01/2021",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/10/2020",
+      "dataEx": "01/12/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/09/2020",
+      "dataEx": "03/11/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/08/2020",
+      "dataEx": "01/10/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "17/08/2020",
+      "dataEx": "26/08/2020",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.0529
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2020",
+      "dataEx": "01/09/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/06/2020",
+      "dataEx": "03/08/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/05/2020",
+      "dataEx": "01/07/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/04/2020",
+      "dataEx": "01/06/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2020",
+      "dataEx": "04/05/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/02/2020",
+      "dataEx": "01/04/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "20/02/2020",
+      "dataEx": "06/03/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.4832
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "20/02/2020",
+      "dataEx": "06/03/2020",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.5235
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/01/2020",
+      "dataEx": "02/03/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/12/2019",
+      "dataEx": "03/02/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "12/12/2019",
+      "dataEx": "06/03/2020",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.03756
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/11/2019",
+      "dataEx": "02/01/2020",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2019",
+      "dataEx": "02/12/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/09/2019",
+      "dataEx": "01/11/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/08/2019",
+      "dataEx": "01/10/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "15/08/2019",
+      "dataEx": "23/08/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.7869
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2019",
+      "dataEx": "02/09/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/06/2019",
+      "dataEx": "01/08/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/05/2019",
+      "dataEx": "01/07/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/04/2019",
+      "dataEx": "03/06/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/03/2019",
+      "dataEx": "02/05/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/02/2019",
+      "dataEx": "01/04/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "21/02/2019",
+      "dataEx": "07/03/2019",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.7494
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "21/02/2019",
+      "dataEx": "07/03/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 1.0507
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/01/2019",
+      "dataEx": "01/03/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/12/2018",
+      "dataEx": "01/02/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "17/12/2018",
+      "dataEx": "07/03/2019",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.0106
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2018",
+      "dataEx": "02/01/2019",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.015
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2018",
+      "dataEx": "03/12/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/09/2018",
+      "dataEx": "01/11/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/08/2018",
+      "dataEx": "01/10/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "17/08/2018",
+      "dataEx": "30/08/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.416
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "17/08/2018",
+      "dataEx": "30/08/2018",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.08346666666666666
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2018",
+      "dataEx": "03/09/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/06/2018",
+      "dataEx": "01/08/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/05/2018",
+      "dataEx": "02/07/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "01/05/2018",
+      "dataEx": "01/06/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/03/2018",
+      "dataEx": "02/05/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/02/2018",
+      "dataEx": "02/04/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "15/02/2018",
+      "dataEx": "07/03/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.08693333333333333
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "15/02/2018",
+      "dataEx": "07/03/2018",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.7658666666666667
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/01/2018",
+      "dataEx": "01/03/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/12/2017",
+      "dataEx": "01/02/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "14/12/2017",
+      "dataEx": "07/03/2018",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.09633333333333333
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2017",
+      "dataEx": "02/01/2018",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2017",
+      "dataEx": "01/12/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/09/2017",
+      "dataEx": "01/11/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/08/2017",
+      "dataEx": "02/10/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/07/2017",
+      "dataEx": "01/09/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/06/2017",
+      "dataEx": "01/08/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/05/2017",
+      "dataEx": "03/07/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/04/2017",
+      "dataEx": "01/06/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2017",
+      "dataEx": "02/05/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "28/02/2017",
+      "dataEx": "03/04/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/01/2017",
+      "dataEx": "01/03/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/12/2016",
+      "dataEx": "01/02/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/11/2016",
+      "dataEx": "02/01/2017",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/10/2016",
+      "dataEx": "01/12/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/09/2016",
+      "dataEx": "01/11/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/08/2016",
+      "dataEx": "03/10/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/07/2016",
+      "dataEx": "01/09/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/06/2016",
+      "dataEx": "01/08/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/05/2016",
+      "dataEx": "01/07/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/04/2016",
+      "dataEx": "01/06/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/03/2016",
+      "dataEx": "02/05/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/02/2016",
+      "dataEx": "01/04/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "18/02/2016",
+      "dataEx": "29/02/2016",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3042666666666667
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "18/02/2016",
+      "dataEx": "29/02/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.132
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/01/2016",
+      "dataEx": "01/03/2016",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.01
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "09/12/2015",
+      "dataEx": "29/02/2016",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.13933333333333334
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "12/08/2015",
+      "dataEx": "25/08/2015",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.23066666666666666
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "10/02/2015",
+      "dataEx": "26/02/2015",
+      "dividendType": "Dividendo",
+      "dividendTypeName": "Dividendo",
+      "value": 0.2042
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "10/02/2015",
+      "dataEx": "26/02/2015",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3048666666666667
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "18/02/2014",
+      "dataEx": "28/02/2014",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.3490666666666667
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "20/12/2013",
+      "dataEx": "28/02/2014",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.13573333333333334
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "06/08/2013",
+      "dataEx": "21/08/2013",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.18493333333333334
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "05/03/2013",
+      "dataEx": "14/03/2013",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.25493333333333335
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "25/12/2012",
+      "dataEx": "14/03/2013",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.208
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "01/08/2012",
+      "dataEx": "15/08/2012",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.18493333333333334
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "29/02/2012",
+      "dataEx": "13/03/2012",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.2776
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "26/12/2011",
+      "dataEx": "13/03/2012",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.192
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "09/08/2011",
+      "dataEx": "22/08/2011",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.1804
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "08/03/2011",
+      "dataEx": "14/03/2011",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.25453333333333333
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "31/12/2010",
+      "dataEx": "17/03/2011",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.14333333333333334
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "10/08/2010",
+      "dataEx": "20/08/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.16433333333333333
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "19/02/2010",
+      "dataEx": "01/03/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.25626666666666664
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "30/12/2009",
+      "dataEx": "01/03/2010",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.1184
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "21/08/2009",
+      "dataEx": "31/08/2009",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.13333333333333333
+    },
+    {
+      "ticker": "ITUB4",
+      "dataCom": "13/08/2007",
+      "dataEx": "25/08/2014",
+      "dividendType": "JCP",
+      "dividendTypeName": "Juros Sobre Capital Próprio",
+      "value": 0.21704
+    }
+  ],
+  "indicators": {
+    "dy": {
+      "actual": 7.4683,
+      "avg": 5.82377,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 7.4683
+        },
+        {
+          "date": 2025,
+          "value": 12.1076
+        },
+        {
+          "date": 2024,
+          "value": 7.8531
+        },
+        {
+          "date": 2023,
+          "value": 3.6993
+        },
+        {
+          "date": 2022,
+          "value": 4.0726
+        },
+        {
+          "date": 2021,
+          "value": 4.3406
+        },
+        {
+          "date": 2020,
+          "value": 4.1239
+        },
+        {
+          "date": 2019,
+          "value": 7.5595
+        },
+        {
+          "date": 2018,
+          "value": 6.2507
+        },
+        {
+          "date": 2017,
+          "value": 0.7621
+        }
+      ]
+    },
+    "p_l": {
+      "actual": 9.9606,
+      "avg": 10.42817,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 9.9606
+        },
+        {
+          "date": 2025,
+          "value": 9.6436
+        },
+        {
+          "date": 2024,
+          "value": 7.3331
+        },
+        {
+          "date": 2023,
+          "value": 10.0603
+        },
+        {
+          "date": 2022,
+          "value": 8.3919
+        },
+        {
+          "date": 2021,
+          "value": 7.6755
+        },
+        {
+          "date": 2020,
+          "value": 16.4008
+        },
+        {
+          "date": 2019,
+          "value": 13.4155
+        },
+        {
+          "date": 2018,
+          "value": 9.3159
+        },
+        {
+          "date": 2017,
+          "value": 12.0845
+        }
+      ]
+    },
+    "p_vp": {
+      "actual": 2.1418,
+      "avg": 1.88941,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 2.1418
+        },
+        {
+          "date": 2025,
+          "value": 2.1153
+        },
+        {
+          "date": 2024,
+          "value": 1.4273
+        },
+        {
+          "date": 2023,
+          "value": 1.7512
+        },
+        {
+          "date": 2022,
+          "value": 1.4614
+        },
+        {
+          "date": 2021,
+          "value": 1.3437
+        },
+        {
+          "date": 2020,
+          "value": 2.1673
+        },
+        {
+          "date": 2019,
+          "value": 2.6564
+        },
+        {
+          "date": 2018,
+          "value": 1.6964
+        },
+        {
+          "date": 2017,
+          "value": 2.1333
+        }
+      ]
+    },
+    "p_ebita": {
+      "actual": 7.6206,
+      "avg": 10.251475,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 7.6206
+        },
+        {
+          "date": 2025,
+          "value": 7.5054
+        },
+        {
+          "date": 2024,
+          "value": 4.9851
+        },
+        {
+          "date": 2023,
+          "value": 6.5298
+        },
+        {
+          "date": 2022,
+          "value": 5.9075
+        },
+        {
+          "date": 2021,
+          "value": 4.4206
+        },
+        {
+          "date": 2020,
+          "value": 34.5919
+        },
+        {
+          "date": 2019,
+          "value": 10.4509
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "p_ebit": {
+      "actual": 8.5289,
+      "avg": 13.10487,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 8.5289
+        },
+        {
+          "date": 2025,
+          "value": 8.6086
+        },
+        {
+          "date": 2024,
+          "value": 6.3353
+        },
+        {
+          "date": 2023,
+          "value": 8.3891
+        },
+        {
+          "date": 2022,
+          "value": 6.6797
+        },
+        {
+          "date": 2021,
+          "value": 4.8636
+        },
+        {
+          "date": 2020,
+          "value": 59.256
+        },
+        {
+          "date": 2019,
+          "value": 11.6421
+        },
+        {
+          "date": 2018,
+          "value": 7.5807
+        },
+        {
+          "date": 2017,
+          "value": 9.1647
+        }
+      ]
+    },
+    "p_sr": {
+      "actual": 1.2084,
+      "avg": 1.35923,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 1.2084
+        },
+        {
+          "date": 2025,
+          "value": 1.1174
+        },
+        {
+          "date": 2024,
+          "value": 0.8985
+        },
+        {
+          "date": 2023,
+          "value": 1.0633
+        },
+        {
+          "date": 2022,
+          "value": 0.9463
+        },
+        {
+          "date": 2021,
+          "value": 1.0497
+        },
+        {
+          "date": 2020,
+          "value": 1.7836
+        },
+        {
+          "date": 2019,
+          "value": 1.8843
+        },
+        {
+          "date": 2018,
+          "value": 1.767
+        },
+        {
+          "date": 2017,
+          "value": 1.8738
+        }
+      ]
+    },
+    "p_ativo": {
+      "actual": 0.1457,
+      "avg": 0.14483,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.1457
+        },
+        {
+          "date": 2025,
+          "value": 0.1411
+        },
+        {
+          "date": 2024,
+          "value": 0.1055
+        },
+        {
+          "date": 2023,
+          "value": 0.131
+        },
+        {
+          "date": 2022,
+          "value": 0.1056
+        },
+        {
+          "date": 2021,
+          "value": 0.0993
+        },
+        {
+          "date": 2020,
+          "value": 0.1535
+        },
+        {
+          "date": 2019,
+          "value": 0.2221
+        },
+        {
+          "date": 2018,
+          "value": 0.1494
+        },
+        {
+          "date": 2017,
+          "value": 0.1951
+        }
+      ]
+    },
+    "p_capitlgiro": {
+      "actual": -1.8299,
+      "avg": -0.1151,
+      "olds": [
+        {
+          "date": 2026,
+          "value": -1.8299
+        },
+        {
+          "date": 2025,
+          "value": -1.8199
+        },
+        {
+          "date": 2024,
+          "value": 8.3395
+        },
+        {
+          "date": 2023,
+          "value": -5.1501
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "p_ativocirculante": {
+      "actual": -0.1473,
+      "avg": -0.14724,
+      "olds": [
+        {
+          "date": 2026,
+          "value": -0.1473
+        },
+        {
+          "date": 2025,
+          "value": -0.1428
+        },
+        {
+          "date": 2024,
+          "value": -0.1069
+        },
+        {
+          "date": 2023,
+          "value": -0.1326
+        },
+        {
+          "date": 2022,
+          "value": -0.1072
+        },
+        {
+          "date": 2021,
+          "value": -0.1014
+        },
+        {
+          "date": 2020,
+          "value": -0.1571
+        },
+        {
+          "date": 2019,
+          "value": -0.2263
+        },
+        {
+          "date": 2018,
+          "value": -0.1531
+        },
+        {
+          "date": 2017,
+          "value": -0.1977
+        }
+      ]
+    },
+    "ev_ebitda": {
+      "actual": 7.9969,
+      "avg": 9.745675,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 7.9969
+        },
+        {
+          "date": 2025,
+          "value": 7.2247
+        },
+        {
+          "date": 2024,
+          "value": 4.6709
+        },
+        {
+          "date": 2023,
+          "value": 6.0311
+        },
+        {
+          "date": 2022,
+          "value": 5.5359
+        },
+        {
+          "date": 2021,
+          "value": 4.2221
+        },
+        {
+          "date": 2020,
+          "value": 32.5552
+        },
+        {
+          "date": 2019,
+          "value": 9.7286
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "ev_ebit": {
+      "actual": 8.9501,
+      "avg": 12.40516,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 8.9501
+        },
+        {
+          "date": 2025,
+          "value": 8.2867
+        },
+        {
+          "date": 2024,
+          "value": 5.936
+        },
+        {
+          "date": 2023,
+          "value": 7.7484
+        },
+        {
+          "date": 2022,
+          "value": 6.2594
+        },
+        {
+          "date": 2021,
+          "value": 4.6453
+        },
+        {
+          "date": 2020,
+          "value": 55.7672
+        },
+        {
+          "date": 2019,
+          "value": 10.8375
+        },
+        {
+          "date": 2018,
+          "value": 6.9922
+        },
+        {
+          "date": 2017,
+          "value": 8.6288
+        }
+      ]
+    },
+    "lpa": {
+      "actual": 4.2467,
+      "avg": 3.36174,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 4.2467
+        },
+        {
+          "date": 2025,
+          "value": 4.068
+        },
+        {
+          "date": 2024,
+          "value": 4.1906
+        },
+        {
+          "date": 2023,
+          "value": 3.3766
+        },
+        {
+          "date": 2022,
+          "value": 2.979
+        },
+        {
+          "date": 2021,
+          "value": 2.7295
+        },
+        {
+          "date": 2020,
+          "value": 1.9273
+        },
+        {
+          "date": 2019,
+          "value": 2.7655
+        },
+        {
+          "date": 2018,
+          "value": 3.8107
+        },
+        {
+          "date": 2017,
+          "value": 3.5235
+        }
+      ]
+    },
+    "vpa": {
+      "actual": 19.7498,
+      "avg": 18.13599,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 19.7498
+        },
+        {
+          "date": 2025,
+          "value": 18.5457
+        },
+        {
+          "date": 2024,
+          "value": 21.5307
+        },
+        {
+          "date": 2023,
+          "value": 19.3976
+        },
+        {
+          "date": 2022,
+          "value": 17.1068
+        },
+        {
+          "date": 2021,
+          "value": 15.5918
+        },
+        {
+          "date": 2020,
+          "value": 14.585
+        },
+        {
+          "date": 2019,
+          "value": 13.966
+        },
+        {
+          "date": 2018,
+          "value": 20.9272
+        },
+        {
+          "date": 2017,
+          "value": 19.9593
+        }
+      ]
+    },
+    "peg_Ratio": {
+      "actual": 1.07146212,
+      "avg": 1.262835385,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 1.07146212
+        },
+        {
+          "date": 2025,
+          "value": 1.05039323
+        },
+        {
+          "date": 2024,
+          "value": 0
+        },
+        {
+          "date": 2023,
+          "value": 0
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 1.26058194
+        },
+        {
+          "date": 2017,
+          "value": 1.66890425
+        }
+      ]
+    },
+    "dividaliquida_patrimonioliquido": {
+      "actual": 0,
+      "avg": 0,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0
+        },
+        {
+          "date": 2025,
+          "value": 0
+        },
+        {
+          "date": 2024,
+          "value": 0
+        },
+        {
+          "date": 2023,
+          "value": 0
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "dividaliquida_ebitda": {
+      "actual": 0,
+      "avg": 0,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0
+        },
+        {
+          "date": 2025,
+          "value": 0
+        },
+        {
+          "date": 2024,
+          "value": 0
+        },
+        {
+          "date": 2023,
+          "value": 0
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "dividaliquida_ebit": {
+      "actual": 0,
+      "avg": 0,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0
+        },
+        {
+          "date": 2025,
+          "value": 0
+        },
+        {
+          "date": 2024,
+          "value": 0
+        },
+        {
+          "date": 2023,
+          "value": 0
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "patrimonio_ativo": {
+      "actual": 0.07,
+      "avg": 0.075,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.07
+        },
+        {
+          "date": 2025,
+          "value": 0.07
+        },
+        {
+          "date": 2024,
+          "value": 0.07
+        },
+        {
+          "date": 2023,
+          "value": 0.07
+        },
+        {
+          "date": 2022,
+          "value": 0.07
+        },
+        {
+          "date": 2021,
+          "value": 0.07
+        },
+        {
+          "date": 2020,
+          "value": 0.07
+        },
+        {
+          "date": 2019,
+          "value": 0.08
+        },
+        {
+          "date": 2018,
+          "value": 0.09
+        },
+        {
+          "date": 2017,
+          "value": 0.09
+        }
+      ]
+    },
+    "passivo_ativo": {
+      "actual": 0.93,
+      "avg": 0.917,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.93
+        },
+        {
+          "date": 2025,
+          "value": 0.93
+        },
+        {
+          "date": 2024,
+          "value": 0.92
+        },
+        {
+          "date": 2023,
+          "value": 0.92
+        },
+        {
+          "date": 2022,
+          "value": 0.92
+        },
+        {
+          "date": 2021,
+          "value": 0.92
+        },
+        {
+          "date": 2020,
+          "value": 0.92
+        },
+        {
+          "date": 2019,
+          "value": 0.91
+        },
+        {
+          "date": 2018,
+          "value": 0.9
+        },
+        {
+          "date": 2017,
+          "value": 0.9
+        }
+      ]
+    },
+    "liquidezcorrente": {
+      "actual": 0.12,
+      "avg": 0.225,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.12
+        },
+        {
+          "date": 2025,
+          "value": 0.14
+        },
+        {
+          "date": 2024,
+          "value": 0.31
+        },
+        {
+          "date": 2023,
+          "value": 0.33
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "margembruta": {
+      "actual": 37.23,
+      "avg": 46.699,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 37.23
+        },
+        {
+          "date": 2025,
+          "value": 35.89
+        },
+        {
+          "date": 2024,
+          "value": 40.48
+        },
+        {
+          "date": 2023,
+          "value": 39.76
+        },
+        {
+          "date": 2022,
+          "value": 44.22
+        },
+        {
+          "date": 2021,
+          "value": 57.23
+        },
+        {
+          "date": 2020,
+          "value": 57.67
+        },
+        {
+          "date": 2019,
+          "value": 60.65
+        },
+        {
+          "date": 2018,
+          "value": 46.23
+        },
+        {
+          "date": 2017,
+          "value": 47.63
+        }
+      ]
+    },
+    "margemebitda": {
+      "actual": 15.86,
+      "avg": 16.00125,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 15.86
+        },
+        {
+          "date": 2025,
+          "value": 14.89
+        },
+        {
+          "date": 2024,
+          "value": 18.02
+        },
+        {
+          "date": 2023,
+          "value": 16.28
+        },
+        {
+          "date": 2022,
+          "value": 16.02
+        },
+        {
+          "date": 2021,
+          "value": 23.75
+        },
+        {
+          "date": 2020,
+          "value": 5.16
+        },
+        {
+          "date": 2019,
+          "value": 18.03
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "margemebit": {
+      "actual": 14.17,
+      "avg": 15.27,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 14.17
+        },
+        {
+          "date": 2025,
+          "value": 12.98
+        },
+        {
+          "date": 2024,
+          "value": 14.18
+        },
+        {
+          "date": 2023,
+          "value": 12.67
+        },
+        {
+          "date": 2022,
+          "value": 14.17
+        },
+        {
+          "date": 2021,
+          "value": 21.58
+        },
+        {
+          "date": 2020,
+          "value": 3.01
+        },
+        {
+          "date": 2019,
+          "value": 16.18
+        },
+        {
+          "date": 2018,
+          "value": 23.31
+        },
+        {
+          "date": 2017,
+          "value": 20.45
+        }
+      ]
+    },
+    "margemliquida": {
+      "actual": 12.13,
+      "avg": 13.09,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 12.13
+        },
+        {
+          "date": 2025,
+          "value": 11.59
+        },
+        {
+          "date": 2024,
+          "value": 12.25
+        },
+        {
+          "date": 2023,
+          "value": 10.57
+        },
+        {
+          "date": 2022,
+          "value": 11.28
+        },
+        {
+          "date": 2021,
+          "value": 13.68
+        },
+        {
+          "date": 2020,
+          "value": 10.87
+        },
+        {
+          "date": 2019,
+          "value": 14.05
+        },
+        {
+          "date": 2018,
+          "value": 18.97
+        },
+        {
+          "date": 2017,
+          "value": 15.51
+        }
+      ]
+    },
+    "roe": {
+      "actual": 21.5,
+      "avg": 18.362,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 21.5
+        },
+        {
+          "date": 2025,
+          "value": 21.93
+        },
+        {
+          "date": 2024,
+          "value": 19.46
+        },
+        {
+          "date": 2023,
+          "value": 17.41
+        },
+        {
+          "date": 2022,
+          "value": 17.41
+        },
+        {
+          "date": 2021,
+          "value": 17.51
+        },
+        {
+          "date": 2020,
+          "value": 13.21
+        },
+        {
+          "date": 2019,
+          "value": 19.8
+        },
+        {
+          "date": 2018,
+          "value": 18.21
+        },
+        {
+          "date": 2017,
+          "value": 17.18
+        }
+      ]
+    },
+    "roa": {
+      "actual": 1.46,
+      "avg": 1.402,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 1.46
+        },
+        {
+          "date": 2025,
+          "value": 1.46
+        },
+        {
+          "date": 2024,
+          "value": 1.44
+        },
+        {
+          "date": 2023,
+          "value": 1.3
+        },
+        {
+          "date": 2022,
+          "value": 1.26
+        },
+        {
+          "date": 2021,
+          "value": 1.29
+        },
+        {
+          "date": 2020,
+          "value": 0.94
+        },
+        {
+          "date": 2019,
+          "value": 1.66
+        },
+        {
+          "date": 2018,
+          "value": 1.6
+        },
+        {
+          "date": 2017,
+          "value": 1.61
+        }
+      ]
+    },
+    "roic": {
+      "actual": 0,
+      "avg": 0,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0
+        },
+        {
+          "date": 2025,
+          "value": 0
+        },
+        {
+          "date": 2024,
+          "value": 0
+        },
+        {
+          "date": 2023,
+          "value": 0
+        },
+        {
+          "date": 2022,
+          "value": 0
+        },
+        {
+          "date": 2021,
+          "value": 0
+        },
+        {
+          "date": 2020,
+          "value": 0
+        },
+        {
+          "date": 2019,
+          "value": 0
+        },
+        {
+          "date": 2018,
+          "value": 0
+        },
+        {
+          "date": 2017,
+          "value": 0
+        }
+      ]
+    },
+    "giro_ativos": {
+      "actual": 0.12,
+      "avg": 0.108,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 0.12
+        },
+        {
+          "date": 2025,
+          "value": 0.13
+        },
+        {
+          "date": 2024,
+          "value": 0.12
+        },
+        {
+          "date": 2023,
+          "value": 0.12
+        },
+        {
+          "date": 2022,
+          "value": 0.11
+        },
+        {
+          "date": 2021,
+          "value": 0.09
+        },
+        {
+          "date": 2020,
+          "value": 0.09
+        },
+        {
+          "date": 2019,
+          "value": 0.12
+        },
+        {
+          "date": 2018,
+          "value": 0.08
+        },
+        {
+          "date": 2017,
+          "value": 0.1
+        }
+      ]
+    },
+    "receitas_cagr5": {
+      "actual": 17.38,
+      "avg": 10.851,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 17.38
+        },
+        {
+          "date": 2025,
+          "value": 17.38
+        },
+        {
+          "date": 2024,
+          "value": 11.68
+        },
+        {
+          "date": 2023,
+          "value": 18.99
+        },
+        {
+          "date": 2022,
+          "value": 11.61
+        },
+        {
+          "date": 2021,
+          "value": 2.26
+        },
+        {
+          "date": 2020,
+          "value": 6.04
+        },
+        {
+          "date": 2019,
+          "value": 8.39
+        },
+        {
+          "date": 2018,
+          "value": 6.73
+        },
+        {
+          "date": 2017,
+          "value": 8.05
+        }
+      ]
+    },
+    "lucros_cagr5": {
+      "actual": 19.9,
+      "avg": 8.268,
+      "olds": [
+        {
+          "date": 2026,
+          "value": 19.9
+        },
+        {
+          "date": 2025,
+          "value": 18.88
+        },
+        {
+          "date": 2024,
+          "value": 8.67
+        },
+        {
+          "date": 2023,
+          "value": 5.86
+        },
+        {
+          "date": 2022,
+          "value": 4.72
+        },
+        {
+          "date": 2021,
+          "value": 4.35
+        },
+        {
+          "date": 2020,
+          "value": -5.99
+        },
+        {
+          "date": 2019,
+          "value": 4.69
+        },
+        {
+          "date": 2018,
+          "value": 8.68
+        },
+        {
+          "date": 2017,
+          "value": 12.92
+        }
+      ]
+    }
+  },
+  "netLiquid": [
+    {
+      "year": "2025",
+      "value": 45849000000
+    },
+    {
+      "year": "2024",
+      "value": 42128000000
+    },
+    {
+      "year": "2023",
+      "value": 33877000000
+    },
+    {
+      "year": "2022",
+      "value": 30737000000
+    },
+    {
+      "year": "2021",
+      "value": 28384000000
+    },
+    {
+      "year": "2020",
+      "value": 15064000000
+    },
+    {
+      "year": "2019",
+      "value": 27813000000
+    },
+    {
+      "year": "2018",
+      "value": 25639000000
+    },
+    {
+      "year": "2017",
+      "value": 23225000000
+    },
+    {
+      "year": "2016",
+      "value": 22016000000
+    },
+    {
+      "year": "2015",
+      "value": 26156000000
+    },
+    {
+      "year": "2014",
+      "value": 21861000000
+    },
+    {
+      "year": "2013",
+      "value": 16522000000
+    },
+    {
+      "year": "2012",
+      "value": 13191000000
+    },
+    {
+      "year": "2011",
+      "value": 14610000000
+    },
+    {
+      "year": "2010",
+      "value": 12494000000
+    }
+  ],
+  "passiveChart": [
+    {
+      "year": 2025,
+      "totalAssets": 3066169000000,
+      "totalLiabilities": 2851093000000,
+      "currentAssets": 37144000000,
+      "nonCurrentAssets": 2880511000000,
+      "currentLiabilities": 274846000000,
+      "nonCurrentLiabilities": 0,
+      "shareholdersEquity": 215076000000
+    },
+    {
+      "year": 2024,
+      "totalAssets": 2854475000000,
+      "totalLiabilities": 2633191000000,
+      "currentAssets": 36127000000,
+      "nonCurrentAssets": 2673301000000,
+      "currentLiabilities": 118380000000,
+      "nonCurrentLiabilities": 0,
+      "shareholdersEquity": 221284000000
+    },
+    {
+      "year": 2023,
+      "totalAssets": 2543100000000,
+      "totalLiabilities": 2344050000000,
+      "currentAssets": 32001000000,
+      "nonCurrentAssets": 2384618000000,
+      "currentLiabilities": 96669000000,
+      "nonCurrentLiabilities": 0,
+      "shareholdersEquity": 199050000000
+    },
+    {
+      "year": 2022,
+      "totalAssets": 2323440000000,
+      "totalLiabilities": 2146097000000,
+      "currentAssets": 35381000000,
+      "nonCurrentAssets": 2172726000000,
+      "currentLiabilities": 99984000000,
+      "nonCurrentLiabilities": 77508000000,
+      "shareholdersEquity": 177343000000
+    },
+    {
+      "year": 2021,
+      "totalAssets": 2069206000000,
+      "totalLiabilities": 1904730000000,
+      "currentAssets": 44512000000,
+      "nonCurrentAssets": 1915573000000,
+      "currentLiabilities": 18254000000,
+      "nonCurrentLiabilities": 63479000000,
+      "shareholdersEquity": 164476000000
+    },
+    {
+      "year": 2020,
+      "totalAssets": 2019251000000,
+      "totalLiabilities": 1864726000000,
+      "currentAssets": 46224000000,
+      "nonCurrentAssets": 1851322000000,
+      "currentLiabilities": 0,
+      "nonCurrentLiabilities": 79653000000,
+      "shareholdersEquity": 154525000000
+    },
+    {
+      "year": 2019,
+      "totalAssets": 1637481000000,
+      "totalLiabilities": 1488016000000,
+      "currentAssets": 30367000000,
+      "nonCurrentAssets": 1501481000000,
+      "currentLiabilities": 0,
+      "nonCurrentLiabilities": 0,
+      "shareholdersEquity": 149465000000
+    },
+    {
+      "year": 2018,
+      "totalAssets": 1552797000000,
+      "totalLiabilities": 1402331000000,
+      "currentAssets": 37159000000,
+      "nonCurrentAssets": 1424876000000,
+      "currentLiabilities": 0,
+      "nonCurrentLiabilities": 0,
+      "shareholdersEquity": 150466000000
+    },
+    {
+      "year": 2017,
+      "totalAssets": 1436239000000,
+      "totalLiabilities": 1288233000000,
+      "currentAssets": 18749000000,
+      "nonCurrentAssets": 1330251000000,
+      "currentLiabilities": 0,
+      "nonCurrentLiabilities": 0,
+      "shareholdersEquity": 148006000000
+    },
+    {
+      "year": 2016,
+      "totalAssets": 1353241000000,
+      "totalLiabilities": 1218427000000,
+      "currentAssets": 18542000000,
+      "nonCurrentAssets": 1246833000000,
+      "currentLiabilities": 0,
+      "nonCurrentLiabilities": 0,
+      "shareholdersEquity": 134814000000
+    }
+  ],
+  "priceHistory": {
+    "length": 1248,
+    "first": {
+      "price": 15.8,
+      "date": "23/09/21 00:00"
+    },
+    "last": {
+      "price": 42.3,
+      "date": "23/09/26 00:00"
+    },
+    "sha256": "a6506cf1f4502b3761a6f356e9bc21f5451940d250b64a92234c2c4e96a1c5df"
+  }
+}

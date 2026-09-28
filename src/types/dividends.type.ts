@@ -24,6 +24,7 @@ export interface AssetEarningsYearlyModel {
   value: number
 }
 
+/** Resposta de `companytickerprovents` do statusinvest */
 export interface RootDividend {
   earningsThisYear: string
   earningsLastYear: string
@@ -37,6 +38,7 @@ export interface RootDividend {
   assetEarningsYearlyModels: AssetEarningsYearlyModel[]
 }
 
+/** Um pagamento de provento */
 export interface LastDividendPayment {
   ticker: string
   dataCom: string
@@ -46,30 +48,17 @@ export interface LastDividendPayment {
   value: number
 }
 
+/** Total de proventos pagos em um ano */
 export interface LastDividendPaymentYear {
   year: number
   value: number
 }
 
+/** Proventos da ação, por pagamento e por ano */
 export interface DividendReturn {
   lastDividendPayments: LastDividendPayment[]
   lastDividendPaymentsYear: LastDividendPaymentYear[]
   helper: Helpers
   dividendPaymentThisYear: number
   dividendPaymentLastYear: number
-}
-
-export type Dividend = {
-  date: string
-  ticker: string
-  value: number
-  type: string
-}
-
-export type Dividends = {
-  [ticker: string]: Dividend[]
-}
-
-export interface DividendOnDate {
-  [ticker: string]: Dividend
 }

@@ -1,122 +1,70 @@
 import axios from 'axios'
 
-import { Stock } from '../entities/Stock'
-import TickerFetcher from '../useCases/Fetcher.js'
-
-export interface Value {
-  SERCODIGO: string
-  VALDATA: string
-  VALVALOR: number
-  NIVNOME: string
-  TERCODIGO: string
+/** Item da API de séries temporais (SGS) do Banco Central */
+interface SgsValue {
+  data: string
+  valor: string
 }
 
-type CDIToMap = {
-  date: Date
-  valMonth: number
-  valDay: number
+/** Tempo que um indicador fica guardado em memória antes de ser buscado de novo (ms) */
+const CACHE_MS = 6 * 60 * 60 * 1000
+
+/**
+ * Busca o valor mais recente de uma série do SGS do Banco Central
+ *
+ * @param serie - Código da série (ex.: 4389 para o CDI anualizado)
+ * @returns O valor convertido de percentual para decimal (13.65 vira 0.1365)
+ */
+async function fetchLatestRate(serie: number): Promise<number> {
+  const { data } = await axios.get<SgsValue[]>(
+    `https://api.bcb.gov.br/dados/serie/bcdata.sgs.${serie}/dados/ultimos/1?formato=json`,
+    { timeout: 15000 },
+  )
+  return Number(data[0].valor) / 100
 }
 
-export interface RootSelic {
-  '@odata.context': string
-  value: Value[]
-}
-
-export interface RootIPCA {
-  '@odata.context': string
-  value: Value[]
-}
-
-export interface RootCDI {
-  '@odata.context': string
-  value: Value[]
-}
-
-// TODO - ATUALIZAR
+/** Indicadores macroeconômicos (taxas anuais, em decimal) */
 export class MacroInfo {
-  static firstStart: boolean = true
-  static readonly version: string = '1.0.0'
-  static SELIC: number
-  static CDI: number
-  static IPCA: number
-  static tickers: string[]
-  static stocks: Stock[] = []
+  private static readonly cache = new Map<
+    number,
+    { value: number; expiresAt: number }
+  >()
 
-  static async getSELIC() {
-    const response = await axios.get(
-      "http://ipeadata.gov.br/api/odata4/ValoresSerie(SERCODIGO='PAN12_TJOVER12')",
-    )
-    const data: RootCDI = response.data
-    return Number(data.value[data.value.length - 1].VALVALOR.toFixed(2))
-  }
+  /**
+   * Retorna a taxa da série, guardada em memória por 6 horas
+   *
+   * @returns `null` se o Banco Central não responder
+   */
+  private static async getRate(serie: number): Promise<number | null> {
+    // Se a taxa está em memória e dentro da validade
+    const cached = MacroInfo.cache.get(serie)
+    if (cached && cached.expiresAt > Date.now()) {
+      return cached.value
+    }
 
-  static async getCDI() {
-    const response = await axios.get(
-      "http://ipeadata.gov.br/api/odata4/ValoresSerie(SERCODIGO='BM12_TJCDI12')",
-    )
-    const data: RootCDI = response.data
-    return data
-  }
-
-  // Retornar como:
-  // {
-  //   date: Date,
-  //   valMonth: number,
-  //   valDay: number
-  // }
-  static async GetCDIToMap() {
-    const CDIData = await MacroInfo.getCDI()
-    const data: CDIToMap[] = []
-
-    for (const dataIndex of CDIData.value) {
-      const date = new Date(dataIndex.VALDATA)
-      date.setHours(0)
-      date.setMinutes(0)
-      date.setSeconds(0)
-      date.setMilliseconds(0)
-
-      const dayOnTheMonth = new Date(
-        date.getFullYear(),
-        date.getMonth(),
-        0,
-      ).getDate()
-
-      data.push({
-        date,
-        valMonth: Number(dataIndex.VALVALOR),
-        valDay: Number(dataIndex.VALVALOR) / dayOnTheMonth,
-      })
+    try {
+      // Busca a taxa e guarda em memória
+      const value = await fetchLatestRate(serie)
+      MacroInfo.cache.set(serie, { value, expiresAt: Date.now() + CACHE_MS })
+      return value
+    } catch (error) {
+      console.error(`Erro ao buscar a série ${serie} do BCB:`, error)
+      return null
     }
   }
 
-  static async getIPCA() {
-    const response = await axios.get(
-      "http://ipeadata.gov.br/api/odata4/ValoresSerie(SERCODIGO='PAN12_IPCAG12')",
-    )
-    const data: RootIPCA = response.data
-    return Number(data.value[data.value.length - 1].VALVALOR.toFixed(2))
+  /** Taxa Selic anualizada (série 1178) */
+  static getSELIC() {
+    return MacroInfo.getRate(1178)
   }
 
-  static async initialize() {
-    if (!MacroInfo.firstStart) return
-    MacroInfo.firstStart = false
+  /** Taxa CDI anualizada (série 4389) */
+  static getCDI() {
+    return MacroInfo.getRate(4389)
+  }
 
-    this.getSELIC().then((result) => {
-      this.SELIC = result
-    })
-
-    this.getCDI().then((result) => {
-      this.SELIC = Number(
-        result.value[result.value.length - 1].VALVALOR.toFixed(2),
-      )
-    })
-
-    this.getIPCA().then((result) => {
-      this.IPCA = result
-    })
-
-    this.tickers = await TickerFetcher.getAllTickers()
-
-    return await TickerFetcher.getAllTickers()
+  /** IPCA acumulado em 12 meses (série 13522) */
+  static getIPCA() {
+    return MacroInfo.getRate(13522)
   }
 }
