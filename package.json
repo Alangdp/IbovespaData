@@ -13,7 +13,8 @@
     "test:update": "UPDATE_GOLDEN=1 bun test",
     "fixtures:record": "bun tests/support/record.ts",
     "queue:start": "bun scripts/start-queue.ts",
-    "cvm:refresh": "bun scripts/cvm-refresh.ts"
+    "cvm:refresh": "bun scripts/cvm-refresh.ts",
+    "backtest": "bun scripts/backtest.ts"
   },
   "author": "",
   "license": "ISC",

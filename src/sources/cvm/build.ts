@@ -36,7 +36,13 @@ const CLASSES_IMOVEL: Record<string, CvmClasseImovel> = {
 /** Conteúdo dos CSVs, pelo prefixo; um texto por ano */
 export type CvmCsvs = Partial<Record<string, string[]>>
 
-type Row = Record<string, string>
+/** Linha de um CSV da CVM, indexada pelo nome da coluna */
+export type CvmRow = Record<string, string>
+
+/** Linhas dos CSVs já lidas, pelo prefixo do arquivo */
+export type CvmRows = Partial<Record<string, CvmRow[]>>
+
+type Row = CvmRow
 
 /** Remove pontuação do CNPJ */
 export function cnpjDigits(cnpj: string): string {
@@ -168,9 +174,33 @@ export function buildCvmFundos(
   csvs: CvmCsvs,
   resolveCidade?: ResolveCidade,
 ): Map<string, CvmFundo> {
+  // Lê os CSVs de cada arquivo, juntando os anos
+  const rows: CvmRows = Object.fromEntries(
+    Object.entries(csvs).map(([file, texts]) => [
+      file,
+      (texts ?? []).flatMap((text) => parseCsv(text)),
+    ]),
+  )
+  return buildCvmFundosFromRows(rows, resolveCidade)
+}
+
+/**
+ * Consolida as linhas já lidas dos informes em um registro por FII
+ *
+ * Usa sempre o informe mais recente (e a versão mais recente) entre as linhas
+ * recebidas: filtrando as linhas pela data de entrega, o resultado é o fundo
+ * como era conhecido naquela data (usado no backtest)
+ *
+ * @param rows - Linhas de cada CSV de `CVM_FILES`
+ * @param resolveCidade - Identifica o município do endereço de cada imóvel
+ * @returns Registros por CNPJ (só dígitos)
+ */
+export function buildCvmFundosFromRows(
+  rows: CvmRows,
+  resolveCidade?: ResolveCidade,
+): Map<string, CvmFundo> {
   const fundos = new Map<string, CvmFundo>()
-  const allRowsOf = (file: string) =>
-    (csvs[file] ?? []).flatMap((text) => parseCsv(text))
+  const allRowsOf = (file: string) => rows[file] ?? []
   const rowsOf = (file: string) => latestVersions(allRowsOf(file))
 
   // Retorna o registro do fundo, criando na primeira vez

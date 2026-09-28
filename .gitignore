@@ -144,3 +144,7 @@ dist
 .svelte-kit
 
 # End of https://www.toptal.com/developers/gitignore/api/node
+# Base do backtest (gerada pela ingestão)
+data/*.db
+data/*.db-*
+data/*.csv

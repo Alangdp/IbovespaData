@@ -14,6 +14,8 @@ export interface AssetEarningsModel {
   et: string
   etd: string
   v: number
+  /** Valor original, antes do ajuste por desdobramento (só quando `adj`) */
+  ov?: number
   sv: string
   sov: string
   adj: boolean

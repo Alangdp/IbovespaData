@@ -26,6 +26,9 @@ bun dev                  # http://localhost:3000, recarrega ao salvar
 | `bun run test:update` | Regrava os golden files em `tests/golden/data` |
 | `bun run fixtures:record` | Regrava as respostas HTTP em `tests/fixtures` (usa a rede) |
 | `bun run queue:start` | Enfileira todos os tickers da B3 para o worker atualizar o cache |
+| `bun run lint` / `bun run lint:fix` | Biome (verifica / corrige) |
+| `bun run cvm:refresh` | Atualiza na hora a base de informes da CVM no Redis |
+| `bun run backtest <subcomando>` | Backtest de FIIs (ver [Backtest de FIIs](#backtest-de-fiis)) |
 
 Docker: `docker build -t ibovespadata .` gera a imagem da API (a API precisa de
 `REDIS_HOST` apontando para o Redis).
@@ -72,6 +75,29 @@ As rotas `/fundos` estão documentadas em `openapi.yaml`: o `data` segue o schem
 `Fundo` do contrato do comparador de FIIs (`fii-api.yaml`), com campos extras
 marcados como "Extra". Um teste em `tests/http/routes.test.ts` falha se a
 resposta e o schema divergirem.
+
+## Backtest de FIIs
+
+Simulação histórica de aportes seguindo o score de FII, sem usar informação
+do futuro (cada decisão só vê o que era público antes da data), com dataset
+de features e rótulos para treinar IA, ficha de decisão por fundo e análise
+de robustez. **Documentação completa: [`docs/backtest.md`](docs/backtest.md)**
+(regras, saídas, configuração, dataset, tabelas, limitações) e dicionário do
+dataset em [`docs/backtest-dataset.md`](docs/backtest-dataset.md).
+
+```bash
+bun run backtest ingest                     # 1ª vez: baixa a base histórica (~10 min)
+bun run backtest simular --tickers XPML11   # atualiza e simula só o XPML11
+bun run backtest simular --inicial 10000 --mensal 500 --cotas XPML11:100
+bun run backtest compare --scores fii-v1,fii-v0-dy-pvp
+bun run backtest robustez --passo 3         # resultado com início em cada mês
+bun run backtest dataset                    # dataset para IA (tabela + CSV)
+bun run backtest ficha XPML11               # ficha de decisão do fundo
+```
+
+Fontes: COTAHIST da B3, informes da CVM (com a data de entrega), proventos
+do statusinvest, CDI/Selic/IPCA do BCB e juro real da NTN-B do Tesouro. Tudo
+fica em `data/backtest.db` (fora do git).
 
 ## Testes
 

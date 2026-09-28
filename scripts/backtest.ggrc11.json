@@ -1,0 +1,11 @@
+{
+  "nome": "Aporte mensal de R$ 1.000 só no GGRC11",
+  "anos": 5,
+  "aporte": { "valor": 1000, "frequencia": "mensal", "dia": 5 },
+  "selecao": { "quantidade": 1, "tickers": ["GGRC11"] },
+  "distribuicao": "igual",
+  "reinvestirDividendos": true,
+  "rebalanceamento": { "frequencia": "nenhum" },
+  "benchmark": { "tipo": "universo" },
+  "score": "fii-v1"
+}
